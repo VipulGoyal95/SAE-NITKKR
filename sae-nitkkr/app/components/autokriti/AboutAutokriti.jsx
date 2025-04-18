@@ -57,7 +57,7 @@ const AboutAutokriti = () => {
         <h1 className="p-5 text-[70px] font-bold text-center">
           About Autokriti
         </h1>
-        <div className="p-4 text-lg leading-relaxed">
+        <div className="p-4 text-justify text-lg leading-relaxed">
           <p>
             Autokriti is north India's largest automobile workshop which began in 2010. Every year loads of students gets enrolled to gain firsthand knowledge of industrial vehicles. The last held physical autokriti in 2019 saw a participation of 700+ candidates.
           </p>

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import "./header.css";
 import Link from "next/link";
 
 const Header = () => {
@@ -40,10 +39,10 @@ const Header = () => {
       }`}
     >
       <div className="p-6">
-        <div className={`w-full rounded-full overflow-hidden ${
+        <div className={`w-full px-[15px] pr-[25px] rounded-full overflow-hidden ${
           isScrolled ? 'bg-[rgba(76,76,76,0.36)] backdrop-blur-md' : 'bg-[rgba(76,76,76,0.36)] backdrop-blur-sm'
         }`}>
-          <nav className="w-full text-black py-2.5 text-center flex items-center justify-around">
+          <nav className="w-full text-black py-2.5 text-center flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <Image 
                 src="/assets/images/sae-logo.png" 

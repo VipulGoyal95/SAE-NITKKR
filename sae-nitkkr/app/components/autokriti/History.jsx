@@ -59,18 +59,14 @@ const History = () => {
     }
   };
 
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <div className="min-h-screen px-16">
       <h1 className='text-[70px] font-bold'>History <br/><span className='text-zinc-600'>Our</span> Story</h1>
       
       <div className="flex flex-row justify-between">
-        <h1 className="text-[140px] font-[600]">202<span style={{ fontSize: `${fontSizes[5]}px` }} className="ml-[2px] inline-block align-top">5</span></h1>
-        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: `${fontSizes[4]}px` }} className="ml-[2px] inline-block align-top">4</span></h1>
-        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: `${fontSizes[3]}px` }} className="ml-[2px] inline-block align-top">3</span></h1>
+        <h1 className="text-[140px] font-[600]">202<span style={{ fontSize: mounted ? `${fontSizes[5]}px` : '140px' }} className="ml-[2px] inline-block align-top">5</span></h1>
+        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[4]}px` : '140px' }} className="ml-[2px] inline-block align-top">4</span></h1>
+        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[3]}px` : '140px' }} className="ml-[2px] inline-block align-top">3</span></h1>
       </div>
 
       <div className="relative flex flex-col items-center">
@@ -139,21 +135,25 @@ const History = () => {
           />
         </div>
       </div>
-      {focusPosition==0 && 
-        <div id="data" className="text-white mt-[30px] text-[25px] w-[70%]">
-          In October 2025, Autokriti 15.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
-        </div>
-      }
-      {focusPosition==1 && 
-        <div id="data" className="text-white mt-[30px] text-[25px] w-[70%]">
-          In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
-        </div>
-      }
-      {focusPosition==2 && 
-        <div id="data" className="text-white mt-[30px] text-[25px] w-[70%]">
-          In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
-        </div>
-      }
+      {mounted && (
+        <>
+          {focusPosition === 0 && (
+            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+              In October 2025, Autokriti 15.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
+            </div>
+          )}
+          {focusPosition === 1 && (
+            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+              In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
+            </div>
+          )}
+          {focusPosition === 2 && (
+            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+              In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
+            </div>
+          )}
+        </>
+      )}
       <div className="flex flex-row gap-4">
         <button 
           id="btn1" 
