@@ -49,3 +49,68 @@ body {
   height: 1px;
   position: absolute;
 }
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(-150px) translateX(0);
+  }
+  100% {
+    transform: translateX(-150px) translateX(-100%);
+  }
+}
+
+@keyframes marquee-left-clone {
+  0% {
+    transform: translateX(-150px) translateX(100%);
+  }
+  100% {
+    transform: translateX(-150px) translateX(0);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(150px) translateX(0);
+  }
+  100% {
+    transform: translateX(150px) translateX(100%);
+  }
+}
+
+@keyframes marquee-right-clone {
+  0% {
+    transform: translateX(150px) translateX(-100%);
+  }
+  100% {
+    transform: translateX(150px) translateX(0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 20s linear infinite;
+}
+
+.animate-marquee-left-clone {
+  animation: marquee-left-clone 20s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 20s linear infinite;
+}
+
+.animate-marquee-right-clone {
+  animation: marquee-right-clone 20s linear infinite;
+}
+
+/* Add smooth transitions for all interactive elements */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transition-colors {
+  transition-property: background-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}

@@ -2,17 +2,6 @@
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
-// import image25 from '../../../../public/assets/images/autokriti/23.png';
-// import image24 from '../../../../public/assets/images/autokriti/24.png';
-// import image23 from '../../../../public/assets/images/autokriti/25.png';
-// import image19 from '../../../../public/assets/images/autokriti/Ellipse 19.png';
-// import image22 from '../../../../public/assets/images/autokriti/Ellipse 20.png';
-// import image20 from '../../../../public/assets/images/autokriti/Ellipse 22.png';
-// import image26 from '../../../../public/assets/images/autokriti/Ellipse 26.png';
-// import image27 from '../../../../public/assets/images/autokriti/Ellipse 27.png';
-// import image4 from '../../../../public/assets/images/autokriti/Line 4.png';
-// import arrow2 from '../../../../public/assets/images/autokriti/Arrow 2.png';
-// import arrow3 from '../../../../public/assets/images/autokriti/Arrow 3.png';
 
 const History = () => {
   const [mounted, setMounted] = useState(false);
@@ -61,12 +50,12 @@ const History = () => {
 
   return (
     <div className="min-h-screen px-16">
-      <h1 className='text-[70px] font-bold'>History <br/><span className='text-zinc-600'>Our</span> Story</h1>
+      <h1 className='text-[65px] mb-[20px] font-bold'>History <br/><span className='text-zinc-600'>Our</span> Story</h1>
       
-      <div className="flex flex-row justify-between">
-        <h1 className="text-[140px] font-[600]">202<span style={{ fontSize: mounted ? `${fontSizes[5]}px` : '140px' }} className="ml-[2px] inline-block align-top">5</span></h1>
-        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[4]}px` : '140px' }} className="ml-[2px] inline-block align-top">4</span></h1>
-        <h1 className='text-[140px] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[3]}px` : '140px' }} className="ml-[2px] inline-block align-top">3</span></h1>
+      <div className="flex h-[20vh] flex-row items-center justify-between">
+        <p className="text-[8.5rem] font-[600]">202<span style={{ fontSize: mounted ? `${fontSizes[5]}px` : '140px' }} className="ml-[2px] inline-block align-top">5</span></p>
+        <p className='text-[8.5rem] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[4]}px` : '140px' }} className="ml-[2px] inline-block align-top">4</span></p>
+        <p className='text-[8.5rem] font-[600]'>202<span style={{ fontSize: mounted ? `${fontSizes[3]}px` : '140px' }} className="ml-[2px] inline-block align-top">3</span></p>
       </div>
 
       <div className="relative flex flex-col items-center">
@@ -138,17 +127,17 @@ const History = () => {
       {mounted && (
         <>
           {focusPosition === 0 && (
-            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+            <div id="data" className="text-justify text-white text-[24px] w-[70%]">
               In October 2025, Autokriti 15.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </div>
           )}
           {focusPosition === 1 && (
-            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+            <div id="data" className="text-justify text-white text-[24px] w-[70%]">
               In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </div>
           )}
           {focusPosition === 2 && (
-            <div id="data" className="text-justify text-white mt-[30px] text-[25px] w-[70%]">
+            <div id="data" className="text-justify text-white text-[24px] w-[70%]">
               In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </div>
           )}
