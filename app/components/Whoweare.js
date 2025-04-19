@@ -27,7 +27,7 @@ export default function About() {
             priority
           />
           <div className="absolute inset-0 flex items-center pl-8 text-4xl font-bold">
-            <span className="text-black mr-4 z-10">WHO {" "}</span>
+            <span className="text-black mr-4 z-10">WHO </span>
             <span className="text-white">ARE WE?</span>
           </div>
         </div>
@@ -39,7 +39,9 @@ export default function About() {
             solutions to the problems in the mobility field. It forms a link
             between naive talents and pioneers of the industry...
           </p>
-          <p className="font-semibold mt-4">We bring our skills to many competitions</p>
+          <p className="font-semibold mt-4">
+            We bring our skills to many competitions
+          </p>
           <div className="flex flex-wrap gap-6 mt-2 text-sm md:text-base">
             <span>Baja SAE India</span>
             <span>SUPRA India</span>

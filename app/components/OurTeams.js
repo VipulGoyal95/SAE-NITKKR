@@ -13,7 +13,7 @@ export default function OurTeams() {
       <div className="flex flex-col gap-20">
         {/* ACCELERON */}
         <div className="flex flex-col md:flex-row items-center gap-12">
-          <div className="relative w-full md:w-[500px] h-[350px] md:h-[400px] rounded-[35px] overflow-hidden mx-5">
+          <div className="relative w-full md:w-[500px] h-[350px] md:h-[500px] rounded-[35px] overflow-hidden mx-5">
             <Image
               src="/assets/images/homepage/acceleron.png"
               alt="Acceleron Car"
@@ -42,7 +42,7 @@ export default function OurTeams() {
         </div>
 
         <div className="flex flex-col md:flex-row-reverse items-center gap-12">
-          <div className="relative w-full md:w-[500px] h-[350px] md:h-[400px] rounded-[35px] overflow-hidden mx-5">
+          <div className="relative w-full md:w-[500px] h-[350px] md:h-[500px] rounded-[35px] overflow-hidden mx-5">
             <Image
               src="/assets/images/homepage/acceleron.png"
               alt="Acceleron Car"
