@@ -30,7 +30,7 @@ export default function Home() {
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <Image
-            src="/img2.png"
+            src="/img9.png"
             alt="SAE NIT Kurukshetra"
             fill
             className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
@@ -38,7 +38,7 @@ export default function Home() {
           />
         </motion.div>
         <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full max-w-[90%] md:max-w-[550px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full mt-4 max-w-[90%] md:max-w-[550px]"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
