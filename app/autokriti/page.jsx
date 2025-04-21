@@ -1,8 +1,9 @@
 import AboutAutokriti from '../components/autokriti/AboutAutokriti';
 import History from '../components/autokriti/History';
 import AutokritiCard from '../components/autokriti/AutokritiCard';
-import TabbedCards from '../components/TabbedCards';
+// import TabbedCards from '../components/TabbedCards';
 import HeroSection from '../components/autokriti/HeroSection';
+import AutokritiDespscription from '../components/autokriti/AutokritiDespscription';
 
 export default function AutokritiPage() {
   return (
@@ -10,7 +11,7 @@ export default function AutokritiPage() {
       <HeroSection />
       <AboutAutokriti />
       <History/>
-      <TabbedCards />
+      <AutokritiDespscription />
       <AutokritiCard />
     </div>
   );

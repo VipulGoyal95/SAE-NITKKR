@@ -29,6 +29,34 @@ body {
   clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 36% 100%);
 }
 
+@media (max-width: 900px) {
+  .clip-diagonal {
+    clip-path: polygon(71% 0%, 100% 0%, 100% 100%, 30% 100%);
+  }
+}
+
+@media (max-width: 800px) {
+  .clip-diagonal {
+    clip-path: polygon(76% 0%, 100% 0%, 100% 100%, 24% 100%);
+  }
+}
+@media (max-width: 620px) {
+  .clip-diagonal {
+    clip-path: polygon(76% 0%, 100% 0%, 100% 100%, 21% 100%);
+  }
+}
+
+@media (max-width: 450px) {
+  .clip-diagonal {
+    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 3% 100%);
+  }
+}
+
+@media (max-width: 416px) {
+  .clip-diagonal {
+    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 1% 100%);
+  }
+}
 
 .responsive-image {
   width: 100%;

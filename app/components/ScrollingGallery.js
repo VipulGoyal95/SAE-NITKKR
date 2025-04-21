@@ -25,7 +25,7 @@ export default function ScrollingGallery() {
 
   return (
     <>
-      <div className="bg-black py-10 space-y-10 overflow-hidden">
+      <div className="bg-black py-10 space-y-10 overflow-hidden my-16">
         {/* Top Row - Right to Left */}
         <div className="relative w-full h-[200px] overflow-hidden group">
           {/* Gradient overlay for fade effect */}
