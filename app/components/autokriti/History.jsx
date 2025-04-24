@@ -86,6 +86,19 @@ const History = () => {
     return fontSize;
   };
 
+  const getColor = (year) =>{
+    if(focusPosition===year && year==0){
+      return "#EE6B46"; 
+    }
+    if(focusPosition===year && year==1){
+      return "#403CB280"
+    }
+    if(focusPosition===year && year==2){
+      return "#243365C7"
+    }
+    return "white"
+  }
+
   return (
     <div ref={componentRef} className="min-h-screen px-16 max-[900px]:px-12 max-[700px]:px-8 max-[560px]:mx-auto">
       <motion.h1 
@@ -112,7 +125,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]"
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' ,color : getColor(0)}} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, y: -50 }}
@@ -120,7 +133,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' ,color : getColor(1) }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, x: 50 }}
@@ -128,7 +141,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' ,color : getColor(2)}} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
         </motion.p>
       </div>
 
@@ -221,7 +234,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%]"
             >
               In October 2025, Autokriti 15.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>
@@ -233,7 +246,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%]"
             >
               In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>
@@ -245,7 +258,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%]"
             >
               In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>

@@ -5,6 +5,17 @@ import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const teamMembers = [
+  {
+    name: 'ABHISHEK',
+    role: 'President',
+    image: '/abhishek.png',
+    gradient: 'from-[#FFFFFF] to-[#454545]',
+    height: 'h-[450px]',
+    social: {
+      linkedin: '#',
+      email: '#'
+    }
+  },
     {
       name: 'SHUBHAYU SINHA',
       role: 'Vice-President',
@@ -32,17 +43,6 @@ const teamMembers = [
     role: 'Secretary',
     image: '/assets/images/homepage/lishagarg.svg',
     gradient: 'from-[#454545] to-[#FFFFFF]',
-    height: 'h-[450px]',
-    social: {
-      linkedin: '#',
-      email: '#'
-    }
-  },
-  {
-    name: 'HIMANSHU KHATRI',
-    role: 'Vice President',
-    image: '/assets/images/homepage/himanshu.svg',
-    gradient: 'from-[#FFFFFF] to-[#454545]',
     height: 'h-[450px]',
     social: {
       linkedin: '#',

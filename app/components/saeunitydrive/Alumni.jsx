@@ -15,6 +15,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 import "swiper/css/effect-cards";
+import CountUp from 'react-countup';
 
 const alumniData = [
   {
@@ -72,7 +73,7 @@ const alumniData = [
   },
   {
     id: 5,
-    name: "Vikram Singh",
+    name: "Shubhayu",
     role: "Mechanical Lead",
     batch: "2024",
     image: "/shubhayu.png",
@@ -85,7 +86,7 @@ const alumniData = [
   },
   {
     id: 6,
-    name: "Neha Sharma",
+    name: "Ankit Rathore",
     role: "Research Head",
     batch: "2024",
     image: "/ankit rathore.png",

@@ -101,8 +101,14 @@ export default function Testimonials() {
   return (
     <section className="py-20 overflow-hidden bg-gray-900 relative">
       {/* Background gradients */}
-      <div className="absolute top-0 left-1/4 w-1/2 h-1/2 bg-blue-500/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-1/2 h-1/2 bg-indigo-500/10 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
+        <div className="absolute top-[55%] right-[5%] w-96 h-96 rounded-full bg-gradient-to-l from-purple-900/30 to-blue-900/20 blur-xl"></div>
+        {/* <div className="absolute bottom-0 left-[20%] w-80 h-80 rounded-full bg-gradient-to-tr from-indigo-900/30 to-blue-900/20 blur-xl"></div> */}
+
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(#6366f1_1px,transparent_1px),linear-gradient(to_right,#6366f1_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      </div>
 
       {/* Section header */}
       <div className="container mx-auto px-4 mb-16">
@@ -167,17 +173,11 @@ export default function Testimonials() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* Right: Carousel */}
-          <div className="w-full lg:w-1/3 order-1 lg:order-2">
-            <div className="relative">
               {/* Navigation buttons */}
-              <div className="absolute top-1/2 left-0 transform -translate-y-1/2 z-40 -ml-5">
+              <div className="absolute bottom-[10%] right-[20%] transform -translate-y-[25%] z-40 -ml-5">
                 <button
                   onClick={handlePrev}
-                  className="w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white flex items-center justify-center backdrop-blur-sm transition-colors"
+                  className="w-12 h-12 bg-gray-800 text-blue-300 border border-gray-700 shadow-md rounded-full hover:bg-gray-700 flex items-center justify-center backdrop-blur-sm transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -196,10 +196,10 @@ export default function Testimonials() {
                   </svg>
                 </button>
               </div>
-              <div className="absolute top-1/2 right-0 transform -translate-y-1/2 z-40 -mr-5">
+              <div className="absolute bottom-[10%] right-[15%] transform -translate-y-[25%] z-40 -mr-5">
                 <button
                   onClick={handleNext}
-                  className="w-10 h-10 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white flex items-center justify-center backdrop-blur-sm transition-colors"
+                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full hover:from-blue-700 hover:to-indigo-800 flex items-center justify-center backdrop-blur-sm transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -218,6 +218,13 @@ export default function Testimonials() {
                   </svg>
                 </button>
               </div>
+            </div>
+          </div>
+
+          {/* Right: Carousel */}
+          <div className="w-full lg:w-1/3 order-1 lg:order-2">
+            <div className="relative">
+              
 
               {/* Carousel */}
               <Swiper

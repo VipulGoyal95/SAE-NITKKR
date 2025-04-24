@@ -3,6 +3,7 @@
 
 import React from "react";
 import Image from "next/image";
+import CountUp from 'react-countup';
 
 export default function Herosection() {
   return (
@@ -104,7 +105,7 @@ export default function Herosection() {
           {/* Stats Cards with modern styling */}
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              4627+
+            <CountUp start={0} end={4657} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />+
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TOTAL CONTRIBUTORS
@@ -113,7 +114,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              24<span className="text-3xl">K</span>
+            <CountUp start={0} end={24} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' /><span className="text-3xl">K</span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TOTAL FUND
@@ -122,7 +123,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              100
+            <CountUp start={0} end={100} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               ALL ALUMNI
@@ -131,7 +132,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              50
+            <CountUp start={0} end={50} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TEAM MEMBERS
