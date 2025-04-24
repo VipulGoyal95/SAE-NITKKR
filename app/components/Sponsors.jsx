@@ -63,7 +63,7 @@ const Sponsors = () => {
           >
             {sponsorImages.map((sponsor, index) => (
               <div key={index} className="mx-8">
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg hover:bg-white/20 transition-all duration-300 transform hover:scale-105">
                   <Image
                     src={sponsor.src}
                     alt={sponsor.alt}

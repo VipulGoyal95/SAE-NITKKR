@@ -1,6 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from './components/header'
+import Header from './components/Navbar'
 import Footer from "./components/Footer";
 
 const geistSans = Geist({
@@ -16,6 +16,13 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "SAE NIT KURUKSHETRA",
   description: "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers",
+  icons: {
+    icon: '/assets//images/sae-logo.png',
+    apple: '/assets//images/sae-logo.png',
+  },
+  openGraph: {
+    images: '/assets/images/sae-logo.png',
+  },
 };
 
 export default function RootLayout({ children }) {

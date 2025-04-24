@@ -42,7 +42,7 @@ export default function Herosection() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full h-[70vh] overflow-hidden"
+          className="relative w-full h-[90vh] overflow-hidden"
         >
           <Image
             src="/img7.jpg"

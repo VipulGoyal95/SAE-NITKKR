@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 const AboutAutokriti = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <div ref={ref} className="flex flex-col lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8">

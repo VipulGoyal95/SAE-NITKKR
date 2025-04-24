@@ -19,11 +19,11 @@ const History = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.5 }
     );
 
     if (componentRef.current) {

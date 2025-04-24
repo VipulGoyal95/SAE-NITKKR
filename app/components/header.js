@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [handleToggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [shouldShow, setShouldShow] = useState(true);
@@ -28,8 +28,8 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  function toggleMobileMenu() {
-    setMobileMenuOpen(!mobileMenuOpen);
+  function barClicked() {
+    setToggle(!handleToggle);
   }
 
   return (
@@ -38,109 +38,66 @@ const Header = () => {
         shouldShow ? "translate-y-0" : "-translate-y-full"
       }`}
     >
-      <div className="p-6">
-        <div
-          className={`w-full px-[15px] pr-[25px] rounded-full overflow-hidden ${
-            isScrolled
-              ? "bg-[rgba(76,76,76,0.36)] backdrop-blur-md"
-              : "bg-[rgba(76,76,76,0.36)] backdrop-blur-sm"
-          }`}
-        >
-          <nav className="w-full text-black py-2.5 text-center flex items-center justify-between">
-            <div className="flex gap-2 items-center">
-              <Image
-                src="/assets/images/sae-logo.png"
-                alt="SAE Logo"
-                width={48}
-                height={48}
-                className="w-12 h-12"
-              />
-              <div className="text-left text-white">
-                <h3>SAE</h3>
-                <h3>Nit Kurukshetra</h3>
-              </div>
+      <div className="w-full h-24 bg-[rgba(76,76,76,0.36)] backdrop-blur-md">
+        <nav className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between h-full">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/assets/images/sae-logo.png"
+              alt="SAE Logo"
+              width={48}
+              height={48}
+              className="w-12 h-12"
+            />
+            <div className="text-white">
+              <h3 className="font-bold">SAE</h3>
+              <h3 className="font-bold">Nit Kurukshetra</h3>
             </div>
+          </div>
 
-            {/* Desktop Navigation */}
-            <ul className="hidden md:flex text-white justify-end gap-10 w-3/4">
-              <Link href="/">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white">
-                  Home
-                </li>
-              </Link>
-              <Link href="/autokriti">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white">
-                  Autokriti
-                </li>
-              </Link>
-              <Link href="/accelerons">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white">
-                  Accelerons
-                </li>
-              </Link>
-              <Link href="/nitrox">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white">
-                  Nitrox
-                </li>
-              </Link>
-            </ul>
-
-            {/* Mobile Menu Button */}
-            <button
-              className="md:hidden relative z-50 text-white"
-              onClick={toggleMobileMenu}
-              aria-label="Toggle menu"
-            >
-              <div className="w-7 h-6 flex flex-col justify-between">
-                <span
-                  className={`w-full h-0.5 bg-white transition-all duration-300 ${
-                    mobileMenuOpen ? "rotate-45 translate-y-2.5" : ""
-                  }`}
-                ></span>
-                <span
-                  className={`w-full h-0.5 bg-white transition-all duration-300 ${
-                    mobileMenuOpen ? "opacity-0" : "opacity-100"
-                  }`}
-                ></span>
-                <span
-                  className={`w-full h-0.5 bg-white transition-all duration-300 ${
-                    mobileMenuOpen ? "-rotate-45 -translate-y-2.5" : ""
-                  }`}
-                ></span>
-              </div>
-            </button>
-          </nav>
-        </div>
-
-        {/* Mobile Navigation */}
-        <div
-          className={`fixed inset-0 z-40 bg-black bg-opacity-90 backdrop-blur-md transform transition-transform duration-300 ${
-            mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-          } md:hidden pt-24`}
-        >
-          <ul className="flex flex-col items-center justify-center gap-8 text-white h-full">
-            <Link href="/" onClick={toggleMobileMenu}>
-              <li className="font-bold text-2xl cursor-pointer hover:text-gray-300">
-                Home
-              </li>
+          {/* Desktop Navigation */}
+          <ul className="hidden md:flex items-center gap-8 text-white">
+            <Link href="/">
+              <li className="font-bold hover:text-gray-300 transition-colors">Home</li>
             </Link>
-            <Link href="/autokriti" onClick={toggleMobileMenu}>
-              <li className="font-bold text-2xl cursor-pointer hover:text-gray-300">
-                Autokriti
-              </li>
+            <Link href="/autokriti">
+              <li className="font-bold hover:text-gray-300 transition-colors">Autokriti</li>
             </Link>
-            <Link href="/accelerons" onClick={toggleMobileMenu}>
-              <li className="font-bold text-2xl cursor-pointer hover:text-gray-300">
-                Accelerons
-              </li>
+            <Link href="/accelerons">
+              <li className="font-bold hover:text-gray-300 transition-colors">Accelerons</li>
             </Link>
-            <Link href="/nitrox" onClick={toggleMobileMenu}>
-              <li className="font-bold text-2xl cursor-pointer hover:text-gray-300">
-                Nitrox
-              </li>
+            <Link href="/nitrox">
+              <li className="font-bold hover:text-gray-300 transition-colors">Nitrox</li>
             </Link>
           </ul>
-        </div>
+
+          {/* Mobile Menu Button */}
+          <div
+            className={`md:hidden cursor-pointer ${handleToggle ? "active" : ""}`}
+            onClick={barClicked}
+          >
+            <span className="block w-6 h-0.5 bg-white mb-1.5 transition-transform"></span>
+            <span className="block w-6 h-0.5 bg-white mb-1.5 transition-opacity"></span>
+            <span className="block w-6 h-0.5 bg-white transition-transform"></span>
+          </div>
+        </nav>
+
+        {/* Mobile Navigation */}
+        <nav className={`md:hidden fixed inset-0 bg-black bg-opacity-90 backdrop-blur-md transition-transform duration-300 ${handleToggle ? "translate-x-0" : "translate-x-full"}`}>
+          <ul className="h-full flex flex-col items-center justify-center gap-8 text-white">
+            <li className="transform hover:scale-110 transition-transform">
+              <Link href="/" className="text-2xl font-bold">Home</Link>
+            </li>
+            <li className="transform hover:scale-110 transition-transform">
+              <Link href="/autokriti" className="text-2xl font-bold">Autokriti</Link>
+            </li>
+            <li className="transform hover:scale-110 transition-transform">
+              <Link href="/accelerons" className="text-2xl font-bold">Accelerons</Link>
+            </li>
+            <li className="transform hover:scale-110 transition-transform">
+              <Link href="/nitrox" className="text-2xl font-bold">Nitrox</Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   );

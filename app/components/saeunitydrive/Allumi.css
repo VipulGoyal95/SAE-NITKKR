@@ -1,0 +1,307 @@
+.alumni-section {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 8rem 4rem;
+  }
+  
+  .sponsors {
+    width: 100%;
+  }
+  
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .sponsors-header {
+    text-align: left;
+    margin-bottom: 4rem;
+    max-width: 600px;
+  }
+  
+  .sponsors-header h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: #000;
+    line-height: 1.1;
+  }
+  
+  .sponsors-header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .year-selector {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    cursor: pointer;
+  }
+  
+  .sponsors-showcase {
+    display: flex;
+    gap: 2rem;
+    position: relative;
+  }
+  
+  .sponsors-carousel {
+    flex: 2;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .sponsor-slide {
+    width: 300px;
+    height: 400px;
+    position: relative;
+  }
+  
+  .sponsor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sponsor-details {
+    flex: 1;
+    padding: 3rem;
+    background: #5850EC;
+    color: white;
+    border-radius: 0;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .sponsor-info {
+    padding-left: 4rem;
+    position: relative;
+  }
+  
+  .sponsor-info h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .sponsor-info p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
+  }
+  
+  .sponsor-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+  }
+  
+  .nav-arrows {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+  }
+  
+  .nav-arrow {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 24px;
+    font-weight: 300;
+    padding-bottom: 3px;
+  }
+  
+  .nav-arrow:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  .nav-arrow:last-child {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+  }
+  
+  .nav-arrow:last-child:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+  
+  @media (max-width: 1200px) {
+    .sponsors-header h2 {
+      font-size: 3rem;
+    }
+    
+    .sponsor-info h3 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .alumni-section {
+      padding: 4rem 2rem;
+    }
+    
+    .sponsors-showcase {
+      flex-direction: column;
+    }
+    
+    .sponsor-details {
+      clip-path: none;
+      border-radius: 12px;
+    }
+    
+    .sponsor-info {
+      padding-left: 0;
+    }
+  }
+  
+  /* Alumni Sponsors */
+  .sponsors {
+    padding: 5rem 0;
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  .sponsors-header {
+    max-width: 600px;
+    margin-bottom: 3rem;
+  }
+  
+  .sponsors-header h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .sponsors-header p {
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+  }
+  
+  .year-selector {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #6c5ce7;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+  
+  .year-selector svg {
+    margin-left: 0.5rem;
+  }
+  
+  .sponsors-showcase {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+  }
+  
+  .sponsors-carousel {
+    flex: 3;
+    overflow: hidden;
+  }
+  
+  .sponsor-slide {
+    height: 250px;
+    position: relative;
+  }
+  
+  .sponsor-image {
+    width: 100%;
+    height: 100%;
+    background-color: #e0e0e0;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .sponsor-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .sponsor-details {
+    flex: 1;
+    background-color: #6c5ce7;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  
+  .sponsor-info {
+    padding-left: 2rem;
+  }
+  
+  .sponsor-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sponsor-info p {
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sponsor-nav {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .nav-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  
+  .nav-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  .nav-button.next {
+    background-color: white; 
+     color: #6c5ce7;
+  }
+  
+  .nav-button.next:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+    
