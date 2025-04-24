@@ -1,43 +1,144 @@
 // import './Hero.css';
+"use client";
+
+import React from "react";
+import Image from "next/image";
+
 export default function Herosection() {
-    return <section>
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen py-12 pt-31 px-4 md:px-10">
-        <div className="text-center md:text-left mb-8 md:mb-0 md:mr-8">
-          <h1 className="text-6xl md:text-8xl font-[800] mb-4 uppercase">
-            THANK<br/>
-            YOU<br/>
+  return (
+    <section className="relative overflow-hidden bg-gray-900 text-gray-100">
+      {/* Abstract Shapes Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
+        <div className="absolute top-[20%] right-[5%] w-96 h-96 rounded-full bg-gradient-to-l from-purple-900/30 to-blue-900/20 blur-xl"></div>
+        <div className="absolute bottom-0 left-[20%] w-80 h-80 rounded-full bg-gradient-to-tr from-indigo-900/30 to-blue-900/20 blur-xl"></div>
+
+        {/* Animated Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(#6366f1_1px,transparent_1px),linear-gradient(to_right,#6366f1_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+      </div>
+
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen py-16 px-6 md:px-10 relative z-10">
+        <div className="text-center md:text-left mb-10 md:mb-0 md:mr-8 relative">
+          {/* Orbit Accent */}
+          <div className="absolute -left-16 top-12 w-32 h-32 rounded-full border-4 border-dotted border-blue-800/30 animate-[spin_25s_linear_infinite] hidden md:block"></div>
+
+          <div className="inline-flex items-center mb-3 px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
+            Alumni Connect
+          </div>
+
+          <h1 className="text-6xl md:text-8xl font-[800] mb-6 uppercase bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200 bg-clip-text text-transparent">
+            THANK
+            <br />
+            YOU
+            <br />
             SENIORS
           </h1>
-          <p className="text-lg opacity-70 uppercase tracking-wider">w e&nbsp;&nbsp;a l l&nbsp;&nbsp;M i s s&nbsp;&nbsp;Y o u</p>
+
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
+
+          <p className="text-lg opacity-80 tracking-wider leading-relaxed max-w-xl">
+            Their wisdom, support, and mentorship continue to inspire the next
+            generation of automotive engineers at SAE NIT Kurukshetra.
+          </p>
         </div>
+
         <div className="w-full md:w-[55%]">
-          <img src="/assets/images/saeunitydrive/image.png" alt="Thank You Seniors" className="w-full h-auto rounded-lg shadow-xl" />
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-500">
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-indigo-700/30 mix-blend-overlay z-10"></div>
+
+            {/* Decorative elements */}
+            <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-800/30 rounded-full blur-xl z-0"></div>
+            <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-indigo-800/30 rounded-full blur-xl z-0"></div>
+
+            {/* Image */}
+            <div className="relative aspect-[4/3]">
+              <Image
+                src="/assets/images/saeunitydrive/image.png"
+                alt="Thank You Seniors"
+                fill
+                className="object-cover z-0"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
+
+            {/* Overlay pattern */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/70 z-20"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:12px_12px] z-30 opacity-30"></div>
+          </div>
         </div>
       </section>
-      <section className=" text-white py-24 px-4 md:px-16 flex flex-col md:flex-row justify-between gap-8">
+
+      {/* Second Section */}
+      <section className="relative text-white py-24 px-6 md:px-16 flex flex-col md:flex-row justify-between gap-12 z-10 border-t border-gray-800/50">
         <div className="md:w-1/2">
-          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6">POWERING INNOVATION, DRIVEN BY ALUMNI</h2>
-          <p className="text-base md:text-lg leading-relaxed opacity-80 mb-8 max-w-xl">Join hands with SAE NIT Kurukshetra and accelerate our journey in building cutting-edge EV and CV projects. Your support fuels our dreams!</p>
-          <a href="#" className="inline-block px-8 py-3 bg-white text-black rounded-full font-medium transition-all duration-300 hover:bg-gray-100 hover:-translate-y-0.5">Fund Now</a>
+          <div className="inline-flex items-center mb-3 px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
+            Alumni Funding
+          </div>
+
+          <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+            POWERING INNOVATION, DRIVEN BY ALUMNI
+          </h2>
+
+          <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
+
+          <p className="text-base md:text-lg leading-relaxed opacity-80 mb-8 max-w-xl text-gray-300">
+            Join hands with SAE NIT Kurukshetra and accelerate our journey in
+            building cutting-edge EV and CV projects. Your support fuels our
+            dreams!
+          </p>
+
+          <a
+            href="#"
+            className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 shadow-md"
+          >
+            Fund Now
+          </a>
         </div>
-        <div className="md:w-1/2 grid grid-cols-2 gap-12">
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">4627+</div>
-            <div className="text-sm opacity-70 uppercase tracking-wider">TOTAL FUND</div>
+
+        <div className="md:w-1/2 grid grid-cols-2 gap-8">
+          {/* Stats Cards with modern styling */}
+          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+              4627+
+            </div>
+            <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
+              TOTAL CONTRIBUTORS
+            </div>
           </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">24<span className="text-3xl">K</span></div>
-            <div className="text-sm opacity-70 uppercase tracking-wider">TOTAL FUND</div>
+
+          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+              24<span className="text-3xl">K</span>
+            </div>
+            <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
+              TOTAL FUND
+            </div>
           </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">100</div>
-            <div className="text-sm opacity-70 uppercase tracking-wider">ALL ALUMNI</div>
+
+          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+              100
+            </div>
+            <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
+              ALL ALUMNI
+            </div>
           </div>
-          <div className="text-center">
-            <div className="text-5xl font-bold mb-2">50</div>
-            <div className="text-sm opacity-70 uppercase tracking-wider">TEAM MEMBERS</div>
+
+          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+              50
+            </div>
+            <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
+              TEAM MEMBERS
+            </div>
           </div>
         </div>
       </section>
     </section>
+  );
 }
