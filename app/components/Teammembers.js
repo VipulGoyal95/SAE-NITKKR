@@ -12,8 +12,8 @@ const teamMembers = [
     gradient: 'from-[#FFFFFF] to-[#454545]',
     height: 'h-[450px]',
     social: {
-      linkedin: '#',
-      email: '#'
+      linkedin: 'https://www.linkedin.com/in/abhi-badgujar-882bb124b/',
+      email: 'mailto:abhi.abhishek.badgujar@gmail.com'
     }
   },
     {
@@ -23,8 +23,8 @@ const teamMembers = [
       gradient: 'from-[#454545] to-[#FFFFFF]',
       height: 'h-[450px]',
       social: {
-        linkedin: '#',
-        email: '#'
+        linkedin: 'https://www.linkedin.com/in/shubhayu-sinha-9a5053264',
+        email: 'mailto:shubhayu.sinha@gmail.com'
       }
     },
   {
@@ -39,14 +39,14 @@ const teamMembers = [
     }
   },
   {
-    name: 'LISHA GARG',
+    name: 'SARTHAK ANAND',
     role: 'Secretary',
-    image: '/assets/images/homepage/lishagarg.svg',
+    image: '/sarthak.png',
     gradient: 'from-[#454545] to-[#FFFFFF]',
     height: 'h-[450px]',
     social: {
       linkedin: '#',
-      email: '#'
+      email: 'mailto:sarthakanand2003@gmail.com'
     }
   }
 ];
