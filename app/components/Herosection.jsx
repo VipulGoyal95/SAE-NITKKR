@@ -84,7 +84,7 @@ export default function Herosection() {
               <motion.div
                 variants={lineVariants}
                 transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-                className="h-1 bg-white mt-2 mb-6 origin-center"
+                className="h-1 bg-white mt-2 mb-6 origin-center max-[550px]:mb-12"
                 style={{ transformOrigin: "center" }}
               />
             </div>

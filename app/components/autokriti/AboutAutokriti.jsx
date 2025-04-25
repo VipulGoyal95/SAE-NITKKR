@@ -8,14 +8,14 @@ const AboutAutokriti = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div ref={ref} className="flex flex-col lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8">
+    <div ref={ref} className="flex flex-col lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8 overflow-hidden">
       <motion.div 
         className="w-full lg:w-[30%] mb-10 lg:mb-0"
         initial={{ opacity: 0, x: -50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
         transition={{ duration: 0.8 }}
       >
-        <div className="flex flex-row items-start justify-center gap-8 md:gap-12 h-[400px]">
+        <div className="flex flex-row items-start justify-center gap-8 md:gap-12 h-[400px] max-[440px]:gap-4 max-[410px]:gap-2">
           {/* First Progress Bar */}
           <motion.div 
             className="flex flex-col items-center group cursor-pointer"
