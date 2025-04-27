@@ -26,7 +26,7 @@ function Participation() {
   }
   const team = isNitroxPage ? nitroxcontent : acceleronsContent;
   return (
-    <div className="relative px-8 w-full max-w-6xl h-[1000px] mx-auto bg-black max-[1220px]:w-[90%] max-[530px]:w-[95%] max-[530px]:h-[930px]">
+    <div className="relative px-8 w-full max-w-6xl h-[1000px] mx-auto bg-black max-[1220px]:w-[90%] max-[530px]:w-[95%] max-[530px]:h-[930px] max-[460px]:h-[850px]">
       {/* Heading */}
       <motion.h2 
         className="absolute w-full text-center top-5 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-white mb-4 max-[482px]:text-3xl"
@@ -59,7 +59,7 @@ function Participation() {
         />
         {/* Content panel inside the border */}
         <motion.div 
-          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0"
+          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -96,7 +96,7 @@ function Participation() {
       </div>
 
       {/* Bottom‑Left "Formula Bharat" Card */}
-      <div className="absolute bottom-0 left-0 w-[55.5%] h-[49%] max-[530px]:bottom-15">
+      <div className="absolute bottom-0 left-0 w-[55.5%] h-[49%] max-[530px]:bottom-15 max-[460px]:h-[48%]">
         <Image
           src="/lowborder.png"
           alt="Formula Bharat border"
@@ -104,7 +104,7 @@ function Participation() {
         //   className="object-cover"
         />
         <motion.div 
-          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0"
+          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

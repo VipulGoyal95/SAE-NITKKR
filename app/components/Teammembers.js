@@ -52,11 +52,7 @@ const teamMembers = [
 ];
 
 const Teammembers = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-  const [visibleCards, setVisibleCards] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const componentRef = useRef(null);
-  const cardRefs = useRef([]);
 
   useEffect(() => {
     // Check if we're on the client side
@@ -73,57 +69,8 @@ const Teammembers = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (hasAnimated) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHasAnimated(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
-    }
-
-    return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
-      }
-    };
-  }, [hasAnimated]);
-
-  useEffect(() => {
-    const cardObservers = cardRefs.current.map((ref, index) => {
-      if (!ref) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisibleCards(prev => [...prev, index]);
-          }
-        },
-        { threshold: 0.4 }
-      );
-
-      observer.observe(ref);
-      return observer;
-    });
-
-    return () => {
-      cardObservers.forEach((observer, index) => {
-        if (observer && cardRefs.current[index]) {
-          observer.unobserve(cardRefs.current[index]);
-        }
-      });
-    };
-  }, []);
-
   return (
-    <div ref={componentRef} className="bg-black py-16 px-4 pb-0 relative overflow-hidden">
+    <div className="bg-black py-16 px-4 pb-0 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-[linear-gradient(45deg,#000000_25%,transparent_25%,transparent_75%,#000000_75%,#000000),linear-gradient(45deg,#000000_25%,transparent_25%,transparent_75%,#000000_75%,#000000)] bg-[length:60px_60px] bg-[0_0,30px_30px] opacity-20"></div>
@@ -133,7 +80,8 @@ const Teammembers = () => {
       <motion.div 
         className="relative z-10 mb-16"
         initial={{ opacity: 0, y: 50 }}
-        animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
         <h2 className="text-white text-4xl font-bold text-center">
@@ -147,13 +95,10 @@ const Teammembers = () => {
         {teamMembers.map((member, index) => (
           <motion.div 
             key={index}
-            ref={el => cardRefs.current[index] = el}
             className="group relative flex items-end justify-center"
             initial={{ opacity: 0, y: 50 }}
-            animate={isMobile ? 
-              (visibleCards.includes(index) ? { opacity: 1, y: 0 } : {}) :
-              (hasAnimated ? { opacity: 1, y: 0 } : {})
-            }
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
             transition={{ 
               duration: 0.8, 
               delay: isMobile ? 0 : 0.3 + index * 0.1 

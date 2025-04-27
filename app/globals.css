@@ -52,9 +52,9 @@ body {
   }
 }
 
-@media (max-width: 416px) {
+@media (max-width: 420px) {
   .clip-diagonal {
-    clip-path: polygon(80% 0%, 100% 0%, 100% 100%, 1% 100%);
+    clip-path: polygon(60% 0%, 100% 0%, 100% 100%, 17% 100%);
   }
 }
 

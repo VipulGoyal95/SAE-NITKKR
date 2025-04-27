@@ -57,7 +57,7 @@ export default function Herosection() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full h-[100vh] overflow-hidden"
+          className="relative w-full h-[100vh] overflow-hidden max-[460px]:h-[55vh]"
         >
           <Image
             src={team.url}
@@ -77,14 +77,14 @@ export default function Herosection() {
               <motion.h1 
                 variants={titleVariants}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center"
+                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center max-[460px]:text-2xl"
               >
                 {team.title}
               </motion.h1>
               <motion.div
                 variants={lineVariants}
                 transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-                className="h-1 bg-white mt-2 mb-6 origin-center max-[550px]:mb-12"
+                className="h-1 bg-white mt-2 mb-6 origin-center max-[550px]:mb-12 max-[460px]:mb-0"
                 style={{ transformOrigin: "center" }}
               />
             </div>

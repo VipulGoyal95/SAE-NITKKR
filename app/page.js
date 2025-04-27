@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <motion.div 
-        className="relative text-center w-full h-screen overflow-hidden"
+        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[36vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -35,13 +35,13 @@ export default function Home() {
           />
         </motion.div>
         <motion.div 
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full mt-4 max-w-[90%] md:max-w-[550px]"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-full mt-4 max-w-[90%] md:max-w-[550px] max-[460px]:-translate-y-0"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
           <motion.h1 
-            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 max-[460px]:text-2xl max-[460px]:mb-2"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -54,7 +54,7 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-[460px]:text-2xl max-[460px]:mb-0">
               SAE NIT Kurukshetra
             </h2>
             <motion.div 

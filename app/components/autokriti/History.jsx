@@ -108,12 +108,12 @@ const History = () => {
   }
 
   return (
-    <div ref={componentRef} className="min-h-screen px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
+    <div ref={componentRef} className="min-h-screen px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className='text-[65px] font-bold max-[1050px]:text-[55px] max-[900px]:text-[45px] max-[560px]:text-[38px] max-[440px]:text-[42px]'
+        className='text-[65px] font-bold max-[1050px]:text-[55px] max-[900px]:text-[45px] max-[560px]:text-[38px] max-[440px]:text-[42px] max-[420px]:text-[50px]'
       >
         History <br/>
         <motion.span 
@@ -228,7 +228,7 @@ const History = () => {
             alt="Line 4"
             width={1000}
             height={10}
-            className="w-[97%] mx-auto max-[720px]:w-[90%]"
+            className="w-[97%] mx-auto max-[720px]:w-[90%] max-[420px]:w-[88%]"
             priority
           />
         </motion.div>
