@@ -12,60 +12,60 @@ export default function MeetTheTeam() {
 
   const acceleronsTeam = [
     {
-      src: '/assets/images/accelerons/yohannan.jpg',
-      alt: 'Yohannan',
-      name: 'Yohannan',
-      role: 'Vice-Captain',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:yohannan@example.com',
+      src: '/assets/images/accelerons/jatin.jpg',
+      alt: 'Jatin',
+      name: 'Jatin Yadav',
+      role: 'Vice-Captain Electrical',
+      linkedin: 'https://www.linkedin.com/in/jatin-yadav-63b4ba257/',
+      email: 'mailto:jatinkhairwal2003@gmail.com',
       rotate: '-rotate-6',
     },
     {
-      src: '/assets/images/accelerons/Sachin.jpeg',
-      alt: 'Sachin',
-      name: 'Sachin',
+      src: '/assets/images/accelerons/hemant.jpeg',
+      alt: 'Hemant',
+      name: 'Hemant',
       role: 'Captain',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:sachin@example.com',
+      linkedin: 'https://www.linkedin.com/in/hemant-rao-34217a263/',
+      email: 'mailto:raohemant801@gmail.com',
       rotate: 'rotate-0',
     },
     {
-      src: '/assets/images/accelerons/sugam.jpg',
-      alt: 'Sugam',
-      name: 'Sugam',
-      role: 'EV-Head',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:sugam@example.com',
+      src: '/assets/images/accelerons/priyanshu.jpg',
+      alt: 'Priyanshu',
+      name: 'Priyanshu',
+      role: 'Vice-Captain Mechanical',
+      linkedin: 'https://www.linkedin.com/in/priyanshu-priyanshu-879377293/',
+      email: 'mailto:12216052@nitkkr.ac.in',
       rotate: 'rotate-6',
     },
   ];
 
   const nitroxTeam = [
     {
-      src: '/assets/images/nitrox/team1.jpg',
-      alt: 'Team Member 1',
-      name: 'John Doe',
-      role: 'Captain',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:john@example.com',
+      src: '/assets/images/nitrox/danish.jpg',
+      alt: 'Danish Goyal',
+      name: 'Danish Goyal',
+      role: 'Vice-Captain',
+      linkedin: 'https://www.linkedin.com/in/danish-goyal-94bb80269/',
+      email: 'mailto:danishgoyaljind15@gmail.com',
       rotate: '-rotate-6',
     },
     {
-      src: '/assets/images/nitrox/team2.jpg',
-      alt: 'Team Member 2',
-      name: 'Jane Smith',
-      role: 'Vice-Captain',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:jane@example.com',
+      src: '/assets/images/nitrox/pritam.jpg',
+      alt: 'Pritam Beriwal',
+      name: 'Pritam Beriwal',
+      role: 'Captain',
+      linkedin: 'https://www.linkedin.com/in/pritam-beriwal/',
+      email: 'mailto:pritamberiwal91@gmail.com',
       rotate: 'rotate-0',
     },
     {
-      src: '/assets/images/nitrox/team3.jpg',
-      alt: 'Team Member 3',
-      name: 'Mike Johnson',
-      role: 'Technical Lead',
-      linkedin: 'https://linkedin.com/',
-      email: 'mailto:mike@example.com',
+      src: '/assets/images/nitrox/chirag.jpeg',
+      alt: 'Chirag jangra',
+      name: 'Chirag jangra',
+      role: 'Electrical Head',
+      linkedin: '#',
+      email: 'mailto:chiragjangra268@gmail.com',
       rotate: 'rotate-6',
     },
   ];
@@ -77,7 +77,7 @@ export default function MeetTheTeam() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto"
       >

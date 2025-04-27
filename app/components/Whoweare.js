@@ -47,9 +47,9 @@ export default function About() {
       <div className="absolute inset-0 bg-black bg-opacity-70 z-10 clip-diagonal" />
 
       {/* Text Content */}
-      <div className="absolute right-0 top-[41%] transform w-[60%] -translate-y-1/2 z-20 pr-0 p-6 max-[1421px]:top-[38%] max-[620px]:top-[35%] max-[450px]:top-[40%] max-[1320px]:w-[61.5%] max-[1220px]:w-[63%] max-[1100px]:w-[65%] max-[880px]:w-[68%] max-[451px]:w-[78%] max-[431px]:w-[79%] min-[1000px]:p-12 max-[1000px]:p-8 max-[700px]:p-6 max-[450px]:p-2 max-[431px]:p-0 md:pr-0 text-white">
+      <div className="absolute right-0 top-[41%] transform w-[60%] -translate-y-1/2 z-20 pr-0 p-6 max-[1421px]:top-[38%] max-[620px]:top-[35%] max-[450px]:top-[40%] max-[1320px]:w-[61.5%] max-[1220px]:w-[63%] max-[1100px]:w-[65%] max-[880px]:w-[68%] max-[451px]:w-[78%] max-[431px]:w-[79%] max-[420px]:w-[82%] min-[1000px]:p-12 max-[1000px]:p-8 max-[700px]:p-6 max-[450px]:p-2 max-[431px]:p-0 md:pr-0 text-white">
         <motion.div 
-          className="relative w-[820px] h-[100px] mx-[31px] mb-8 max-[900px]:mb-6 max-[800px]:mb-2 max-[750px]:mb-6 max-[620px]:mb-8 max-[451px]:h-[70px] max-[450px]:w-[700px] max-[450px]:mb-2 max-[416px]:mb-0 max-[416px]:h-[64px]"
+          className="relative w-[820px] h-[100px] mx-[31px] mb-8 max-[900px]:mb-6 max-[800px]:mb-2 max-[750px]:mb-6 max-[620px]:mb-8 max-[451px]:h-[70px] max-[450px]:w-[700px] max-[450px]:mb-2 max-[420px]:mb-1 max-[416px]:h-[64px]"
           initial={{ opacity: 0, x: 100 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,7 +61,7 @@ export default function About() {
             className="object-contain"
             priority
           />
-          <div className="absolute inset-0 flex items-center pl-8 text-4xl font-bold max-[700px]:pl-6 max-[620px]:text-3xl max-[450px]:text-2xl">
+          <div className="absolute inset-0 flex items-center pl-8 text-4xl font-bold max-[700px]:pl-6 max-[420px]:pl-4 max-[620px]:text-3xl max-[450px]:text-2xl">
             <motion.span 
               className="text-black mr-4 z-10"
               initial={{ opacity: 0, x: 50 }}
@@ -81,7 +81,7 @@ export default function About() {
           </div>
         </motion.div>
         <motion.div 
-          className="w-[80%] absolute right-8 bg-opacity-90 p-8 rounded-md max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[16px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[451px]:right-4 max-[620px]:pl-12"
+          className="w-[80%] absolute right-8 bg-opacity-90 p-8 rounded-md max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[16px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[451px]:right-4 max-[620px]:pl-12 max-[420px]:right-2"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}

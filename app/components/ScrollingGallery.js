@@ -57,7 +57,7 @@ export default function ScrollingGallery() {
       variants={containerVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className="bg-black py-10 space-y-10 overflow-hidden my-16"
+      className="bg-black py-10 space-y-10 overflow-hidden my-16 max-[460px]:my-10"
     >
       {/* Top Row - Right to Left */}
       <motion.div variants={itemVariants} className="relative w-full h-[200px] overflow-hidden group">

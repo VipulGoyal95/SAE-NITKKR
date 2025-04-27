@@ -2,14 +2,34 @@
 "use client"
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation';
 
 
 function Participation() {
+  const pathname = usePathname();
+  const isNitroxPage = pathname.includes('/nitrox');
+
+  const acceleronsContent={
+    top: "SUPRA",
+    top_content: "SUPRA SAEINDIA Student Formula is a national engineering design competition held by the Society of Automotive Engineers Indian(SAEINDIA). The goal is to develop and provide a platform for student engineers to experience build and learn.",
+    top_subcontent: "Students gain and develop skills such as engineering,project management and team work.Points are earned in a series off track,\"Static\" events, and on track,\"Dyanamic\" events. The team with the most points at the end of the competion wins.",
+    bottom: "FORMULA BHARAT",
+    bottom_content: "Formula Bharat is an engineering design competitionin which Studentsfrom colleges and universities all over the country, compete with a life-size Formula-style vehicle in areas of engineering design,overall cost,marketability and dynamic performance.",
+    bottom_subcontent: "These student teams are required to build a new vehicle from scratch year-after-year and seek sponsorship and donations by their own means to fund the project"
+  }
+
+  const nitroxcontent={
+    top:"BAJA",
+    top_content: "Baja SAE is an Collegiate Design Series competition run by the Society Of Automotive Engineers International (SAE INTERNATIONAL) Teams of Students from universities all over the world design and build small off-road cars.",
+    bottom: "ATVC",
+    bottom_content: "The Third season of Aravalli Terrain Vehicle Championship, powered by infi-league Motorsports is a natioanl championship earnmarking all the techno freaks across the country"
+  }
+  const team = isNitroxPage ? nitroxcontent : acceleronsContent;
   return (
-    <div className="relative w-full max-w-6xl h-[1000px] mx-auto bg-black">
+    <div className="relative px-8 w-full max-w-6xl h-[1000px] mx-auto bg-black max-[1220px]:w-[90%] max-[530px]:w-[95%] max-[530px]:h-[930px] max-[460px]:h-[850px]">
       {/* Heading */}
       <motion.h2 
-        className="absolute top-6 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-white"
+        className="absolute w-full text-center top-5 left-1/2 transform -translate-x-1/2 text-4xl font-bold text-white mb-4 max-[482px]:text-3xl"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
@@ -19,7 +39,7 @@ function Participation() {
       </motion.h2>
 
       {/* Top‑Left Photo */}
-      <div className="absolute top-24 left-0 w-[45%] h-[39%] rounded-xl overflow-hidden">
+      <div className="absolute top-24 left-0 w-[45%] h-[39%] rounded-xl overflow-hidden max-[530px]:h-[32.5%]">
         <Image
           src="/upcar.png"
           alt="Drift race"
@@ -29,7 +49,7 @@ function Participation() {
       </div>
 
       {/* Top‑Right "SUPRA" Card */}
-      <div className="absolute top-24 right-0 w-[52.5%] h-[49%]">
+      <div className="absolute top-24 right-0 w-[52.5%] h-[49%] max-[530px]:h-[40%]">
         {/* Mint border PNG */}
         <Image
           src="/upborder.png"
@@ -39,35 +59,44 @@ function Participation() {
         />
         {/* Content panel inside the border */}
         <motion.div 
-          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start mt-[20px]"
+          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-4"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <motion.h3 
-            className="text-[50px] text-center font-semibold text-white"
+            className="text-[50px] text-center font-semibold text-white max-[1038px]:text-[40px] max-[896px]:text-[38px] max-[858px]:text-[35px] max-[802px]:text-[32px] max-[713px]:text-[29px] max-[602px]:text-[27px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            SUPRA
+            {team.top}
           </motion.h3>
           <motion.p 
-            className="mt-4 text-[18px] text-white leading-relaxed text-justify"
+            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            SUPRA SAEINDIA is a national‑level Formula racing competition where engineering meets speed. Student teams design, build, and race their own formula‑style car, competing in both static and dynamic events. It's a test of skill, innovation, and teamwork — where future engineers shift into high gear.
+            {team.top_content}
           </motion.p>
+          {/* <motion.p 
+            className="mt-2 text-[16px] border-x-[5px] px-2 border-[red] text-white leading-relaxed text-justify"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {team.top_subcontent}
+          </motion.p> */}
         </motion.div>
       </div>
 
       {/* Bottom‑Left "Formula Bharat" Card */}
-      <div className="absolute bottom-0 left-0 w-[55.5%] h-[49%]">
+      <div className="absolute bottom-0 left-0 w-[55.5%] h-[49%] max-[530px]:bottom-15 max-[460px]:h-[48%]">
         <Image
           src="/lowborder.png"
           alt="Formula Bharat border"
@@ -75,35 +104,44 @@ function Participation() {
         //   className="object-cover"
         />
         <motion.div 
-          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start"
+          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <motion.h3 
-            className="text-[45px] text-center font-semibold text-white"
+            className="text-[45px] text-center font-semibold text-white max-[1038px]:text-[40px] max-[896px]:text-[38px] max-[858px]:text-[35px] max-[802px]:text-[32px] max-[713px]:text-[29px] max-[602px]:text-[27px] max-[435px]:text-[25px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            FORMULA BHARAT
+            {team.bottom}
           </motion.h3>
           <motion.p 
-            className="mt-4 text-[18px] text-white leading-relaxed text-justify"
+            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            Formula Bharat is a national engineering design competition where student teams race to innovate. They build full‑scale Formula‑style cars from scratch each year, competing in design, cost, business, and dynamic performance. With self‑driven funding and relentless effort, it's a true test of engineering passion and perseverance.
+            {team.bottom_content}
           </motion.p>
+          {/* <motion.p 
+            className="mt-2 w-[70%] text-[16px] border-x-[5px] px-2 border-[red] text-white leading-relaxed text-justify"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            {team.bottom_subcontent}
+          </motion.p> */}
         </motion.div>
       </div>
 
       {/* Bottom‑Right Photo */}
-      <div className="absolute bottom-0 right-0 w-[56.5%] h-[39.5%] rounded-xl overflow-hidden">
+      <div className="absolute bottom-0 right-0 w-[56.5%] h-[39.5%] rounded-xl overflow-hidden max-[530px]:h-[40.5%] max-[530px]:bottom-15">
         <Image
           src="/lowcar.png"
           alt="Formula car"

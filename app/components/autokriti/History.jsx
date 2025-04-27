@@ -74,25 +74,46 @@ const History = () => {
     }
     
     // Mobile view
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    // if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    //   fontSize = isFocused ? 85 : 64;
+    // }
+
+    if (typeof window !== 'undefined' && window.innerWidth <= 693) {
       fontSize = isFocused ? 85 : 64;
     }
 
-    if (typeof window !== 'undefined' && window.innerWidth <= 693) {
-      fontSize = isFocused ? 60 : 48;
+    if (typeof window !== 'undefined' && window.innerWidth <= 560) {
+      fontSize = isFocused ? 60 : 46;
+    }
+
+    if (typeof window !== 'undefined' && window.innerWidth <= 420) {
+      fontSize = isFocused ? 53 : 43;
     }
 
     console.log(window.innerWidth);
     return fontSize;
   };
 
+  const getColor = (year) =>{
+    if(focusPosition===year && year==0){
+      return "#EE6B46"; 
+    }
+    if(focusPosition===year && year==1){
+      return "#403CB280"
+    }
+    if(focusPosition===year && year==2){
+      return "#243365C7"
+    }
+    return "white"
+  }
+
   return (
-    <div ref={componentRef} className="min-h-screen px-16 max-[900px]:px-12 max-[700px]:px-8 max-[560px]:mx-auto">
+    <div ref={componentRef} className="min-h-screen px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className='text-[65px] font-bold'
+        className='text-[65px] font-bold max-[1050px]:text-[55px] max-[900px]:text-[45px] max-[560px]:text-[38px] max-[440px]:text-[42px] max-[420px]:text-[50px]'
       >
         History <br/>
         <motion.span 
@@ -110,29 +131,29 @@ const History = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]"
+          className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]"
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' ,color : getColor(0)}} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, y: -50 }}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]'
+          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' ,color : getColor(1) }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, x: 50 }}
           animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[768px]:text-[4rem] max-[693px]:text-[48px]'
+          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' }} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' ,color : getColor(2)}} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
         </motion.p>
       </div>
 
-      <div className="relative flex flex-col items-center mt-[55px] mb-[30px]">
+      <div className="relative flex flex-col items-center mt-[55px] mb-[30px] max-[700px]:mt-[40px] max-[560px]:mt-[25px] max-[420px]:mt-[15px]">
         <div className="relative flex flex-row justify-center items-center w-full">
           <div className="flex flex-row justify-between items-center w-[100%]">
             <motion.div 
@@ -207,7 +228,7 @@ const History = () => {
             alt="Line 4"
             width={1000}
             height={10}
-            className="w-[97%] mx-auto"
+            className="w-[97%] mx-auto max-[720px]:w-[90%] max-[420px]:w-[88%]"
             priority
           />
         </motion.div>
@@ -221,7 +242,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%] max-[1050px]:text-[20px] max-[700px]:text-[18px] max-[560px]:w-[80%] max-[560px]:text-[16px] max-[440px]:w-[85%]"
             >
               In October 2025, Autokriti 15.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>
@@ -233,7 +254,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%] max-[1050px]:text-[20px] max-[700px]:text-[18px] max-[560px]:w-[80%] max-[560px]:text-[16px] max-[440px]:w-[85%]"
             >
               In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>
@@ -245,7 +266,7 @@ const History = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
               id="data" 
-              className="text-justify text-white text-[24px] w-[70%]"
+              className="text-justify text-white text-[22px] w-[70%] max-[1050px]:text-[20px] max-[700px]:text-[18px] max-[560px]:w-[80%] max-[560px]:text-[16px] max-[440px]:w-[85%]"
             >
               In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
             </motion.div>

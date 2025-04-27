@@ -6,10 +6,10 @@ import TabbedCards from '../TabbedCards'
 
 const AutokritiDespscription = () => {
     const ref = useRef(null)
-    const isInView = useInView(ref, { once: true, amount: 0.4 })
+    const isInView = useInView(ref, { once: true, amount: 0.2 })
 
     return (
-        <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div ref={ref} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 max-[500px]:py-6">
             <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}

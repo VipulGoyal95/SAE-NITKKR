@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useGesture } from '@use-gesture/react';
 
 const HeroSection = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -10,6 +11,9 @@ const HeroSection = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const containerRef = useRef(null);
   const autoPlayRef = useRef(null);
+  const [swipeDirection, setSwipeDirection] = useState(null);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const lastSwipeTime = useRef(0);
   
   const images = [
     {
@@ -84,18 +88,50 @@ const HeroSection = () => {
     }
   };
 
+  const handleImageChange = (direction) => {
+    const now = Date.now();
+    if (now - lastSwipeTime.current < 1000) return;
+    
+    setIsTransitioning(true);
+    if (direction === 'next') {
+      nextImage();
+    } else {
+      prevImage();
+    }
+    lastSwipeTime.current = now;
+    setTimeout(() => setIsTransitioning(false), 500);
+  };
+
+  const bind = useGesture({
+    onDrag: ({ movement: [x], direction: [xDir], velocity: [xVel], cancel }) => {
+      if (!isTransitioning && (Math.abs(x) > 100 || Math.abs(xVel) > 0.5)) {
+        setSwipeDirection(xDir > 0 ? 'left' : 'right');
+        if (xDir > 0) {
+          handleImageChange('prev');
+        } else {
+          handleImageChange('next');
+        }
+        cancel();
+      }
+    },
+    onDragEnd: () => {
+      setSwipeDirection(null);
+    }
+  });
+
   return (
     <div 
       ref={containerRef}
       className="relative w-full h-screen overflow-hidden"
       onMouseMove={handleMouseMove}
+      {...bind()}
     >
       <AnimatePresence mode="wait">
         <motion.div
           key={currentImage}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 1.1, x: swipeDirection === 'left' ? -100 : swipeDirection === 'right' ? 100 : 0 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          exit={{ opacity: 0, scale: 0.9, x: swipeDirection === 'left' ? 100 : swipeDirection === 'right' ? -100 : 0 }}
           transition={{ duration: 1 }}
           className="absolute inset-0"
           style={{
