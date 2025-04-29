@@ -6,31 +6,31 @@ import { useEffect, useRef, useState } from 'react';
 
 const sponsorImages = [
   {
-    src: '/assets/images/sponsors/altium2.jpg',
+    src: '/assets/images/sponsors/altium2.webp',
     alt: 'Sponsor 1',
     width: 200,
     height: 150
   },
   {
-    src: '/assets/images/sponsors/pankaj_potentiometer.png',
+    src: '/assets/images/sponsors/pankaj_potentiometer.webp',
     alt: 'Sponsor 2',
     width: 200,
     height: 150
   },
   {
-    src: '/assets/images/sponsors/bender.png',
+    src: '/assets/images/sponsors/bender.webp',
     alt: 'Sponsor 3',
     width: 200,
     height: 150
   },
   {
-    src: '/assets/images/sponsors/bare metal comp.png',
+    src: '/assets/images/sponsors/bare metal comp.webp',
     alt: 'Sponsor 4',
     width: 200,
     height: 150
   },
   {
-    src: '/assets/images/sponsors/solidworks.png',
+    src: '/assets/images/sponsors/solidworks.webp',
     alt: 'Sponsor 5',
     width: 250,
     height: 150

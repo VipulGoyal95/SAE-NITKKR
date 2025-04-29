@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="min-h-screen relative">
       {/* Abstract SVG Background Patterns */}
-      <div className="absolute top-0 left-0 w-full h-screen overflow-hidden pointer-events-none z-0">
+      {/* <div className="absolute top-0 left-0 w-full h-screen overflow-hidden pointer-events-none z-0">
         <svg
           className="absolute top-0 left-0 opacity-10"
           width="100%"
@@ -66,7 +66,7 @@ export default function Home() {
             </linearGradient>
           </defs>
         </svg>
-      </div>
+      </div> */}
 
       {/* Hero Section */}
       <motion.div
@@ -112,18 +112,18 @@ export default function Home() {
           </svg>
         </div>
 
-        {/* Hero Image with Zoom Effect */}
+        {/* Hero Image with Fixed Background Effect */}
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="relative h-full w-full"
+          className="fixed inset-0 w-full h-screen -z-10"
         >
           <Image
-            src="/img9.png"
+            src="/img9.webp"
             alt="SAE NIT Kurukshetra"
             fill
-            className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
+            className="object-cover opacity-90"
             priority
           />
         </motion.div>
@@ -195,7 +195,7 @@ export default function Home() {
 
             {/* Animated Underline */}
             <motion.div
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:via-purple-500 group-hover:to-blue-500 transition-all duration-300"
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-white group-hover:bg-gradient-to-r hover:bg-white transition-all duration-300"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -203,7 +203,7 @@ export default function Home() {
           </motion.div>
 
           {/* CTA Button */}
-          <motion.button
+          {/* <motion.button
             className="mt-6 px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-indigo-600 hover:to-blue-600 text-white rounded-full font-medium shadow-lg transform transition-all hover:scale-105 hover:shadow-xl max-[460px]:mt-3 max-[460px]:px-4 max-[460px]:py-1 max-[460px]:text-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -212,7 +212,7 @@ export default function Home() {
             whileTap={{ scale: 0.98 }}
           >
             Explore
-          </motion.button>
+          </motion.button> */}
         </motion.div>
 
         {/* Scroll Indicator */}
@@ -252,7 +252,7 @@ export default function Home() {
       </motion.div>
 
       {/* Section Divider */}
-      <div className="relative h-24 overflow-hidden">
+      {/* <div className="relative h-24 overflow-hidden">
         <svg
           className="absolute w-full h-24"
           preserveAspectRatio="none"
@@ -283,13 +283,13 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
           />
         </svg>
-      </div>
+      </div> */}
 
       {/* Content Sections with Section Transitions */}
       <Whoweare />
 
       {/* Section Divider */}
-      <div className="relative h-24 overflow-hidden transform rotate-180">
+      {/* <div className="relative h-24 overflow-hidden transform rotate-180">
         <svg
           className="absolute w-full h-24"
           preserveAspectRatio="none"
@@ -301,13 +301,13 @@ export default function Home() {
             opacity="0.05"
           />
         </svg>
-      </div>
+      </div> */}
 
       <OurTeams />
       <Sponsors />
 
       {/* Section Divider */}
-      <div className="relative h-24 overflow-hidden">
+      {/* <div className="relative h-24 overflow-hidden">
         <svg
           className="absolute w-full h-24"
           preserveAspectRatio="none"
@@ -319,7 +319,7 @@ export default function Home() {
             opacity="0.05"
           />
         </svg>
-      </div>
+      </div> */}
 
       <Teammembers />
     </div>

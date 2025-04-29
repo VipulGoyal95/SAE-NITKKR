@@ -23,7 +23,7 @@ const FacultyMessage = () => {
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl shrink-0 relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 mix-blend-overlay z-10"></div>
             <Image
-              src="/assets/images/crowdfunding/faculty.png"
+              src="/assets/images/crowdfunding/faculty.webp"
               alt="Faculty In-Charge"
               width={224}
               height={224}

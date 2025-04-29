@@ -108,7 +108,7 @@ const History = () => {
   }
 
   return (
-    <div ref={componentRef} className="min-h-screen px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
+    <div ref={componentRef} className="min-h-screen text-white px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
@@ -163,7 +163,7 @@ const History = () => {
               className="relative left-[20px]"
             >
               <Image
-                src="/assets/images/autokriti/Ellipse 19.png"
+                src="/assets/images/autokriti/Ellipse 19.webp"
                 alt="Ellipse 19"
                 width={20}
                 height={20}
@@ -177,7 +177,7 @@ const History = () => {
               className="relative"
             >
               <Image
-                src="/assets/images/autokriti/Ellipse 20.png"
+                src="/assets/images/autokriti/Ellipse 20.webp"
                 alt="Ellipse 22"
                 width={20}
                 height={20}
@@ -191,7 +191,7 @@ const History = () => {
               className="relative right-[20px]"
             >
               <Image
-                src="/assets/images/autokriti/Ellipse 26.png"
+                src="/assets/images/autokriti/Ellipse 26.webp"
                 alt="Ellipse 26"
                 width={20}
                 height={20}
@@ -207,7 +207,7 @@ const History = () => {
           >
             <Image
               id="focus"
-              src="/assets/images/autokriti/Ellipse 27.png"
+              src="/assets/images/autokriti/Ellipse 27.webp"
               alt="Focus Ellipse"
               width={150}
               height={150}
@@ -224,7 +224,7 @@ const History = () => {
           transition={{ duration: 1, delay: 1 }}
         >
           <Image
-            src="/assets/images/autokriti/Line 4.png"
+            src="/assets/images/autokriti/Line 4.webp"
             alt="Line 4"
             width={1000}
             height={10}
@@ -285,7 +285,7 @@ const History = () => {
           onClick={() => handleFocusChange('left')}
         >
           <div className="group-hover:invert">
-            <Image src="/assets/images/autokriti/Arrow 2.png" alt="Arrow 2" width={30} height={30} />
+            <Image src="/assets/images/autokriti/Arrow 2.webp" alt="Arrow 2" width={30} height={30} />
           </div>
         </motion.button>
         <motion.button 
@@ -295,11 +295,11 @@ const History = () => {
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           id="btn2" 
-          className="text-white p-[10px] rounded-[100%] bg-[#313131] my-[20px] hover:bg-white group cursor-pointer"
+          className="text-white p-[10px] rounded-[100%] bg-[#313131] my-[20px] hover:bg-white cursor-pointer"
           onClick={() => handleFocusChange('right')}
         >
-          <div className="group-hover:invert">
-            <Image src="/assets/images/autokriti/Arrow 3.png" alt="Arrow 3" width={30} height={30} />
+          <div className="hover:invert">
+            <Image src="/assets/images/autokriti/Arrow 3.webp" alt="Arrow 3" width={30} height={30} />
           </div>
         </motion.button>
       </div>

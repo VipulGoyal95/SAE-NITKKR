@@ -54,7 +54,7 @@ const Header = () => {
           <nav className="w-full text-black py-2.5 text-center flex items-center justify-between">
             <div className="flex gap-2 items-center">
               <Image 
-                src="/assets/images/sae-logo.png" 
+                src="/assets/images/sae-logo.webp" 
                 alt="SAE Logo" 
                 width={40}
                 height={40}

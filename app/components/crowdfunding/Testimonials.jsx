@@ -18,28 +18,28 @@ const testimonials = [
   {
     name: "Rahul Verma",
     designation: "Alumnus, Batch of 2021",
-    image: "/testimonials/rahul.jpg",
+    image: "/testimonials/rahul.webp",
     feedback:
       "Being a part of SAE helped me build a solid foundation in engineering and teamwork. I'm proud to support the next generation through this initiative.",
   },
   {
     name: "Sneha Kapoor",
     designation: "Senior, Mechanical Dept",
-    image: "/testimonials/sneha.jpg",
+    image: "/testimonials/sneha.webp",
     feedback:
       "SAE society has shaped my college experience. The dedication and innovation of our teams deserve every bit of support.",
   },
   {
     name: "Aman Singh",
     designation: "Alumnus, R&D Engineer, Maruti Suzuki",
-    image: "/testimonials/aman.jpg",
+    image: "/testimonials/aman.webp",
     feedback:
       "SAE taught me real-world engineering skills. Supporting this cause is my way of giving back to a society that gave me so much.",
   },
   {
     name: "Neha Chauhan",
     designation: "Alumnus, Design Engineer, Tata Motors",
-    image: "/testimonials/neha.jpg",
+    image: "/testimonials/neha.webp",
     feedback:
       "From design to track, SAE molded us into creators and innovators. Proud to see the legacy continue through this crowdfunding.",
   },

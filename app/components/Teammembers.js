@@ -8,7 +8,7 @@ const teamMembers = [
   {
     name: 'ABHISHEK',
     role: 'President',
-    image: '/abhishek.png',
+    image: '/abhishek.webp',
     gradient: 'from-[#FFFFFF] to-[#454545]',
     height: 'h-[450px]',
     social: {
@@ -19,7 +19,7 @@ const teamMembers = [
     {
       name: 'SHUBHAYU SINHA',
       role: 'Vice-President',
-      image: '/shubhayu2.png',
+      image: '/shubhayu2.webp',
       gradient: 'from-[#454545] to-[#FFFFFF]',
       height: 'h-[450px]',
       social: {
@@ -30,7 +30,7 @@ const teamMembers = [
   {
     name: 'ANKIT RATHORE',
     role: 'Secretary',
-    image: '/ankit rathore.png',
+    image: '/ankit rathore.webp',
     gradient: 'from-[#FFFFFF] to-[#454545]',
     height: 'h-[450px]',
     social: {
@@ -41,7 +41,7 @@ const teamMembers = [
   {
     name: 'SARTHAK ANAND',
     role: 'Secretary',
-    image: '/sarthak.png',
+    image: '/sarthak.webp',
     gradient: 'from-[#454545] to-[#FFFFFF]',
     height: 'h-[450px]',
     social: {
@@ -107,7 +107,7 @@ const Teammembers = () => {
             <div className={`${member.height} w-full max-w-[230px] rounded-t-[150px] overflow-hidden 
               bg-gradient-to-bl ${member.gradient} 
               transform transition-all duration-500 ease-out
-              group-hover:scale-105 group-hover:shadow-2xl`}
+              hover:scale-105 hover:shadow-2xl`}
             >
               {/* Content Container */}
               <div className="h-full flex flex-col items-center relative">
@@ -118,22 +118,22 @@ const Teammembers = () => {
                     alt={member.name.toLowerCase()}
                     width={300}
                     height={400}
-                    className="object-cover object-top w-full h-full transform transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top w-full h-full transform transition-transform duration-500 hover:scale-110"
                   />
                 </div>
 
                 {/* Overlay with Name, Role, and Social Icons */}
-                <div className="absolute inset-0 flex flex-col items-center justify-start bg-gradient-to-b from-black/80 via-black/50 to-transparent opacity-0 transition-all duration-500 group-hover:opacity-100">
+                <div className="absolute inset-0 flex flex-col items-center justify-start bg-gradient-to-b from-black/80 via-black/50 to-transparent opacity-0 transition-all duration-500 hover:opacity-100">
                   <div className="w-full h-[35%] flex flex-col items-center justify-center space-y-2.5 pt-8">
-                    <h3 className="text-white text-xl font-bold transform translate-y-4 transition-transform duration-500 group-hover:translate-y-4">
+                    <h3 className="text-white text-xl font-bold transform translate-y-4 transition-transform duration-500 hover:translate-y-4">
                       {member.name}
                     </h3>
-                    <p className="text-white/90 italic transform translate-y-0 transition-transform duration-500 group-hover:translate-y-0">
+                    <p className="text-white/90 italic transform translate-y-0 transition-transform duration-500 hover:translate-y-0">
                       ~{member.role.toLowerCase()}
                     </p>
                     
                     {/* Social Links */}
-                    <div className="flex gap-4 transform translate-y-0 transition-transform duration-500 group-hover:translate-y-0">
+                    <div className="flex gap-4 transform translate-y-0 transition-transform duration-500 hover:translate-y-0">
                       <a 
                         href={member.social.linkedin}
                         target="_blank"

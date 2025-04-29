@@ -7,7 +7,7 @@ import AutokritiDespscription from '../components/autokriti/AutokritiDespscripti
 
 export default function AutokritiPage() {
   return (
-    <div>
+    <div className='bg-black'>
       <HeroSection />
       <AboutAutokriti />
       <History/>

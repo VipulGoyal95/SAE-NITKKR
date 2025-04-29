@@ -38,7 +38,7 @@ export default function About() {
     >
       {/* Background Image */}
       <Image
-        src="/assets/images/homepage/1.png"
+        src="/assets/images/homepage/1.webp"
         alt="Car"
         width={1100}
         height={600}
@@ -58,7 +58,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <Image
-            src="/assets/images/homepage/3.png"
+            src="/assets/images/homepage/3.webp"
             alt="Heading Capsule"
             fill
             className="object-contain"

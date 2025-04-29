@@ -17,11 +17,11 @@ export const metadata = {
   title: "SAE NIT KURUKSHETRA",
   description: "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers",
   icons: {
-    icon: '/assets//images/sae-logo.png',
-    apple: '/assets//images/sae-logo.png',
+    icon: '/assets//images/sae-logo.webp',
+    apple: '/assets//images/sae-logo.webp',
   },
   openGraph: {
-    images: '/assets/images/sae-logo.png',
+    images: '/assets/images/sae-logo.webp',
   },
 };
 

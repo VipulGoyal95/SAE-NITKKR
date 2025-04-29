@@ -1,8 +1,13 @@
-
+"use client"
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
+  const unitydrivePage = pathname.includes('/saeunitydrive');
+  const crowdfundingPage = pathname.includes('/crowdfunding');
+  const isblue = unitydrivePage || crowdfundingPage;
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-gray-300 py-16 px-6 relative">
+    <footer className={`${isblue? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-black'} text-gray-300 py-16 px-6 relative`}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg width="100%" height="100%" className="opacity-5">
           <pattern
@@ -30,13 +35,13 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative group">
+              <div className="relative group w-[40%] max-[1024px]:w-fit">
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-70 group-hover:opacity-100 blur transition duration-300"></div>
                 <div className="relative bg-black rounded-full p-1">
                   <img
-                    src="/assets/images/sae-logo.png"
+                    src="/assets/images/sae-logo.webp"
                     alt="SAE NITKKR Logo"
-                    className="h-14 w-14"
+                    className="h-14"
                   />
                 </div>
               </div>

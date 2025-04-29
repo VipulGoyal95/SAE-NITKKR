@@ -8,7 +8,7 @@ const AboutAutokriti = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <div ref={ref} className="flex flex-col lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8 max-[500px]:px-4 overflow-hidden">
+    <div ref={ref} className="flex flex-col text-white lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8 max-[500px]:px-4 overflow-hidden">
       <motion.div 
         className="w-full lg:w-[30%] mb-10 lg:mb-0"
         initial={{ opacity: 0, x: -50 }}

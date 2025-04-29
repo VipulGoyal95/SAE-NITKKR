@@ -8,9 +8,11 @@ export default function Nitrox() {
     return (
         <div>
             <Herosection />
-            <Participation />
-            <ScrollingGallery />
-            <MeetTheTeam />
+            <div className="bg-black">
+                <Participation />
+                <ScrollingGallery />
+                <MeetTheTeam />
+            </div>
         </div>
     )
 }

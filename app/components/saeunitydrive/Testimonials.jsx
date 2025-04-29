@@ -20,7 +20,7 @@ const testimonialsData = [
     name: "Rahul Sharma",
     role: "Former SAE President",
     batch: "2022",
-    image: "/testimonials/person1.jpg",
+    image: "/testimonials/person1.webp",
     quote:
       "Being part of SAE was a transformative experience that shaped my engineering career. The Unity Drive initiative truly embodies the collaborative spirit we need in technical education.",
   },
@@ -29,7 +29,7 @@ const testimonialsData = [
     name: "Priya Patel",
     role: "Corporate Sponsor",
     batch: "Industry Partner",
-    image: "/testimonials/person2.jpg",
+    image: "/testimonials/person2.webp",
     quote:
       "Working with the SAE NIT Kurukshetra team has been exceptional. Their dedication to innovation and commitment to excellence makes them stand out among student organizations.",
   },
@@ -38,7 +38,7 @@ const testimonialsData = [
     name: "Vikram Singh",
     role: "Mechanical Engineering Faculty",
     batch: "NIT Kurukshetra",
-    image: "/testimonials/person3.jpg",
+    image: "/testimonials/person3.webp",
     quote:
       "The SAE Unity Drive demonstrates how students can bridge theoretical knowledge with practical applications. It's initiatives like these that prepare our students for real-world challenges.",
   },
@@ -47,7 +47,7 @@ const testimonialsData = [
     name: "Ananya Reddy",
     role: "SAE Competition Winner",
     batch: "2023",
-    image: "/testimonials/person4.jpg",
+    image: "/testimonials/person4.webp",
     quote:
       "The mentorship and resources provided through SAE helped our team excel in national competitions. The Unity Drive expands these opportunities to even more students.",
   },
@@ -56,7 +56,7 @@ const testimonialsData = [
     name: "Rajat Kapoor",
     role: "Industry Mentor",
     batch: "Automotive Industry",
-    image: "/testimonials/person5.jpg",
+    image: "/testimonials/person5.webp",
     quote:
       "The innovative thinking and technical skills of SAE NIT Kurukshetra students is impressive. The Unity Drive will further strengthen the industry-academia connection.",
   },
@@ -65,7 +65,7 @@ const testimonialsData = [
     name: "Neha Gupta",
     role: "SAE Alumni",
     batch: "2021",
-    image: "/testimonials/person6.jpg",
+    image: "/testimonials/person6.webp",
     quote:
       "The teamwork and practical skills I developed at SAE directly contributed to my career success. Unity Drive will take this impact to the next level.",
   },

@@ -6,19 +6,19 @@ import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const topImages = [
-  "/img1.png",
-  "/img2.png",
-  "/img3.jpg",
-  "/img4.jpg",
-  "/img5.jpg",
+  "/img1.webp",
+  "/img2.webp",
+  "/img3.webp",
+  "/img4.webp",
+  "/img5.webp",
 ];
 
 const bottomImages = [
-  "/img5.jpg",
-  "/img6.jpg",
-  "/img7.jpg",
-  "/img8.jpg",
-  "/lowcar.png",
+  "/img5.webp",
+  "/img6.webp",
+  "/img7.webp",
+  "/img8.webp",
+  "/lowcar.webp",
 ];
 
 export default function ScrollingGallery() {
@@ -60,7 +60,7 @@ export default function ScrollingGallery() {
       className="bg-black py-10 space-y-10 overflow-hidden my-16 max-[460px]:my-10"
     >
       {/* Top Row - Right to Left */}
-      <motion.div variants={itemVariants} className="relative w-full h-[200px] overflow-hidden group">
+      <motion.div variants={itemVariants} className="relative w-full h-[200px] overflow-hidden">
         {/* Gradient overlay for fade effect */}
         <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
         <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
@@ -75,7 +75,7 @@ export default function ScrollingGallery() {
           {topImages.map((src, index) => (
             <motion.div 
               key={index} 
-              className="relative min-w-[300px] mx-2 group/image cursor-pointer"
+              className="relative min-w-[300px] mx-2 cursor-pointer"
               onClick={() => setSelectedImage(src)}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -86,9 +86,9 @@ export default function ScrollingGallery() {
                   alt={`Top image ${index + 1}`}
                   width={300}
                   height={200}
-                  className="object-cover w-full h-[200px] transition-transform duration-500 group-hover/image:scale-110"
+                  className="object-cover w-full h-[200px] transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/30 transition-colors duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-500 rounded-lg" />
               </div>
             </motion.div>
           ))}
@@ -96,7 +96,7 @@ export default function ScrollingGallery() {
       </motion.div>
 
       {/* Bottom Row - Left to Right */}
-      <motion.div variants={itemVariants} className="relative w-full h-[200px] overflow-hidden group">
+      <motion.div variants={itemVariants} className="relative w-full h-[200px] overflow-hidden">
         {/* Gradient overlay for fade effect */}
         <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
         <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
@@ -111,7 +111,7 @@ export default function ScrollingGallery() {
           {bottomImages.map((src, index) => (
             <motion.div 
               key={index} 
-              className="relative min-w-[300px] mx-2 group/image cursor-pointer"
+              className="relative min-w-[300px] mx-2 cursor-pointer"
               onClick={() => setSelectedImage(src)}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
@@ -122,9 +122,9 @@ export default function ScrollingGallery() {
                   alt={`Bottom image ${index + 1}`}
                   width={300}
                   height={200}
-                  className="object-cover w-full h-[200px] transition-transform duration-500 group-hover/image:scale-110"
+                  className="object-cover w-full h-[200px] transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/30 transition-colors duration-500 rounded-lg" />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/30 transition-colors duration-500 rounded-lg" />
               </div>
             </motion.div>
           ))}

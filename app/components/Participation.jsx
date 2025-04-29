@@ -41,7 +41,7 @@ function Participation() {
       {/* Top‑Left Photo */}
       <div className="absolute top-24 left-0 w-[45%] h-[39%] rounded-xl overflow-hidden max-[530px]:h-[32.5%]">
         <Image
-          src="/upcar.png"
+          src="/upcar.webp"
           alt="Drift race"
           fill
         //   className="object-cover"
@@ -52,7 +52,7 @@ function Participation() {
       <div className="absolute top-24 right-0 w-[52.5%] h-[49%] max-[530px]:h-[40%]">
         {/* Mint border PNG */}
         <Image
-          src="/upborder.png"
+          src="/upborder.webp"
           alt="Supra border"
           fill
         //   className="object-cover"
@@ -98,7 +98,7 @@ function Participation() {
       {/* Bottom‑Left "Formula Bharat" Card */}
       <div className="absolute bottom-0 left-0 w-[55.5%] h-[49%] max-[530px]:bottom-15 max-[460px]:h-[48%]">
         <Image
-          src="/lowborder.png"
+          src="/lowborder.webp"
           alt="Formula Bharat border"
           fill
         //   className="object-cover"
@@ -143,7 +143,7 @@ function Participation() {
       {/* Bottom‑Right Photo */}
       <div className="absolute bottom-0 right-0 w-[56.5%] h-[39.5%] rounded-xl overflow-hidden max-[530px]:h-[40.5%] max-[530px]:bottom-15">
         <Image
-          src="/lowcar.png"
+          src="/lowcar.webp"
           alt="Formula car"
           fill
         //   className="object-cover"

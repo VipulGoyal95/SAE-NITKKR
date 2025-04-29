@@ -17,19 +17,19 @@ const HeroSection = () => {
   
   const images = [
     {
-      src: '/assets/images/autokriti/Autokriti1.jpeg',
+      src: '/assets/images/autokriti/Autokriti1.webp',
     },
     {
-      src: '/assets/images/autokriti/Autokriti2.jpeg',
+      src: '/assets/images/autokriti/Autokriti2.webp',
     },
     {
-      src: '/assets/images/autokriti/Autokriti3.jpeg',
+      src: '/assets/images/autokriti/Autokriti3.webp',
     },
     {
-      src: '/assets/images/autokriti/Autokriti4.jpeg',
+      src: '/assets/images/autokriti/Autokriti4.webp',
     },
     {
-      src: '/assets/images/autokriti/Autokriti5.jpeg',
+      src: '/assets/images/autokriti/Autokriti5.webp',
     }
   ];
 

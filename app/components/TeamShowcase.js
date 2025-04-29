@@ -10,7 +10,7 @@ const TeamShowcase = () => {
         <div className="flex-grow flex justify-center items-center mb-8">
           <div className="relative w-full max-w-[500px] h-[300px] md:h-[500px] rounded-[35px] overflow-hidden">
             <Image
-              src="/assets/images/homepage/acceleron.png"
+              src="/assets/images/homepage/acceleron.webp"
               alt="Nitrox Car"
               fill
               className="rounded-[35px] object-cover"
@@ -79,7 +79,7 @@ const TeamShowcase = () => {
         <div className="flex-grow flex justify-center items-center">
           <div className="relative w-full max-w-[500px] h-[300px] md:h-[500px] rounded-[35px] overflow-hidden">
             <Image
-              src="/assets/images/homepage/acceleron.png"
+              src="/assets/images/homepage/acceleron.webp"
               alt="Acceleron Car"
               fill
               className="rounded-[35px] object-cover"
