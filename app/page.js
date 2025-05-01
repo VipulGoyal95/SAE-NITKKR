@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.div
-        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[40vh]"
+        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[92vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

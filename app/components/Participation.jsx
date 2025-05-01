@@ -59,7 +59,7 @@ function Participation() {
         />
         {/* Content panel inside the border */}
         <motion.div 
-          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-4"
+          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
