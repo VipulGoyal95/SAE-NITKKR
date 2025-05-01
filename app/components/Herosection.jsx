@@ -57,7 +57,7 @@ export default function Herosection() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full h-[100vh] overflow-hidden max-[460px]:h-[55vh]"
+          className="relative w-full h-[100vh] overflow-hidden"
         >
           <motion.div
           initial={{ scale: 1.2 }}

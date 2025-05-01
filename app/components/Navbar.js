@@ -67,7 +67,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <ul className="hidden md:flex text-white justify-end gap-6 lg:gap-10 w-3/4">
+            <ul className="hidden md:flex text-white justify-end gap-6 lg:gap-10 w-3/4 max-[1237px]:w-[80%] max-[1160px]:gap-4">
               <Link href="/">
                 <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">Home</li>
               </Link>
@@ -82,6 +82,9 @@ const Header = () => {
               </Link>
               <Link href="/saeunitydrive">
                 <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">SAE Unity Drive</li>
+              </Link>
+              <Link href="/crowdfunding">
+                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">CrowdFunding</li>
               </Link>
             </ul>
 
@@ -184,6 +187,15 @@ const Header = () => {
                   onClick={barClicked}
                 >
                   SAE Unity Drive
+                </Link>
+              </li>
+              <li className="w-full text-center">
+                <Link 
+                  href="/crowdfunding" 
+                  className="text-3xl font-bold text-white block py-4 px-8 rounded-xl hover:bg-white/10 transform hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-white/5" 
+                  onClick={barClicked}
+                >
+                  CrowdFunding
                 </Link>
               </li>
             </ul>

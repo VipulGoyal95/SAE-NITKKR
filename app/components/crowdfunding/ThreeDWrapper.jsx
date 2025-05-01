@@ -48,7 +48,7 @@ const ThreeDWrapper = ({ children }) => {
       <ThreeBackground />
 
       {/* Scroll progress indicator */}
-      <ScrollProgress />
+      {/* <ScrollProgress /> */}
 
       {/* Floating 3D decorative elements */}
       <div className="fixed top-[15%] right-[10%] z-10 pointer-events-none opacity-70">

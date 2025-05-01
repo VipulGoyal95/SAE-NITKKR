@@ -34,7 +34,7 @@ export default function About() {
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen max-[800px]:h-[90vh] max-[620px]:h-[80vh] overflow-hidden max-[451px]:h-[60vh] max-[392px]:h-[64vh]"
+      className="relative w-full h-screen max-[800px]:h-[90vh] max-[620px]:h-[80vh] overflow-hidden max-[451px]:h-[82vh] max-[392px]:h-[84vh]"
     >
       {/* Background Image */}
       <Image
@@ -52,7 +52,7 @@ export default function About() {
       {/* Text Content */}
       <div className="absolute right-0 top-[41%] transform w-[60%] -translate-y-1/2 z-20 pr-0 p-6 max-[1421px]:top-[38%] max-[620px]:top-[35%] max-[450px]:top-[40%] max-[1320px]:w-[61.5%] max-[1220px]:w-[63%] max-[1100px]:w-[65%] max-[880px]:w-[68%] max-[451px]:w-[78%] max-[431px]:w-[79%] max-[420px]:w-[82%] min-[1000px]:p-12 max-[1000px]:p-8 max-[700px]:p-6 max-[450px]:p-2 max-[431px]:p-0 md:pr-0 text-white">
         <motion.div
-          className="relative w-[820px] h-[100px] mx-[31px] mb-8 max-[900px]:mb-6 max-[800px]:mb-2 max-[750px]:mb-6 max-[620px]:mb-8 max-[451px]:h-[70px] max-[450px]:w-[700px] max-[450px]:mb-2 max-[420px]:mb-1 max-[416px]:h-[64px]"
+          className="relative w-[820px] h-[100px] mx-[31px] mb-8 max-[900px]:mb-6 max-[800px]:mb-2 max-[750px]:mb-6 max-[620px]:mb-8 max-[451px]:h-[70px] max-[450px]:w-[700px] max-[450px]:mb-2 max-[420px]:mb-4 max-[416px]:h-[64px]"
           initial={{ opacity: 0, x: 100 }}
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -84,7 +84,7 @@ export default function About() {
           </div>
         </motion.div>
         <motion.div
-          className="w-[80%] absolute right-8 bg-opacity-90 p-8 rounded-md max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[16px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[451px]:right-4 max-[620px]:pl-12 max-[420px]:right-2"
+          className="w-[80%] absolute right-8 bg-opacity-90 p-8 rounded-md max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[15px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[451px]:right-4 max-[620px]:pl-12 max-[420px]:right-2"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -95,11 +95,7 @@ export default function About() {
             animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            SAE NIT Kurukshetra is a collegiate club affiliated with SAE India,
-            which is a wing of SAE International, on a national scale. The club
-            is a platform for budding engineers to work together to drive at
-            solutions to the problems in the mobility field. It forms a link
-            between naive talents and pioneers of the industry...
+            SAE NIT Kurukshetra is a collegiate club affiliated with SAE India, which is a wing of SAE International, on a national scale. The club is a platform for budding engineers to work together to arrive at solutions to the problems in the mobility field. It forms a link between naive talents and pioneers of the industry. Valuing the interdisciplinary nature of the automobile sector, undergraduate students from various branches strive to innovate better under the guidance of our professors here at NIT Kurukshetra.
           </motion.p>
           <motion.p
             className="font-semibold mt-4 max-[900px]:mt-2 max-[416px]:mt-0"

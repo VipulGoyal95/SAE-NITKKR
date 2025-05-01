@@ -57,7 +57,7 @@ export default function Herosection() {
             {/* Image */}
             <div className="relative aspect-[4/3]">
               <Image
-                src="/assets/images/saeunitydrive/image.png"
+                src="/assets/images/saeunitydrive/image.webp"
                 alt="Thank You Seniors"
                 fill
                 className="object-cover z-0"

@@ -98,7 +98,7 @@ export default function OurTeams() {
                 animate={isAcceleronVisible ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                <span className="text-black mr-4 z-10">ACCELERONS</span>
+                <span className="text-black mr-4 z-10">ACCELERONS ELECTRIC</span>
               </motion.div>
             </div>
             <motion.p
@@ -159,7 +159,7 @@ export default function OurTeams() {
                 animate={isNitroxVisible ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                <span className="text-black mr-10 z-10">Nitrox</span>
+                <span className="text-black mr-10 z-10">NITROX</span>
               </motion.div>
             </div>
             <motion.p

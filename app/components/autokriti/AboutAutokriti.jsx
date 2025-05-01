@@ -1,14 +1,39 @@
-"use client"
+'use client'
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const AboutAutokriti = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
+  const [isMobile, setIsMobile] = useState(false);
+  const [clickedIndex, setClickedIndex] = useState(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const checkMobile = () => setIsMobile(window.innerWidth < 768);
+      checkMobile();
+      window.addEventListener('resize', checkMobile);
+      return () => window.removeEventListener('resize', checkMobile);
+    }
+  }, []);
+
+  const handleClick = (index) => {
+    if (isMobile) {
+      setClickedIndex(clickedIndex === index ? null : index);
+    }
+  };
+
+  const progressData = [
+    { height: "200px", hoverHeight: "300px", label: "15+\nworkshops" },
+    { height: "300px", hoverHeight: "360px", label: "2500+\nstudents" },
+    { height: "160px", hoverHeight: "260px", label: "North India's\nbiggest\nworkshop" },
+  ];
+
   return (
     <div ref={ref} className="flex flex-col text-white lg:flex-row mt-[10vh] gap-[30px] justify-center min-h-screen px-4 md:px-8 max-[700px]:px-8 max-[500px]:px-4 overflow-hidden">
+      {/* Progress Bars Section */}
       <motion.div 
         className="w-full lg:w-[30%] mb-10 lg:mb-0"
         initial={{ opacity: 0, x: -50 }}
@@ -16,94 +41,50 @@ const AboutAutokriti = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="flex flex-row items-start justify-center gap-8 md:gap-12 h-[400px] max-[440px]:gap-4 max-[410px]:gap-2">
-          {/* First Progress Bar */}
-          <motion.div 
-            className="flex flex-col items-center group cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            <div className="relative">
-              <motion.div 
-                className="w-[3px] bg-white transition-all duration-500 ease-in-out group-hover:h-[300px]"
-                initial={{ height: 0 }}
-                animate={isInView ? { height: "200px" } : { height: 0 }}
-                transition={{ duration: 1, delay: 0.3 }}
-              />
-              <motion.div 
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full"
-                initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : { scale: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-              />
-            </div>
-            <div className="text-2xl sm:text-[30px] font-bold whitespace-pre mt-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
-              15+
-              <br />
-              workshops
-            </div>
-          </motion.div>
-
-          {/* Second Progress Bar */}
-          <motion.div 
-            className="flex flex-col items-center group cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            <div className="relative">
-              <motion.div 
-                className="w-[3px] bg-white transition-all duration-500 ease-in-out group-hover:h-[360px]"
-                initial={{ height: 0 }}
-                animate={isInView ? { height: "300px" } : { height: 0 }}
-                transition={{ duration: 1, delay: 0.5 }}
-              />
-              <motion.div 
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full"
-                initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : { scale: 0 }}
-                transition={{ duration: 0.5, delay: 1.2 }}
-              />
-            </div>
-            <div className="text-2xl sm:text-[30px] font-bold whitespace-pre mt-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
-              2500+
-              <br />
-              students
-            </div>
-          </motion.div>
-
-          {/* Third Progress Bar */}
-          <motion.div 
-            className="flex flex-col items-center group cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <div className="relative">
-              <motion.div 
-                className="w-[3px] bg-white transition-all duration-500 ease-in-out group-hover:h-[260px]"
-                initial={{ height: 0 }}
-                animate={isInView ? { height: "160px" } : { height: 0 }}
-                transition={{ duration: 1, delay: 0.7 }}
-              />
-              <motion.div 
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full"
-                initial={{ scale: 0 }}
-                animate={isInView ? { scale: 1 } : { scale: 0 }}
-                transition={{ duration: 0.5, delay: 1.4 }}
-              />
-            </div>
-            <div className="text-2xl sm:text-[30px] font-bold whitespace-pre mt-4 text-center opacity-0 group-hover:opacity-100 transition-all duration-500 -translate-y-4 group-hover:translate-y-0">
-              North India's
-              <br />
-              biggest
-              <br />
-              workshop
-            </div>
-          </motion.div>
+          {progressData.map((bar, index) => (
+            <motion.div 
+              key={index}
+              className="flex flex-col items-center group cursor-pointer"
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              transition={{ duration: 0.5, delay: 0.2 + index * 0.2 }}
+              onClick={() => handleClick(index)}
+            >
+              <div className="relative">
+                <motion.div 
+                  className={`w-[3px] bg-white transition-all duration-500 ease-in-out 
+                    ${isMobile && clickedIndex === index ? 'h-[' + bar.hoverHeight + ']' : ''}`}
+                  initial={{ height: 0 }}
+                  animate={isInView ? { height: bar.height } : { height: 0 }}
+                  transition={{ duration: 1, delay: 0.3 + index * 0.2 }}
+                  style={{
+                    height: isMobile
+                      ? clickedIndex === index
+                        ? bar.hoverHeight
+                        : bar.height
+                      : bar.height
+                  }}
+                />
+                <motion.div 
+                  className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-white rounded-full"
+                  initial={{ scale: 0 }}
+                  animate={isInView ? { scale: 1 } : { scale: 0 }}
+                  transition={{ duration: 0.5, delay: 1 + index * 0.2 }}
+                />
+              </div>
+              <div className={`
+                text-2xl sm:text-[30px] font-bold whitespace-pre mt-4 text-center 
+                transition-all duration-500 -translate-y-4
+                ${isMobile ? (clickedIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0') : 'opacity-0 group-hover:opacity-100 group-hover:translate-y-0'}
+              `}>
+                {bar.label}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
+      {/* Text Section */}
       <motion.div 
         className="w-full lg:w-[50%] lg:pl-16"
         initial={{ opacity: 0, x: 50 }}
@@ -124,32 +105,20 @@ const AboutAutokriti = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 1 }}
-          >
+          <motion.p transition={{ delay: 1 }}>
             Autokriti is north India's largest automobile workshop which began
             in 2010. Every year loads of students gets enrolled to gain
             firsthand knowledge of industrial vehicles. The last held physical
             autokriti in 2019 saw a participation of 700+ candidates.
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-          >
+          <motion.p transition={{ delay: 1.2 }}>
             It involves overhauling of a star engine, which varied from a 2
             stroke engine of a scooter in Autokriti 1 to 3.6L turbocharged V6
             Porsche Cayenne in season 11.0; always in cahoots with technology.
             And not just the gearheads, but geeks from all branches of
             technology find here the stuffs of their interest.
           </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5, delay: 1.4 }}
-          >
+          <motion.p transition={{ delay: 1.4 }}>
             E- Autokriti is a digital edition of Autokriti, where this legacy of
             imparting knowledge continues amid the current covid crisis. And
             with many new surprises awaiting e-autokriti 2.0, we are expecting

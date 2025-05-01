@@ -14,6 +14,23 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
 
+// Add custom styles at the top of the file after imports
+const customStyles = `
+  .testimonials-swiper .swiper-button-next,
+  .testimonials-swiper .swiper-button-prev {
+    background: none;
+    width: auto;
+    height: auto;
+    position: static;
+    margin: 0;
+  }
+
+  .testimonials-swiper .swiper-button-next::after,
+  .testimonials-swiper .swiper-button-prev::after {
+    display: none;
+  }
+`;
+
 const testimonials = [
   {
     name: "Rahul Verma",
@@ -59,7 +76,7 @@ const Testimonials = () => {
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       setIsAnimating(true);
-      swiperRef.current.swiper.slidePrev();
+      swiperRef.current.swiper.slidePrev(500);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
@@ -67,13 +84,15 @@ const Testimonials = () => {
   const handleNext = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
       setIsAnimating(true);
-      swiperRef.current.swiper.slideNext();
+      swiperRef.current.swiper.slideNext(500);
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
 
   return (
     <section className="py-20 overflow-hidden bg-gray-900 relative">
+      {/* Add the style tag for custom styles */}
+      <style>{customStyles}</style>
       {/* Background gradients */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
@@ -152,10 +171,10 @@ const Testimonials = () => {
               </div>
 
               {/* Navigation buttons */}
-              <div className="absolute bottom-8 right-10 flex space-x-4">
+              <div className="absolute bottom-8 right-10 flex space-x-4 z-10">
                 <button
                   onClick={handlePrev}
-                  className="w-12 h-12 bg-gray-800 text-blue-300 border border-gray-700 shadow-md rounded-full hover:bg-gray-700 flex items-center justify-center backdrop-blur-sm transition-colors"
+                  className="custom-prev-btn w-12 h-12 bg-gray-800 text-blue-300 border border-gray-700 shadow-md rounded-full hover:bg-gray-700 flex items-center justify-center backdrop-blur-sm transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +194,7 @@ const Testimonials = () => {
                 </button>
                 <button
                   onClick={handleNext}
-                  className="w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full hover:from-blue-700 hover:to-indigo-800 flex items-center justify-center backdrop-blur-sm transition-colors"
+                  className="custom-next-btn w-12 h-12 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full hover:from-blue-700 hover:to-indigo-800 flex items-center justify-center backdrop-blur-sm transition-colors"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -221,6 +240,10 @@ const Testimonials = () => {
                 autoplay={{
                   delay: 5000,
                   disableOnInteraction: true,
+                }}
+                navigation={{
+                  nextEl: '.custom-next-btn',
+                  prevEl: '.custom-prev-btn',
                 }}
                 modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
                 onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}

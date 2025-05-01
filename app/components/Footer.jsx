@@ -120,22 +120,22 @@ const Footer = () => {
                 {
                   name: "Team Accelerons",
                   links: [
-                    { icon: "instagram", url: "#" },
-                    { icon: "facebook", url: "#" },
+                    { icon: "instagram", url: "https://instagram.com/accelerons_nitkkr?utm_medium=copy_link" },
+                    { icon: "facebook", url: "https://www.facebook.com/teamaccelerons/" },
                   ],
                 },
                 {
                   name: "Team Nitrox",
                   links: [
-                    { icon: "instagram", url: "#" },
-                    { icon: "facebook", url: "#" },
+                    { icon: "instagram", url: "https://instagram.com/nitroxteam?utm_medium=copy_link" },
+                    { icon: "facebook", url: "https://www.facebook.com/teamnitrox/" },
                   ],
                 },
                 {
                   name: "Autokriti",
                   links: [
-                    { icon: "instagram", url: "#" },
-                    { icon: "facebook", url: "#" },
+                    { icon: "instagram", url: "https://instagram.com/autokriti?utm_medium=copy_link" },
+                    { icon: "facebook", url: "https://www.facebook.com/autokriti/" },
                   ],
                 },
               ].map((team, index) => (
@@ -217,7 +217,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com"
+                  href="https://in.linkedin.com/company/sae-nit-kkr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group text-gray-400 hover:text-white transition-colors flex items-center"
@@ -281,8 +281,9 @@ const Footer = () => {
             <ul className="space-y-4">
               {[
                 {
-                  href: "/termsandcondition",
+                  href: "/termsandconditions",
                   label: "Terms & Conditions",
+                  target: "_blank",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -295,6 +296,7 @@ const Footer = () => {
                 {
                   href: "/privacypolicy",
                   label: "Privacy Policy",
+                  target: "_blank",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -307,6 +309,7 @@ const Footer = () => {
                 {
                   href: "/refundandcancelpolicy",
                   label: "Refund Policy",
+                  target: "_blank",
                   icon: (
                     <path
                       strokeLinecap="round"
@@ -321,6 +324,7 @@ const Footer = () => {
                   <a
                     href={link.href}
                     className="group text-gray-400 hover:text-white transition-colors flex items-center"
+                    target='_blank'
                   >
                     <div className="p-2 mr-3 rounded-full bg-gray-800 group-hover:bg-blue-500/20 transition-colors">
                       <svg
@@ -353,12 +357,12 @@ const Footer = () => {
             <circle cx="12" cy="12" r="3" fill="#3b82f6" />
           </svg>
 
-          <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} SAE NITKKR. All rights reserved.
             </p>
 
-            <div className="flex items-center space-x-4 mt-4 md:mt-0">
+            {/* <div className="flex items-center space-x-4 mt-4 md:mt-0">
               <a
                 href="https://github.com"
                 target="_blank"
@@ -405,7 +409,7 @@ const Footer = () => {
                   <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
