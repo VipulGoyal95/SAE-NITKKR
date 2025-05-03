@@ -1,6 +1,6 @@
 function TermsAndConditions() {
     return (
-        <div className="w-[65%] mx-auto mt-[20vh] leading-8">
+        <div className="w-[65%] mx-auto mt-[20vh] leading-8 max-[500px]:w-[90%]">
             <h1 className="text-4xl"><strong>Terms and Conditions</strong></h1>
             <br />
             <p>Welcome to SAE NIT Kurukshetra!</p>

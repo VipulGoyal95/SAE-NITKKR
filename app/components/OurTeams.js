@@ -54,7 +54,7 @@ export default function OurTeams() {
   }, []);
 
   return (
-    <section className="bg-white py-16 px-8 min-[1050px]:px-14 max-[48rem]:px-6 overflow-hidden">
+    <section className="bg-white py-16 px-8 min-[1050px]:px-14 max-[48rem]:px-6 overflow-hidden z-10">
       <h2 className="text-center mb-16">
         <span className="inline-block border-y-2 border-black py-4 px-6 text-4xl font-bold tracking-wide text-black">
           OUR TEAMS
@@ -77,14 +77,14 @@ export default function OurTeams() {
             />
           </div>
           <motion.div
-            className="max-w-[44vw] max-[1050px]:max-w-[40vw] max-[768px]:max-w-[75%] max-[541px]:max-w-[90%] max-[461px]:max-w-[95%]"
+            className="max-w-[44vw] max-[1050px]:max-w-[40vw] max-[768px]:max-w-[75%] max-[541px]:max-w-[90%] max-[461px]:max-w-[95%] max-[420px]:max-w-[100%] "
             initial={{ opacity: 0, x: 100 }}
             animate={
               isAcceleronVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
             }
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <div className="relative w-[57vw] h-[100px] mb-8 max-[1050px]:mb-4 max-[852px]:w-[85vw] max-[541px]:w-[120vw]">
+            <div className="relative w-[57vw] h-[100px] mb-8 max-[1050px]:mb-4 max-[852px]:w-[85vw] max-[541px]:w-[120vw] max-[420px]:w-[140vw]">
               <Image
                 src="/assets/images/homepage/Vector 38.svg"
                 alt="Heading Capsule"
@@ -93,7 +93,7 @@ export default function OurTeams() {
                 priority
               />
               <motion.div
-                className="absolute inset-0 flex items-center pl-8 text-4xl font-bold"
+                className="absolute inset-0 flex items-center pl-8 text-4xl font-bold max-[420px]:text-[28px] max-[420px]:pl-4"
                 initial={{ opacity: 0 }}
                 animate={isAcceleronVisible ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -138,7 +138,7 @@ export default function OurTeams() {
             />
           </div>
           <motion.div
-            className="max-w-[44vw] flex flex-col items-end max-[768px]:max-w-[75%] max-[541px]:max-w-[85%] max-[441px]:max-w-[95%]"
+            className="max-w-[44vw] flex flex-col items-end max-[768px]:max-w-[75%] max-[541px]:max-w-[85%] max-[441px]:max-w-[95%] max-[420px]:max-w-[98%]"
             initial={{ opacity: 0, x: -100 }}
             animate={
               isNitroxVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }
@@ -154,7 +154,7 @@ export default function OurTeams() {
                 priority
               />
               <motion.div
-                className="absolute inset-0 flex items-center justify-end pl-8 text-4xl font-bold"
+                className="absolute inset-0 flex items-center justify-end pl-8 text-4xl font-bold max-[420px]:text-3xl"
                 initial={{ opacity: 0 }}
                 animate={isNitroxVisible ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}

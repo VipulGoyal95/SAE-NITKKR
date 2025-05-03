@@ -1,6 +1,6 @@
 function RefundAndCancel() {
     return (
-        <div className="w-[65%] mx-auto mt-[20vh] leading-8">
+        <div className="w-[65%] mx-auto mt-[20vh] leading-8 max-[500px]:w-[90%]">
             <h2 className="text-4xl font-bold">Refund policy</h2>
             <br />
             <p>Since the Website offers non tangible, irrevocable goods we do not provide refunds after the product is purchased, which you acknowledge prior to purchasing any product on the Website. Please make sure that you've carefully read service description before making a purchase.</p>

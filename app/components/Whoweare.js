@@ -34,7 +34,7 @@ export default function About() {
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen max-[800px]:h-[90vh] max-[620px]:h-[80vh] overflow-hidden max-[451px]:h-[82vh] max-[392px]:h-[84vh]"
+      className="relative w-full h-screen max-[800px]:h-[90vh] max-[620px]:h-[80vh] overflow-hidden max-[451px]:h-[63vh] max-[392px]:h-[84vh]"
     >
       {/* Background Image */}
       <Image

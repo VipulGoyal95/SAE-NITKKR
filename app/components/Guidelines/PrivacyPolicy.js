@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
     return (
-        <div className="w-[65%] mx-auto mt-[20vh] leading-8">
+        <div className="w-[65%] mx-auto mt-[20vh] leading-8 max-[500px]:w-[90%]">
             <h1 className="text-4xl font-bold">Privacy Policy for SAE NIT Kurukshetra</h1>
             <br />
             <p>At SAE NIT Kurukshetra, accessible from https://saenitkurukshetra.com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by SAE NIT Kurukshetra and how we use it.</p>

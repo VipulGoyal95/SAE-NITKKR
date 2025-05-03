@@ -174,7 +174,7 @@ export default function Testimonials() {
                 </div>
               </div>
               {/* Navigation buttons */}
-              <div className="absolute bottom-[10%] right-[20%] transform -translate-y-[25%] z-40 -ml-5">
+              <div className="absolute bottom-[10%] right-[20%] transform -translate-y-[25%] z-40 -ml-5 top-20">
                 <button
                   onClick={handlePrev}
                   className="w-12 h-12 bg-gray-800 text-blue-300 border border-gray-700 shadow-md rounded-full hover:bg-gray-700 flex items-center justify-center backdrop-blur-sm transition-colors"

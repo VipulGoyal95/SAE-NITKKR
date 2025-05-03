@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const sponsorImages = [
   {
-    src: '/assets/images/sponsors/altium2.webp',
+    src: '/assets/images/sponsors/Altium2.webp',
     alt: 'Sponsor 1',
     width: 200,
     height: 150

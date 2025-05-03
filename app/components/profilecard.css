@@ -1,0 +1,104 @@
+.wrapper{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.wrapper .cards{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: linear-gradient(#8a70fe, #aa97ff 30%, #192c3b 30%, #0f2131);
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.wrapper .cards .imgBox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+    transition: 0.5s;
+    z-index: 999;
+    overflow: hidden;
+    transform-origin: top;
+}
+
+.wrapper .cards:hover .imgBox{
+    transform: translateY(30px) scale(0.5);
+}
+
+.wrapper .cards .imgBox img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper .cards .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    transform: translateY(100%);
+    transition: 0.5s;
+}
+
+.wrapper .cards:hover .content{
+    transform: translateY(0);
+}
+
+.wrapper .cards .content .info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+}
+
+.wrapper .cards .content .info h2{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.wrapper .cards .content .info h2 span{
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.wrapper .cards .content .social-icons{
+    position: relative;
+    display: flex;
+    gap: 7px;
+    margin-top: 5px;
+}
+
+.social-icons li{
+    list-style: none;
+}
+
+.social-icons li a{
+    width: 40px;
+    height: 40px;
+    background: #22435c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.social-icons li a:hover{
+    transform: rotate(360deg);
+    background: #7b66db;
+}

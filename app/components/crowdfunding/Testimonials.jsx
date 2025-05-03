@@ -171,7 +171,7 @@ const Testimonials = () => {
               </div>
 
               {/* Navigation buttons */}
-              <div className="absolute bottom-8 right-10 flex space-x-4 z-10">
+              <div className="absolute bottom-8 right-10 flex space-x-4 z-10 max-[450px]:bottom-0 max-[450px]:top-8">
                 <button
                   onClick={handlePrev}
                   className="custom-prev-btn w-12 h-12 bg-gray-800 text-blue-300 border border-gray-700 shadow-md rounded-full hover:bg-gray-700 flex items-center justify-center backdrop-blur-sm transition-colors"

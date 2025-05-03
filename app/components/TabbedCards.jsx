@@ -3,7 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
 
 const tabs = [
-  { id: 1, title: "Transmission", marginbottom:"6", padding:"4",color: "bg-[#071e1b]", content:[
+  { id: 1, title: "Transmission", paddingbottom:"0", marginbottom:"6", padding:"4",color: "bg-[#071e1b]", content:[
     {
       title: "Introduction",
       topics: ["What is transmission","Why it is used","Power and Torque"]
@@ -29,7 +29,7 @@ const tabs = [
       topics:["4wd,2wd- advantages, disadvantages","Front wd, rear wd"]
     }
   ]},
-  { id: 2, title: "Vehicle Dynamics", marginbottom:"4", padding:"4", color: "bg-[#11342e]", content:[
+  { id: 2, title: "Vehicle Dynamics", paddingbottom:"0", marginbottom:"4", padding:"4", color: "bg-[#11342e]", content:[
     {
       title: "Suspension",
       topics: ["Basic terminology"," Types","Springs","Types of springs","Dampers","Roll center analysis","Instant Center"]
@@ -47,8 +47,8 @@ const tabs = [
       topics: ["introduction","Basic terminology","Forces","Parts"]
     }
   ]},
-  { id: 3, title: "Brakes", marginbottom:"6", padding:"4", color: "bg-[#3e574c]"},
-  { id: 4, title: "Engines Overhauling", marginbottom:"2", padding:"4", color: "bg-[#f27325]", content:[
+  { id: 3, title: "Brakes", paddingbottom:"0", marginbottom:"6", padding:"4", color: "bg-[#3e574c]"},
+  { id: 4, title: "Engines Overhauling", paddingbottom:"0", marginbottom:"2", padding:"4", color: "bg-[#f27325]", content:[
     {
       title: "Overhauling of following engines",
       topics: ["Honda city","Audi","Mercedes","Land cruiser","Porsche"]
@@ -58,7 +58,7 @@ const tabs = [
       topics: ["Introduction","Types of Engine","Classification of Engine","Basic Engine Parts","Fuel Injector","Variable Valve Timing","Turbochargers, Superchargers","Intercooler"]
     }
   ] },
-  { id: 5, title: "IOT", marginbottom:"1", padding:"3", color: "bg-[#a0763d]",content:[
+  { id: 5, title: "IOT", marginbottom:"1", paddingbottom:"10", padding:"3", color: "bg-[#a0763d]",content:[
     {
       title: "Adruino",
       topics: ["Introduction to UART, SPI, I2C Communication","How these works- start bit, data frame, stop bits","Steps of Data Transmission","Slave and Master Communication","Advantages and Disadvantages","Use Cases"]
@@ -76,7 +76,7 @@ const tabs = [
       topics: ["Introduction","Need for telemetry","Application in EV and CV","How to implement a long distance telemetry using Arduino and RF signal models"," Live data tracking of a vehicle","Tackling range, reliability and stability issues"]
     }
   ] },
-  { id: 6, title: "Electric Vehicle", marginbottom:"1", padding:"2", color: "bg-[#973933]", content:[
+  { id: 6, title: "Electric Vehicle", paddingbottom:"10", marginbottom:"1", padding:"2", color: "bg-[#973933]", content:[
     {
       title: "Battery",
       topics: ["Mechanical design","Thermal design","Electrical design","Cell stacking","Types of cells(Shape/ Chemistry)"]
@@ -91,7 +91,7 @@ const tabs = [
     }
   ]},
   {
-    id:7, title: "Softwares", marginbottom:"2", padding:"4", color: "bg-[#3D0301]", content:[
+    id:7, title: "Softwares", paddingbottom:"pb-4", marginbottom:"2", padding:"4", color: "bg-[#3D0301]", content:[
       {
         title:"Solidworks/Catia/Siemens NX",
         topics:["Installation","Introduction to UI","Part file(Sketching 2D)","Part File(Sketching 3D)","Extrude/cut/revolve a pattern by an example (sheaves of CVT)","Assembly(Dampers)"]
@@ -153,7 +153,7 @@ export default function TabbedCards() {
           className={`${
             tab.color
           } text-white rounded-2xl shadow-lg transition-all duration-500 ease-in-out ${
-            activeTab === tab.id ? "w-full max-[450px]:relative max-[450px]:items-start max-[450px]:h-56 max-[450px]:flex-col" : "w-32 max-[450px]:w-full max-[450px]:h-14 max-[450px]:flex-row"
+            activeTab === tab.id ? `w-full max-[450px]:relative max-[450px]:items-start max-[450px]:h-fit max-[450px]:pb-8 max-[450px]:flex-col` : "w-32 max-[450px]:w-full max-[450px]:h-14 max-[450px]:flex-row"
           } flex flex-col justify-items-start items-center overflow-hidden hover:opacity-95`}
         >
           <div className={`p-${tab.padding} w-full flex justify-between items-start max-[450px]:w-auto`}>

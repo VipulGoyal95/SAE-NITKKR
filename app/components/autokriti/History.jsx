@@ -108,7 +108,7 @@ const History = () => {
   }
 
   return (
-    <div ref={componentRef} className="min-h-screen text-white px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8">
+    <div ref={componentRef} className="min-h-screen text-white px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8 max-[430px]:min-h-[80vh]">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={hasAnimated ? { opacity: 1, y: 0 } : {}}

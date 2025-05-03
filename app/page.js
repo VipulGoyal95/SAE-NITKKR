@@ -70,7 +70,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.div
-        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[92vh]"
+        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[100vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -84,7 +84,7 @@ export default function Home() {
         />
 
         {/* Animated Particles Background */}
-        <div className="absolute inset-0 z-5">
+        {/* <div className="absolute inset-0 z-5">
           <svg
             className="w-full h-full opacity-20"
             viewBox="0 0 100 100"
@@ -110,7 +110,7 @@ export default function Home() {
               />
             ))}
           </svg>
-        </div>
+        </div> */}
 
         {/* Hero Image with Fixed Background Effect */}
         <motion.div
