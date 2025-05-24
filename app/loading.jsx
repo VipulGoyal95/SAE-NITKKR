@@ -11,7 +11,7 @@ export default function Loading() {
       <Player
         autoplay
         loop
-        src="./services.json"
+        src="/services.json"
         style={{ height: '200px', width: '200px', filter: 'invert(1)' }}
       />
     </div>
