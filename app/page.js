@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { useEffect, useState} from 'react';
 import { motion } from "framer-motion";
 import Whoweare from "./components/Whoweare";
 import OurTeams from "./components/OurTeams";
@@ -7,6 +8,32 @@ import Teammembers from "./components/Teammembers";
 import Sponsors from "./components/Sponsors";
 
 export default function Home() {
+
+  const team = {
+    urls: [
+     "/heroimg.webp",
+     "/hero2.jpg",
+     "/hero3.jpg",
+     "/hero4.webp",
+   ]
+  }
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === team.urls.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [team.urls.length]);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+}, [])
   return (
     <div className="min-h-screen relative">
       {/* Abstract SVG Background Patterns */}
@@ -70,7 +97,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <motion.div
-        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[100vh]"
+        className="relative text-center w-full h-screen overflow-hidden max-[460px]:h-[42vh]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -117,15 +144,24 @@ export default function Home() {
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="fixed inset-0 w-full h-screen -z-10"
+          className="fixed inset-0 w-full h-screen -z-10 max-[460px]:h-[42vh]"
         >
-          <Image
-            src="/img9.webp"
-            alt="SAE NIT Kurukshetra"
-            fill
-            className="object-cover opacity-90"
-            priority
-          />
+          {team.urls.map((url, index) => (
+              <div
+                key={url}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={url}
+                  alt={`Hero Image ${index + 1}`}
+                  fill
+                  className="object-cover brightness-75"
+                  priority
+                />
+              </div>
+            ))}
         </motion.div>
 
         {/* Hero Content */}

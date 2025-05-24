@@ -4,24 +4,45 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import { usePathname } from 'next/navigation';
 
-const topImages = [
-  "/img1.webp",
-  "/img2.webp",
-  "/img3.webp",
-  "/img4.webp",
-  "/img5.webp",
+const topImagesAcelerons = [
+  "/assets/images/accelerons/img1.webp",
+  "/assets/images/accelerons/img2.webp",
+  "/assets/images/accelerons/img3.webp",
+  "/assets/images/accelerons/img4.webp",
+  "/assets/images/accelerons/img5.webp",
 ];
 
-const bottomImages = [
-  "/img5.webp",
-  "/img6.webp",
-  "/img7.webp",
-  "/img8.webp",
-  "/lowcar.webp",
+const bottomImagesAcelerons = [
+  "/assets/images/accelerons/img5.webp",
+  "/assets/images/accelerons/img6.webp",
+  "/assets/images/accelerons/img7.webp",
+  "/assets/images/accelerons/img8.webp",
 ];
+
+const topImagesNitrox = [
+  "/assets/images/nitrox/img1.webp",
+  "/assets/images/nitrox/img2.webp",
+  "/assets/images/nitrox/img3.webp",
+  "/assets/images/nitrox/img4.webp",
+  "/assets/images/nitrox/img5.webp",
+  "/assets/images/nitrox/img6.webp",
+  "/assets/images/nitrox/img7.webp"
+]
+
+const bottomImagesNitrox = [
+  "/assets/images/nitrox/img8.webp",
+  "/assets/images/nitrox/img9.webp",
+  "/assets/images/nitrox/img10.webp",
+  "/assets/images/nitrox/img12.webp",
+  "/assets/images/nitrox/img13.webp",
+  "/assets/images/nitrox/img14.webp"
+]
 
 export default function ScrollingGallery() {
+  const pathname = usePathname();
+  const isNitroxPage = pathname.includes('/nitrox');
   const [selectedImage, setSelectedImage] = useState(null);
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.5 });
@@ -50,7 +71,9 @@ export default function ScrollingGallery() {
       }
     }
   };
-
+  const topImages = isNitroxPage ? topImagesNitrox : topImagesAcelerons;
+  const bottomImages = isNitroxPage ? bottomImagesNitrox : bottomImagesAcelerons;
+  
   return (
     <motion.div
       ref={containerRef}

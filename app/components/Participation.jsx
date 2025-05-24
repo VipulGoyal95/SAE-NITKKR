@@ -11,20 +11,31 @@ function Participation() {
 
   const acceleronsContent={
     top: "SUPRA",
-    top_content: "SUPRA SAEINDIA Student Formula is a national engineering design competition held by the Society of Automotive Engineers Indian(SAEINDIA). The goal is to develop and provide a platform for student engineers to experience build and learn.",
+    top_content: "SUPRA SAEINDIA Student Formula is a premier national level competition organized by the Society of Automotive Engineers India (SAEINDIA). It aims to provide a dynamic platform for student engineers to design, build, and learn through real-world automotive challenges and hands-on experience.",
     top_subcontent: "Students gain and develop skills such as engineering,project management and team work.Points are earned in a series off track,\"Static\" events, and on track,\"Dyanamic\" events. The team with the most points at the end of the competion wins.",
     bottom: "FORMULA BHARAT",
-    bottom_content: "Formula Bharat is an engineering design competitionin which Studentsfrom colleges and universities all over the country, compete with a life-size Formula-style vehicle in areas of engineering design,overall cost,marketability and dynamic performance.",
+    bottom_content: "Formula Bharat is a national-level engineering design competition where students from colleges and universities across the country design, build, and compete with Formula Student vehicles. Teams are evaluated on engineering design, cost efficiency, marketability, and dynamic on-track performance.",
     bottom_subcontent: "These student teams are required to build a new vehicle from scratch year-after-year and seek sponsorship and donations by their own means to fund the project"
   }
 
   const nitroxcontent={
-    top:"BAJA",
-    top_content: "Baja SAE is an Collegiate Design Series competition run by the Society Of Automotive Engineers International (SAE INTERNATIONAL) Teams of Students from universities all over the world design and build small off-road cars.",
+    top:"eBAJA",
+    top_content: "eBAJA is a premier electric vehicle design competition organized by the Society of Automotive Engineers India (SAE India). In this dynamic competition, student teams from universities across the country design, build, and race electric-powered off-road vehicles, emphasizing sustainability, innovation, and performance.",
     bottom: "ATVC",
-    bottom_content: "The Third season of Aravalli Terrain Vehicle Championship, powered by infi-league Motorsports is a natioanl championship earnmarking all the techno freaks across the country"
+    bottom_content: "ATVC (All-Terrain Vehicle Challenge) is a prestigious competition in India where student teams from universities across the nation design, build, and test all-terrain vehicles. The competition provides a platform for students to apply their engineering knowledge, enhance their practical skills, and push the limits of off-road vehicle technology."
+  }
+
+  const imagesAcclerons = {
+    top:"/accelerons_top.png",
+    bottom: "/accelerons_bottom.png"
+  }
+
+  const imagesNitrox={
+    top:"/nitrox_top.png",
+    bottom: "/nitrox_bottom.png"
   }
   const team = isNitroxPage ? nitroxcontent : acceleronsContent;
+  const images = isNitroxPage ? imagesNitrox : imagesAcclerons;
   return (
     <div className="relative px-8 w-full max-w-6xl h-[1000px] mx-auto bg-black max-[1220px]:w-[90%] max-[530px]:w-[95%] max-[530px]:h-[930px] max-[460px]:h-[850px]">
       {/* Heading */}
@@ -41,7 +52,7 @@ function Participation() {
       {/* Top‑Left Photo */}
       <div className="absolute top-24 left-0 w-[45%] h-[39%] rounded-xl overflow-hidden max-[530px]:h-[32.5%]">
         <Image
-          src="/upcar.webp"
+          src={images.top}
           alt="Drift race"
           fill
         //   className="object-cover"
@@ -143,7 +154,7 @@ function Participation() {
       {/* Bottom‑Right Photo */}
       <div className="absolute bottom-0 right-0 w-[56.5%] h-[39.5%] rounded-xl overflow-hidden max-[530px]:h-[40.5%] max-[530px]:bottom-15">
         <Image
-          src="/lowcar.webp"
+          src={images.bottom}
           alt="Formula car"
           fill
         //   className="object-cover"

@@ -1,101 +1,101 @@
 "use client"
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 import { usePathname } from 'next/navigation';
 
 export default function Herosection() {
   const ref = useRef(null);
   const whoWeAreRef = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
-  const isWhoWeAreInView = useInView(whoWeAreRef, { once: true, amount: 0.3 });
   const pathname = usePathname();
   const isNitroxPage = pathname.includes('/nitrox');
 
-  const titleVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const lineVariants = {
-    hidden: { scaleX: 0 },
-    visible: { scaleX: 1 }
-  };
-
-  const contentVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.2 * i,
-        duration: 0.8,
-        ease: "easeOut"
-      }
-    })
-  };
-
   const accelerons={
-    url:"/img7.webp",
+    urls: [
+      "/assets/images/accelerons/img7.webp",
+      "/assets/images/accelerons/img8.webp",
+      "/assets/images/accelerons/img10.webp",
+      "/assets/images/accelerons/img5.webp",
+      "/assets/images/accelerons/img11.webp"
+    ],
     title:"Team Accelerons Electric",
-    about: "TEAM ACCELERONS is a student-led engineering team of SAE NIT Kurukshetra. The feeling of speed and precision, the tactical aspects, the way car looks, the way it behaves, that first lap excitement and the intrigues that surround it, are the things that drives the team to DESIGN, BUILD and RACE formula-style cars for the Formula Bharat and SUPRA competitions. From being a first-timer in SUPRA 2014 to standing on top among all NITS in SUPRA 2018, the Team has come a long way, upgrading itself with each passing season.. After all Felipe Massa rightly said, \"When you give up your hunger for success you are not racing full heartedly anymore.\""
+    about: "Team Accelerons Electric is the formula student team of SAE NIT Kurukshetra—fuelled by a passion for speed, precision, and the art of racing. It's the adrenaline of the first lap, the elegance in engineering, and the challenge of perfecting performance that drive us to design, build, and race formula-style cars for competitions like Formula Bharat and SUPRA SAEINDIA. From making our debut in SUPRA 2014 to emerging as the top-ranking NIT team in SUPRA 2018, our journey has been one of relentless growth and unyielding spirit. As Felipe Massa once said, \"When you give up your hunger for success, you are not racing full-heartedly anymore.\" And hunger is something we never run out of."
   }
 
   const nitrox={
-    url: "/assets/images/nitrox/hero.webp",
+    urls: [
+      "/assets/images/nitrox/hero.webp",
+      "/assets/images/nitrox/img1.JPG",
+      "/assets/images/nitrox/img2.JPG",
+      "/assets/images/nitrox/img3.JPG",
+      "/assets/images/nitrox/img4.JPG"
+    ],
     title: "Team Nitrox",
-    about: "TEAM NITROX is a group of junkies with a shared objective to create a fierce beast of an ATV (All-terrain vehicle). The team was founded back in 2010 under SAE NIT KURUKSHETRA. Since its foundation, the team has grown in all aspects, be its technical or competitive. From one of the few teams that design its own CVT to representing the country in BAJA SAE Illinois, the team has repeatedly provided evidence of its exceptional growth."
+    about: "TEAM NITROX is a dedicated group of engineering enthusiasts united by a common goal: to build a high-performance ATV (All-Terrain Vehicle) that can dominate any terrain. Established in 2010 under the banner of SAE NIT Kurukshetra, the team has consistently evolved, excelling both technically and competitively. From being one of the few teams to design its own Continuously Variable Transmission (CVT) to representing India at BAJA SAE Illinois, and to even debuting our 4X4 ATV: Team Nitrox has consistently demonstrated exceptional growth and innovation in the field of off-road engineering."
   }
+
   const team = isNitroxPage ? nitrox : accelerons;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === team.urls.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [team.urls.length]);
+
   return (
     <div className="text-white overflow-hidden">
       <div ref={ref} className="min-h-screen flex flex-col items-center justify-start relative">
-        {/* Hero Image Section */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="relative w-full h-[100vh] overflow-hidden"
+        <motion.div className="relative w-full h-[100vh] overflow-hidden"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
         >
-          <motion.div
-          initial={{ scale: 1.2 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-          className="fixed inset-0 w-full h-screen -z-10"
-        >
-          <Image
-            src={team.url}
-            alt="Team Accelorons Car"
-            fill
-            className="object-cover brightness-75"
-            priority
-          />
-        </motion.div>
+          <motion.div className="fixed inset-0 w-full h-screen -z-10"
+            initial={{ scale: 1.2 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
+            {team.urls.map((url, index) => (
+              <div
+                key={url}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <Image
+                  src={url}
+                  alt={`${team.title} Image ${index + 1}`}
+                  fill
+                  className="object-cover brightness-75"
+                  priority
+                />
+              </div>
+            ))}
+          </motion.div>
           <div className="absolute inset-0 bg-black/30" />
           
-          <motion.div 
-            initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
-            className="absolute inset-0 flex items-end justify-center py-8 px-8 md:px-16"
-          >
+          <div className="absolute inset-0 flex items-end justify-center py-8 px-8 md:px-16">
             <div className="relative">
-              <motion.h1 
-                variants={titleVariants}
-                transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center max-[460px]:text-2xl"
+              <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center max-[460px]:text-2xl"
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
                 {team.title}
               </motion.h1>
-              <motion.div
-                variants={lineVariants}
-                transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-                className="h-1 bg-white mt-2 mb-6 origin-center max-[550px]:mb-12 max-[460px]:mb-0"
-                style={{ transformOrigin: "center" }}
+              <motion.div className="h-1 bg-white mt-2 mb-6 origin-center max-[550px]:mb-12 max-[460px]:mb-0"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 1 }}              
               />
             </div>
-          </motion.div>
+          </div>
         </motion.div>
 
         {/* Who Are We Section */}
@@ -104,58 +104,14 @@ export default function Herosection() {
           className="w-full bg-black px-4 py-16 md:py-20"
         >
           <div className="max-w-4xl mx-auto">
-            <motion.h2 
-              initial="hidden"
-              animate={isWhoWeAreInView ? "visible" : "hidden"}
-              variants={contentVariants}
-              custom={0}
-              className="text-4xl md:text-5xl font-bold text-white text-center mb-8"
-            >
+            <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">
               Who Are We
-            </motion.h2>
+            </h2>
             
             <div className="space-y-6 text-center">
-              <motion.p 
-                initial="hidden"
-                animate={isWhoWeAreInView ? "visible" : "hidden"}
-                variants={contentVariants}
-                custom={1}
-                className="text-white text-lg md:text-xl leading-relaxed"
-              >
+              <p className="text-white text-lg md:text-xl leading-relaxed">
                 {team.about}
-              </motion.p>
-              
-              {/* <motion.p 
-                initial="hidden"
-                animate={isWhoWeAreInView ? "visible" : "hidden"}
-                variants={contentVariants}
-                custom={2}
-                className="text-white text-lg md:text-xl leading-relaxed"
-              >
-                From a rookie debut in SUPRA 2014 to dominating as the top NIT in 2018,
-                our journey is fueled by grit, late nights, and the thrill of that first
-                green flag.
-              </motion.p> */}
-              
-              {/* <motion.p 
-                initial="hidden"
-                animate={isWhoWeAreInView ? "visible" : "hidden"}
-                variants={contentVariants}
-                custom={3}
-                className="text-white text-2xl md:text-3xl font-bold mt-8"
-              >
-                "We don't chase podiums — we build towards them."
-              </motion.p> */}
-              
-              {/* <motion.p 
-                initial="hidden"
-                animate={isWhoWeAreInView ? "visible" : "hidden"}
-                variants={contentVariants}
-                custom={4}
-                className="text-white text-xl md:text-2xl font-semibold"
-              >
-                Driven by passion. Engineered with purpose.
-              </motion.p> */}
+              </p>
             </div>
           </div>
         </div>

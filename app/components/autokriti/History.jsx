@@ -256,7 +256,7 @@ const History = () => {
               id="data" 
               className="text-justify text-white text-[22px] w-[70%] max-[1050px]:text-[20px] max-[700px]:text-[18px] max-[560px]:w-[80%] max-[560px]:text-[16px] max-[440px]:w-[85%]"
             >
-              In October 2024, Autokriti 14.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
+              Held in October 2024, it marked a transformative chapter in the event’s legacy—introducing an expanded lineup of workshops that pushed the boundaries of automotive and technological learning. 
             </motion.div>
           )}
           {focusPosition === 2 && (
@@ -268,7 +268,7 @@ const History = () => {
               id="data" 
               className="text-justify text-white text-[22px] w-[70%] max-[1050px]:text-[20px] max-[700px]:text-[18px] max-[560px]:w-[80%] max-[560px]:text-[16px] max-[440px]:w-[85%]"
             >
-              In October 2023, Autokriti 13.0 will mark a new milestone, expecting 1,500+ students from various disciplines. This edition introduces a diverse range of new workshops, expanding the learning experience. Get ready to be a part of this exciting journey—registrations open soon
+              Held in October 2023, it the stage for a bold return to hands-on learning, drawing over 500 students into a world of high-voltage innovation and mechanical mastery. With a sharp focus on sustainable technologies, the edition leveled up its workshop offerings.
             </motion.div>
           )}
         </>

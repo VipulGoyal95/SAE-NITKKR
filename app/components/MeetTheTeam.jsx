@@ -32,7 +32,7 @@ export default function MeetTheTeam() {
 
   const acceleronsTeam = [
     {
-      src: '/assets/images/accelerons/jatin.webp',
+      src: '/assets/images/accelerons/Jatin.webp',
       alt: 'Jatin',
       name: 'Jatin Yadav',
       role: 'Vice-Captain Electrical',

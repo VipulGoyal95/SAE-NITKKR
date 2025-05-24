@@ -1,9 +1,9 @@
 // components/CrowdfundingHeroSection.tsx
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef  } from "react";
 import Image from "next/image";
-import CountUp from "react-countup";
+import { useCountUp } from 'react-countup';
 import { motion } from "framer-motion";
 import {
   ScrollAnimatedElement,
@@ -12,12 +12,50 @@ import {
 } from "./ScrollAnimations";
 
 const HeroSection = () => {
-  const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const counterRef1 = useRef(null);
+  const counterRef2 = useRef(null);
+  const counterRef3 = useRef(null);
+  const counterRef4 = useRef(null);
 
+  useCountUp({
+    ref: counterRef2,
+    start: 0,
+    end: 8,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+
+  useCountUp({
+    ref:counterRef3,
+    start: 0,
+    end: 15,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+  useCountUp({
+    ref:counterRef4,
+    start: 0,
+    end: 53,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+  
+  useCountUp({
+    ref: counterRef1,
+    start: 0,
+    end: 175,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  });
   // Only render CountUp components when the component is mounted on the client
   // This prevents hydration errors with server-side rendering
   return (
@@ -137,7 +175,7 @@ const HeroSection = () => {
           <ScrollAnimatedElement direction="y" distance={20} delay={0.6}>
             <div className="mt-8">
               <motion.a
-                href="#donate"
+                href="/donation"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
                 whileHover={{
                   scale: 1.05,
@@ -206,7 +244,7 @@ const HeroSection = () => {
             </p>
 
             <motion.a
-              href="#donate"
+              href="/donation"
               className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
               whileHover={{
                 scale: 1.05,
@@ -224,16 +262,7 @@ const HeroSection = () => {
           <ScrollAnimatedElement direction="y" distance={30} delay={0.1}>
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-                {isMounted && (
-                  <CountUp
-                    start={0}
-                    end={175}
-                    delay={0.3}
-                    duration={1}
-                    enableScrollSpy={false}
-                    className="counter-class"
-                  />
-                )}
+              <span className="counter-class" ref={counterRef1}></span>
                 +
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
@@ -245,16 +274,7 @@ const HeroSection = () => {
           <ScrollAnimatedElement direction="y" distance={30} delay={0.2}>
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-                {isMounted && (
-                  <CountUp
-                    start={0}
-                    end={8}
-                    delay={0.3}
-                    duration={1}
-                    enableScrollSpy={false}
-                    className="counter-class"
-                  />
-                )}
+              <span className="counter-class" ref={counterRef2}></span>
                 <span className="text-3xl">L</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
@@ -266,16 +286,7 @@ const HeroSection = () => {
           <ScrollAnimatedElement direction="y" distance={30} delay={0.3}>
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-                {isMounted && (
-                  <CountUp
-                    start={0}
-                    end={15}
-                    delay={0.3}
-                    duration={1}
-                    enableScrollSpy={false}
-                    className="counter-class"
-                  />
-                )}
+              <span className="counter-class" ref={counterRef3}></span>
                 <span className="text-3xl">L</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
@@ -287,16 +298,7 @@ const HeroSection = () => {
           <ScrollAnimatedElement direction="y" distance={30} delay={0.4}>
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-                {isMounted && (
-                  <CountUp
-                    start={0}
-                    end={53}
-                    delay={0.3}
-                    duration={1}
-                    enableScrollSpy={false}
-                    className="counter-class"
-                  />
-                )}
+              <span className="counter-class" ref={counterRef4}></span>
                 %
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">

@@ -77,7 +77,7 @@ const FacultyMessage = () => {
           {/* CTA Button */}
           <div className="mt-6">
             <a
-              href="#support"
+              href="/donation"
               className="inline-block px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-700 text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 shadow-md"
             >
               Support Our Cause

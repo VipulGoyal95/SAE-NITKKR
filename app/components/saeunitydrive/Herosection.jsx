@@ -1,11 +1,55 @@
 // import './Hero.css';
 "use client";
 
-import React from "react";
 import Image from "next/image";
-import CountUp from 'react-countup';
+import { useEffect, useRef } from 'react';
+import { useCountUp } from 'react-countup';
 
 export default function Herosection() {
+  const counterRef1 = useRef(null);
+  const counterRef2 = useRef(null);
+  const counterRef3 = useRef(null);
+  const counterRef4 = useRef(null);
+
+  useCountUp({
+    ref: counterRef2,
+    start: 0,
+    end: 24,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+
+  useCountUp({
+    ref:counterRef3,
+    start: 0,
+    end: 100,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+  useCountUp({
+    ref:counterRef4,
+    start: 0,
+    end: 50,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  })
+  
+  useCountUp({
+    ref: counterRef1,
+    start: 0,
+    end: 4657,
+    duration: 1,
+    delay: 0.3,
+    enableScrollSpy: true,
+    scrollSpyOnce: true,
+  });
+
   return (
     <section className="relative overflow-hidden bg-gray-900 text-gray-100">
       {/* Abstract Shapes Background */}
@@ -105,7 +149,7 @@ export default function Herosection() {
           {/* Stats Cards with modern styling */}
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-            <CountUp start={0} end={4657} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />+
+            <span className="counter-class" ref={counterRef1}></span>+
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TOTAL CONTRIBUTORS
@@ -114,7 +158,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-            <CountUp start={0} end={24} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' /><span className="text-3xl">K</span>
+              <span className="counter-class" ref={counterRef2}></span><span className="text-3xl">K</span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TOTAL FUND
@@ -123,7 +167,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-            <CountUp start={0} end={100} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />
+            <span className="counter-class" ref={counterRef3}></span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               ALL ALUMNI
@@ -132,7 +176,7 @@ export default function Herosection() {
 
           <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-            <CountUp start={0} end={50} delay={0.3} duration={1} enableScrollSpy={true} scrollSpyOnce={true} className='counter-class' />
+            <span className="counter-class" ref={counterRef4}></span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TEAM MEMBERS

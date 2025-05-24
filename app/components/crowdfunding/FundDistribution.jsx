@@ -207,7 +207,7 @@ const FundDistribution = () => {
         <div className="mt-16 text-center">
           <ScrollAnimatedElement direction="y" distance={30} delay={0.6}>
             <motion.a
-              href="#donate"
+              href="/donation"
               className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
               whileHover={{
                 scale: 1.05,

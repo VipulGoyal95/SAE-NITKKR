@@ -53,8 +53,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed pl-1 border-l-2 border-blue-500 ml-1">
-              A collegiate club at NIT Kurukshetra dedicated to advancing
-              mobility knowledge and solutions for the benefit of humanity.
+            A student-driven club at NIT Kurukshetra focused on advancing mobility engineering through innovation, design, and the thrill of racing.
             </p>
           </div>
 

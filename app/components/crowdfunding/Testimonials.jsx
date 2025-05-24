@@ -229,6 +229,7 @@ const Testimonials = () => {
                 grabCursor={true}
                 centeredSlides={true}
                 slidesPerView={"auto"}
+                loop={true}
                 coverflowEffect={{
                   rotate: 0,
                   stretch: 0,
@@ -239,14 +240,15 @@ const Testimonials = () => {
                 pagination={{ clickable: true }}
                 autoplay={{
                   delay: 5000,
-                  disableOnInteraction: true,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true
                 }}
                 navigation={{
                   nextEl: '.custom-next-btn',
                   prevEl: '.custom-prev-btn',
                 }}
                 modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
-                onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                 className="testimonials-swiper"
               >
                 {testimonials.map((testimonial, index) => (
