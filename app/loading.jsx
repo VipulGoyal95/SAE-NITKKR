@@ -1,7 +1,9 @@
-// components/loading.js
-
 'use client';
-import { Player } from '@lottiefiles/react-lottie-player';
+import dynamic from 'next/dynamic';
+
+const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), {
+  ssr: false
+});
 
 export default function Loading() {
   return (
@@ -10,7 +12,7 @@ export default function Loading() {
         autoplay
         loop
         src="./services.json"
-        style={{ height: '200px', width: '200px',filter: 'invert(1)' }}
+        style={{ height: '200px', width: '200px', filter: 'invert(1)' }}
       />
     </div>
   );
