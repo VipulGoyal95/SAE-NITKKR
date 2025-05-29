@@ -70,7 +70,7 @@ function Participation() {
         />
         {/* Content panel inside the border */}
         <motion.div 
-          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3"
+          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -86,7 +86,7 @@ function Participation() {
             {team.top}
           </motion.h3>
           <motion.p 
-            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px]"
+            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px] max-[450px]:text-[12.2px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -115,7 +115,7 @@ function Participation() {
         //   className="object-cover"
         />
         <motion.div 
-          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3"
+          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -131,7 +131,7 @@ function Participation() {
             {team.bottom}
           </motion.h3>
           <motion.p 
-            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px]"
+            className="mt-4 text-[18px] text-white leading-relaxed text-justify max-[896px]:mt-2 max-[858px]:text-[17px] max-[714px]:text-[16px] max-[657px]:text-[15px] max-[637px]:mt-0 max-[530px]:text-[13px] max-[460px]:text-[12.2px]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}

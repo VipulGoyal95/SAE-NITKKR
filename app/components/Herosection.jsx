@@ -80,7 +80,7 @@ export default function Herosection() {
           </motion.div>
           <div className="absolute inset-0 bg-black/30" />
           
-          <div className="absolute inset-0 flex items-end justify-center py-8 px-8 md:px-16">
+          <div className="absolute inset-0 flex items-end justify-center py-8 px-8 max-[450px]:mb-10 md:px-16">
             <div className="relative">
               <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center max-[460px]:text-2xl"
                 initial={{ y: 20, opacity: 0 }}
