@@ -26,10 +26,10 @@ export default function Herosection() {
   const nitrox={
     urls: [
       "/assets/images/nitrox/hero.webp",
-      "/assets/images/nitrox/img1.JPG",
-      "/assets/images/nitrox/img2.JPG",
-      "/assets/images/nitrox/img3.JPG",
-      "/assets/images/nitrox/img4.JPG"
+      "/assets/images/nitrox/img1.webp",
+      "/assets/images/nitrox/img2.webp",
+      "/assets/images/nitrox/img3.webp",
+      "/assets/images/nitrox/img4.webp"
     ],
     title: "Team Nitrox",
     about: "TEAM NITROX is a dedicated group of engineering enthusiasts united by a common goal: to build a high-performance ATV (All-Terrain Vehicle) that can dominate any terrain. Established in 2010 under the banner of SAE NIT Kurukshetra, the team has consistently evolved, excelling both technically and competitively. From being one of the few teams to design its own Continuously Variable Transmission (CVT) to representing India at BAJA SAE Illinois, and to even debuting our 4X4 ATV: Team Nitrox has consistently demonstrated exceptional growth and innovation in the field of off-road engineering."

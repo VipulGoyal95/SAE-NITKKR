@@ -19,7 +19,7 @@ export default function Crowdfunding() {
     <DynamicThreeDWrapper>
       <div>
         <HeroSection />
-        <FundDistribution />
+        {/* <FundDistribution /> */}
         <FacultyMessage />
         <TeamTimeline />
         <Testimonials />

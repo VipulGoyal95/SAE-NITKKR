@@ -123,7 +123,7 @@ const HeroSection = () => {
 
       {/* Hero Section */}
       <section className="flex flex-col md:flex-row items-center justify-center min-h-screen py-16 px-6 md:px-10 relative z-10">
-        <div className="text-center md:text-left mb-10 md:mb-0 md:mr-8 relative">
+        <div className="text-center md:text-left mb-10 md:mb-0 md:mr-8 relative mt-8">
           {/* Orbit Accent */}
           <motion.div
             className="absolute -left-16 top-12 w-32 h-32 rounded-full border-4 border-dotted border-blue-800/30 hidden md:block"
@@ -143,7 +143,7 @@ const HeroSection = () => {
             className="inline-flex items-center mb-3 px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm"
           >
             <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
-            Crowdfunding Campaign
+            Crowdfunding
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement direction="x" distance={-50} delay={0.2}>
@@ -166,14 +166,15 @@ const HeroSection = () => {
 
           <ScrollAnimatedElement direction="y" distance={20} delay={0.4}>
             <p className="text-lg opacity-80 tracking-wider leading-relaxed max-w-xl">
-              SAE NIT Kurukshetra is a student-run society that designs, builds,
-              and races high-performance vehicles for prestigious competitions.
-              Your support fuels our innovation.
+            Welcome to the official crowdfunding campaign of SAE NIT Kurukshetra! We’re not just building vehicles: we are building the future of mobility. 
+            <br/>
+With your support, we aim to gather the funds required to build our vehicles and participate in competitions such as SUPRA, Formula Bharat, eBAJA and ATVC.
+  
             </p>
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement direction="y" distance={20} delay={0.6}>
-            <div className="mt-8">
+            <div className="mt-6">
               <motion.a
                 href="/donation"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
@@ -232,15 +233,14 @@ const HeroSection = () => {
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold leading-tight mb-6 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              POWERING INNOVATION, FUELING DREAMS
+              DRIVEN BY PASSION <br/> FUELED BY YOU.
+
             </h2>
 
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
 
             <p className="text-base md:text-lg leading-relaxed opacity-80 mb-8 max-w-xl text-gray-300">
-              Your contribution helps us purchase crucial components, prototype
-              new designs, and transport our teams to competitions. Every rupee
-              brings us closer to pushing engineering boundaries.
+            Designing and building high performance vehicles is exhilarating, but it’s not easy nor cheap. Our team is entirely student-run, and we rely on the generosity of sponsors, alumni, and well-wishers to keep us on the track.
             </p>
 
             <motion.a

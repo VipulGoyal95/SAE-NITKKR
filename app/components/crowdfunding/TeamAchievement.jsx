@@ -4,10 +4,21 @@ import React from "react";
 const teams = {
   "Team Nitrox": [
     {
+      year: 2025,
+      items: ["AIR - 8 in GD&T","AIR - 26 in Design"],
+    },
+    {
+      year: 2024,
+      items: ["AIR - 4 Sales","AIR - 16 Cost"],
+    },
+    {
+      year: 2023,
+      items: ["Participated in E-BAJA, 1st Time ","Cleared both Mechanical and Electrical Technical Inspection"],
+    },
+    {
       year: 2021,
       items: ["ATVC - VIRTUAL: AIR 1", "Shifted to ELECTRIC VEHICLE for BAJA"],
     },
-    { year: 2020, items: ["ATVC - AIR 2 Overall"] },
     {
       year: 2019,
       items: [
@@ -31,7 +42,6 @@ const teams = {
       year: 2017,
       items: [
         "Ergonomic sling seat design",
-        "Trailing arm suspension",
         "Innovated belt system",
         "AIR 29 of 400",
         "AIR 7 of 397",
@@ -46,9 +56,18 @@ const teams = {
         "Self Designed Gearbox",
       ],
     },
-    { year: 2015, items: ["AIR 3 Suspension & Traction", "AIR 7 of 397"] },
+    { year: 2015, items: ["AIR 3 Suspension & Traction", "AIR 20 of 375 Teams"] },
+    
   ],
   "Team Accelerons": [
+    {
+      year: 2024,
+      items: ["Designing their First Electric Vehicle"],
+    },
+    {
+      year: 2023,
+      items: ["AIR 2 Formula Imperial", "AIR 2 Skid Pad Event", "Lightest Vehicle Award", "Innovation Award", "AIR 10 SUPRA SAE", "AIR 3 Cost Report","AIR 4 Design Event"],
+    },
     {
       year: 2022,
       items: ["Formula Bharat - AIR 5 Overall", "AIR 3 CGMR Event"],
@@ -76,6 +95,9 @@ const teams = {
       year: 2015,
       items: ["Pneumatic Gear Shifter", "AIR 10 Cost", "AIR 30 Formula Design"],
     },
+    {
+      year: 2014, items: ["First Attempt in SUPRA SAE INDIA - AIR 37"]
+    }
   ],
 };
 

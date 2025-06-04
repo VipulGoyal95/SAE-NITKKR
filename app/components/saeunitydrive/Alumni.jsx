@@ -19,13 +19,13 @@ import "swiper/css/effect-cards";
 const alumniData = [
   {
     id: 1,
-    name: "Shubhayu",
-    role: "Senior Automotive Engineer",
-    batch: "2024",
-    image: "/shubhayu.webp",
-    portrait: "/shubhayu.webp",
+    name: "Rahul Lamba",
+    role: "Head Designer",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Rahul lamba.jpeg",
+    portrait: "/assets/images/saeunitydrive/Rahul lamba.jpeg",
     // quote: "Innovation is the driving force behind automotive evolution.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/rhllamba/",
     twitter: "#",
     achievements: [
       "Best Innovation Award 2023",
@@ -34,65 +34,338 @@ const alumniData = [
   },
   {
     id: 2,
-    name: "Ankit Rathore",
-    role: "AI Researcher",
-    batch: "2024",
-    image: "/ankit rathore.webp",
-    portrait: "/ankit rathore.webp",
+    name: "Sarthak Manocha",
+    role: "",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Sarthak Manocha.jpeg",
+    portrait: "/assets/images/saeunitydrive/Sarthak Manocha.jpeg",
     // quote:
     //   "The future of mobility lies at the intersection of AI and engineering.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/sarthak-manocha-452979a0/",
     twitter: "#",
     achievements: ["ML Research Lead", "3 Patents Filed"],
   },
   {
     id: 3,
-    name: "Lisha Garg",
-    role: "Product Designer",
-    batch: "2024",
-    image: "/assets/images/homepage/lishagarg.svg",
-    portrait: "/assets/images/homepage/lishagarg.svg",
+    name: "Manish kumar",
+    role: "",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Manish.jpeg",
+    portrait: "/assets/images/saeunitydrive/Manish.jpeg",
     // quote:
     //   "Design thinking transforms good vehicles into extraordinary experiences.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/manish-kumar-a1012b108/",
     twitter: "#",
     achievements: ["Design Excellence Award", "UX Conference Speaker"],
   },
   {
     id: 4,
-    name: "Himanshu Khatri",
-    role: "CTO, AutoTech Inc.",
-    batch: "2024",
-    image: "/assets/images/homepage/himanshu.svg",
-    portrait: "/assets/images/homepage/himanshu.svg",
+    name: "Ravinder Singh Bisht",
+    role: "",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Ravinder Singh Bisht.jpeg",
+    portrait: "/assets/images/saeunitydrive/Ravinder Singh Bisht.jpeg",
     // quote: "Technology should enhance human potential, not replace it.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ravinder-singh-bisht-2229a588/",
     twitter: "#",
     achievements: ["Forbes 30 Under 30", "Tech Innovator Award"],
   },
   {
     id: 5,
-    name: "Shubhayu",
-    role: "Mechanical Lead",
-    batch: "2024",
-    image: "/shubhayu.webp",
-    portrait: "/shubhayu.webp",
+    name: "Nitin Ahlawat",
+    role: "",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Nitin Alawat.jpeg",
+    portrait: "/assets/images/saeunitydrive/Nitin Alawat.jpeg",
     // quote:
     //   "Engineering excellence is built on precision, passion, and perseverance.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/ahlawatnitin144/",
     twitter: "#",
     achievements: ["SAE Technical Paper Author", "Formula Student Judge"],
   },
   {
     id: 6,
-    name: "Ankit Rathore",
-    role: "Research Head",
-    batch: "2024",
-    image: "/ankit rathore.webp",
-    portrait: "/ankit rathore.webp",
+    name: "Thodupunuri Arun kumar",
+    role: "",
+    batch: "2019",
+    image: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.jpeg",
+    portrait: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.jpeg",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/arunthodupunuri/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 7,
+    name: "Amit",
+    role: "",
+    batch: "2022",
+    image: "/assets/images/saeunitydrive/Amit.jpeg",
+    portrait: "/assets/images/saeunitydrive/Amit.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 8,
+    name: "Ajit",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Ajit.jpeg",
+    portrait: "/assets/images/saeunitydrive/Ajit.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 9,
+    name: "Navneet",
+    role: "",
+    batch: "2023",
+    image: "",
+    portrait: "",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 10,
+    name: "Omansh",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Omansh.jpeg",
+    portrait: "/assets/images/saeunitydrive/Omansh.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/omansh-tandon/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 12,
+    name: "Debashish",
+    role: "",
+    batch: "2023",
+    image: "",
+    portrait: "",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 13,
+    name: "Aasheesh",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Asheesh.jpeg",
+    portrait: "/assets/images/saeunitydrive/Asheesh.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/aasheeshbansal/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 14,
+    name: "Himanshu Khatri",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Himanshu khatri.jpeg",
+    portrait: "/assets/images/saeunitydrive/Himanshu khatri.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/hk2107/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 15,
+    name: "Kritika Agrawal",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Kritika agrawal.jpeg",
+    portrait: "/assets/images/saeunitydrive/Kritika agrawal.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/kritikaagra/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 16,
+    name: "Deekshith Nayak",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Deekshith Nayak.jpeg",
+    portrait: "/assets/images/saeunitydrive/Deekshith Nayak.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/deekshith-ramavath-419694254/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 17,
+    name: "Garima",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Garima gupta.jpeg",
+    portrait: "/assets/images/saeunitydrive/Garima gupta.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/garima-gupta-a11081221/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 18,
+    name: "Bhupeksh",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Bhupekesh.jpeg",
+    portrait: "/assets/images/saeunitydrive/Bhupekesh.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/bhupeksh-kaushik-360424222/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 19,
+    name: "Vaibhav Dharmani",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Vaibhav Dharmani.jpeg",
+    portrait: "/assets/images/saeunitydrive/Vaibhav Dharmani.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/vaibhav-dharmani-aa91a7199/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 20,
+    name: "Parv Sarin",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Parv sarin.jpeg",
+    portrait: "/assets/images/saeunitydrive/Parv sarin.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/parv-sarin/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 21,
+    name: "Manikya",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Manikya sharma.jpeg",
+    portrait: "/assets/images/saeunitydrive/Manikya sharma.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/10manikya/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 22,
+    name: "Saeed ul khair",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Saeed ul khair.jpeg",
+    portrait: "/assets/images/saeunitydrive/Saeed ul khair.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/saeed-ul-khair-29ab941b2/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 23,
+    name: "Deepak yadav",
+    role: "",
+    batch: "2022",
+    image: "/assets/images/saeunitydrive/Deepak yadav.jpeg",
+    portrait: "/assets/images/saeunitydrive/Deepak yadav.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/deepak-yadav-48410a185/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 24,
+    name: "Arnav",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Arnav.jpeg",
+    portrait: "/assets/images/saeunitydrive/Arnav.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/arnav-goel-ba94a21ab/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 25,
+    name: "Ajay",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Ajay.jpeg",
+    portrait: "/assets/images/saeunitydrive/Ajay.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/ajay-nitkkr/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 26,
+    name: "Udit",
+    role: "",
+    batch: "2022",
+    image: "/assets/images/saeunitydrive/Udit.jpeg",
+    portrait: "/assets/images/saeunitydrive/Udit.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/udit-tripathi-265104174/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 27,
+    name: "Tanishq",
+    role: "",
+    batch: "2022",
+    image: "/assets/images/saeunitydrive/Tanishq Ameta.jpeg",
+    portrait: "/assets/images/saeunitydrive/Tanishq Ameta.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/tanishqameta/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 28,
+    name: "Himatri Noonwal",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Himatri.jpeg",
+    portrait: "/assets/images/saeunitydrive/Himatri.jpeg",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/himatri-noonwal/",
     twitter: "#",
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
@@ -214,6 +487,8 @@ export default function AlumniCarousel() {
                   <option value="2024">2024</option>
                   <option value="2023">2023</option>
                   <option value="2022">2022</option>
+                  <option value="2019">2019</option>
+                  <option value="2016">2016</option>
                 </select>
                 <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3">
                   <svg
@@ -259,23 +534,28 @@ export default function AlumniCarousel() {
         <div className="flex items-center justify-center gap-8">
           {/* Left Container - Previous Alumni */}
           <div className="w-1/4 max-[1000px]:hidden">
-            {filteredAlumni.length > 0 && (
+            {filteredAlumni.length > 0 && prevIndex >= 0 && prevIndex < filteredAlumni.length && (
               <div className="relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden p-6 backdrop-blur-sm border border-gray-700/50">
-                
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
-                  <Image
-                    src={filteredAlumni[prevIndex].image}
-                    alt={filteredAlumni[prevIndex].name}
-                    fill
-                    className="object-cover"
-                  />
+                  {filteredAlumni[prevIndex]?.image ? (
+                    <Image
+                      src={filteredAlumni[prevIndex].image}
+                      alt={filteredAlumni[prevIndex].name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                      <span className="text-gray-400 text-lg">No Image</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <h4 className="text-lg font-bold text-white">
-                      {filteredAlumni[prevIndex].name}
+                      {filteredAlumni[prevIndex]?.name || 'Unknown'}
                     </h4>
                     <p className="text-sm text-gray-300">
-                      {filteredAlumni[prevIndex].role}
+                      {filteredAlumni[prevIndex]?.role || ''}
                     </p>
                   </div>
                 </div>
@@ -285,7 +565,7 @@ export default function AlumniCarousel() {
 
           {/* Center Container - Current Alumni */}
           <div className="w-1/2 max-[1000px]:w-[80%] max-[768px]:w-[90%] max-[550px]:w-[95%]">
-            {filteredAlumni.length > 0 && (
+            {filteredAlumni.length > 0 && activeIndex >= 0 && activeIndex < filteredAlumni.length && (
               <div className="relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden p-8 backdrop-blur-sm border border-gray-700/50">
                 <div className="absolute top-0 right-0 w-full h-16 bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-blue-900/20"></div>
                 <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-r from-blue-900/20 via-indigo-900/20 to-blue-900/20"></div>
@@ -313,14 +593,20 @@ export default function AlumniCarousel() {
                       {/* Decorative elements */}
                       <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-800/30 rounded-full blur-xl z-0"></div>
                       <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-indigo-800/30 rounded-full blur-xl z-0"></div>
-                      <Image
-                        src={active.portrait}
-                        alt={active.name}
-                        fill
-                        className="object-cover z-0"
-                        sizes="(max-width: 768px) 192px, 256px"
-                        priority
-                      />
+                      {active.portrait ? (
+                        <Image
+                          src={active.portrait}
+                          alt={active.name}
+                          fill
+                          className="object-cover z-0"
+                          sizes="(max-width: 768px) 192px, 256px"
+                          priority
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                          <span className="text-gray-400 text-lg">No Image</span>
+                        </div>
+                      )}
                       {/* Overlay pattern */}
                       <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/70 z-20"></div>
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:12px_12px] z-30 opacity-30"></div>
@@ -334,10 +620,10 @@ export default function AlumniCarousel() {
                         {active.role}
                       </p>
                       <p className="text-md mt-1 text-gray-500">
-                        Class of {active.batch}
+                        {active.batch}
                       </p>
                       {/* Achievements pills */}
-                      <div className="flex flex-wrap max-[452px]:justify-center gap-2 mt-4">
+                      {/* <div className="flex flex-wrap max-[452px]:justify-center gap-2 mt-4">
                         {active.achievements?.map((achievement, idx) => (
                           <span
                             key={idx}
@@ -346,7 +632,7 @@ export default function AlumniCarousel() {
                             {achievement}
                           </span>
                         ))}
-                      </div>
+                      </div> */}
                       {/* Social links */}
                       <div className="flex gap-3 mt-6">
                         <a
@@ -387,22 +673,28 @@ export default function AlumniCarousel() {
 
           {/* Right Container - Next Alumni */}
           <div className="w-1/4 max-[1000px]:hidden">
-            {filteredAlumni.length > 0 && (
+            {filteredAlumni.length > 0 && nextIndex >= 0 && nextIndex < filteredAlumni.length && (
               <div className="relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden p-6 backdrop-blur-sm border border-gray-700/50">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
-                  <Image
-                    src={filteredAlumni[nextIndex].image}
-                    alt={filteredAlumni[nextIndex].name}
-                    fill
-                    className="object-cover"
-                  />
+                  {filteredAlumni[nextIndex]?.image ? (
+                    <Image
+                      src={filteredAlumni[nextIndex].image}
+                      alt={filteredAlumni[nextIndex].name}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                      <span className="text-gray-400 text-lg">No Image</span>
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                   <div className="absolute bottom-4 left-4">
                     <h4 className="text-lg font-bold text-white">
-                      {filteredAlumni[nextIndex].name}
+                      {filteredAlumni[nextIndex]?.name || 'Unknown'}
                     </h4>
                     <p className="text-sm text-gray-300">
-                      {filteredAlumni[nextIndex].role}
+                      {filteredAlumni[nextIndex]?.role || ''}
                     </p>
                   </div>
                 </div>
