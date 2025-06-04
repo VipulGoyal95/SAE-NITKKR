@@ -8,8 +8,8 @@ export default function Saeunitydrive() {
   return (
     <div className="bg-gray-900">
       <Herosection />
-      <FacultyMessage />
-      <TeamAchievement />
+      {/* <FacultyMessage /> */}
+      {/* <TeamAchievement /> */}
       <Testimonials />
       <AlumniCarousel />
     </div>
