@@ -33,32 +33,53 @@ const customStyles = `
 
 const testimonials = [
   {
-    name: "Rahul Verma",
-    designation: "Alumnus, Batch of 2021",
-    image: "/testimonials/rahul.webp",
+    name: "Manish kumar",
+    designation: "Alumnus, Batch of 2016",
+    image: "/assets/images/saeunitydrive/Manish.webp",
     feedback:
-      "Being a part of SAE helped me build a solid foundation in engineering and teamwork. I'm proud to support the next generation through this initiative.",
+      "Keep innovating keep building",
   },
   {
-    name: "Sneha Kapoor",
-    designation: "Senior, Mechanical Dept",
-    image: "/testimonials/sneha.webp",
+    name: "Ravinder Singh Bisht",
+    designation: "Alumnus, Batch of 2016",
+    image: "/assets/images/saeunitydrive/Ravinder Singh Bisht.webp",
     feedback:
-      "SAE society has shaped my college experience. The dedication and innovation of our teams deserve every bit of support.",
+      "Best of luck. Keep up the good work team!",
   },
   {
-    name: "Aman Singh",
-    designation: "Alumnus, R&D Engineer, Maruti Suzuki",
-    image: "/testimonials/aman.webp",
+    name: "Nitin Ahlawat",
+    designation: "Alumnus, Batch of 2016",
+    image: "/assets/images/saeunitydrive/Nitin Alawat.webp",
     feedback:
-      "SAE taught me real-world engineering skills. Supporting this cause is my way of giving back to a society that gave me so much.",
+      "This is an adventure. Have fun!",
   },
   {
-    name: "Neha Chauhan",
-    designation: "Alumnus, Design Engineer, Tata Motors",
-    image: "/testimonials/neha.webp",
+    name: "Parv Sarin",
+    designation: "Alumnus, Batch of 2024",
+    image: "/assets/images/saeunitydrive/Parv sarin.webp",
     feedback:
-      "From design to track, SAE molded us into creators and innovators. Proud to see the legacy continue through this crowdfunding.",
+      "keep striving for excellence and let your dedication continue to shine!",
+  },
+  {
+    name: "Udit Tripathi",
+    designation: "Alumnus, Batch of 2022",
+    image: "/assets/images/saeunitydrive/Udit.webp",
+    feedback:
+      "I would like to believe that I am still a part of the family, baaki aacha kaam karo and make us come back to college to celebrate your achievements",
+  },
+  {
+    name: "Tanishq Ameta",
+    designation: "Alumnus, Batch of 2022",
+    image: "/assets/images/saeunitydrive/Tanishq Ameta.webp",
+    feedback:
+      "Nothing much, but whatever you guys do, do it with heart. Learn from previous mistakes that your seniors and we have done, Build a good team and all the best for the competitions👍",
+  },
+  {
+    name: "Kritika Agrawal",
+    designation: "Alumnus, Batch of 2024",
+    image: "/assets/images/saeunitydrive/Kritika agrawal.webp",
+    feedback:
+      "Keep it up team !! Stay strong, stay motivated.",
   },
 ];
 
@@ -123,7 +144,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-16">
           {/* Left: Featured Testimonial */}
-          <div className="w-full lg:w-2/3 order-2 lg:order-1">
+          <div className="w-full lg:w-2/3 order-2 lg:order-1 z-10">
             <div
               className={`relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden h-full p-8 lg:p-10 backdrop-blur-sm border border-gray-700/50 
                          transition-all duration-700 ${
@@ -217,7 +238,7 @@ const Testimonials = () => {
           </div>
 
           {/* Right: Carousel */}
-          <div className="w-full lg:w-1/3 order-1 lg:order-2">
+          <div className="w-full lg:w-1/3 order-1 lg:order-2 z-10">
             <div className="relative">
               {/* Orbit Accent */}
               <div className="absolute -right-16 top-32 w-48 h-48 rounded-full border-4 border-dotted border-indigo-800/30 animate-[spin_35s_linear_infinite_reverse] hidden lg:block"></div>

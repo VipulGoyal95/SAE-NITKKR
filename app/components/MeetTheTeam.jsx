@@ -32,7 +32,7 @@ export default function MeetTheTeam() {
 
   const acceleronsTeam = [
     {
-      src: '/assets/images/accelerons/Jatin.webp',
+      src: '/assets/images/accelerons/JATIN JATIN.webp',
       alt: 'Jatin',
       name: 'Jatin Yadav',
       role: 'Vice-Captain Electrical',
@@ -62,7 +62,7 @@ export default function MeetTheTeam() {
 
   const nitroxTeam = [
     {
-      src: '/assets/images/nitrox/danish.webp',
+      src: '/assets/images/nitrox/Danish Goyal.webp',
       alt: 'Danish Goyal',
       name: 'Danish Goyal',
       role: 'Vice-Captain',

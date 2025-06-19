@@ -12,10 +12,8 @@ function Participation() {
   const acceleronsContent={
     top: "SUPRA",
     top_content: "SUPRA SAEINDIA Student Formula is a premier national level competition organized by the Society of Automotive Engineers India (SAEINDIA). It aims to provide a dynamic platform for student engineers to design, build, and learn through real-world automotive challenges and hands-on experience.",
-    top_subcontent: "Students gain and develop skills such as engineering,project management and team work.Points are earned in a series off track,\"Static\" events, and on track,\"Dyanamic\" events. The team with the most points at the end of the competion wins.",
     bottom: "FORMULA BHARAT",
     bottom_content: "Formula Bharat is a national-level engineering design competition where students from colleges and universities across the country design, build, and compete with Formula Student vehicles. Teams are evaluated on engineering design, cost efficiency, marketability, and dynamic on-track performance.",
-    bottom_subcontent: "These student teams are required to build a new vehicle from scratch year-after-year and seek sponsorship and donations by their own means to fund the project"
   }
 
   const nitroxcontent={
@@ -26,13 +24,13 @@ function Participation() {
   }
 
   const imagesAcclerons = {
-    top:"/accelerons_top.png",
-    bottom: "/accelerons_bottom.png"
+    top:"/accelerons_top.webp",
+    bottom: "/accelerons_bottom.webp"
   }
 
   const imagesNitrox={
-    top:"/nitrox_top.png",
-    bottom: "/nitrox_bottom.png"
+    top:"/nitrox_top.webp",
+    bottom: "/nitrox_bottom.webp"
   }
   const team = isNitroxPage ? nitroxcontent : acceleronsContent;
   const images = isNitroxPage ? imagesNitrox : imagesAcclerons;
@@ -70,7 +68,7 @@ function Participation() {
         />
         {/* Content panel inside the border */}
         <motion.div 
-          className="absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2"
+          className={`absolute inset-6 rounded-lg p-4 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2 ${isNitroxPage && "max-[392px]:inset-x-2" }`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -115,7 +113,7 @@ function Participation() {
         //   className="object-cover"
         />
         <motion.div 
-          className="absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2"
+          className={`absolute inset-6 rounded-lg p-6 flex flex-col justify-start max-[1038px]:p-3 max-[757px]:p-1 max-[657px]:p-0 max-[460px]:inset-3 max-[460px]:inset-y-2 ${!isNitroxPage && "max-[393px]:inset-x-2"}`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}

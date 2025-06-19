@@ -23,41 +23,41 @@ const FacultyMessage = () => {
             <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
             Faculty Speaks
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-purple-400 via-blue-300 to-indigo-300 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-purple-400 via-blue-300 to-indigo-300 bg-clip-text text-transparent max-[500px]:text-center">
             Message from Faculty In-Charge
           </h2>
 
         <div className="flex flex-col gap-10">
-          <div className="flex flex-row gap-10 items-end">
+          <div className="flex flex-row flex-wrap gap-10 items-end max-[500px]:justify-center max-[500px]:gap-4">
 
 
-            <div className="relative mb-8">
+            <div className="relative mb-0">
               {/* Orbit Accent */}
               <div className="absolute -left-4 -top-4 w-full h-full rounded-full border-4 border-dotted border-purple-800/30 animate-[spin_25s_linear_infinite]"></div>
 
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl shrink-0 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 mix-blend-overlay z-10"></div>
                 <Image
-                  src="/assets/images/crowdfunding/faculty.webp"
+                  src="/assets/images/crowdfunding/Dr. Surjit Angra.webp"
                   alt="Faculty In-Charge"
-                  width={224}
-                  height={224}
-                  className="w-full h-full object-cover"
+                  width={100}
+                  height={100}
+                  className="w-full h-[130%] object-cover"
                 />
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 max-[500px]:flex-auto">
+              
 
-
-              <p className="text-[26px] mb-4">
-                <span className="font-bold text-blue-300">SURJIT ANGRA</span>
+              <p className="text-[26px] mb-4 max-[500px]:text-center">
+                <span className="font-bold text-blue-300">Dr. Surjit Angra</span>
                 <br />
                 <span className="text-sm text-gray-400">
                   Ex- Faculty Advisor, SAE NIT Kurukshetra
                 </span>
               </p>
 
-              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm">
+              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm max-[500px]:w-full max-[500px]:mx-auto">
                 {/* Quote SVG */}
                 <svg
                   className="absolute top-4 left-4 w-8 h-8 text-purple-500 opacity-70"
@@ -67,7 +67,7 @@ const FacultyMessage = () => {
                   <path d="M10,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H10z M20,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H20z"></path>
                 </svg>
 
-                <p className="pl-10 text-lg">
+                <p className="pl-10 text-lg max-[500px]:text-[17px] max-[500px]:pl-6">
                   At SAE NIT Kurukshetra, we believe in nurturing talent through hands-on engineering challenges that extend far beyond the classroom. Our teams, Team Accelerons and Team Nitrox represent the spirit of innovation, dedication, and resilience that defines this institution.<br/> <br/>
                   Through national and international competitions, these students gain exposure to real-world design, manufacturing, and teamwork scenarios that prepare them for future careers in automotive and mobility sectors. However, excellence requires not just effort, but also resources.
 
@@ -92,7 +92,7 @@ const FacultyMessage = () => {
             </div> */}
             </div>
           </div>
-          <div className="flex flex-row gap-10 items-end">
+          <div className="flex flex-row flex-wrap gap-10 items-end max-[500px]:justify-center max-[500px]:gap-4">
 
 
             <div className="relative mb-8">
@@ -102,26 +102,26 @@ const FacultyMessage = () => {
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl shrink-0 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 mix-blend-overlay z-10"></div>
                 <Image
-                  src="/assets/images/crowdfunding/faculty.webp"
+                  src="/assets/images/crowdfunding/Dr. Satnam Singh.webp"
                   alt="Faculty In-Charge"
-                  width={224}
-                  height={224}
-                  className="w-full h-full object-cover"
+                  width={100}
+                  height={100}
+                  className="w-full h-[124%] object-cover"
                 />
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 max-[500px]:flex-auto">
 
 
-              <p className="text-[26px] mb-4">
-                <span className="font-bold text-blue-300">SATNAM SINGH</span>
+              <p className="text-[26px] mb-4 max-[500px]:text-center">
+                <span className="font-bold text-blue-300">Dr. Satnam Singh</span>
                 <br />
                 <span className="text-sm text-gray-400">
                   Faculty Advisor, SAE NIT Kurukshetra
                 </span>
               </p>
 
-              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm">
+              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm max-[500px]:w-full max-[500px]:mx-auto">
                 {/* Quote SVG */}
                 <svg
                   className="absolute top-4 left-4 w-8 h-8 text-purple-500 opacity-70"
@@ -131,7 +131,7 @@ const FacultyMessage = () => {
                   <path d="M10,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H10z M20,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H20z"></path>
                 </svg>
 
-                <p className="pl-10 text-lg">
+                <p className="pl-10 text-lg max-[500px]:text-[17px] max-[500px]:pl-6">
                 SAE NIT KKR has consistently empowered students to turn engineering theory into impactful, hands-on projects. Your support fuels that vision. Your support can help them to keep the wheels of innovation turning.<br/> <br/>
 Your contributions will directly enable our students to innovate, compete, and represent NIT Kurukshetra on prestigious platforms.
 
@@ -157,7 +157,7 @@ Your contributions will directly enable our students to innovate, compete, and r
             </div> */}
             </div>
           </div>
-          <div className="flex flex-row gap-10 items-end">
+          <div className="flex flex-row flex-wrap gap-10 items-end max-[500px]:justify-center max-[500px]:gap-4">
 
 
             <div className="relative mb-8">
@@ -167,26 +167,26 @@ Your contributions will directly enable our students to innovate, compete, and r
               <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-gray-700 shadow-xl shrink-0 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/30 to-blue-500/30 mix-blend-overlay z-10"></div>
                 <Image
-                  src="/assets/images/crowdfunding/faculty.webp"
+                  src="/assets/images/crowdfunding/Dr. Vikas Kumar.webp"
                   alt="Faculty In-Charge"
-                  width={224}
-                  height={224}
-                  className="w-full h-full object-cover"
+                  width={100}
+                  height={100}
+                  className="w-full h-[110%] object-cover"
                 />
               </div>
             </div>
-            <div className="flex-1">
+            <div className="flex-1 max-[500px]:flex-auto">
 
 
-              <p className="text-[26px] mb-4">
-                <span className="font-bold text-blue-300">VIKAS KUMAR</span>
+              <p className="text-[26px] mb-4 max-[500px]:mx-auto">
+                <span className="font-bold text-blue-300">Dr. Vikas Kumar</span>
                 <br />
                 <span className="text-sm text-gray-400">
                   Faculty Advisor, SAE NIT Kurukshetra
                 </span>
               </p>
 
-              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm">
+              <div className="relative bg-gray-800/80 border border-gray-700 rounded-xl p-6 text-gray-300 leading-relaxed shadow-lg backdrop-blur-sm max-[500px]:w-full max-[500px]:mx-auto">
                 {/* Quote SVG */}
                 <svg
                   className="absolute top-4 left-4 w-8 h-8 text-purple-500 opacity-70"
@@ -196,7 +196,7 @@ Your contributions will directly enable our students to innovate, compete, and r
                   <path d="M10,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H10z M20,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H20z"></path>
                 </svg>
 
-                <p className="pl-10 text-lg">
+                <p className="pl-10 text-lg max-[500px]:text-[17px] max-[500px]:pl-6">
                 Behind every prototype and race-ready machine is a team of students who dared to dream. Stand with SAE NIT Kurukshetra as we turn those dreams into achievements, one contribution at a time.<br/> <br/>
 I urge alumni, corporates, and well-wishers to support our crowdfunding campaign.
 

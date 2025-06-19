@@ -46,7 +46,7 @@ export default function About() {
         priority
       />
       <Image
-        src="/assets/images/homepage/whoweare.jpeg"
+        src="/assets/images/homepage/whoweare.webp"
         alt="Car Mobile"
         width={1100}
         height={600}

@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "SAE NIT KURUKSHETRA",
-  description: "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers",
+  title:{
+    default: "SAE NIT Kurukshetra",
+    template: "%s - SAE NIT Kurukshetra"
+  },
+  description: "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers NIT Kurukshetra",
   icons: {
     icon: '/assets//images/sae-logo.webp',
     apple: '/assets//images/sae-logo.webp',

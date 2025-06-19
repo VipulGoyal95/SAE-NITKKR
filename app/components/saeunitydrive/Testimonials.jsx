@@ -17,12 +17,12 @@ import "swiper/css/effect-coverflow";
 const testimonialsData = [
   {
     id: 1,
-    name: "Rahul Sharma",
-    role: "Former SAE President",
-    batch: "2022",
-    image: "/testimonials/person1.webp",
+    name: "Manish kumar",
+    role: "",
+    batch: "2016",
+    image: "/assets/images/saeunitydrive/Manish.webp",
     quote:
-      "Being part of SAE was a transformative experience that shaped my engineering career. The Unity Drive initiative truly embodies the collaborative spirit we need in technical education.",
+      "Keep innovating keep building",
   },
   {
     id: 2,

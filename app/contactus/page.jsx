@@ -1,6 +1,9 @@
 import ContactForm from "../components/ContactForm";
 import Image from 'next/image';
 
+export const metadata = {
+    title: "Contact Us"
+}
 export default function ContactUs() {
     return (
         <div className="min-h-screen bg-black text-white py-12 px-4">
@@ -35,7 +38,7 @@ export default function ContactUs() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-white">Phone</h3>
-                                <p className="text-gray-400 mt-1">8 8 9 9 6 6 9 0 5 0</p>
+                                <p className="text-gray-400 mt-1">7 2 0 6 1 6 8 3 5 5</p>
                             </div>
                         </div>
 
@@ -68,7 +71,7 @@ export default function ContactUs() {
                         <div className="flex items-start space-x-4">
                             <div className="bg-white rounded-full p-3">
                                 <Image
-                                    src="/ac.jpg"
+                                    src="/ac.webp"
                                     alt="ac"
                                     width={100}
                                     height={60}
@@ -77,7 +80,7 @@ export default function ContactUs() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-white">Accelerons Email</h3>
-                                <p className="text-gray-400 mt-1">teamaccelerons@gmail.com
+                                <p className="text-gray-400 mt-1">acceleronsnitkkr@gmail.com 
                                 </p>
                             </div>
                         </div>

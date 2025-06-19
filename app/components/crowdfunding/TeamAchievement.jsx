@@ -122,12 +122,12 @@ const TeamTimeline = () => {
             Our Journey
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-indigo-300 bg-clip-text text-transparent">
-            Team Achievements Timeline
+            Team Achievements
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6 mx-auto"></div>
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+          {/* <p className="text-gray-400 text-lg max-w-3xl mx-auto">
             A chronicle of excellence and innovation through the years
-          </p>
+          </p> */}
         </div>
 
         {/* Timeline Grid */}
@@ -205,14 +205,14 @@ const TeamTimeline = () => {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <a
             href="/donation"
             className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 shadow-md"
           >
             Support Our Next Achievement
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

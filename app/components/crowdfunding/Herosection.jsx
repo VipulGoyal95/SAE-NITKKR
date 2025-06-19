@@ -21,7 +21,7 @@ const HeroSection = () => {
   useCountUp({
     ref: counterRef2,
     start: 0,
-    end: 8,
+    end: 0,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -31,7 +31,7 @@ const HeroSection = () => {
   useCountUp({
     ref:counterRef3,
     start: 0,
-    end: 15,
+    end: 0,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -40,7 +40,7 @@ const HeroSection = () => {
   useCountUp({
     ref:counterRef4,
     start: 0,
-    end: 53,
+    end: 60,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -50,7 +50,7 @@ const HeroSection = () => {
   useCountUp({
     ref: counterRef1,
     start: 0,
-    end: 175,
+    end: 12,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -252,7 +252,7 @@ With your support, we aim to gather the funds required to build our vehicles and
               }}
               whileTap={{ scale: 0.95 }}
             >
-              Donate Now
+              Contribute Now
             </motion.a>
           </ScrollAnimatedElement>
         </div>
@@ -263,10 +263,10 @@ With your support, we aim to gather the funds required to build our vehicles and
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef1}></span>
-                +
+              <span className="text-3xl">L</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
-                BACKERS
+                TARGET
               </div>
             </div>
           </ScrollAnimatedElement>
@@ -287,10 +287,10 @@ With your support, we aim to gather the funds required to build our vehicles and
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef3}></span>
-                <span className="text-3xl">L</span>
+                {/* <span className="text-3xl">L</span> */}
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
-                TARGET
+                CONTRIBUTORS
               </div>
             </div>
           </ScrollAnimatedElement>
@@ -299,10 +299,9 @@ With your support, we aim to gather the funds required to build our vehicles and
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef4}></span>
-                %
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
-                FUNDED
+                DAYS LEFT
               </div>
             </div>
           </ScrollAnimatedElement>

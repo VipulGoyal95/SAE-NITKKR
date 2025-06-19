@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "convert-images": "node scripts/convertImages.js",
+    "update-imports": "node scripts/updateImports.js"
   },
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
@@ -25,6 +27,8 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "glob": "^10.3.10",
+    "sharp": "^0.33.2",
     "tailwindcss": "^4"
   }
 }

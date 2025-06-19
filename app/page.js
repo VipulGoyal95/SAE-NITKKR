@@ -12,8 +12,8 @@ export default function Home() {
   const team = {
     urls: [
      "/heroimg.webp",
-     "/hero2.jpg",
-     "/hero3.jpg",
+     "/hero2.webp",
+     "/hero3.webp",
      "/hero4.webp",
    ]
   }

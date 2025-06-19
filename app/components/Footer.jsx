@@ -114,7 +114,7 @@ const Footer = () => {
               </svg>
               Social
             </h3>
-            <div className="space-y-5">
+            <div className="space-y-5 max-[500px]:space-y-1">
               {[
                 {
                   name: "Team Accelerons",

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const teamMembers = [
   {
-    name: 'ABHISHEK',
+    name: 'Abhishek',
     role: 'President',
     image: '/abhishek.webp',
     gradient: 'from-[#FFFFFF] to-[#454545]',
@@ -17,7 +17,7 @@ const teamMembers = [
     }
   },
   {
-    name: 'SHUBHAYU SINHA',
+    name: 'Shubhayu Sinha',
     role: 'Vice-President',
     image: '/shubhayu2.webp',
     gradient: 'from-[#454545] to-[#FFFFFF]',
@@ -28,7 +28,7 @@ const teamMembers = [
     }
   },
   {
-    name: 'ANKIT RATHORE',
+    name: 'Ankit Rathore',
     role: 'Secretary',
     image: '/ankit rathore.webp',
     gradient: 'from-[#FFFFFF] to-[#454545]',
@@ -39,7 +39,7 @@ const teamMembers = [
     }
   },
   {
-    name: 'SARTHAK ANAND',
+    name: 'Sarthak Anand',
     role: 'Secretary',
     image: '/sarthak.webp',
     gradient: 'from-[#454545] to-[#FFFFFF]',
@@ -128,7 +128,7 @@ const Teammembers = () => {
                 `}>
                   <div className="w-full h-[35%] flex flex-col items-center justify-center space-y-2.5 pt-8">
                     <h3 className="text-white text-xl font-bold">{member.name}</h3>
-                    <p className="text-white/90 italic">~{member.role.toLowerCase()}</p>
+                    <p className="text-white/90">{member.role}</p>
                     <div className="flex gap-4">
                       <a 
                         href={member.social.linkedin}

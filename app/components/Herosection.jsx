@@ -103,17 +103,27 @@ export default function Herosection() {
           ref={whoWeAreRef}
           className="w-full bg-black px-4 py-16 md:py-20"
         >
-          <div className="max-w-4xl mx-auto">
+          <motion.div className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-8">
               Who Are We
             </h2>
             
-            <div className="space-y-6 text-center">
+            <motion.div className="space-y-6 text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 ,delay: 0.5 }}
+            >
               <p className="text-white text-lg md:text-xl leading-relaxed">
                 {team.about}
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

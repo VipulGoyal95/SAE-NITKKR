@@ -63,29 +63,31 @@ export default function Herosection() {
       </div>
 
       {/* Hero Section */}
-      <section className="flex flex-col md:flex-row items-center justify-center min-h-screen py-16 px-6 md:px-10 relative z-10">
+      <section className="flex flex-col pt-[105px] md:flex-row items-center justify-center min-h-screen py-16 px-6 md:px-10 relative z-10">
         <div className="text-center md:text-left mb-10 md:mb-0 md:mr-8 relative">
           {/* Orbit Accent */}
           <div className="absolute -left-16 top-12 w-32 h-32 rounded-full border-4 border-dotted border-blue-800/30 animate-[spin_25s_linear_infinite] hidden md:block"></div>
 
           <div className="inline-flex items-center mb-3 px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
-            Alumni Connect
+            Unity Drive
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-[800] mb-6 uppercase bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200 bg-clip-text text-transparent">
-            THANK
+          <h1 className="text-6xl md:text-6xl max-[525px]:text-5xl max-[450px]:text-4xl font-[800] mb-6 uppercase bg-gradient-to-r from-blue-400 via-indigo-300 to-blue-200 bg-clip-text text-transparent">
+            Once a part
             <br />
-            YOU
+            of GOLE,
             <br />
-            SENIORS
+            always part
+            <br/>
+            of the legacy.
           </h1>
 
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
 
           <p className="text-lg opacity-80 tracking-wider leading-relaxed max-w-xl">
-            Their wisdom, support, and mentorship continue to inspire the next
-            generation of automotive engineers at SAE NIT Kurukshetra.
+          The Unity Drive is our heartfelt call to all alumni of SAE NIT Kurukshetra to come together, reconnect, and reinvest in the future of the very teams you helped build.
+
           </p>
         </div>
 
@@ -99,9 +101,9 @@ export default function Herosection() {
             <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-indigo-800/30 rounded-full blur-xl z-0"></div>
 
             {/* Image */}
-            <div className="relative aspect-[4/3]">
+            <div className="relative h-[550px] max-[767px]:aspect-[4/3] max-[767px]:h-max">
               <Image
-                src="/assets/images/saeunitydrive/image.webp"
+                src="/assets/images/saeunitydrive/Sae unity drive.webp"
                 alt="Thank You Seniors"
                 fill
                 className="object-cover z-0"
@@ -132,17 +134,15 @@ export default function Herosection() {
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
 
           <p className="text-base md:text-lg leading-relaxed opacity-80 mb-8 max-w-xl text-gray-300">
-            Join hands with SAE NIT Kurukshetra and accelerate our journey in
-            building cutting-edge EV and CV projects. Your support fuels our
-            dreams!
+          Whether you once welded the chassis, fine-tuned vehicle dynamics systems, drafted sponsorship decks and reports, or stood by your team at sunrise before events: you know the hustle. Now it’s time to pass the baton and enable the next face of SAE NIT KKR to continue your legacy.
           </p>
 
-          <a
+          {/* <a
             href="#"
             className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 shadow-md"
           >
             Fund Now
-          </a>
+          </a> */}
         </div>
 
         <div className="md:w-1/2 grid grid-cols-2 gap-8">

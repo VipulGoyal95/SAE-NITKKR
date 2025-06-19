@@ -5,6 +5,11 @@ import AutokritiCard from '../components/autokriti/AutokritiCard';
 import HeroSection from '../components/autokriti/HeroSection';
 import AutokritiDespscription from '../components/autokriti/AutokritiDespscription';
 
+
+export const metadata = {
+  title: "Autokriti"
+}
+
 export default function AutokritiPage() {
   return (
     <div className='bg-black'>

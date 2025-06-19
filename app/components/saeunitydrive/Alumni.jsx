@@ -20,10 +20,10 @@ const alumniData = [
   {
     id: 1,
     name: "Rahul Lamba",
-    role: "Head Designer",
+    role: "",
     batch: "2016",
-    image: "/assets/images/saeunitydrive/Rahul lamba.jpeg",
-    portrait: "/assets/images/saeunitydrive/Rahul lamba.jpeg",
+    image: "/assets/images/saeunitydrive/Rahul lamba.webp",
+    portrait: "/assets/images/saeunitydrive/Rahul lamba.webp",
     // quote: "Innovation is the driving force behind automotive evolution.",
     linkedin: "https://www.linkedin.com/in/rhllamba/",
     twitter: "#",
@@ -37,8 +37,8 @@ const alumniData = [
     name: "Sarthak Manocha",
     role: "",
     batch: "2016",
-    image: "/assets/images/saeunitydrive/Sarthak Manocha.jpeg",
-    portrait: "/assets/images/saeunitydrive/Sarthak Manocha.jpeg",
+    image: "/assets/images/saeunitydrive/Sarthak Manocha.webp",
+    portrait: "/assets/images/saeunitydrive/Sarthak Manocha.webp",
     // quote:
     //   "The future of mobility lies at the intersection of AI and engineering.",
     linkedin: "https://www.linkedin.com/in/sarthak-manocha-452979a0/",
@@ -50,8 +50,8 @@ const alumniData = [
     name: "Manish kumar",
     role: "",
     batch: "2016",
-    image: "/assets/images/saeunitydrive/Manish.jpeg",
-    portrait: "/assets/images/saeunitydrive/Manish.jpeg",
+    image: "/assets/images/saeunitydrive/Manish.webp",
+    portrait: "/assets/images/saeunitydrive/Manish.webp",
     // quote:
     //   "Design thinking transforms good vehicles into extraordinary experiences.",
     linkedin: "https://www.linkedin.com/in/manish-kumar-a1012b108/",
@@ -63,8 +63,8 @@ const alumniData = [
     name: "Ravinder Singh Bisht",
     role: "",
     batch: "2016",
-    image: "/assets/images/saeunitydrive/Ravinder Singh Bisht.jpeg",
-    portrait: "/assets/images/saeunitydrive/Ravinder Singh Bisht.jpeg",
+    image: "/assets/images/saeunitydrive/Ravinder Singh Bisht.webp",
+    portrait: "/assets/images/saeunitydrive/Ravinder Singh Bisht.webp",
     // quote: "Technology should enhance human potential, not replace it.",
     linkedin: "https://www.linkedin.com/in/ravinder-singh-bisht-2229a588/",
     twitter: "#",
@@ -75,8 +75,8 @@ const alumniData = [
     name: "Nitin Ahlawat",
     role: "",
     batch: "2016",
-    image: "/assets/images/saeunitydrive/Nitin Alawat.jpeg",
-    portrait: "/assets/images/saeunitydrive/Nitin Alawat.jpeg",
+    image: "/assets/images/saeunitydrive/Nitin Alawat.webp",
+    portrait: "/assets/images/saeunitydrive/Nitin Alawat.webp",
     // quote:
     //   "Engineering excellence is built on precision, passion, and perseverance.",
     linkedin: "https://www.linkedin.com/in/ahlawatnitin144/",
@@ -88,8 +88,8 @@ const alumniData = [
     name: "Thodupunuri Arun kumar",
     role: "",
     batch: "2019",
-    image: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.jpeg",
-    portrait: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.jpeg",
+    image: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.webp",
+    portrait: "/assets/images/saeunitydrive/Thodupunuri Arun kumar.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/arunthodupunuri/",
@@ -98,63 +98,11 @@ const alumniData = [
   },
   {
     id: 7,
-    name: "Amit",
+    name: "Amit Rawat",
     role: "",
     batch: "2022",
-    image: "/assets/images/saeunitydrive/Amit.jpeg",
-    portrait: "/assets/images/saeunitydrive/Amit.jpeg",
-    // quote:
-    //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "",
-    twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
-  },
-  {
-    id: 8,
-    name: "Ajit",
-    role: "",
-    batch: "2023",
-    image: "/assets/images/saeunitydrive/Ajit.jpeg",
-    portrait: "/assets/images/saeunitydrive/Ajit.jpeg",
-    // quote:
-    //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "",
-    twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
-  },
-  {
-    id: 9,
-    name: "Navneet",
-    role: "",
-    batch: "2023",
-    image: "",
-    portrait: "",
-    // quote:
-    //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "",
-    twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
-  },
-  {
-    id: 10,
-    name: "Omansh",
-    role: "",
-    batch: "2023",
-    image: "/assets/images/saeunitydrive/Omansh.jpeg",
-    portrait: "/assets/images/saeunitydrive/Omansh.jpeg",
-    // quote:
-    //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "https://www.linkedin.com/in/omansh-tandon/",
-    twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
-  },
-  {
-    id: 12,
-    name: "Debashish",
-    role: "",
-    batch: "2023",
-    image: "",
-    portrait: "",
+    image: "/assets/images/saeunitydrive/Amit rawat.webp",
+    portrait: "/assets/images/saeunitydrive/Amit rawat.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "",
@@ -163,14 +111,68 @@ const alumniData = [
   },
   {
     id: 13,
-    name: "Aasheesh",
+    name: "Aasheesh Bansal",
     role: "",
     batch: "2023",
-    image: "/assets/images/saeunitydrive/Asheesh.jpeg",
-    portrait: "/assets/images/saeunitydrive/Asheesh.jpeg",
+    image: "/assets/images/saeunitydrive/Asheesh.webp",
+    portrait: "/assets/images/saeunitydrive/Asheesh.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/aasheeshbansal/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 24,
+    name: "Arnav Goel",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Arnav.webp",
+    portrait: "/assets/images/saeunitydrive/Arnav.webp",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/arnav-goel-ba94a21ab/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 12,
+    name: "Debasish Mandal",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Debasish Mandal.webp",
+    portrait: "/assets/images/saeunitydrive/Debasish Mandal.webp",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 10,
+    name: "Omansh Tandon",
+    role: "",
+    batch: "2023",
+    image: "/assets/images/saeunitydrive/Omansh.webp",
+    portrait: "/assets/images/saeunitydrive/Omansh.webp",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/omansh-tandon/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  
+  
+  {
+    id: 19,
+    name: "Vaibhav Dharmani",
+    role: "",
+    batch: "2024",
+    image: "/assets/images/saeunitydrive/Vaibhav Dharmani.webp",
+    portrait: "/assets/images/saeunitydrive/Vaibhav Dharmani.webp",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/vaibhav-dharmani-aa91a7199/",
     twitter: "#",
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
@@ -179,8 +181,8 @@ const alumniData = [
     name: "Himanshu Khatri",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Himanshu khatri.jpeg",
-    portrait: "/assets/images/saeunitydrive/Himanshu khatri.jpeg",
+    image: "/assets/images/saeunitydrive/Himanshu khatri.webp",
+    portrait: "/assets/images/saeunitydrive/Himanshu khatri.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/hk2107/",
@@ -192,8 +194,8 @@ const alumniData = [
     name: "Kritika Agrawal",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Kritika agrawal.jpeg",
-    portrait: "/assets/images/saeunitydrive/Kritika agrawal.jpeg",
+    image: "/assets/images/saeunitydrive/Kritika agrawal.webp",
+    portrait: "/assets/images/saeunitydrive/Kritika agrawal.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/kritikaagra/",
@@ -205,8 +207,8 @@ const alumniData = [
     name: "Deekshith Nayak",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Deekshith Nayak.jpeg",
-    portrait: "/assets/images/saeunitydrive/Deekshith Nayak.jpeg",
+    image: "/assets/images/saeunitydrive/Deekshith Nayak.webp",
+    portrait: "/assets/images/saeunitydrive/Deekshith Nayak.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/deekshith-ramavath-419694254/",
@@ -215,11 +217,11 @@ const alumniData = [
   },
   {
     id: 17,
-    name: "Garima",
+    name: "Garima Gupta",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Garima gupta.jpeg",
-    portrait: "/assets/images/saeunitydrive/Garima gupta.jpeg",
+    image: "/assets/images/saeunitydrive/Garima gupta.webp",
+    portrait: "/assets/images/saeunitydrive/Garima gupta.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/garima-gupta-a11081221/",
@@ -231,8 +233,8 @@ const alumniData = [
     name: "Bhupeksh",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Bhupekesh.jpeg",
-    portrait: "/assets/images/saeunitydrive/Bhupekesh.jpeg",
+    image: "/assets/images/saeunitydrive/Bhupekesh.webp",
+    portrait: "/assets/images/saeunitydrive/Bhupekesh.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/bhupeksh-kaushik-360424222/",
@@ -240,25 +242,26 @@ const alumniData = [
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
-    id: 19,
-    name: "Vaibhav Dharmani",
+    id: 9,
+    name: "Navneet Raj",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Vaibhav Dharmani.jpeg",
-    portrait: "/assets/images/saeunitydrive/Vaibhav Dharmani.jpeg",
+    image: "/assets/images/saeunitydrive/Navneet raj.webp",
+    portrait: "/assets/images/saeunitydrive/Navneet raj.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "https://www.linkedin.com/in/vaibhav-dharmani-aa91a7199/",
+    linkedin: "",
     twitter: "#",
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
+  
   {
     id: 20,
     name: "Parv Sarin",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Parv sarin.jpeg",
-    portrait: "/assets/images/saeunitydrive/Parv sarin.jpeg",
+    image: "/assets/images/saeunitydrive/Parv sarin.webp",
+    portrait: "/assets/images/saeunitydrive/Parv sarin.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/parv-sarin/",
@@ -267,11 +270,11 @@ const alumniData = [
   },
   {
     id: 21,
-    name: "Manikya",
+    name: "Manikya Sharma",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Manikya sharma.jpeg",
-    portrait: "/assets/images/saeunitydrive/Manikya sharma.jpeg",
+    image: "/assets/images/saeunitydrive/Manikya sharma.webp",
+    portrait: "/assets/images/saeunitydrive/Manikya sharma.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/10manikya/",
@@ -283,11 +286,24 @@ const alumniData = [
     name: "Saeed ul khair",
     role: "",
     batch: "2023",
-    image: "/assets/images/saeunitydrive/Saeed ul khair.jpeg",
-    portrait: "/assets/images/saeunitydrive/Saeed ul khair.jpeg",
+    image: "/assets/images/saeunitydrive/Saeed ul khair.webp",
+    portrait: "/assets/images/saeunitydrive/Saeed ul khair.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/saeed-ul-khair-29ab941b2/",
+    twitter: "#",
+    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 8,
+    name: "Ajit",
+    role: "",
+    batch: "2023",
+    image: "",
+    portrait: "",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "",
     twitter: "#",
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
@@ -296,34 +312,22 @@ const alumniData = [
     name: "Deepak yadav",
     role: "",
     batch: "2022",
-    image: "/assets/images/saeunitydrive/Deepak yadav.jpeg",
-    portrait: "/assets/images/saeunitydrive/Deepak yadav.jpeg",
+    image: "/assets/images/saeunitydrive/Deepak yadav.webp",
+    portrait: "/assets/images/saeunitydrive/Deepak yadav.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/deepak-yadav-48410a185/",
     twitter: "#",
     achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
-  {
-    id: 24,
-    name: "Arnav",
-    role: "",
-    batch: "2023",
-    image: "/assets/images/saeunitydrive/Arnav.jpeg",
-    portrait: "/assets/images/saeunitydrive/Arnav.jpeg",
-    // quote:
-    //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "https://www.linkedin.com/in/arnav-goel-ba94a21ab/",
-    twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
-  },
+  
   {
     id: 25,
-    name: "Ajay",
+    name: "Ajay Kumar Gupta",
     role: "",
     batch: "2023",
-    image: "/assets/images/saeunitydrive/Ajay.jpeg",
-    portrait: "/assets/images/saeunitydrive/Ajay.jpeg",
+    image: "/assets/images/saeunitydrive/Ajay.webp",
+    portrait: "/assets/images/saeunitydrive/Ajay.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/ajay-nitkkr/",
@@ -332,11 +336,11 @@ const alumniData = [
   },
   {
     id: 26,
-    name: "Udit",
+    name: "Udit Tripathi",
     role: "",
     batch: "2022",
-    image: "/assets/images/saeunitydrive/Udit.jpeg",
-    portrait: "/assets/images/saeunitydrive/Udit.jpeg",
+    image: "/assets/images/saeunitydrive/Udit.webp",
+    portrait: "/assets/images/saeunitydrive/Udit.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/udit-tripathi-265104174/",
@@ -345,11 +349,11 @@ const alumniData = [
   },
   {
     id: 27,
-    name: "Tanishq",
+    name: "Tanishq Ameta",
     role: "",
     batch: "2022",
-    image: "/assets/images/saeunitydrive/Tanishq Ameta.jpeg",
-    portrait: "/assets/images/saeunitydrive/Tanishq Ameta.jpeg",
+    image: "/assets/images/saeunitydrive/Tanishq Ameta.webp",
+    portrait: "/assets/images/saeunitydrive/Tanishq Ameta.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/tanishqameta/",
@@ -361,8 +365,8 @@ const alumniData = [
     name: "Himatri Noonwal",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Himatri.jpeg",
-    portrait: "/assets/images/saeunitydrive/Himatri.jpeg",
+    image: "/assets/images/saeunitydrive/Himatri.webp",
+    portrait: "/assets/images/saeunitydrive/Himatri.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/himatri-noonwal/",
@@ -534,7 +538,7 @@ export default function AlumniCarousel() {
         <div className="flex items-center justify-center gap-8">
           {/* Left Container - Previous Alumni */}
           <div className="w-1/4 max-[1000px]:hidden">
-            {filteredAlumni.length > 0 && prevIndex >= 0 && prevIndex < filteredAlumni.length && (
+            {filteredAlumni.length > 1 && prevIndex >= 0 && prevIndex < filteredAlumni.length && (
               <div className="relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden p-6 backdrop-blur-sm border border-gray-700/50">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                   {filteredAlumni[prevIndex]?.image ? (
@@ -613,7 +617,7 @@ export default function AlumniCarousel() {
                     </div>
                     {/* Info */}
                     <div className="flex flex-col items-center md:items-start">
-                      <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+                      <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent max-[500px]:text-center">
                         {active.name}
                       </h3>
                       <p className="text-lg mt-2 text-gray-300 font-medium">
@@ -649,7 +653,7 @@ export default function AlumniCarousel() {
                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
                           </svg>
                         </a>
-                        <a
+                        {/* <a
                           href={active.twitter}
                           className="w-9 h-9 bg-gray-700 text-gray-400 hover:text-blue-300 rounded-full flex items-center justify-center transition-colors"
                         >
@@ -662,7 +666,7 @@ export default function AlumniCarousel() {
                           >
                             <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
                           </svg>
-                        </a>
+                        </a> */}
                       </div>
                     </div>
                   </div>
@@ -673,7 +677,7 @@ export default function AlumniCarousel() {
 
           {/* Right Container - Next Alumni */}
           <div className="w-1/4 max-[1000px]:hidden">
-            {filteredAlumni.length > 0 && nextIndex >= 0 && nextIndex < filteredAlumni.length && (
+            {filteredAlumni.length > 1 && nextIndex >= 0 && nextIndex < filteredAlumni.length && (
               <div className="relative bg-gray-800/80 rounded-3xl shadow-2xl overflow-hidden p-6 backdrop-blur-sm border border-gray-700/50">
                 <div className="relative w-full aspect-square rounded-2xl overflow-hidden">
                   {filteredAlumni[nextIndex]?.image ? (
