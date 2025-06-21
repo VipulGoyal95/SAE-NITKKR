@@ -1,6 +1,5 @@
 "use client";
 
-import { Player } from "@lottiefiles/react-lottie-player";
 import { useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
@@ -10,9 +9,19 @@ const DynamicThreeDWrapper = dynamic(
     { ssr: false }
 );
 
+const DynamicLottiePlayer = dynamic(
+    () => import("@lottiefiles/react-lottie-player").then(mod => ({ default: mod.Player })),
+    { ssr: false }
+);
+
 export default function ThankYou() {
     const router = useRouter();
     const [isStopped, setIsStopped] = useState(false);
+    const [isLottieLoaded, setIsLottieLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLottieLoaded(true);
+    }, []);
 
     return (
         <DynamicThreeDWrapper>
@@ -24,18 +33,22 @@ export default function ThankYou() {
 
                 {/* Animated Grid Pattern */}
                 <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(#6366f1_1px,transparent_1px),linear-gradient(to_right,#6366f1_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-                <Player
-                    autoplay
-                    keepLastFrame
-                    src="/tick.json"
-                    style={{ width: "400px", height: "400px" }}
-                    loop={false}
-                    onEvent={(event) => {
-                    if (event === "complete") {
-                        setIsStopped(true);
-                    }
-                    }}
-                />
+                
+                {isLottieLoaded && (
+                    <DynamicLottiePlayer
+                        autoplay
+                        keepLastFrame
+                        src="/tick.json"
+                        style={{ width: "400px", height: "400px" }}
+                        loop={false}
+                        onEvent={(event) => {
+                        if (event === "complete") {
+                            setIsStopped(true);
+                        }
+                        }}
+                    />
+                )}
+                
                 <h1 className="text-3xl font-bold mt-6 text-green-400">Thank you!</h1>
                 <p className="text-lg mt-2 text-gray-300 text-center max-w-md">
                     Your contribution has been received successfully. We deeply appreciate your support.
