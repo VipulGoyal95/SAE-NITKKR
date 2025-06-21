@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import { 
   Crown, 
@@ -16,9 +17,11 @@ import {
   Building2,
   Handshake
 } from 'lucide-react';
+import { useRouter } from 'next/navigation'
 
 
 function Page() {
+  const router = useRouter();
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -39,7 +42,7 @@ function Page() {
             Join hands with SAE NIT Kurukshetra to inspire future engineers and drive real innovation in the mobility and automotive community.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="px-12 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-2xl shadow-purple-500/25">
+              <button onClick={()=> router.push("/contactus")} className="px-12 py-5 cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-2xl shadow-purple-500/25">
                Know More <ArrowRight className="w-6 h-6" />
               </button>
               
@@ -56,12 +59,12 @@ function Page() {
             <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Sponsors and Partners</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-items-center mb-16">
-            <img src="/assets/images/sponsors/altium.webp" alt="Altium" className="h-32 object-contain" />
+            <img src="/assets/images/sponsors/Altium2.webp" alt="Altium" className="h-32 object-contain" />
             <img src="/assets/images/sponsors/pankaj_potentiometer.webp" alt="Pankaj Potentiometers" className="h-32 object-contain" />
             <img src="/assets/images/sponsors/bender.webp" alt="Bender" className="h-32 object-contain" />
             <img src="/assets/images/sponsors/bare metal comp.webp" alt="Bare Metal Comp" className="h-32 object-contain" />
             <img src="/assets/images/sponsors/solidworks.webp" alt="SolidWorks" className="h-32 object-contain col-span-2 sm:col-span-1" />
-            <img src="/assets/images/sponsors/Altium2.webp" alt="Altium2" className="h-32 object-contain col-span-2 sm:col-span-1" />
+            {/* <img src="/assets/images/sponsors/" alt="Altium2" className="h-32 object-contain col-span-2 sm:col-span-1" /> */}
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 mt-20">
             <span className="text-white">Previous </span>
@@ -93,7 +96,7 @@ function Page() {
           Join our exclusive sponsorship initiative today and become part of SAE NIT Kurukshetra — a student-driven force shaping the future of mobility, engineering, and automotive excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="px-12 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-2xl shadow-purple-500/25">
+            <button onClick={()=>router.push("/contactus") } className="px-12 py-5 cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-bold text-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3 shadow-2xl shadow-purple-500/25">
               Become a Sponsor <Zap className="w-6 h-6" />
             </button>
            

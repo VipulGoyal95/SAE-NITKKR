@@ -168,8 +168,8 @@ const alumniData = [
     name: "Vaibhav Dharmani",
     role: "",
     batch: "2024",
-    image: "/assets/images/saeunitydrive/Vaibhav Dharmani.webp",
-    portrait: "/assets/images/saeunitydrive/Vaibhav Dharmani.webp",
+    image: "/assets/images/saeunitydrive/Vaibhav dharmani.webp",
+    portrait: "/assets/images/saeunitydrive/Vaibhav dharmani.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/vaibhav-dharmani-aa91a7199/",

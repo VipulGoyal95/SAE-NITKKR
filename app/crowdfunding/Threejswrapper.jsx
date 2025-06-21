@@ -9,9 +9,10 @@ import ThreeDWrapper from "../components/crowdfunding/ThreeDWrapper";
 import dynamic from "next/dynamic";
 
 const DynamicThreeDWrapper = dynamic(
-    () => import("../components/crowdfunding/ThreeDWrapper"),
-    { ssr: false }
-  );
+  () => import("../components/crowdfunding/ThreeDWrapper"),
+  { ssr: false }
+);
+
 const Threejswrapper = () => {
   return (
     <DynamicThreeDWrapper>

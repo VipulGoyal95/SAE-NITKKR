@@ -2,26 +2,58 @@
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import {
+  updateDoc,
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { useRouter } from 'next/navigation'
+import db from "../../firebase";
+import { ClipLoader } from "react-spinners";
+import { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
+
 
 // Dynamically import ThreeDWrapper to avoid SSR issues
 const DynamicThreeDWrapper = dynamic(
-  () => import("../components/crowdfunding/ThreeDWrapper"),
+  () => import("../../components/crowdfunding/ThreeDWrapper"),
   { ssr: false }
 );
 
+const Loader = () => (
+  <div className="flex items-center justify-center">
+    <ClipLoader size={50} color="#3B82F6" />
+  </div>
+);
+
 export default function Donation() {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    graduationYear: "",
     amount: "",
     message: "",
+    confirmed: false,
+    currency: "INR",
   });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+  const currencySymbols = {
+    INR: "₹",
+    USD: "$",
+    CAD: "C$",
+    EURO: "€",
   };
+  const [loading, setLoading] = useState(false);
+
+  const handleCurrencyChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
 
   const handleChange = (e) => {
     setFormData({
@@ -29,9 +61,80 @@ export default function Donation() {
       [e.target.name]: e.target.value,
     });
   };
+  const validateForm = () => {
+    const { name, amount, email, graduationYear,message } = formData;
+
+    if (!name || !amount || !email || !graduationYear) {
+      toast.error("Please fill all required fields.");
+      return false;
+    }
+
+    if (parseInt(amount) <= 0) {
+      toast.error("Amount should be greater than 0.");
+      return false;
+    }
+
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return false;
+    }
+
+    return true;
+  };
+
+  const saveToFirestore = async () => {
+    const timestamp = String(new Date().getTime());
+    try {
+      setLoading(true);
+      await setDoc(doc(db, "CrowdFunding2025", timestamp), {
+        ...formData,
+        timestamp: new Date(),
+      });
+        sessionStorage.setItem("crowdfunding2025_userid", timestamp);
+        setLoading(false);
+        router.push("/crowdfunding/payment")
+    } catch (error) {
+      setLoading(false);
+      // toast.error("Something went wrong, Please try again.");
+      console.error("Firestore Error:", error);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (validateForm()) {
+      // savedatatoGoogleSheets(e);
+      
+      saveToFirestore();
+    }
+  };
 
   return (
     <DynamicThreeDWrapper>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: '#1e1e2f',
+            color: '#f5f5f5',
+            border: '1px solid #333',
+            borderRadius: '10px',
+          },
+          success: {
+            iconTheme: {
+              primary: '#4ade80', // green
+              secondary: '#1e1e2f',
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: '#f87171', // red
+              secondary: '#1e1e2f',
+            },
+          },
+        }}
+      />
+
       <div className="min-h-screen text-white relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
@@ -82,10 +185,42 @@ export default function Donation() {
                   placeholder="Enter your email"
                 />
               </div>
+              <div>
+                <label htmlFor="graduationYear" className="block text-sm font-medium text-gray-300 mb-2">
+                  Graduation Year
+                </label>
+                <input
+                  type="number"
+                  id="graduationYear"
+                  name="graduationYear"
+                  value={formData.graduationYear}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
+                  placeholder="Enter your Graduation Year"
+                />
+              </div>
+              {/* <div>
+                <label htmlFor="currency" className="block text-sm font-medium text-gray-300 mb-2">
+                  Select Currency
+                </label>
+                <select
+                  id="currency"
+                  name="currency"
+                  value={formData.currency}
+                  onChange={handleCurrencyChange}
+                  className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors mb-4"
+                >
+                  <option value="INR">INR (₹)</option>
+                  <option value="USD">USD ($)</option>
+                  <option value="CAD">CAD (C$)</option>
+                  <option value="EURO">EURO (€)</option>
+                </select>
+              </div> */}
 
               <div>
                 <label htmlFor="amount" className="block text-sm font-medium text-gray-300 mb-2">
-                  Donation Amount (₹)
+                  Contribution ({currencySymbols[formData.currency]})
                 </label>
                 <input
                   type="number"
@@ -96,7 +231,7 @@ export default function Donation() {
                   required
                   min="1"
                   className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
-                  placeholder="Enter amount"
+                  placeholder={`Enter amount`}
                 />
               </div>
 
@@ -111,21 +246,21 @@ export default function Donation() {
                   onChange={handleChange}
                   rows="4"
                   className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
-                  placeholder="Share your thoughts or specify how you'd like your donation to be used"
+                  placeholder="Your thoughts matter to us. Feel free to share a message for our teams!"
                 />
               </div>
 
               <button
                 type="submit"
                 className="w-full py-4 px-6 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-[1.02]"
+                disabled={loading}
               >
-                Donate Now
+                {
+                  loading? <Loader /> : "Contribute Now"
+                }
               </button>
             </form>
 
-            <div className="mt-8 text-center text-gray-400">
-              <p>Your donation is secure and will be processed through our trusted payment gateway.</p>
-            </div>
           </div>
         </div>
       </div>

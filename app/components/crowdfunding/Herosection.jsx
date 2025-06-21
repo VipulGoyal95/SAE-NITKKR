@@ -176,7 +176,7 @@ With your support, we aim to gather the funds required to build our vehicles and
           <ScrollAnimatedElement direction="y" distance={20} delay={0.6}>
             <div className="mt-6">
               <motion.a
-                href="/donation"
+                href="/crowdfunding/form"
                 className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
                 whileHover={{
                   scale: 1.05,
@@ -244,7 +244,7 @@ With your support, we aim to gather the funds required to build our vehicles and
             </p>
 
             <motion.a
-              href="/donation"
+              href="/crowdfunding/form"
               className="inline-block px-8 py-3 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-medium transition-all duration-300 shadow-md"
               whileHover={{
                 scale: 1.05,

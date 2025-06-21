@@ -30,7 +30,7 @@ const TeamMembers = () => {
 
       <div className="relative mx-auto max-w-8xl max-[420px]:max-w-[95vw]">
        
-        <div className="mb-20 text-center">
+        <div className="mt-8 mb-20 text-center max-[450px]:mb-8">
           {/* <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-[2rem] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-2xl">
             <Users className="h-14 w-14 text-white" />
           </div> */}
@@ -50,7 +50,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-50" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 min-[1300px]:grid-cols-3 lg:grid-cols-4 ${showFull1 ? "max-h-[3000px] pb-10 max-[450px]:max-h-[3700px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[90vh]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 min-[1300px]:grid-cols-3 lg:grid-cols-4 ${showFull1 ? "max-h-[3000px] pb-10 max-[450px]:max-h-[3700px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[68vh]"} transition-all duration-700 ease-in-out`}>
               {Details4yr.map((member, index) => (
                 <div 
                   key={member.id}
@@ -85,7 +85,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-50" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 sm:grid-cols-2 lg:grid-cols-4 ${showFull3 ? "max-h-[3000px] pb-10 max-[450px]:max-h-[3900px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[90vh]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 sm:grid-cols-2 lg:grid-cols-4 ${showFull3 ? "max-h-[3000px] pb-10 max-[450px]:max-h-[3900px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[68vh]"} transition-all duration-700 ease-in-out`}>
               {Details3yr.map((member, index) => (
                 <div 
                   key={member.id}
@@ -120,7 +120,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-45" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 sm:grid-cols-2 lg:grid-cols-4 ${showFull2 ? "max-h-[2000px] pb-10 max-[450px]:max-h-[2500px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[90vh]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 sm:grid-cols-2 lg:grid-cols-4 ${showFull2 ? "max-h-[2000px] pb-10 max-[450px]:max-h-[2500px]" : "max-h-[110vh] max-[600px]:max-h-[105vh] max-[415px]:max-h-[68vh]"} transition-all duration-700 ease-in-out`}>
               {alumni.map((member, index) => (
                 <div 
                   key={member.id}

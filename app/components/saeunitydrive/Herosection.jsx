@@ -14,11 +14,12 @@ export default function Herosection() {
   useCountUp({
     ref: counterRef2,
     start: 0,
-    end: 24,
+    end: 20.4,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
+    decimals: 1
   })
 
   useCountUp({
@@ -43,7 +44,7 @@ export default function Herosection() {
   useCountUp({
     ref: counterRef1,
     start: 0,
-    end: 4657,
+    end: 30,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -145,9 +146,9 @@ export default function Herosection() {
           </a> */}
         </div>
 
-        <div className="md:w-1/2 grid grid-cols-2 gap-8">
+        <div className="md:w-1/2 grid items-center grid-cols-2 gap-8">
           {/* Stats Cards with modern styling */}
-          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
             <span className="counter-class" ref={counterRef1}></span>+
             </div>
@@ -156,16 +157,16 @@ export default function Herosection() {
             </div>
           </div>
 
-          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef2}></span><span className="text-3xl">K</span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
-              TOTAL FUND
+              RAISED
             </div>
           </div>
 
-          <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+          {/* <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
             <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
             <span className="counter-class" ref={counterRef3}></span>
             </div>
@@ -181,8 +182,18 @@ export default function Herosection() {
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               TEAM MEMBERS
             </div>
-          </div>
+          </div> */}
         </div>
+        {/* <div>
+            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+              <span className="counter-class" ref={counterRef4}></span>
+              </div>
+              <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
+                TEAM MEMBERS
+              </div>
+            </div>
+        </div> */}
       </section>
     </section>
   );

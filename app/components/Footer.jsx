@@ -5,9 +5,14 @@ const Footer = () => {
   const pathname = usePathname();
   const unitydrivePage = pathname.includes('/saeunitydrive');
   const crowdfundingPage = pathname.includes('/crowdfunding');
+  const form = pathname.includes('/crowdfunding/form');
+  const payment = pathname.includes('/crowdfunding/payment');
+  const thankyou = pathname.includes('/crowdfunding/thankyou');
   const isblue = unitydrivePage || crowdfundingPage;
+  const istop = form || payment || thankyou;
+
   return (
-    <footer className={`${isblue? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-black'} text-gray-300 py-16 px-6 relative`}>
+    <footer className={`${istop? 'bg-gradient-to-t from-gray-900 to-black' : isblue ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-black' } text-gray-300 py-16 px-6 relative`}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg width="100%" height="100%" className="opacity-5">
           <pattern
@@ -26,7 +31,7 @@ const Footer = () => {
           <rect width="100%" height="100%" fill="url(#grid-pattern)"></rect>
         </svg>
         <div className="absolute -bottom-24 -left-24 w-96 h-96 blur-3xl bg-blue-500 opacity-10 rounded-full"></div>
-        <div className="absolute -top-24 -right-24 w-96 h-96 blur-3xl bg-purple-500 opacity-10 rounded-full"></div>
+        {/* <div className="absolute -top-24 -right-24 w-96 h-96 blur-3xl bg-purple-500 opacity-10 rounded-full"></div> */}
       </div>
 
       <div className="max-w-7xl mx-auto glass-effect backdrop-blur-sm rounded-2xl p-8 border border-gray-800 bg-black/30 relative z-10">
@@ -81,7 +86,7 @@ const Footer = () => {
                 { href: "/nitrox", label: "Team Nitrox" },
                 { href: "/autokriti", label: "Autokriti" },
                 { href: "/sponsors", label: "Sponsors" },
-                { href: "/contactus", label: "Contact Us" },
+                { href: "/teammembers", label: "Team Members" },
               ].map((link, index) => (
                 <li key={index}>
                   <a

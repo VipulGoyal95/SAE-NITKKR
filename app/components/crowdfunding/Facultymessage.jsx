@@ -178,7 +178,7 @@ Your contributions will directly enable our students to innovate, compete, and r
             <div className="flex-1 max-[500px]:flex-auto">
 
 
-              <p className="text-[26px] mb-4 max-[500px]:mx-auto">
+              <p className="text-[26px] mb-4 max-[500px]:text-center">
                 <span className="font-bold text-blue-300">Dr. Vikas Kumar</span>
                 <br />
                 <span className="text-sm text-gray-400">

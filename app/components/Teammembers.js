@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useRef, useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const teamMembers = [
   {
@@ -54,6 +55,7 @@ const teamMembers = [
 const Teammembers = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [clickedIndex, setClickedIndex] = useState(null);
+  const [titleHovered, setTitleHovered] = useState(false);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -85,10 +87,28 @@ const Teammembers = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
-        <h2 className="text-white text-4xl font-bold text-center">
-          TEAM MEMBERS
-        </h2>
-        <div className="w-24 h-1 bg-gradient-to-r from-white/0 via-white to-white/0 mx-auto mt-4"></div>
+        <Link href="/teammembers" passHref legacyBehavior>
+          <a
+            onMouseEnter={() => setTitleHovered(true)}
+            onMouseLeave={() => setTitleHovered(false)}
+            className="block w-fit mx-auto cursor-pointer"
+            style={{ textDecoration: 'none' }}
+          >
+            <h2 className="text-white text-4xl font-bold text-center select-none">
+              Team members
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-white/0 via-white to-white/0 mx-auto mt-4"></div>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={titleHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+              transition={{ duration: 0.3 }}
+              className="text-white text-lg font-medium text-center mt-2"
+              style={{ pointerEvents: 'none' }}
+            >
+              Know more about our team
+            </motion.div>
+          </a>
+        </Link>
       </motion.div>
 
       {/* Grid */}

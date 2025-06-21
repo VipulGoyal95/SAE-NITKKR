@@ -36,14 +36,14 @@ const TeamMemberCard = ({ member }) => {
           isHovered ? 'translate-y-0' : 'translate-y-24'
         }`}>
           <div className={`${!member.Department?"mb-10 max-[540px]:mb-6 max-[500px]:mb-4 max-[410px]:mb-1":"mb-2"}`}>
-            <h3 className="text-3xl max-[640px]:text-2xl max-[420px]:text-xl font-bold text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_30%)]">
+            <h3 className={`text-3xl max-[640px]:text-2xl max-[420px]:text-xl font-bold text-white [text-shadow:_0_2px_4px_rgb(0_0_0_/_30%)] ${isHovered? "max-[420px]:text-[1.1rem]": ""}`}>
               {member.name}
             </h3>
             <div className={`mt-3 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[420px]:mt-2 ${
               isHovered ? 'w-40 max-[430px]:w-34' : 'w-20'
             }`} />
             {
-              member.metadata? (<p className="mt-1 text-lg max-[640px]:text-[18px] max-[600px]:text-[17px] max-[420px]:text-[15px] font-medium text-blue-50/90">{member.metadata.position1}</p>):(<p className="mt-3 text-lg max-[640px]:text-[18px] max-[600px]:text-[17px] max-[420px]:text-[15px] font-medium text-blue-50/90">{member.Team}</p>)
+              member.metadata? (<p className="mt-1 text-lg max-[640px]:text-[18px] max-[600px]:text-[17px] max-[420px]:text-[15px] font-medium text-blue-50/90">{member.metadata.position1}</p>):(<p className={`mt-3 text-lg max-[640px]:text-[18px] max-[600px]:text-[17px] max-[420px]:text-[15px] font-medium text-blue-50/90 ${!member.Team ? "mb-10":""}`}>{member.Department}</p>)
             }
             {
               member.metadata && member.metadata.position2 && (<p className="mt-1 text-lg max-[640px]:text-[18px] max-[600px]:text-[17px] max-[420px]:text-[15px] font-medium text-blue-50/90">{member.metadata.position2}</p>)
@@ -63,7 +63,13 @@ const TeamMemberCard = ({ member }) => {
             {
               !member.Department && <p className={`${!isHovered && "max-[420px]:h-6 max-[420px]:w-3"}`}></p>
             }
-            <p className="mt-1 text-sm font-medium text-blue-50/70">{member.Department}</p>
+            { member.metadata &&
+              <p className="mt-1 text-sm font-medium text-blue-50/70">{member.Department}</p>
+            }
+            {
+              !member.metadata && member.Team &&
+              <p className="mt-1 text-sm font-medium text-blue-50/70">{member.Team}</p>
+            }
           </p>
           
           <div className={`flex space-x-3 transition-all duration-700 max-[450px]:space-x-2 max-[400px]:space-x-1 ${
