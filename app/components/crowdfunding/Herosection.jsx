@@ -208,7 +208,6 @@ With your support, we aim to gather the funds required to build our vehicles and
                   <MuxPlayer
                     playbackId="A3nZBzfdzGxA3LlkE46FPAErJI027rx5xoIYINyfSjVI"
                     streamType="on-demand"
-                    autoPlay
                     controls
                     metadata={{
                       video_title: 'CrowdFunding 2025',
