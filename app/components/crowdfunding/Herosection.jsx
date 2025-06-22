@@ -10,6 +10,7 @@ import {
   Tilt3DCard,
   FloatingElement,
 } from "./ScrollAnimations";
+import Brochure from "./Brochure";
 
 const HeroSection = () => {
 
@@ -40,7 +41,7 @@ const HeroSection = () => {
   useCountUp({
     ref:counterRef4,
     start: 0,
-    end: 60,
+    end: 45,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -50,7 +51,7 @@ const HeroSection = () => {
   useCountUp({
     ref: counterRef1,
     start: 0,
-    end: 12,
+    end: 8,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
@@ -173,7 +174,7 @@ With your support, we aim to gather the funds required to build our vehicles and
             </p>
           </ScrollAnimatedElement>
 
-          <ScrollAnimatedElement direction="y" distance={20} delay={0.6}>
+          {/* <ScrollAnimatedElement direction="y" distance={20} delay={0.6}>
             <div className="mt-6">
               <motion.a
                 href="/crowdfunding/form"
@@ -187,7 +188,7 @@ With your support, we aim to gather the funds required to build our vehicles and
                 Contribute Now
               </motion.a>
             </div>
-          </ScrollAnimatedElement>
+          </ScrollAnimatedElement> */}
         </div>
 
         <div className="w-full md:w-[45%]">
@@ -222,7 +223,7 @@ With your support, we aim to gather the funds required to build our vehicles and
           </Tilt3DCard>
         </div>
       </section>
-
+      <Brochure />
       {/* Funding Stats Section */}
       <section className="relative text-white py-24 px-6 md:px-16 flex flex-col md:flex-row justify-between gap-12 z-10 border-t border-gray-800/50">
         <div className="md:w-1/2">

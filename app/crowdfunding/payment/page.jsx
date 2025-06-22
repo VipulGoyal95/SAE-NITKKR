@@ -8,6 +8,7 @@ import toast from 'react-hot-toast';
 import { doc, updateDoc } from "firebase/firestore";
 import db from "../../firebase"; // adjust path if needed
 import { useRouter } from 'next/navigation'
+import { ClipLoader } from "react-spinners";
 // import ThreeDWrapper from "../../components/crowdfunding/ThreeDWrapper"
 const DynamicThreeDWrapper = dynamic(
     () => import("../../components/crowdfunding/ThreeDWrapper"),
@@ -45,7 +46,11 @@ const handleCopy = async () => {
     }
   };
 
-  
+  const Loader = () => (
+    <div className="flex items-center justify-center">
+      <ClipLoader size={50} color="#3B82F6" />
+    </div>
+  );
 
 
 const Payment=()=>{
@@ -60,13 +65,17 @@ const Payment=()=>{
       }
     
       try {
+        setLoading(true);
         const userDocRef = doc(db, "CrowdFunding2025", docId);
         await updateDoc(userDocRef, {
           confirmed: true,
         });
         router.push("/crowdfunding/thankyou");
+        setLoading(false);
         // console.log("User contribution confirmed successfully.");
       } catch (error) {
+        setLoading(false);
+        toast.error("Something went wrong, Please try again.")
         console.error("Error confirming user contribution:", error);
       }
     };
@@ -117,12 +126,19 @@ const Payment=()=>{
                             <p>8570865708@sbi</p>
                             <button className="cursor-pointer ml-4" onClick={handleCopy}><FaCopy /></button>
                         </div>
+                        
+                        {/* Note for large contributions */}
+                        <div className="mt-6 p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-lg max-w-md mx-auto">
+                            <p className="text-[16px] text-yellow-200 font-medium">
+                                <span className="font-bold">Note:</span> For contributions exceeding ₹2000, it is recommended to scan the QR code using your device, as there is a limit set for UPI transactions through screenshots.
+                            </p>
+                        </div>
                         {/* <div className="mx-auto w-[80%] my-10 h-[4px] bg-gradient-to-r from-blue-500 to-purple-500"></div> */}
                         <div className="mt-10">
-                            <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+                            <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500 max-[450px]:text-3.5xl">
                                 Bank Account Details
                             </h1>
-                            <div className="mx-auto text-center text-[23px]">
+                            <div className="mx-auto text-center text-[23px] max-[450px]:text-[20px]">
                                 <p >
                                     Account Number: 30993905530
                                     <button className="cursor-pointer ml-4" onClick={handleCopy2}><FaCopy /></button>
@@ -135,7 +151,7 @@ const Payment=()=>{
                         </div>
                         <button
                             type="submit"
-                            className="w-fit mx-auto cursor-pointer mt-12 py-4 px-6 text-[22px] font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-[1.02]"
+                            className="w-fit mx-auto cursor-pointer mt-12 py-4 px-6 text-[22px] max-[450px]:text-[20px] font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-[1.02]"
                             disabled={loading}
                             onClick={handleSubmit}
                         >
@@ -143,6 +159,23 @@ const Payment=()=>{
                             loading? <Loader /> : "Confirm"
                             }
                         </button>   
+                        
+                        {/* Contact Details */}
+                        <div className="mt-14 p-6 bg-gradient-to-r from-gray-800/50 to-gray-700/50 border border-gray-600/30 rounded-lg max-w-md mx-auto">
+                            <h3 className="text-[20px] font-bold text-center mb-4 text-blue-300">
+                                In case of query, contact us
+                            </h3>
+                            <div className="space-y-3 text-[16px]">
+                                <div className="flex justify-between items-center">
+                                    <span className="font-medium text-gray-200">Abhishek:</span>
+                                    <span className="text-blue-300">+91 7206168355</span>
+                                </div>
+                                <div className="flex justify-between items-center">
+                                    <span className="font-medium text-gray-200">Shubhayu Sinha:</span>
+                                    <span className="text-blue-300">+91 9911914563</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -3,6 +3,8 @@
 import { useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
+// import { useScrollToTop } from "@/app/utils/scrollToTop";
+import Link from "next/link";
 
 const DynamicThreeDWrapper = dynamic(
     () => import("../../components/crowdfunding/ThreeDWrapper"),
@@ -21,8 +23,12 @@ export default function ThankYou() {
 
     useEffect(() => {
         setIsLottieLoaded(true);
-    }, []);
-
+        const timeout = setTimeout(() => {
+            router.push("/crowdfunding"); // redirect to homepage after delay (optional)
+          }, 7000);
+          return () => clearTimeout(timeout);
+    }, [router]);
+    // useScrollToTop();
     return (
         <DynamicThreeDWrapper>
             <div className="min-h-screen flex flex-col items-center justify-center text-white px-4">

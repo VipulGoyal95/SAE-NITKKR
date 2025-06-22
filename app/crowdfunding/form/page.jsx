@@ -91,11 +91,11 @@ export default function Donation() {
         timestamp: new Date(),
       });
         sessionStorage.setItem("crowdfunding2025_userid", timestamp);
-        setLoading(false);
         router.push("/crowdfunding/payment")
+        setLoading(false);
     } catch (error) {
       setLoading(false);
-      // toast.error("Something went wrong, Please try again.");
+      toast.error("Something went wrong, Please try again.");
       console.error("Firestore Error:", error);
     }
   };
