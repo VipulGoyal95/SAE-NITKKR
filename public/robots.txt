@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /private
+
+# Host
+Host: https://www.saenitkurukshetra.com
+
+# Sitemaps
+Sitemap: https://www.saenitkurukshetra.com/sitemap.xml

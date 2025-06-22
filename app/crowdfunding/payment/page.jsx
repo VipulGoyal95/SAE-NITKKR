@@ -9,6 +9,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import db from "../../firebase"; // adjust path if needed
 import { useRouter } from 'next/navigation'
 import { ClipLoader } from "react-spinners";
+import Head from "next/head";
 // import ThreeDWrapper from "../../components/crowdfunding/ThreeDWrapper"
 const DynamicThreeDWrapper = dynamic(
     () => import("../../components/crowdfunding/ThreeDWrapper"),
@@ -80,6 +81,11 @@ const Payment=()=>{
       }
     };
     return(
+      <>
+        <Head>
+          <title>Payments</title>
+          <meta name="robots" content="noindex, follow" />
+        </Head>
         <DynamicThreeDWrapper>
             <Toaster
                 position="top-right"
@@ -180,6 +186,7 @@ const Payment=()=>{
                 </div>
             </div>
         </DynamicThreeDWrapper>
+      </>
     )
 }
 

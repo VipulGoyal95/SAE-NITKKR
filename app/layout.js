@@ -14,19 +14,46 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title:{
+  title: {
     default: "SAE NIT Kurukshetra",
-    template: "%s - SAE NIT Kurukshetra"
+    template: "%s - SAE NIT Kurukshetra",
   },
-  description: "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers NIT Kurukshetra",
+  description:
+    "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers NIT Kurukshetra",
+  metadataBase: new URL("https://www.saenitkurukshetra.com"),
+  alternates: {
+    canonical: "/",
+  },
   icons: {
-    icon: '/assets//images/sae-logo.webp',
-    apple: '/assets//images/sae-logo.webp',
+    icon: "/assets/images/sae-logo.webp",
+    apple: "/assets/images/sae-logo.webp",
   },
   openGraph: {
-    images: '/assets/images/sae-logo.webp',
+    title: "SAE NIT Kurukshetra",
+    description:
+      "Explore SAE NIT Kurukshetra's engineering innovation and teams like Accelerons and Nitrox.",
+    url: "https://www.saenitkurukshetra.com/",
+    siteName: "SAE NIT Kurukshetra",
+    images: [
+      {
+        url: "/assets/images/sae-logo.webp",
+        width: 800,
+        height: 600,
+        alt: "SAE NIT Kurukshetra Logo",
+      },
+    ],
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
+
 
 export default function RootLayout({ children }) {
   return (
