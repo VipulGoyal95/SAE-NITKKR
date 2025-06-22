@@ -15,9 +15,7 @@ module.exports = {
           disallow: ['/private'], // 🔒 Optional disallowed paths
         },
       ],
-      additionalSitemaps: [
-        'https://www.saenitkurukshetra.com/sitemap.xml',
-      ],
+      additionalSitemaps: [],
     },
   };
   
