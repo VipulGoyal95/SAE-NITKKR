@@ -50,7 +50,7 @@ export default function ContactUs() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-white">Email</h3>
-                                <p className="text-gray-400 mt-1">saenitkurukshetra@gmail.com</p>
+                                <p className="text-gray-400 mt-1">saenitkkr@nitkkr.ac.in</p>
                             </div>
                         </div>
                         <div className="flex items-start space-x-4">
@@ -65,7 +65,7 @@ export default function ContactUs() {
                             </div>
                             <div>
                                 <h3 className="text-xl font-semibold text-white">Nitrox Email</h3>
-                                <p className="text-gray-400 mt-1">teamnitrox@gmail.com</p>
+                                <p className="text-gray-400 mt-1">nitroxkkr@gmail.com</p>
                             </div>
                         </div>
                         <div className="flex items-start space-x-4">

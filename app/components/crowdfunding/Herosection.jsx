@@ -11,6 +11,7 @@ import {
   FloatingElement,
 } from "./ScrollAnimations";
 import Brochure from "./Brochure";
+import MuxPlayer from '@mux/mux-player-react';
 
 const HeroSection = () => {
 
@@ -57,6 +58,7 @@ const HeroSection = () => {
     enableScrollSpy: true,
     scrollSpyOnce: true,
   });
+
   // Only render CountUp components when the component is mounted on the client
   // This prevents hydration errors with server-side rendering
   return (
@@ -167,7 +169,7 @@ const HeroSection = () => {
 
           <ScrollAnimatedElement direction="y" distance={20} delay={0.4}>
             <p className="text-lg opacity-80 tracking-wider leading-relaxed max-w-xl">
-            Welcome to the official crowdfunding campaign of SAE NIT Kurukshetra! We’re not just building vehicles: we are building the future of mobility. 
+            Welcome to the official crowdfunding campaign of SAE NIT Kurukshetra! We're not just building vehicles: we are building the future of mobility. 
             <br/>
 With your support, we aim to gather the funds required to build our vehicles and participate in competitions such as SUPRA, Formula Bharat, eBAJA and ATVC.
   
@@ -192,35 +194,33 @@ With your support, we aim to gather the funds required to build our vehicles and
         </div>
 
         <div className="w-full md:w-[45%]">
-          <Tilt3DCard>
             <div className="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500">
               {/* Gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-indigo-700/30 mix-blend-overlay z-10"></div>
 
               {/* Decorative elements */}
-              <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-800/30 rounded-full blur-xl z-0"></div>
-              <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-indigo-800/30 rounded-full blur-xl z-0"></div>
+              <div className="absolute -top-12 -left-12 w-24 h-24 bg-blue-800/30 rounded-full blur-xl z-0 pointer-events-none"></div>
+              <div className="absolute -bottom-12 -right-12 w-24 h-24 bg-indigo-800/30 rounded-full blur-xl z-0 pointer-events-none"></div>
 
               {/* Video or Image */}
-              <div className="relative aspect-video">
-                {/* You can use a video or image here */}
-                <video
-                  className="object-cover w-full h-full"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                >
-                  <source src="/sae-crowdfunding.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              <div className="relative aspect-video h-full">
+                <div className="relative z-40 h-full">
+                  <MuxPlayer
+                    playbackId="A3nZBzfdzGxA3LlkE46FPAErJI027rx5xoIYINyfSjVI"
+                    streamType="on-demand"
+                    autoPlay
+                    controls
+                    metadata={{
+                      video_title: 'CrowdFunding 2025',
+                      viewer_user_id: 'Placeholder (optional)',
+                    }}
+                  />
+                </div>
+                {/* Overlays with pointer-events-none */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/70 -z-10 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:12px_12px] -z-20 opacity-30 pointer-events-none"></div>
               </div>
-
-              {/* Overlay pattern */}
-              <div className="absolute inset-0 bg-gradient-to-b from-black/10 to-black/70 z-20"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:12px_12px] z-30 opacity-30"></div>
             </div>
-          </Tilt3DCard>
         </div>
       </section>
       <Brochure />
@@ -241,7 +241,7 @@ With your support, we aim to gather the funds required to build our vehicles and
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6"></div>
 
             <p className="text-base md:text-lg leading-relaxed opacity-80 mb-8 max-w-xl text-gray-300">
-            Designing and building high performance vehicles is exhilarating, but it’s not easy nor cheap. Our team is entirely student-run, and we rely on the generosity of sponsors, alumni, and well-wishers to keep us on the track.
+            Designing and building high performance vehicles is exhilarating, but it's not easy nor cheap. Our team is entirely student-run, and we rely on the generosity of sponsors, alumni, and well-wishers to keep us on the track.
             </p>
 
             <motion.a

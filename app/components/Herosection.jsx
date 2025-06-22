@@ -14,7 +14,7 @@ export default function Herosection() {
   const accelerons={
     urls: [
       "/assets/images/accelerons/img7.webp",
-      "/assets/images/accelerons/img8.webp",
+      "/assets/images/accelerons/img12.webp",
       "/assets/images/accelerons/img10.webp",
       "/assets/images/accelerons/img5.webp",
       "/assets/images/accelerons/img11.webp"

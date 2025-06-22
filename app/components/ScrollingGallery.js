@@ -7,11 +7,13 @@ import { motion, useInView } from "framer-motion";
 import { usePathname } from 'next/navigation';
 
 const topImagesAcelerons = [
-  "/assets/images/accelerons/img1.webp",
-  "/assets/images/accelerons/img2.webp",
-  "/assets/images/accelerons/img3.webp",
-  "/assets/images/accelerons/img4.webp",
+  "/assets/images/accelerons/img10.webp",
+  "/assets/images/accelerons/img11.webp",
+  "/assets/images/accelerons/img12.webp",
+  "/assets/images/accelerons/img13.webp",
+  "/assets/images/accelerons/img14.webp",
   "/assets/images/accelerons/img5.webp",
+  "/assets/images/accelerons/img17.webp",
 ];
 
 const bottomImagesAcelerons = [
@@ -19,6 +21,9 @@ const bottomImagesAcelerons = [
   "/assets/images/accelerons/img6.webp",
   "/assets/images/accelerons/img7.webp",
   "/assets/images/accelerons/img8.webp",
+  "/assets/images/accelerons/img15.webp",
+  "/assets/images/accelerons/img16.webp",
+  "/assets/images/accelerons/img18.webp",
 ];
 
 const topImagesNitrox = [

@@ -61,6 +61,35 @@ export default function Donation() {
       [e.target.name]: e.target.value,
     });
   };
+
+  const savedatatoGoogleSheets = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbxXNeuB-Gst-pHxTcJuygHmXKBi6tlkuqVNao6S2C2n5izAqTzxxbzGreNX_eKIiwwkvg/exec",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            ...formData,
+          }),
+        }
+      );
+      const result = await response.json();
+      if (result.status === "Success") {
+        console.log("Data saved")
+        console.log(result.data);
+      }
+      else{
+        toast.error("Failed to save data");
+        return;
+      }
+      // console.log(result);
+    } catch (error) {
+      console.error("Error saving data:", error);
+      toast.error("Failed to save data!");
+      return;
+    }
+  };
+
   const validateForm = () => {
     const { name, amount, email, graduationYear,message } = formData;
 
@@ -103,8 +132,7 @@ export default function Donation() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // savedatatoGoogleSheets(e);
-      
+      savedatatoGoogleSheets(e);
       saveToFirestore();
     }
   };
