@@ -35,7 +35,7 @@ export default function Donation() {
     graduationYear: "",
     amount: "",
     message: "",
-    confirmed: false,
+    confirmed: "No",
     currency: "INR",
   });
   const currencySymbols = {
@@ -64,7 +64,7 @@ export default function Donation() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxXNeuB-Gst-pHxTcJuygHmXKBi6tlkuqVNao6S2C2n5izAqTzxxbzGreNX_eKIiwwkvg/exec",
+        "https://script.google.com/macros/s/AKfycbx0TRj6X8llAmE7YjwXxQNlEIr8d7JBhO89KBlAmDpJjqlvNYIL2-xD8gAzQL0yOPcu/exec",
         {
           method: "POST",
           body: JSON.stringify({
@@ -118,6 +118,7 @@ export default function Donation() {
         timestamp: new Date(),
       });
       sessionStorage.setItem("crowdfunding2025_userid", timestamp);
+      sessionStorage.setItem("crowdfunding2025_data",JSON.stringify(formData));
       router.push("/crowdfunding/payment");
       setLoading(false);
     } catch (error) {
@@ -130,7 +131,7 @@ export default function Donation() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      savedatatoGoogleSheets(e);
+      // savedatatoGoogleSheets(e);
       saveToFirestore();
     }
   };

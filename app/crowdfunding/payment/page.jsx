@@ -49,15 +49,49 @@ const handleCopy = async () => {
 
   const Loader = () => (
     <div className="flex items-center justify-center">
-      <ClipLoader size={50} color="#3B82F6" />
+      <ClipLoader size={35} color="#3B82F6" />
     </div>
   );
 
+  
 
 const Payment=()=>{
     const [loading,setLoading] = useState(false);
     const router = useRouter();
-    const handleSubmit = async () => {
+    const savedatatoGoogleSheets = async (e) => {
+      e.preventDefault();
+      try {
+        const formData = JSON.parse(sessionStorage.getItem("crowdfunding2025_data"));
+        if(!formData){
+          console.error("something went wrong");
+        }
+        console.log(formData);
+        const response = await fetch(
+          "https://script.google.com/macros/s/AKfycbx0TRj6X8llAmE7YjwXxQNlEIr8d7JBhO89KBlAmDpJjqlvNYIL2-xD8gAzQL0yOPcu/exec",
+          {
+            method: "POST",
+            body: JSON.stringify({
+              ...formData,
+            }),
+          }
+        );
+        const result = await response.json();
+        if (result.status === "Success") {
+          console.log("Data saved");
+          console.log(result.data);
+          // return {sucess:"true"}
+        } else {
+          toast.error("Failed to save data");
+          return;
+        }
+        // console.log(result);
+      } catch (error) {
+        console.error("Error saving data:", error);
+        toast.error("Failed to save data!");
+        return;
+      }
+    };
+    const handleSubmit = async (e) => {
       const docId = sessionStorage.getItem("crowdfunding2025_userid");
     
       if (!docId) {
@@ -69,8 +103,10 @@ const Payment=()=>{
         setLoading(true);
         const userDocRef = doc(db, "CrowdFunding2025", docId);
         await updateDoc(userDocRef, {
-          confirmed: true,
+          confirmed: "Yes",
         });
+        await savedatatoGoogleSheets(e);
+        // sessionStorage.removeItem("crowdfunding2025_userid");
         router.push("/crowdfunding/thankyou");
         setLoading(false);
         // console.log("User contribution confirmed successfully.");

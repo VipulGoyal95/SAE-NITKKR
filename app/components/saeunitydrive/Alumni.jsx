@@ -250,7 +250,7 @@ const alumniData = [
     portrait: "/assets/images/saeunitydrive/Navneet raj.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/navneet-raj-94395a182/",
     twitter: "#",
     // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
