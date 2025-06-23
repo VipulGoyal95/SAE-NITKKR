@@ -22,7 +22,7 @@ export const metadata = {
     "Official website of SAE NIT Kurukshetra - Society of Automotive Engineers NIT Kurukshetra",
   metadataBase: new URL("https://www.saenitkurukshetra.com"),
   alternates: {
-    canonical: "/",
+    canonical: "https://www.saenitkurukshetra.com/",
   },
   icons: {
     icon: "/assets/images/sae-logo.webp",
