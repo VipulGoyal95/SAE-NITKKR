@@ -225,9 +225,9 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-[460px]:text-2xl max-[460px]:mb-2">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-[460px]:text-2xl max-[460px]:mb-2">
               SAE NIT Kurukshetra
-            </h2>
+            </h1>
 
             {/* Animated Underline */}
             <motion.div

@@ -30,7 +30,16 @@ export default function About() {
       }
     };
   }, []);
-
+  let photowidth=1100;
+  if(window.innerWidth<=1460 && window.innerWidth>1280){
+    photowidth=980;
+  }
+  else if(window.innerWidth<=1280){
+    photowidth=930;
+  }
+  else{
+    photowidth=1100;
+  }
   return (
     <div
       ref={ref}
@@ -40,7 +49,7 @@ export default function About() {
       <Image
         src="/assets/images/homepage/1.webp"
         alt="Car"
-        width={1100}
+        width={photowidth}
         height={600}
         className="z-0 max-[881px]:h-full block max-[500px]:hidden"
         priority
@@ -92,7 +101,7 @@ export default function About() {
           </div>
         </motion.div>
         <motion.div
-          className="w-[80%] absolute right-8 bg-opacity-90 p-8 pt-0 rounded-md max-[420px]:flex max-[420px]:flex-col max-[420px]:items-end  max-[1421px]:p-6 max-[1421px]:pt-0 max-[1421px]:pl-14 max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[15px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[420px]:w-auto max-[451px]:right-4 max-[420px]:text-[12px] max-[620px]:pl-12 max-[420px]:right-2"
+          className="w-[80%] absolute right-8 bg-opacity-90 p-8 pt-0 rounded-md max-[420px]:flex max-[420px]:flex-col max-[420px]:items-end  max-[1421px]:p-6 max-[1421px]:pt-0 max-[1421px]:pl-14 max-[1300px]:pr-0 max-[1300px]:pl-18 max-[1120px]:px-15 max-[1120px]:py-6 max-[1051px]:pr-8 max-[950px]:pr-6 max-[900px]:pr-4 max-[900px]:py-3 max-[900px]:pt-0 max-[760px]:pr-0 max-[1120px]:text-[18px] max-[900px]:text-[15px] max-[900px]:right-6 max-[751px]:text-[14px] max-[620px]:text-[13px] max-[451px]:text-[11px] max-[451px]:w-[85%] max-[420px]:w-auto max-[451px]:right-4 max-[420px]:text-[12px] max-[620px]:pl-12 max-[420px]:right-2"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -140,6 +149,9 @@ export default function About() {
           </motion.div>
         </motion.div>
       </div>
+      {/* <div className="hidden max-[500px]:block bg-black w-[280px] h-[200px] m-3 absolute rounded-2xl right-0 top-[20%]">
+
+      </div> */}
     </div>
   );
 }

@@ -503,6 +503,15 @@ export const Details4yr = [
 
 export const Details3yr = [
   {
+    id: 70,
+    img: '/assets/images/Teammembers/Aryan.webp',
+    name: 'Aryan ',
+    Team: 'Accelerons',
+    Department: 'Brakes',
+    LinkedIn: 'https://www.linkedin.com/in/aryan-yadav-66ba5b2aa/',
+    Email: '123101068@nitkkr.ac.in',
+  },
+  {
     id: 43,
     img: '/assets/images/Teammembers/AADI BHAT.webp',
     name: 'Aadi Bhat',

@@ -68,25 +68,26 @@ const Header = () => {
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex text-white justify-end gap-6 lg:gap-10 w-3/4 max-[1237px]:w-[80%] max-[1160px]:gap-4">
-              <Link href="/">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">Home</li>
-              </Link>
-              <Link href="/autokriti">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">Autokriti</li>
-              </Link>
-              <Link href="/accelerons">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">Accelerons</li>
-              </Link>
-              <Link href="/nitrox">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">Nitrox</li>
-              </Link>
-              <Link href="/saeunitydrive">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">SAE Unity Drive</li>
-              </Link>
-              <Link href="/crowdfunding">
-                <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">CrowdFunding</li>
-              </Link>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/">Home</Link>
+              </li>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/autokriti">Autokriti</Link>
+              </li>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/accelerons">Accelerons</Link>
+              </li>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/nitrox">Nitrox</Link>
+              </li>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/saeunitydrive">SAE Unity Drive</Link>
+              </li>
+              <li className="font-bold p-2.5 rounded-lg text-lg cursor-pointer hover:bg-gray-800 hover:text-white transition-all duration-300">
+                <Link href="/crowdfunding">CrowdFunding</Link>
+              </li>
             </ul>
+
 
             {/* Mobile Menu Button */}
             <button
