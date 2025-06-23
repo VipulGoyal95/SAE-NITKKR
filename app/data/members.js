@@ -714,9 +714,9 @@ export const Details3yr = [
     id: 65,
     img: '/assets/images/Teammembers/NITESH GUPTA.webp',
     name: 'Nitesh Gupta',
-    Team: '',
+    Team: 'IT',
     Department: 'IT Team',
-    LinkedIn: 'https://www.linkedin.com/in/niteshgupta64/',
+    LinkedIn: 'https://niteshishere.vercel.app',
     Email: 'nitesh647484@gmail.com',
   },
   {

@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+  const router = useRouter();
   const [handleToggle, setToggle] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -52,7 +54,7 @@ const Header = () => {
           isScrolled ? 'bg-[rgba(76,76,76,0.36)] backdrop-blur-md' : 'bg-[rgba(76,76,76,0.36)] backdrop-blur-sm'
         }`}>
           <nav className="w-full text-black py-2.5 text-center flex items-center justify-between">
-            <div className="flex gap-2 items-center">
+            <div onClick={() => router.push('/')} className="flex gap-2 cursor-pointer items-center">
               <Image 
                 src="/assets/images/sae-logo.webp" 
                 alt="SAE Logo" 

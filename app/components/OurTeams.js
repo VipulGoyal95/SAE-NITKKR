@@ -46,7 +46,7 @@ export default function OurTeams() {
                 priority
               />
               <motion.div
-                className="absolute inset-0 flex items-center pl-8 text-4xl font-bold max-[420px]:text-[28px] max-[420px]:pl-4"
+                className="absolute inset-0 flex items-center pl-8 text-4xl font-bold max-[450px]:text-[28px] max-[450px]:pl-4"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1}}
                 viewport={{ once: true, amount: 0.4 }}

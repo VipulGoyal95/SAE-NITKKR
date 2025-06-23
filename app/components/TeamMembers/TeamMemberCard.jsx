@@ -93,12 +93,16 @@ const TeamMemberCard = ({ member }) => {
                 rel="noopener noreferrer"
                 className="group/link flex items-center space-x-2 max-[433px]:space-x-1 rounded-full bg-gradient-to-r from-white/10 to-white/20 px-5 max-[560px]:px-4 max-[525px]:px-3.5 max-[495px]:px-3 py-2.5 max-[495px]:py-2 max-[420px]:py-1.5  backdrop-blur-xl transition-all duration-300 hover:from-white/20 hover:to-white/30"
               >
-                <Linkedin size={18} className="text-white transition-all max-[525px]:hidden duration-300 group-hover/link:scale-110" />
+               {member.id === 65 ? (<> <Github size={18} className="text-white transition-all max-[525px]:hidden duration-300 group-hover/link:scale-110" />
+                <Github size={14} className="text-white transition-all hidden max-[525px]:block max-[420px]:hidden duration-300 group-hover/link:scale-110" />
+                <Github size={13} className="text-white transition-all hidden max-[420px]:block duration-300 group-hover/link:scale-110" />
+                <span className="text-sm max-[640px]:text-[13px] max-[480px]:text-[12px] font-medium text-white">Portfolio</span></>) : (<> <Linkedin size={18} className="text-white transition-all max-[525px]:hidden duration-300 group-hover/link:scale-110" />
                 <Linkedin size={14} className="text-white transition-all hidden max-[525px]:block max-[420px]:hidden duration-300 group-hover/link:scale-110" />
                 <Linkedin size={13} className="text-white transition-all hidden max-[420px]:block duration-300 group-hover/link:scale-110" />
-                <span className="text-sm max-[640px]:text-[13px] max-[480px]:text-[12px] font-medium text-white">LinkedIn</span>
+                <span className="text-sm max-[640px]:text-[13px] max-[480px]:text-[12px] font-medium text-white">LinkedIn</span></>)}
               </a>
             )}
+        
           </div>
         </div>
       </div>

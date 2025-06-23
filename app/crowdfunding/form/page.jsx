@@ -9,12 +9,11 @@ import {
   getDoc,
   serverTimestamp,
 } from "firebase/firestore";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 import db from "../../firebase";
 import { ClipLoader } from "react-spinners";
-import { Toaster } from 'react-hot-toast';
-import toast from 'react-hot-toast';
-
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 // Dynamically import ThreeDWrapper to avoid SSR issues
 const DynamicThreeDWrapper = dynamic(
@@ -29,7 +28,7 @@ const Loader = () => (
 );
 
 export default function Donation() {
-  const router = useRouter()
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,7 +53,6 @@ export default function Donation() {
     });
   };
 
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -65,7 +63,8 @@ export default function Donation() {
   const savedatatoGoogleSheets = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://script.google.com/macros/s/AKfycbxXNeuB-Gst-pHxTcJuygHmXKBi6tlkuqVNao6S2C2n5izAqTzxxbzGreNX_eKIiwwkvg/exec",
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxXNeuB-Gst-pHxTcJuygHmXKBi6tlkuqVNao6S2C2n5izAqTzxxbzGreNX_eKIiwwkvg/exec",
         {
           method: "POST",
           body: JSON.stringify({
@@ -75,10 +74,9 @@ export default function Donation() {
       );
       const result = await response.json();
       if (result.status === "Success") {
-        console.log("Data saved")
+        console.log("Data saved");
         console.log(result.data);
-      }
-      else{
+      } else {
         toast.error("Failed to save data");
         return;
       }
@@ -91,7 +89,7 @@ export default function Donation() {
   };
 
   const validateForm = () => {
-    const { name, amount, email, graduationYear,message } = formData;
+    const { name, amount, email, graduationYear, message } = formData;
 
     if (!name || !amount || !email || !graduationYear) {
       toast.error("Please fill all required fields.");
@@ -119,9 +117,9 @@ export default function Donation() {
         ...formData,
         timestamp: new Date(),
       });
-        sessionStorage.setItem("crowdfunding2025_userid", timestamp);
-        router.push("/crowdfunding/payment")
-        setLoading(false);
+      sessionStorage.setItem("crowdfunding2025_userid", timestamp);
+      router.push("/crowdfunding/payment");
+      setLoading(false);
     } catch (error) {
       setLoading(false);
       toast.error("Something went wrong, Please try again.");
@@ -143,27 +141,27 @@ export default function Donation() {
         position="top-right"
         toastOptions={{
           style: {
-            background: '#1e1e2f',
-            color: '#f5f5f5',
-            border: '1px solid #333',
-            borderRadius: '10px',
+            background: "#1e1e2f",
+            color: "#f5f5f5",
+            border: "1px solid #333",
+            borderRadius: "10px",
           },
           success: {
             iconTheme: {
-              primary: '#4ade80', // green
-              secondary: '#1e1e2f',
+              primary: "#4ade80", // green
+              secondary: "#1e1e2f",
             },
           },
           error: {
             iconTheme: {
-              primary: '#f87171', // red
-              secondary: '#1e1e2f',
+              primary: "#f87171", // red
+              secondary: "#1e1e2f",
             },
           },
         }}
       />
 
-      <div className="min-h-screen text-white relative overflow-hidden">
+      <div className="min-h-screen text-white relative overflow-hidden bg-gray-900">
         {/* Background Elements */}
         <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
         <div className="absolute top-[20%] right-[5%] w-96 h-96 rounded-full bg-gradient-to-l from-purple-900/30 to-blue-900/20 blur-xl"></div>
@@ -171,19 +169,23 @@ export default function Donation() {
 
         {/* Animated Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(#6366f1_1px,transparent_1px),linear-gradient(to_right,#6366f1_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-        
+
         <div className="container mx-auto px-4 py-16 relative z-10">
           <div className="max-w-2xl mt-12 mx-auto">
             <h1 className="text-4xl font-bold text-center mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
               Support Our Mission
             </h1>
             <p className="text-center text-gray-300 mb-12">
-              Your contribution helps us continue our work in automotive innovation and education.
+              Your contribution helps us continue our work in automotive
+              innovation and education.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Full Name
                 </label>
                 <input
@@ -199,7 +201,10 @@ export default function Donation() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Email Address
                 </label>
                 <input
@@ -214,7 +219,10 @@ export default function Donation() {
                 />
               </div>
               <div>
-                <label htmlFor="graduationYear" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="graduationYear"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Graduation Year
                 </label>
                 <input
@@ -247,7 +255,10 @@ export default function Donation() {
               </div> */}
 
               <div>
-                <label htmlFor="amount" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="amount"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Contribution ({currencySymbols[formData.currency]})
                 </label>
                 <input
@@ -264,7 +275,10 @@ export default function Donation() {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Message (Optional)
                 </label>
                 <textarea
@@ -283,15 +297,12 @@ export default function Donation() {
                 className="w-full py-4 px-6 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-200 transform hover:scale-[1.02]"
                 disabled={loading}
               >
-                {
-                  loading? <Loader /> : "Contribute Now"
-                }
+                {loading ? <Loader /> : "Contribute Now"}
               </button>
             </form>
-
           </div>
         </div>
       </div>
     </DynamicThreeDWrapper>
   );
-} 
+}

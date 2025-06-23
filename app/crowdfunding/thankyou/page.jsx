@@ -37,7 +37,7 @@ export default function ThankYou() {
                 <meta name="robots" content="noindex, follow" />
             </Head>
             <DynamicThreeDWrapper>
-                <div className="min-h-screen flex flex-col items-center justify-center text-white px-4">
+                <div className="min-h-screen flex flex-col items-center justify-center text-white px-4 bg-gray-900">
                     {/* Background Elements */}
                     <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
                     <div className="absolute top-[20%] right-[5%] w-96 h-96 rounded-full bg-gradient-to-l from-purple-900/30 to-blue-900/20 blur-xl"></div>
