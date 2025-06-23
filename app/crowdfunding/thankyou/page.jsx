@@ -4,7 +4,7 @@ import { useEffect,useState } from "react";
 import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-// import { useScrollToTop } from "@/app/utils/scrollToTop";
+import { useScrollToTop } from "@/app/utils/scrollToTop";
 import Link from "next/link";
 
 const DynamicThreeDWrapper = dynamic(
@@ -29,7 +29,7 @@ export default function ThankYou() {
           }, 7000);
           return () => clearTimeout(timeout);
     }, [router]);
-    // useScrollToTop();
+    useScrollToTop();
     return (
         <>
             <Head>

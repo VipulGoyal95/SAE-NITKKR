@@ -65,6 +65,7 @@ const Payment=()=>{
         if(!formData){
           console.error("something went wrong");
         }
+        formData.confirmed = "Yes";
         console.log(formData);
         const response = await fetch(
           "https://script.google.com/macros/s/AKfycbx0TRj6X8llAmE7YjwXxQNlEIr8d7JBhO89KBlAmDpJjqlvNYIL2-xD8gAzQL0yOPcu/exec",
