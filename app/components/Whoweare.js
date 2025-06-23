@@ -31,15 +31,15 @@ export default function About() {
     };
   }, []);
   let photowidth=1100;
-  if(window.innerWidth<=1460 && window.innerWidth>1280){
-    photowidth=980;
-  }
-  else if(window.innerWidth<=1280){
-    photowidth=930;
-  }
-  else{
-    photowidth=1100;
-  }
+  // if(window.innerWidth<=1460 && window.innerWidth>1280){
+  //   photowidth=980;
+  // }
+  // else if(window.innerWidth<=1280){
+  //   photowidth=930;
+  // }
+  // else{
+  //   photowidth=1100;
+  // }
   return (
     <div
       ref={ref}
