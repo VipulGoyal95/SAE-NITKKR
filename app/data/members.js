@@ -243,7 +243,7 @@ export const Details4yr = [
       position2: "Statics Head"
     },
     Department: "Vehicle Dynamics",
-    LinkedIn: "",
+    LinkedIn: "https://www.linkedin.com/in/sarthak-anand-614985285/",
     Email: "sarthakanand2003@gmail.com",
   },
   {
@@ -386,7 +386,7 @@ export const Details4yr = [
   {
     id: 29,
     img: '/assets/images/Teammembers/narayan.webp',
-    name: "Lakshmi narayan",
+    name: "Lakshmi Narayan",
     Team: "Nitrox",
     metadata:{
       position1: "Transmission Head",

@@ -14,12 +14,12 @@ export default function Herosection() {
   useCountUp({
     ref: counterRef2,
     start: 0,
-    end: 20.4,
+    end: 2.04,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
-    decimals: 1
+    decimals: 2
   })
 
   useCountUp({
@@ -121,7 +121,7 @@ export default function Herosection() {
       </section>
 
       {/* Second Section */}
-      <section className="relative text-white py-24 px-6 md:px-16 flex flex-col md:flex-row justify-between gap-12 z-10 border-t border-gray-800/50">
+      <section className="relative text-white py-24 px-6 md:px-16 flex flex-col md:flex-row justify-between gap-12 z-10 border-t border-gray-800/50 max-[500px]:pb-6">
         <div className="md:w-1/2">
           <div className="inline-flex items-center mb-3 px-4 py-2 bg-blue-900/40 text-blue-300 rounded-full text-sm font-medium backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
@@ -148,8 +148,8 @@ export default function Herosection() {
 
         <div className="md:w-1/2 grid items-center grid-cols-2 gap-8">
           {/* Stats Cards with modern styling */}
-          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
+          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[450px]:h-[130px]">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent max-[500px]:text-4xl">
             <span className="counter-class" ref={counterRef1}></span>+
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
@@ -157,9 +157,9 @@ export default function Herosection() {
             </div>
           </div>
 
-          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
-            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              <span className="counter-class" ref={counterRef2}></span><span className="text-3xl">K</span>
+          <div className="bg-gray-800/80 h-[150px] rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[450px]:h-[130px] max-[500px]:flex max-[500px]:flex-col max-[500px]:justify-between">
+            <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent max-[500px]:text-4xl">
+              <span className="counter-class" ref={counterRef2}></span><span className="text-3xl">L</span>
             </div>
             <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
               RAISED

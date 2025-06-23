@@ -46,7 +46,7 @@ const teamMembers = [
     gradient: 'from-[#454545] to-[#FFFFFF]',
     height: 'h-[450px]',
     social: {
-      linkedin: '#',
+      linkedin: 'https://www.linkedin.com/in/sarthak-anand-614985285/',
       email: 'sarthakanand2003@gmail.com'
     }
   }
