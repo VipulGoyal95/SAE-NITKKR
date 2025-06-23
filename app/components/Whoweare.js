@@ -45,7 +45,7 @@ function MobileAbout() {
           transition={{ duration: 0.6 }}
           className="bg-white/10 backdrop-blur-md rounded-xl p-5 mb-5 shadow-lg border border-white/10"
         >
-          <h2 className="text-white text-lg font-semibold mb-3">Our Chapter</h2>
+          {/* <h2 className="text-white text-lg font-semibold mb-3">Our Chapter</h2> */}
           <p className="text-white/90 text-sm leading-relaxed">
             SAE NIT Kurukshetra is the official collegiate chapter affiliated
             with SAE India and SAE International—the global authority in
@@ -60,9 +60,9 @@ function MobileAbout() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="bg-white/10 backdrop-blur-md rounded-xl p-5 mb-5 shadow-lg border border-white/10"
         >
-          <h2 className="text-white text-lg font-semibold mb-3">
+          {/* <h2 className="text-white text-lg font-semibold mb-3">
             Our Philosophy
-          </h2>
+          </h2> */}
           <p className="text-white/90 text-sm leading-relaxed">
             At our core, engineering is not just learned, but lived. Through
             collaboration, hands-on experience, and innovation, we explore every
@@ -105,11 +105,14 @@ export default function About() {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-
+  const [firstpoint,setFirstpoint] = useState(false);
+  const [secondpoint,setSecondpoint] = useState(false);
   // Detect if we're on mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 500);
+      setFirstpoint(window.innerWidth < 1450 && window.innerWidth>1300);
+      setSecondpoint(window.innerWidth < 1300);
     };
 
     // Initial check
@@ -149,7 +152,15 @@ export default function About() {
   }, []);
 
   let photowidth = 1100;
-
+  if(firstpoint){
+    photowidth=980;
+  }
+  else if(secondpoint){
+    photowidth=930;
+  }
+  else{
+    photowidth=1100;
+  }
   // Render mobile component if screen width is less than 500px
   if (isMobile) {
     return <MobileAbout />;
@@ -167,7 +178,7 @@ export default function About() {
         alt="Car"
         width={photowidth}
         height={600}
-        className="z-0 max-[881px]:h-full block"
+        className="z-0 max-[881px]:h-full h-full block"
         priority
       />
 

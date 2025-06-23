@@ -3,11 +3,11 @@ import dynamic from 'next/dynamic';
 
 const Player = dynamic(() => import('@lottiefiles/react-lottie-player').then(mod => mod.Player), {
   ssr: false,
-  loading: () => (
-    <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center">
-      <div className="h-[200px] w-[200px] animate-pulse bg-white/10 rounded-full" />
-    </div>
-  )
+  // loading: () => (
+  //   <div className="fixed inset-0 bg-black z-[9999] flex items-center justify-center">
+  //     <div className="h-[200px] w-[200px] animate-pulse bg-white/10 rounded-full" />
+  //   </div>
+  // )
 });
 
 export default function Loading() {

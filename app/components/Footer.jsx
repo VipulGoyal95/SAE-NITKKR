@@ -8,11 +8,10 @@ const Footer = () => {
   const form = pathname.includes('/crowdfunding/form');
   const payment = pathname.includes('/crowdfunding/payment');
   const thankyou = pathname.includes('/crowdfunding/thankyou');
-  const isblue = unitydrivePage || crowdfundingPage;
-  const istop = form || payment || thankyou;
+  const isblue = unitydrivePage || crowdfundingPage || form || payment || thankyou;
 
   return (
-    <footer className={`${istop? 'bg-gradient-to-t from-gray-900 to-black' : isblue ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-black' } text-gray-300 py-16 px-6 relative`}>
+    <footer className={`${isblue ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-black' } text-gray-300 py-16 px-6 relative`}>
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <svg width="100%" height="100%" className="opacity-5">
           <pattern

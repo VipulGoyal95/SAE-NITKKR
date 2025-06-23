@@ -43,7 +43,7 @@ const alumniData = [
     //   "The future of mobility lies at the intersection of AI and engineering.",
     linkedin: "https://www.linkedin.com/in/sarthak-manocha-452979a0/",
     twitter: "#",
-    achievements: ["ML Research Lead", "3 Patents Filed"],
+    // achievements: ["ML Research Lead", "3 Patents Filed"],
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const alumniData = [
     //   "Design thinking transforms good vehicles into extraordinary experiences.",
     linkedin: "https://www.linkedin.com/in/manish-kumar-a1012b108/",
     twitter: "#",
-    achievements: ["Design Excellence Award", "UX Conference Speaker"],
+    // achievements: ["Design Excellence Award", "UX Conference Speaker"],
   },
   {
     id: 4,
@@ -68,7 +68,7 @@ const alumniData = [
     // quote: "Technology should enhance human potential, not replace it.",
     linkedin: "https://www.linkedin.com/in/ravinder-singh-bisht-2229a588/",
     twitter: "#",
-    achievements: ["Forbes 30 Under 30", "Tech Innovator Award"],
+    // achievements: ["Forbes 30 Under 30", "Tech Innovator Award"],
   },
   {
     id: 5,
@@ -81,7 +81,7 @@ const alumniData = [
     //   "Engineering excellence is built on precision, passion, and perseverance.",
     linkedin: "https://www.linkedin.com/in/ahlawatnitin144/",
     twitter: "#",
-    achievements: ["SAE Technical Paper Author", "Formula Student Judge"],
+    // achievements: ["SAE Technical Paper Author", "Formula Student Judge"],
   },
   {
     id: 6,
@@ -94,7 +94,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/arunthodupunuri/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 7,
@@ -107,7 +107,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 13,
@@ -120,7 +120,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/aasheeshbansal/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 24,
@@ -133,7 +133,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/arnav-goel-ba94a21ab/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 12,
@@ -146,7 +146,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 10,
@@ -159,7 +159,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/omansh-tandon/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   
   
@@ -174,7 +174,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/vaibhav-dharmani-aa91a7199/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 14,
@@ -187,7 +187,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/hk2107/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 15,
@@ -200,7 +200,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/kritikaagra/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 16,
@@ -213,7 +213,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/deekshith-ramavath-419694254/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 17,
@@ -226,7 +226,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/garima-gupta-a11081221/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 18,
@@ -239,7 +239,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/bhupeksh-kaushik-360424222/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 9,
@@ -252,7 +252,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   
   {
@@ -266,7 +266,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/parv-sarin/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 21,
@@ -279,7 +279,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/10manikya/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 22,
@@ -292,7 +292,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/saeed-ul-khair-29ab941b2/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 8,
@@ -305,20 +305,20 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 23,
     name: "Deepak yadav",
     role: "",
     batch: "2022",
-    image: "/assets/images/saeunitydrive/Deepak yadav.webp",
-    portrait: "/assets/images/saeunitydrive/Deepak yadav.webp",
+    image: "/assets/images/saeunitydrive/Deepak Yadav.webp",
+    portrait: "/assets/images/saeunitydrive/Deepak Yadav.webp",
     // quote:
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/deepak-yadav-48410a185/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   
   {
@@ -332,7 +332,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/ajay-nitkkr/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 26,
@@ -345,7 +345,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/udit-tripathi-265104174/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 27,
@@ -358,7 +358,7 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/tanishqameta/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
   {
     id: 28,
@@ -371,7 +371,33 @@ const alumniData = [
     //   "Research is the foundation upon which tomorrow's innovations are built.",
     linkedin: "https://www.linkedin.com/in/himatri-noonwal/",
     twitter: "#",
-    achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 29,
+    name: "Ritik Yadav",
+    role: "",
+    batch: "2022",
+    image: "",
+    portrait: "",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/ritik-yadav6097/",
+    twitter: "#",
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
+  },
+  {
+    id: 30,
+    name: "Vipul Yadav",
+    role: "",
+    batch: "2021",
+    image: "/assets/images/saeunitydrive/Vipul Yadav.webp",
+    portrait: "/assets/images/saeunitydrive/Vipul Yadav.webp",
+    // quote:
+    //   "Research is the foundation upon which tomorrow's innovations are built.",
+    linkedin: "https://www.linkedin.com/in/vipulyvy/",
+    twitter: "#",
+    // achievements: ["PhD in Automotive Engineering", "Research Grant Recipient"],
   },
 ];
 
@@ -491,6 +517,7 @@ export default function AlumniCarousel() {
                   <option value="2024">2024</option>
                   <option value="2023">2023</option>
                   <option value="2022">2022</option>
+                  <option value="2021">2021</option>
                   <option value="2019">2019</option>
                   <option value="2016">2016</option>
                 </select>

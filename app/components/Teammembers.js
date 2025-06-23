@@ -95,7 +95,7 @@ const Teammembers = () => {
             style={{ textDecoration: 'none' }}
           >
             <h2 className="text-white text-4xl font-bold text-center select-none">
-              Team members
+              TEAM MEMBERS
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-white/0 via-white to-white/0 mx-auto mt-4"></div>
             <motion.div
