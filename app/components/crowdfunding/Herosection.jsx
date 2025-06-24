@@ -42,6 +42,7 @@ const HeroSection = () => {
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
+    decimals: 1,
   });
 
   const { update: updateContributors } = useCountUp({
