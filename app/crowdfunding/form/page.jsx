@@ -45,6 +45,7 @@ export default function Donation() {
     EURO: "€",
   };
   const [loading, setLoading] = useState(false);
+  const [isAlumni,setIsAlumni] = useState("Alumni");
 
   const handleCurrencyChange = (e) => {
     setFormData({
@@ -58,6 +59,25 @@ export default function Donation() {
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleNonAlumni = ()=>{
+    setIsAlumni("Non-Alumni");
+    setFormData({
+      ...formData,
+      graduationYear: "Non-Alumni"
+    })
+  }
+
+  // Prevents arrow keys from changing number input values
+  const handleKeyDown = (e) => {
+    if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      e.preventDefault();
+    }
+  };
+
+  const handleWheel = (e) => {
+    e.target.blur();
   };
 
   const savedatatoGoogleSheets = async (e) => {
@@ -91,7 +111,14 @@ export default function Donation() {
   const validateForm = () => {
     const { name, amount, email, graduationYear, message } = formData;
 
-    if (!name || !amount || !email || !graduationYear) {
+    // Check required fields based on alumni status
+    if (!name || !amount || !email) {
+      toast.error("Please fill all required fields.");
+      return false;
+    }
+
+    // Only require graduation year for Alumni
+    if (isAlumni === "Alumni" && !graduationYear) {
       toast.error("Please fill all required fields.");
       return false;
     }
@@ -226,16 +253,34 @@ export default function Donation() {
                 >
                   Graduation Year
                 </label>
-                <input
-                  type="number"
-                  id="graduationYear"
-                  name="graduationYear"
-                  value={formData.graduationYear}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"
-                  placeholder="Enter your Graduation Year"
-                />
+                <div className="flex gap-4">
+                  <input
+                    type="number"
+                    id="graduationYear"
+                    name="graduationYear"
+                    value={formData.graduationYear}
+                    onChange={handleChange}
+                    onKeyDown={handleKeyDown}
+                    onWheel={handleWheel}
+                    disabled={isAlumni === "Non-Alumni"}
+                    required={isAlumni === "Alumni"}
+                    className={`w-[60%] px-4 py-3 rounded-lg backdrop-blur-sm border transition-colors max-[450px]:text-[14px] ${
+                      isAlumni === "Non-Alumni"
+                        ? "bg-gray-700/50 border-gray-600 text-gray-400 cursor-not-allowed"
+                        : "bg-gray-800/50 border-gray-700 text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    }`}
+                    placeholder={isAlumni === "Non-Alumni" ? "Not applicable for Non-Alumni" : "Enter your Graduation Year"}
+                    
+                  />
+                  <div className="flex w-[40%] px-0 justify-center items-center gap-2 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 transition-colors">
+                    <p className={`border-r-2 w-full border-gray-700 px-3 h-full flex items-center justify-center cursor-pointer max-[426px]:px-0 max-[426px]:text-[14px] transition-colors ${
+                      isAlumni === "Alumni" ? "bg-blue-600/20 text-blue-400" : "hover:bg-gray-700/50"
+                    }`} onClick={()=>setIsAlumni("Alumni")}>Alumni</p>
+                    <p className={`px-3 h-full w-full flex items-center justify-center cursor-pointer max-[426px]:px-0 max-[426px]:text-[14px] transition-colors ${
+                      isAlumni === "Non-Alumni" ? "bg-blue-600/20 text-blue-400" : "hover:bg-gray-700/50"
+                    }`} onClick={handleNonAlumni}>Non Alumni</p>
+                  </div>
+                </div>
               </div>
               {/* <div>
                 <label htmlFor="currency" className="block text-sm font-medium text-gray-300 mb-2">
@@ -268,6 +313,8 @@ export default function Donation() {
                   name="amount"
                   value={formData.amount}
                   onChange={handleChange}
+                  onKeyDown={handleKeyDown}
+                  onWheel={handleWheel}
                   required
                   min="1"
                   className="w-full px-4 py-3 rounded-lg bg-gray-800/50 backdrop-blur-sm border border-gray-700 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none transition-colors"

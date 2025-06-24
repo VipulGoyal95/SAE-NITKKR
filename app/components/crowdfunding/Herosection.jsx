@@ -1,7 +1,7 @@
 // components/CrowdfundingHeroSection.tsx
 "use client";
 
-import React, { useEffect, useRef  } from "react";
+import React, { useEffect, useRef, useState  } from "react";
 import Image from "next/image";
 import { useCountUp } from 'react-countup';
 import { motion } from "framer-motion";
@@ -12,6 +12,16 @@ import {
 } from "./ScrollAnimations";
 import Brochure from "./Brochure";
 import MuxPlayer from '@mux/mux-player-react';
+import db from "../../firebase";
+import {
+  updateDoc,
+  doc,
+  setDoc,
+  getDoc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const HeroSection = () => {
 
@@ -19,35 +29,40 @@ const HeroSection = () => {
   const counterRef2 = useRef(null);
   const counterRef3 = useRef(null);
   const counterRef4 = useRef(null);
-
-  useCountUp({
+  const [raisedAmount,setRaisedAmount] = useState(0);
+  const [days,setDays] = useState(0);
+  const [contributors,setContributors] = useState(0);
+  const [amountsymbol,setAmountSymbol] = useState("");
+  
+  const { update: updateRaisedAmount } = useCountUp({
     ref: counterRef2,
     start: 0,
-    end: 0,
+    end: raisedAmount,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
-  })
+  });
 
-  useCountUp({
+  const { update: updateContributors } = useCountUp({
     ref:counterRef3,
     start: 0,
-    end: 0,
+    end: contributors,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
-  })
-  useCountUp({
+  });
+
+  const { update: updateDays } = useCountUp({
     ref:counterRef4,
     start: 0,
-    end: 45,
+    end: days,
     duration: 1,
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
-  })
+  });
   
   useCountUp({
     ref: counterRef1,
@@ -59,10 +74,71 @@ const HeroSection = () => {
     scrollSpyOnce: true,
   });
 
+  useEffect(() => {
+    const fetchCurrentData = async () => {
+      try {
+        // Reference to the "CurrentData" document in the "DonationForm" collection
+        const docRef = doc(db, "CrowdFunding2025", "CurrentData");
+
+        // Retrieve the document
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          // Document data exists, set it to state
+          const data = docSnap.data();
+          setRaisedAmount(data.Amount);
+          setContributors(data.Contributors);
+          setDays(data.Days);
+          setAmountSymbol(data.AmountSymbol);
+          // Manually update the counters
+          updateRaisedAmount(data.Amount);
+          updateContributors(data.Contributors);
+          updateDays(data.Days);
+
+          // console.log(days);
+          // console.log("CurrentData:", data);
+        } else {
+          // Document does not exist
+          toast.error('Something went wrong')
+          console.log("No such document!");
+        }
+      } catch (error) {
+        toast.error('Something went wrong')
+        console.error("Error fetching document:", error);
+      } finally {
+        // setLoading(false)
+      }
+    };
+
+    fetchCurrentData();
+  }, []);
   // Only render CountUp components when the component is mounted on the client
   // This prevents hydration errors with server-side rendering
   return (
     <section className="relative overflow-hidden bg-gray-900 text-gray-100">
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: "#1e1e2f",
+            color: "#f5f5f5",
+            border: "1px solid #333",
+            borderRadius: "10px",
+          },
+          success: {
+            iconTheme: {
+              primary: "#4ade80", // green
+              secondary: "#1e1e2f",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "#f87171", // red
+              secondary: "#1e1e2f",
+            },
+          },
+        }}
+      />
       {/* Abstract Shapes Background with SVG Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-[10%] w-72 h-72 rounded-full bg-gradient-to-r from-blue-900/30 to-indigo-900/20 blur-xl"></div>
@@ -275,7 +351,7 @@ With your support, we aim to gather the funds required to build our vehicles and
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef2}></span>
-                <span className="text-3xl">L</span>
+                <span className="text-3xl">{amountsymbol}</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
                 RAISED
