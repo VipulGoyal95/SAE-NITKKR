@@ -337,7 +337,7 @@ With your support, we aim to gather the funds required to build our vehicles and
         <div className="md:w-1/2 grid grid-cols-2 gap-8">
           {/* Stats Cards with modern styling */}
           <ScrollAnimatedElement direction="y" distance={30} delay={0.1}>
-            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[500px]:p-4">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef1}></span>
               <span className="text-3xl">L</span>
@@ -349,10 +349,10 @@ With your support, we aim to gather the funds required to build our vehicles and
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement direction="y" distance={30} delay={0.2}>
-            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[500px]:p-4">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef2}></span>
-                <span className="text-3xl">{amountsymbol}</span>
+                <span className="text-3xl max-[500px]:text-[30px]">{amountsymbol}</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
                 RAISED
@@ -361,7 +361,7 @@ With your support, we aim to gather the funds required to build our vehicles and
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement direction="y" distance={30} delay={0.3}>
-            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[500px]:p-4">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef3}></span>
                 {/* <span className="text-3xl">L</span> */}
@@ -373,7 +373,7 @@ With your support, we aim to gather the funds required to build our vehicles and
           </ScrollAnimatedElement>
 
           <ScrollAnimatedElement direction="y" distance={30} delay={0.4}>
-            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300">
+            <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[500px]:p-4">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
               <span className="counter-class" ref={counterRef4}></span>
               </div>
