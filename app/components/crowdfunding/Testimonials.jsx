@@ -13,7 +13,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
-
+import { usePathname } from 'next/navigation';
 // Add custom styles at the top of the file after imports
 const customStyles = `
   .testimonials-swiper .swiper-button-next,
@@ -83,16 +83,51 @@ const testimonials = [
   },
 ];
 
+const testimonialData2=[
+  {
+    name: "Ravinder Singh Bisht",
+    designation: "Alumnus, Batch of 2016",
+    image: "/assets/images/saeunitydrive/Ravinder Singh Bisht.webp",
+    feedback:
+      "Be curious, keep innovating, and learning. \n Best of luck for all milestones ahead.",
+  },
+  {
+    name: "Anindya Agasty",
+    designation: "Alumnus, Batch of 2002",
+    image: "/assets/images/crowdfunding/ANINDYA.webp",
+    feedback:
+      "Best of Luck.",
+  },
+  // {
+  //   name: "Tony Thomas Philip",
+  //   designation: "Alumnus, Batch of 2003",
+  //   image: "/assets/images/crowdfunding/Tony thomas.webp",
+  //   feedback:
+  //     "Good luck team NITK!! You all are doing a fantastic job! Proud of you! ",
+  // },
+  {
+    name: "Prateek Kumar Singh",
+    designation: "Alumnus, Batch of 2018",
+    image: "/assets/images/crowdfunding/Prateek Kumar Singh.webp",
+    feedback:
+      "I know how much effort you guys make without taking care of your health or grades. In the long term, it all matters. So, keep working hard and enjoy the journey. \n Best of Luck",
+  },
+]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const swiperRef = useRef(null);
   const [isAnimating, setIsAnimating] = useState(false);
+  const pathname = usePathname();
+  const isCrowdfundingPage = pathname.includes('/crowdfunding');
+
+  const testimonialsData = isCrowdfundingPage? testimonialData2: testimonials;
+
 
   const active =
     hoveredIndex !== null
-      ? testimonials[hoveredIndex]
-      : testimonials[activeIndex];
+      ? testimonialsData[hoveredIndex]
+      : testimonialsData[activeIndex];
 
   const handlePrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
@@ -109,6 +144,7 @@ const Testimonials = () => {
       setTimeout(() => setIsAnimating(false), 500);
     }
   };
+
 
   return (
     <section className="py-20 overflow-hidden bg-gray-900 relative">
@@ -167,7 +203,12 @@ const Testimonials = () => {
                     <path d="M10,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H10z M20,8c-3.866,0-7,3.134-7,7c0,3.866,3.134,7,7,7h1v-2h-1c-2.757,0-5-2.243-5-5c0-2.757,2.243-5,5-5h2V8H20z"></path>
                   </svg>
                   <p className="text-xl md:text-2xl font-light text-gray-300 italic mt-4 leading-relaxed">
-                    {active.feedback}
+                  {active.feedback.split('\n').map((line, index, arr) => (
+                    <span key={index}>
+                      {line}
+                      {index < arr.length - 1 && <br />}
+                    </span>
+                  ))}
                   </p>
                 </div>
 
@@ -272,7 +313,7 @@ const Testimonials = () => {
                 onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
                 className="testimonials-swiper"
               >
-                {testimonials.map((testimonial, index) => (
+                {testimonialsData.map((testimonial, index) => (
                   <SwiperSlide
                     key={index}
                     className="testimonial-slide w-[280px]"
