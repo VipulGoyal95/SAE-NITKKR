@@ -167,12 +167,11 @@ const Testimonials = () => {
             Testimonials
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            What Our Alumni & Seniors Say
+            Hear from our Contributors
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mt-3 mb-6 mx-auto"></div>
           <p className="text-gray-400 text-lg">
-            Hear from those who have been part of our journey and believe in our
-            vision
+            We thank you from the bottom of our hearts for believing in us!
           </p>
         </div>
       </div>
