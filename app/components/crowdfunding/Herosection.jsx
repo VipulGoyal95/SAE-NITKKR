@@ -42,7 +42,7 @@ const HeroSection = () => {
     delay: 0.3,
     enableScrollSpy: true,
     scrollSpyOnce: true,
-    decimals: 1,
+    decimals: 2,
   });
 
   const { update: updateContributors } = useCountUp({
@@ -351,7 +351,7 @@ With your support, we aim to gather the funds required to build our vehicles and
           <ScrollAnimatedElement direction="y" distance={30} delay={0.2}>
             <div className="bg-gray-800/80 rounded-2xl p-6 backdrop-blur-sm border border-gray-700/50 shadow-xl hover:shadow-blue-900/10 hover:-translate-y-1 transition-all duration-300 max-[500px]:p-4">
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-blue-300 to-indigo-200 bg-clip-text text-transparent">
-              <span className="counter-class" ref={counterRef2}></span>
+              <span className="counter-class max-[500px]:text-[44px]" ref={counterRef2}></span>
                 <span className="text-3xl max-[500px]:text-[30px]">{amountsymbol}</span>
               </div>
               <div className="text-sm opacity-70 uppercase tracking-wider text-blue-300">
