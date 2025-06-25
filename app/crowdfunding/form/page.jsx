@@ -84,7 +84,7 @@ export default function Donation() {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbx0TRj6X8llAmE7YjwXxQNlEIr8d7JBhO89KBlAmDpJjqlvNYIL2-xD8gAzQL0yOPcu/exec",
+        "https://script.google.com/macros/s/AKfycby3TYVxS2DYJJ79me517P9StTWCRAwfWwGgYjOhesdvsUJDvoEkeGJhjfaawr2bl2BJVw/exec",
         {
           method: "POST",
           body: JSON.stringify({
@@ -97,13 +97,13 @@ export default function Donation() {
         console.log("Data saved");
         console.log(result.data);
       } else {
-        toast.error("Failed to save data");
+        toast.error("Something went Wrong");
         return;
       }
       // console.log(result);
     } catch (error) {
       console.error("Error saving data:", error);
-      toast.error("Failed to save data!");
+      toast.error("Something Went Wrong");
       return;
     }
   };
@@ -158,7 +158,7 @@ export default function Donation() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      // savedatatoGoogleSheets(e);
+      savedatatoGoogleSheets(e);
       saveToFirestore();
     }
   };

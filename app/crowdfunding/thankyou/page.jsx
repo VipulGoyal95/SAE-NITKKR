@@ -26,7 +26,7 @@ export default function ThankYou() {
         setIsLottieLoaded(true);
         const timeout = setTimeout(() => {
             router.push("/crowdfunding"); // redirect to homepage after delay (optional)
-          }, 7000);
+          }, 5000);
           return () => clearTimeout(timeout);
     }, [router]);
     useScrollToTop();
