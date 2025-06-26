@@ -112,6 +112,13 @@ const testimonialData2=[
     feedback:
       "I know how much effort you guys make without taking care of your health or grades. In the long term, it all matters. So, keep working hard and enjoy the journey. \n Best of Luck",
   },
+  {
+    name: "Hardik Sachdeva",
+    designation: "Alumnus, Batch of 2020",
+    image: "/assets/images/crowdfunding/Hardik Sachdeva.webp",
+    feedback:
+      "All the best for your future endeavours.",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);

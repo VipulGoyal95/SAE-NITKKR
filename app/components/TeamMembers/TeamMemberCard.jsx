@@ -68,7 +68,7 @@ const TeamMemberCard = ({ member }) => {
             }
             {
               !member.metadata && member.Team &&
-              <p className="mt-1 text-sm font-medium text-blue-50/70">{member.Team}</p>
+              <p className="mt-1 text-[17px] leading-4 font-medium text-blue-50/70">{member.Team}</p>
             }
           </p>
           

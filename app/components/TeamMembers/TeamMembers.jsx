@@ -50,7 +50,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-50" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull1 ? "max-h-[5050px] pb-10" : "max-h-[105vh] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull1 ? "max-h-[5050px] pb-10" : "max-h-[760px] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
               {Details4yr.map((member, index) => (
                 <div 
                   key={member.id}
@@ -85,7 +85,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-50" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull3 ? "max-h-[5050px] pb-10" : "max-h-[105vh] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull3 ? "max-h-[5050px] pb-10" : "max-h-[760px] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
               {Details3yr.map((member, index) => (
                 <div 
                   key={member.id}
@@ -120,7 +120,7 @@ const TeamMembers = () => {
           </h3>
           <div className="mb-10 mx-auto w-70 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 transition-all duration-700 max-[500px]:w-45" />
           <div className="overflow-hidden transition-all duration-700 ease-in-out">
-            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull2 ? "max-h-[3110px] pb-10" : "max-h-[105vh] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
+            <div className={`w-full px-10 grid max-[800px]:grid-cols-2 overflow-hidden gap-10 max-[650px]:gap-5 max-[420px]:gap-4 max-[650px]:px-0 max-[1300px]:grid-cols-3 min-[1300px]:grid-cols-4 ${showFull2 ? "max-h-[3110px] pb-10" : "max-h-[760px] max-[650px]:max-h-[735px] max-[1300px]:max-h-[780px] max-[415px]:max-h-[550px] max-[420px]:max-h-[630px] max-[500px]:max-h-[636px]"} transition-all duration-700 ease-in-out`}>
               {alumni.map((member, index) => (
                 <div 
                   key={member.id}

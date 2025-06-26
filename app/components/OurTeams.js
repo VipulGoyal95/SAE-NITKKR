@@ -60,7 +60,7 @@ export default function OurTeams() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
             >
               Meet Team Accelerons Electric, SAE NIT KKR’s formula student team. We design, build, and race high-performance electric formula-style vehicles for some of India’s most prestigious student motorsport events.<br/>
             </motion.p>
@@ -69,7 +69,7 @@ export default function OurTeams() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
             >
               Born from a love for speed, design, and serious engineering, the team is a blend of members playing a role in transforming raw energy into refined motion. We don’t just build cars. We build them. 
             </motion.p>
@@ -78,7 +78,7 @@ export default function OurTeams() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.4 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
             >
               We participate in competitions like Formula Bharat, Formula Imperial and SUPRA.
             </motion.p>
@@ -132,7 +132,7 @@ export default function OurTeams() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
               >
                 Meet Team Nitrox, SAE NIT KKR’s very own all-terrain vehicle (ATV) team, where off-road engineering meets fearless innovation.
 
@@ -142,7 +142,7 @@ export default function OurTeams() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
               >
                 We design and fabricate single-seater, four-wheel-drive ATVs that are built to conquer everything from rugged trails to technical tracks. Whether it’s clearing obstacles, climbing grades, or outlasting endurance rounds, Team Nitrox thrives where the terrain gets tough and the challenge gets real.
 
@@ -152,7 +152,7 @@ export default function OurTeams() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
               >
                 We participate in competitions such as eBAJA and ATVC.
 
