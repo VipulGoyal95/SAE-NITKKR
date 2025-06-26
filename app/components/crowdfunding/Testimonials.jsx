@@ -98,13 +98,13 @@ const testimonialData2=[
     feedback:
       "Best of Luck.",
   },
-  // {
-  //   name: "Tony Thomas Philip",
-  //   designation: "Alumnus, Batch of 2003",
-  //   image: "/assets/images/crowdfunding/Tony thomas.webp",
-  //   feedback:
-  //     "Good luck team NITK!! You all are doing a fantastic job! Proud of you! ",
-  // },
+  {
+    name: "Tony Thomas Philip",
+    designation: "Alumnus, Batch of 2003",
+    image: "/assets/images/crowdfunding/Tony thomas.webp",
+    feedback:
+      "Good luck team NITK!! You all are doing a fantastic job! Proud of you! ",
+  },
   {
     name: "Prateek Kumar Singh",
     designation: "Alumnus, Batch of 2018",
