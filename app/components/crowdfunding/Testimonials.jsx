@@ -119,6 +119,20 @@ const testimonialData2=[
     feedback:
       "All the best for your future endeavours.",
   },
+  {
+    name: "Akhilesh Kotla",
+    designation: "Alumnus, Batch of 2018",
+    image: "/assets/images/crowdfunding/Akhilesh.webp",
+    feedback:
+      "Good luck with your upcoming SAE competitions! Hope you make our university proud.",
+  },
+  {
+    name: "Vishal Saini",
+    designation: "Alumnus, Batch of 2019",
+    image: "/assets/images/crowdfunding/Vishal Saini.webp",
+    feedback:
+      "I just want to say keep working hard as you guys are doing now and All the Best👍 for your future events",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
