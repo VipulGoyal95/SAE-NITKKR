@@ -133,6 +133,13 @@ const testimonialData2=[
     feedback:
       "I just want to say keep working hard as you guys are doing now and All the Best👍 for your future events",
   },
+  {
+    name: "Visvesvarryya Neelakantan",
+    designation: "Alumnus, Batch of 1999",
+    image: "/assets/images/crowdfunding/Visvesvarrya-Neelakantan.webp",
+    feedback:
+      "All the Best guys...",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
