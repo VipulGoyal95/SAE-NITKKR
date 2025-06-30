@@ -140,6 +140,13 @@ const testimonialData2=[
     feedback:
       "All the Best guys...",
   },
+  {
+    name: "Subodh Nene",
+    designation: "Alumnus, Batch of 2005",
+    image: "/assets/images/crowdfunding/Subodh nene.webp",
+    feedback:
+      "Give your best to the competition.",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
