@@ -1,5 +1,5 @@
 "use client"
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { FaCopy } from "react-icons/fa6";
@@ -63,6 +63,7 @@ const Payment=()=>{
       try {
         const formData = JSON.parse(sessionStorage.getItem("crowdfunding2025_data"));
         if(!formData){
+          toast.error("Something went wrong");
           console.error("something went wrong");
         }
         formData.confirmed = "Yes";
@@ -94,9 +95,10 @@ const Payment=()=>{
     };
     const handleSubmit = async (e) => {
       const docId = sessionStorage.getItem("crowdfunding2025_userid");
-    
+      
       if (!docId) {
-        console.error("No user ID found in session storage.");
+        toast.error("Something went wrong");
+        console.error("No user ID found");
         return;
       }
     
@@ -107,7 +109,8 @@ const Payment=()=>{
           confirmed: "Yes",
         });
         await savedatatoGoogleSheets(e);
-        // sessionStorage.removeItem("crowdfunding2025_userid");
+        sessionStorage.removeItem("crowdfunding2025_userid");
+        sessionStorage.removeItem("crowdfunding2025_data");
         router.push("/crowdfunding/thankyou");
         setLoading(false);
         // console.log("User contribution confirmed successfully.");
@@ -117,6 +120,19 @@ const Payment=()=>{
         console.error("Error confirming user contribution:", error);
       }
     };
+    useEffect(()=>{
+      const docId = sessionStorage.getItem("crowdfunding2025_userid");
+      
+      if (!docId) {
+        // console.error("No user ID found");
+        router.push("/crowdfunding")
+      }
+      const formData = JSON.parse(sessionStorage.getItem("crowdfunding2025_data"));
+      if(!formData){
+        // console.error("something went wrong");
+        router.push("/crowdfunding");
+      }
+    },[])
     return(
       <>
         <Head>
