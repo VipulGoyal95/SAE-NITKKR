@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
   const router = useRouter();
@@ -11,6 +12,12 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [shouldShow, setShouldShow] = useState(true);
+  const pathname = usePathname();
+  const navbaroriginal =
+    pathname === "/crowdfunding" ||
+    pathname === "/crowdfunding/form" ||
+    pathname === "/crowdfunding/thankyou" ||
+    pathname === "/crowdfunding/payment";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +52,7 @@ const Header = () => {
 
   return (
     <div 
-      className={`fixed top-0 left-0 right-0 z-50 transform transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-50 transform transition-all ${navbaroriginal ? "top-0":"top-10"} duration-300 ${
         shouldShow ? 'translate-y-0' : '-translate-y-full'
       }`}
     >

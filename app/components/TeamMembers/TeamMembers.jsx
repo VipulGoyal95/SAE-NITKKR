@@ -30,7 +30,7 @@ const TeamMembers = () => {
 
       <div className="relative mx-auto max-w-8xl max-[420px]:max-w-[95vw]">
        
-        <div className="mt-8 mb-20 text-center max-[450px]:mb-8">
+        <div className="mt-14 mb-20 text-center max-[450px]:mb-8 max-[500px]:mt-10">
           {/* <div className="mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-[2rem] bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 shadow-2xl">
             <Users className="h-14 w-14 text-white" />
           </div> */}
