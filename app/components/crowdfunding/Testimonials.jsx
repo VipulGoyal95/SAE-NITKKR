@@ -147,6 +147,20 @@ const testimonialData2=[
     feedback:
       "Give your best to the competition.",
   },
+  {
+    name: "M P Singh",
+    designation: "Alumnus, Batch of 1988",
+    image: "/assets/images/crowdfunding/Manesh Pratap singh.webp",
+    feedback:
+      "I would be happy to mentor , coach and strategic management.",
+  },
+  {
+    name: "Ritwik Batabyal",
+    designation: "Alumnus, Batch of 1996",
+    image: "/assets/images/crowdfunding/Ritwik Batabyal.webp",
+    feedback:
+      "All the best",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
