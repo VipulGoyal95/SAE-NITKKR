@@ -161,6 +161,20 @@ const testimonialData2=[
     feedback:
       "All the best",
   },
+  {
+    name: "Karunam Goyal",
+    designation: "Alumnus, Batch of 2021",
+    image: "/assets/images/crowdfunding/Karunam Goyal.webp",
+    feedback:
+      "All the best, team! Give it your best shot, stay focused, and enjoy every moment. We’re all rooting for you. Go make it count!",
+  },
+  {
+    name: "Varun Garg",
+    designation: "Alumnus, Batch of 1996",
+    image: "/assets/images/crowdfunding/Varun Garg.webp",
+    feedback:
+      "We wish you success",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);

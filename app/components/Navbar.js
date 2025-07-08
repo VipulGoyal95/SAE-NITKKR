@@ -71,7 +71,7 @@ const Header = () => {
               />
               <div className="text-left text-white">
                 <h3 className="text-sm sm:text-base md:text-lg font-bold">SAE</h3>
-                <h3 className="text-xs sm:text-sm md:text-base font-bold">Nit Kurukshetra</h3>
+                <h3 className="text-xs sm:text-sm md:text-base font-bold">NIT Kurukshetra</h3>
               </div>
             </div>
 
