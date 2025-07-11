@@ -9,6 +9,7 @@ import {
   EffectCoverflow,
 } from "swiper/modules";
 import Image from "next/image";
+import { BsPersonFill } from "react-icons/bs";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -175,6 +176,41 @@ const testimonialData2=[
     feedback:
       "We wish you success",
   },
+  {
+    name: "Purnendu Kaul",
+    designation: "Alumnus, Batch of 2011",
+    image: "/assets/images/crowdfunding/Purnendu Kaul.webp",
+    feedback:
+      "Best of luck",
+  },
+  {
+    name: "Dinesh Kumar",
+    designation: "Alumnus, Batch of 2019",
+    image: "",
+    feedback:
+      "All the best team. Give your best shot. Success and failure is a part of life",
+  },
+  {
+    name: "Durgesh Kumar",
+    designation: "Alumnus, Batch of 2017",
+    image: "/assets/images/crowdfunding/Durgesh Kumar.webp",
+    feedback:
+      "Keep pushing boundaries — your passion and perseverance are driving the future of innovation.",
+  },
+  {
+    name: "Amit Sharma",
+    designation: "Alumnus, Batch of 2017",
+    image: "",
+    feedback:
+      "All the best to team",
+  },
+  {
+    name: "Manish Kumar",
+    designation: "Alumnus, Batch of 2013",
+    image: "",
+    feedback:
+      "Do your best.. you will shine :)",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -277,13 +313,19 @@ const Testimonials = () => {
                 {/* Person Info */}
                 <div className="mt-auto flex items-center">
                   <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-blue-500/30">
-                    <Image
-                      src={active.image}
-                      alt={active.name}
-                      width={64}
-                      height={64}
-                      className="object-cover w-full h-full"
-                    />
+                    {active.image ? (
+                      <Image
+                        src={active.image}
+                        alt={active.name}
+                        width={64}
+                        height={64}
+                        className="object-cover w-full h-full"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                        <BsPersonFill className="text-gray-400 text-4xl" />
+                      </div>
+                    )}
                   </div>
                   <div className="ml-4">
                     <h4 className="font-bold text-xl text-white">
@@ -391,13 +433,19 @@ const Testimonials = () => {
                     >
                       <div className="relative overflow-hidden rounded-lg mb-4">
                         <div className="aspect-square w-full">
-                          <Image
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                            fill
-                            className="object-cover"
-                            sizes="280px"
-                          />
+                          {testimonial.image ? (
+                            <Image
+                              src={testimonial.image}
+                              alt={testimonial.name}
+                              fill
+                              className="object-cover"
+                              sizes="280px"
+                            />
+                          ) : (
+                            <div className="w-full h-full bg-gray-700 flex items-center justify-center">
+                              <BsPersonFill className="text-gray-400 text-6xl" />
+                            </div>
+                          )}
                           {/* Gradient overlay */}
                           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-70"></div>
                         </div>
