@@ -30,6 +30,15 @@ const customStyles = `
   .testimonials-swiper .swiper-button-prev::after {
     display: none;
   }
+
+  /* Reduce Swiper pagination dot size on mobile */
+  @media (max-width: 640px) {
+    .testimonials-swiper .swiper-pagination-bullet {
+      width: 8px !important;
+      height: 8px !important;
+      margin: 0 3px !important;
+    }
+  }
 `;
 
 const testimonials = [
@@ -210,6 +219,20 @@ const testimonialData2=[
     image: "",
     feedback:
       "Do your best.. you will shine :)",
+  },
+  {
+    name: "Dora Kasireddi",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Dora Kasireddi.webp",
+    feedback:
+      "I requested fellow RECERs to contribute for this good cause",
+  },
+  {
+    name: "Nitin Agarwal",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Nitin Agarwal.webp",
+    feedback:
+      "Wishing you all the best",
   },
 ]
 const Testimonials = () => {
