@@ -234,6 +234,13 @@ const testimonialData2=[
     feedback:
       "Wishing you all the best",
   },
+  {
+    name: "Shyam Prakash Jha",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Shyam Prakash Jha.webp",
+    feedback:
+      "Remember, the work you do today shapes the future—not just for yourselves, but for the generations that follow. Stay passionate, stay focused, and most importantly, enjoy the journey.\n \n Wishing you continued success in all your endeavors!",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
