@@ -248,6 +248,20 @@ const testimonialData2=[
     feedback:
       "All the best.",
   },
+  {
+    name: "Sridhar Nedunsezian",
+    designation: "Alumnus, Batch of 2002",
+    image: "",
+    feedback:
+      "My best wishes to the team. Make NITK (RECK) proud.",
+  },
+  {
+    name: "Nishchal Jain",
+    designation: "Alumnus, Batch of 2002",
+    image: "/assets/images/crowdfunding/Nishchal Jain.webp",
+    feedback:
+      "Good Luck in exploring new ideas 💡... Be passionate about what you do and do what you enjoy and inspire for",
+  },
 ]
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
