@@ -34,8 +34,8 @@ const customStyles = `
   /* Reduce Swiper pagination dot size on mobile */
   @media (max-width: 640px) {
     .testimonials-swiper .swiper-pagination-bullet {
-      width: 8px !important;
-      height: 8px !important;
+      width: 6px !important;
+      height: 6px !important;
       margin: 0 3px !important;
     }
   }
@@ -261,6 +261,20 @@ const testimonialData2=[
     image: "/assets/images/crowdfunding/Nishchal Jain.webp",
     feedback:
       "Good Luck in exploring new ideas 💡... Be passionate about what you do and do what you enjoy and inspire for",
+  },
+  {
+    name: "Jivraj singh Sandhu",
+    designation: "Alumnus, Batch of 1991",
+    image: "/assets/images/crowdfunding/Jivraj singh Sandhu.webp",
+    feedback:
+      "Wishing you all the best....bring laurels for our  Alma Mater and yourself too.",
+  },
+  {
+    name: "Harvinder Bajaj",
+    designation: "Alumnus, Batch of 1999",
+    image: "/assets/images/crowdfunding/Harvinder Bajaj.webp",
+    feedback:
+      "Keep innovating, keep shining, and make your college proud. All the best.",
   },
 ]
 const Testimonials = () => {
