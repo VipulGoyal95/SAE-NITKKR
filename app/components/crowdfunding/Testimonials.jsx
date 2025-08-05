@@ -30,6 +30,15 @@ const customStyles = `
   .testimonials-swiper .swiper-button-prev::after {
     display: none;
   }
+
+  /* Reduce Swiper pagination dot size on mobile */
+  @media (max-width: 640px) {
+    .testimonials-swiper .swiper-pagination-bullet {
+      width: 6px !important;
+      height: 6px !important;
+      margin: 0 3px !important;
+    }
+  }
 `;
 
 const testimonials = [
@@ -210,6 +219,62 @@ const testimonialData2=[
     image: "",
     feedback:
       "Do your best.. you will shine :)",
+  },
+  {
+    name: "Dora Kasireddi",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Dora Kasireddi.webp",
+    feedback:
+      "I requested fellow RECERs to contribute for this good cause",
+  },
+  {
+    name: "Nitin Agarwal",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Nitin Agarwal.webp",
+    feedback:
+      "Wishing you all the best",
+  },
+  {
+    name: "Shyam Prakash Jha",
+    designation: "Alumnus, Batch of 1998",
+    image: "/assets/images/crowdfunding/Shyam Prakash Jha.webp",
+    feedback:
+      "Remember, the work you do today shapes the future—not just for yourselves, but for the generations that follow. Stay passionate, stay focused, and most importantly, enjoy the journey.\n \n Wishing you continued success in all your endeavors!",
+  },
+  {
+    name: "Abhishek Choubey",
+    designation: "Alumnus, Batch of 2002",
+    image: "/assets/images/crowdfunding/Abhishek choubey.webp",
+    feedback:
+      "All the best.",
+  },
+  {
+    name: "Sridhar Nedunsezian",
+    designation: "Alumnus, Batch of 2002",
+    image: "",
+    feedback:
+      "My best wishes to the team. Make NITK (RECK) proud.",
+  },
+  {
+    name: "Nishchal Jain",
+    designation: "Alumnus, Batch of 2002",
+    image: "/assets/images/crowdfunding/Nishchal Jain.webp",
+    feedback:
+      "Good Luck in exploring new ideas 💡... Be passionate about what you do and do what you enjoy and inspire for",
+  },
+  {
+    name: "Jivraj singh Sandhu",
+    designation: "Alumnus, Batch of 1991",
+    image: "/assets/images/crowdfunding/Jivraj singh Sandhu.webp",
+    feedback:
+      "Wishing you all the best....bring laurels for our  Alma Mater and yourself too.",
+  },
+  {
+    name: "Harvinder Bajaj",
+    designation: "Alumnus, Batch of 1999",
+    image: "/assets/images/crowdfunding/Harvinder Bajaj.webp",
+    feedback:
+      "Keep innovating, keep shining, and make your college proud. All the best.",
   },
 ]
 const Testimonials = () => {
