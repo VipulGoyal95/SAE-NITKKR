@@ -16,7 +16,7 @@ const DynamicThreeDWrapper = dynamic(
     { ssr: false }
   );
 
-const textToCopy = "8570865708@sbi";
+const textToCopy = "saenitkkr@sbi";
 const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(textToCopy);
@@ -178,11 +178,11 @@ const Payment=()=>{
                             Scan This QR and Make Payment
                         </h1>
 
-                        <Image src="/assets/images/paymentQR/MainQRcode.webp" alt="paymentQR" width={370} height={400} className="mx-auto" />
+                        <Image src="/assets/images/paymentQR/saenitkkrsbi.webp" alt="paymentQR" width={370} height={400} className="mx-auto" />
                         
                         <div style={{ display: 'flex', alignItems: "center", gap: "3px", flexWrap: "wrap", justifyContent: "center" }} className="mt-6 text-[22px]">
                             <p>UPI ID:</p>
-                            <p>8570865708@sbi</p>
+                            <p>saenitkkr@sbi</p>
                             <button className="cursor-pointer ml-4" onClick={handleCopy}><FaCopy /></button>
                         </div>
                         
