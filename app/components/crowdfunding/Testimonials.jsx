@@ -25,7 +25,9 @@ const customStyles = `
     position: static;
     margin: 0;
   }
-
+  .testimonials-swiper .swiper-pagination-bullet{
+    display: none;
+  }
   .testimonials-swiper .swiper-button-next::after,
   .testimonials-swiper .swiper-button-prev::after {
     display: none;
@@ -275,6 +277,83 @@ const testimonialData2=[
     image: "/assets/images/crowdfunding/Harvinder Bajaj.webp",
     feedback:
       "Keep innovating, keep shining, and make your college proud. All the best.",
+  },
+  {
+    name: "Sanket Arora",
+    designation: "Alumnus, Batch of 2012",
+    image: "/assets/images/crowdfunding/Sanket Arora.webp",
+    feedback:
+      "Bring some innovation in whatever you do!",
+  },
+  {
+    name: "Narendra Krishna Tripathi",
+    designation: "Alumnus, Batch of 2015",
+    image: "/assets/images/crowdfunding/Narendra Krishna Tripathi.webp",
+    feedback:
+      "All the best !",
+  },
+  {
+    name: "Anjul Mittal",
+    designation: "Alumnus, Batch of 2012",
+    image: "/assets/images/crowdfunding/Anjul Mittal.webp",
+    feedback:
+      "All the best !",
+  },
+  {
+    name: "Sajeed Ahmed",
+    designation: "Alumnus, Batch of 2004",
+    image: "/assets/images/crowdfunding/Sajeed Ahmed.webp",
+    feedback:
+      "Wishing the team all the very best.",
+  },
+  {
+    name: "Mohinder Saini",
+    designation: "Alumnus, Batch of 2002",
+    image: "",
+    feedback:
+      "All the best!",
+  },
+  {
+    name: "Santosh Kondeti",
+    designation: "Alumnus, Batch of 2011",
+    image: "/assets/images/crowdfunding/Santosh Kondeti.webp",
+    feedback:
+      "All the best!",
+  },
+  {
+    name: "Rahul Bhardwaj",
+    designation: "Non Alumni",
+    image: "/assets/images/crowdfunding/Rahul Bhardwaj.webp",
+    feedback:
+      "What a fantastic initiative ! Excited to see the final outcome and to be a part of this journey.",
+  },
+  {
+    name: "Pratikshya Mohanty",
+    designation: "Alumnus, Batch of 2017",
+    image: "/assets/images/crowdfunding/Pratikshya Mohanty.webp",
+    feedback:
+      "\"Please consider enhancing women engineers' participation in the club by removing social barriers to entry and encouraging technical leadership among women engineers on campus by being allies to the cause.\" I champion women's causes and would like the current team to take outcome-driven steps toward this initiative. If things go in the right direction, I will be more than happy to continue my support year on year.",
+  },
+  {
+    name: "Sam Selvan",
+    designation: "Alumnus, Batch of 2011",
+    image: "/assets/images/crowdfunding/sam selvan.webp",
+    feedback:
+      "Keep up the good work. I am in the automotive industry as well. Let me know if I can contribute apart from monetary compensation.",
+  },
+  {
+    name: "Harmeet Singh Bharmi",
+    designation: "Alumnus, Batch of 2011",
+    image: "/assets/images/crowdfunding/Harmeet Singh Bharmi.webp",
+    feedback:
+      "All the very best.",
+  },
+  {
+    name: "Shivam Pachauri",
+    designation: "Alumnus, Batch of 2020",
+    image: "/assets/images/crowdfunding/Shivam Pachauri.webp",
+    feedback:
+      "Always demonstrates teamwork, because it's not about how good the car is, but how you handle the team and whether everyone works in unity.",
   },
 ]
 const Testimonials = () => {
