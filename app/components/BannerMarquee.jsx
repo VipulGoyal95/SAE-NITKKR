@@ -5,7 +5,7 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 const marqueeText =
-  "Help Drive Innovation at SAE NIT Kurukshetra! | We are raising ₹8 Lakhs in 45 Days to power the next big leaps for our teams! | Be a part of our journey. CLICK to check out our Crowdfunding Drive!";
+  "Together, we made it happen! In 45 days, we managed to raise ₹7.48 lakhs. Thank you to everyone who believed in our journey. Your trust resonates with us. For those who still wish to support, contributions are still welcome!";
 
 export default function BannerMarquee() {
   return (
