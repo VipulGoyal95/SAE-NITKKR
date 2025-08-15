@@ -4,11 +4,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import RegisterForm from './RegisterForm';
 
 export default function AutokritiCard() {
   const [currentPoster, setCurrentPoster] = useState('/assets/images/autokriti/cv-ev posters (2).webp');
   const [isHovered, setIsHovered] = useState(false);
   const [activeItem, setActiveItem] = useState(null);
+  const [showForm, setShowForm] = useState(false);
 
   const handleHover = (posterPath, index) => {
     setCurrentPoster(posterPath);
@@ -126,6 +128,7 @@ export default function AutokritiCard() {
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <motion.button 
+            onClick={() => setShowForm(true)}
             className="bg-red-600 text-white text-lg font-bold py-3 px-6 rounded-lg border-4 border-cyan-300 cursor-pointer hover:bg-red-700 transition duration-300 hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -133,6 +136,7 @@ export default function AutokritiCard() {
             Register Now
           </motion.button>
         </motion.div>
+        {showForm && <RegisterForm onClose={() => setShowForm(false)} isOpen={showForm} />}
       </motion.div>
     </div>
   );
