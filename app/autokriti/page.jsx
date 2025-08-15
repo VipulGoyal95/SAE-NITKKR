@@ -4,6 +4,7 @@ import AutokritiCard from '../components/autokriti/AutokritiCard';
 // import TabbedCards from '../components/TabbedCards';
 import HeroSection from '../components/autokriti/HeroSection';
 import AutokritiDespscription from '../components/autokriti/AutokritiDespscription';
+import WorkshopDomain from '../components/autokriti/WorkshopDomain';
 
 
 export const metadata = {
@@ -17,6 +18,7 @@ export default function AutokritiPage() {
       <AboutAutokriti />
       <History/>
       <AutokritiDespscription />
+      <WorkshopDomain />
       <AutokritiCard />
     </div>
   );

@@ -52,7 +52,7 @@ const Header = () => {
 
   return (
     <div 
-      className={`fixed left-0 right-0 z-50 transform transition-all ${navbaroriginal ? "top-0":"top-10"} duration-300 ${
+      className={`fixed left-0 right-0 z-50 transform transition-all ${navbaroriginal ? "top-0":"top-0"} duration-300 ${
         shouldShow ? 'translate-y-0' : '-translate-y-full'
       }`}
     >

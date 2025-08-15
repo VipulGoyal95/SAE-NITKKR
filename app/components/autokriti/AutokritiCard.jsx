@@ -26,22 +26,22 @@ export default function AutokritiCard() {
     {
       title: 'Combustion Vehicle',
       poster: '/assets/images/autokriti/cv-ev posters (2).webp',
-      description: 'Learn about traditional combustion engines and their mechanics'
+      description: 'INR-'
     },
     {
       title: 'IOT',
       poster: '/assets/images/autokriti/iot posters (1).webp',
-      description: 'Explore the world of Internet of Things in automotive technology'
+      description: 'INR-'
     },
     {
       title: 'Electric Vehicles',
       poster: '/assets/images/autokriti/cv-ev posters (2).webp',
-      description: 'Dive into the future of electric mobility and sustainable transportation'
+      description: 'INR-'
     },
     {
       title: 'Softwares',
       poster: '/assets/images/autokriti/software posters (1).webp',
-      description: 'Discover automotive software solutions and programming'
+      description: 'INR-'
     }
   ];
 
