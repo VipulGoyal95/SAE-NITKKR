@@ -16,7 +16,7 @@ const AutokritiDespscription = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl sm:text-5xl font-bold text-center mb-8 bg-gradient-to-r text-white bg-clip-text"
             >
-                Autokriti 14.0: Fueling the Future
+                 <span className="text-red-500">Auto</span>kriti 14.O : Fueling the Future
             </motion.h1>
 
             <motion.div
