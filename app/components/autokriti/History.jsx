@@ -102,29 +102,30 @@ const History = () => {
       return "#403CB280"
     }
     if(focusPosition===year && year==2){
-      return "#243365C7"
+      return "#166db4c7"
     }
     return "white"
   }
 
   return (
-    <div ref={componentRef} className="min-h-screen text-white px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8 max-[430px]:min-h-[80vh]">
+    <div ref={componentRef} className="min-h-screen text-white px-16 max-[1025px]:px-8 max-[700px]:px-8 max-[500px]:px-4 max-[560px]:mx-auto overflow-hidden max-[1025px]:mt-8 max-[430px]:min-h-[80vh] ">
       <motion.h1 
-        initial={{ opacity: 0, y: 20 }}
-        animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.8 }}
-        className='text-[65px] font-bold max-[1050px]:text-[55px] max-[900px]:text-[45px] max-[560px]:text-[38px] max-[440px]:text-[42px] max-[420px]:text-[50px]'
-      >
-        History <br/>
-        <motion.span 
-          initial={{ opacity: 0, x: -20 }}
-          animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className='text-zinc-600'
-        >
-          Our
-        </motion.span> Story
-      </motion.h1>
+  initial={{ opacity: 0, y: 20 }}
+  animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.8 }}
+  className='text-[65px] font-bold leading-[1.1] max-[1050px]:text-[55px] max-[900px]:text-[45px] max-[560px]:text-[38px] max-[440px]:text-[42px] max-[420px]:text-[50px]'
+>
+  History <br/>
+  <motion.span 
+    initial={{ opacity: 0, x: -20 }}
+    animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
+    transition={{ duration: 0.8, delay: 0.3 }}
+    className='text-zinc-600'
+  >
+    Our
+  </motion.span> Story
+</motion.h1>
+
       
       <div className="flex h-[20vh] flex-row items-start justify-between max-[860px]:h-[14vh]">
         <motion.p 
@@ -133,7 +134,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]"
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' ,color : getColor(0)}} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' ,color : getColor(0)}} className="ml-[2px] inline-block align-top transition-all duration-300 hover:scale-110 hover:text-[#EE6B46]">5</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, y: -50 }}
@@ -141,7 +142,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' ,color : getColor(1) }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' ,color : getColor(1) }} className="ml-[2px] inline-block align-top transition-all duration-300 hover:scale-110 hover:text-[#EE6B46]">4</span>
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, x: 50 }}
@@ -149,7 +150,7 @@ const History = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
         >
-          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' ,color : getColor(2)}} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
+          202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' ,color : getColor(2)}} className="ml-[2px] inline-block align-top transition-all duration-300 hover:scale-110 hover:text-[#EE6B46]">3</span>
         </motion.p>
       </div>
 
@@ -167,7 +168,7 @@ const History = () => {
                 alt="Ellipse 19"
                 width={20}
                 height={20}
-                priority
+                priority={true}
               />
             </motion.div>
             <motion.div 
@@ -195,19 +196,19 @@ const History = () => {
                 alt="Ellipse 26"
                 width={20}
                 height={20}
-                priority
+                // priority
               />
             </motion.div>
           </div>
           <motion.div 
-            className={`absolute top-1/2 ${getFocusPosition()} transform -translate-y-1/2`}
+            className={`absolute top-1/2 ${getFocusPosition()} transform -translate-y-1/2 `}
             initial={{ scale: 0 }}
             animate={hasAnimated ? { scale: 1 } : {}}
             transition={{ duration: 0.5 }}
           >
             <Image
               id="focus"
-              src="/assets/images/autokriti/Ellipse 27.webp"
+              src="/ellipse1.png"
               alt="Focus Ellipse"
               width={150}
               height={150}
@@ -229,7 +230,7 @@ const History = () => {
             width={1000}
             height={10}
             className="w-[97%] mx-auto max-[720px]:w-[90%] max-[420px]:w-[88%]"
-            priority
+            priority={true}
           />
         </motion.div>
       </div>
