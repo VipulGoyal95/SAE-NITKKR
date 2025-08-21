@@ -5,6 +5,7 @@ import AutokritiCard from '../components/autokriti/AutokritiCard';
 import HeroSection from '../components/autokriti/HeroSection';
 import AutokritiDespscription from '../components/autokriti/AutokritiDespscription';
 import WorkshopDomain from '../components/autokriti/WorkshopDomain';
+import ShowcaseVideo from '../components/autokriti/ShowcaseVideo';
 
 
 export const metadata = {
@@ -19,7 +20,8 @@ export default function AutokritiPage() {
       <History/>
       <AutokritiDespscription />
       <WorkshopDomain />
-      <AutokritiCard />
+      <ShowcaseVideo/>
+      {/* <AutokritiCard /> */}
     </div>
   );
 } 
