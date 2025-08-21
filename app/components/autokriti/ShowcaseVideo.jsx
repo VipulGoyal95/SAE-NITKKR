@@ -39,10 +39,11 @@ const ShowcaseVideo = () => {
         {/* Fancy title overlay (optional) */}
         <div className="absolute bottom-6 left-6 text-white/90">
           <h3 className="text-2xl md:text-3xl font-bold tracking-wide drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">
-            Drift Experience
+            Drift Show
           </h3>
           <p className="text-sm md:text-base text-zinc-300 mt-1 drop-shadow-[0_0_6px_rgba(255,0,255,0.6)]">
-            Feel the adrenaline of the ride
+            Experience the thrills of professional drifting at SAE NIT
+            Kurukshetra, courtesy of BND Motorsports
           </p>
         </div>
       </motion.div>
