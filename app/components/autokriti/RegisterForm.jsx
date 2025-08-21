@@ -1,4 +1,4 @@
-  "use client";
+"use client";
 import { getCashfree } from "@/app/utils/cashfree";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
@@ -19,8 +19,8 @@ const instructions = (
       </li>
       <li>
         In case of any issue or payment failure, please contact:<br />
-        <span className="font-semibold">Govind</span> +91-9602562300<br />
-        <span className="font-semibold">Sourav</span> +91-9306356371
+        <span className="font-semibold">Ankit</span> +91-8168754398<br />
+        <span className="font-semibold">Sarthak</span> +91-9311323161
       </li>
     </ul>
   </div>
@@ -38,11 +38,9 @@ export default function RegistrationForm() {
     branch: "",
     semester: "",
     dept: "",
-    timeslot: "",
     accommodation: false,
     instructionsRead: false,
     semesterDropdownOpen: false,
-    timeslotDropdownOpen: false,
   });
   const [errors, setErrors] = useState({});
   const [workshopAmount, setWorkshopAmount] = useState(0);
@@ -61,11 +59,9 @@ export default function RegistrationForm() {
         
         setLoading(true);
         try {
-            const res = await axios.post(`https://sae-backend.vercel.app/api/payment`, {
+            const res = await axios.post(`http://localhost:5000/api/payment`, {
                 version,
-                name: form.name,
-                email: form.email,
-                phone: form.phone,
+                form,
                 amount: 1,
             });
 
@@ -91,6 +87,7 @@ export default function RegistrationForm() {
 
         let checkoutOptions = {
             paymentSessionId: newSessionId, // Use the latest session ID
+            mode: 'Sandbox'
             // returnUrl: `https://saenitkurukshetra.com/cashfree/payment`,
         };
 
@@ -104,7 +101,7 @@ export default function RegistrationForm() {
         });
     };
 
-    useEffect(async () => {
+    useEffect(() => {
         setSessionId(isSessionId);
     }, [isSessionId]);
 
@@ -116,20 +113,20 @@ export default function RegistrationForm() {
     }));
 
     if (name === "accommodation") {
-      setAccommodationAmount(checked ? 279 : 0);
+      setAccommodationAmount(checked ? 299*3 : 0);
     }
 
     if (name === "dept") {
       let amount = 0;
-      if (value === "Mechanical") amount = 1000;
-      else if (value === "IoT") amount = 1500;
-      else if (value === "EV + PCB Designing") amount = 2000;
-      else if (value === "Software") amount = 2500;
+      if (value === "CV") amount = 1799;
+      else if (value === "IoT") amount = 2199;
+      else if (value === "EV") amount = 1799;
+      else if (value === "Software") amount = 1599;
       setWorkshopAmount(amount);
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const newErrors = {};
     if (!validator.isLength(form.name.trim(), { min: 2 })) {
@@ -157,6 +154,14 @@ export default function RegistrationForm() {
       // alert("Form submitted successfully! Data saved to localStorage.");
       setShowDataDialog(true);
     }
+
+    // try {
+    //   const res = await axios.post("http://localhost:5000/add-data", form);
+
+    //   console.log(res.data);
+    // } catch (error) {
+    //   console.log(error);
+    // }
   }
 
   return (
@@ -279,7 +284,7 @@ export default function RegistrationForm() {
             <div>
               <label className="block mb-2 font-semibold text-cyan-300">Select Your Department</label>
               <div className="flex flex-col space-y-2">
-                {["Mechanical", "IoT", "EV + PCB Designing", "Software"].map((dept) => (
+                {["CV", "IoT", "EV", "Software"].map((dept) => (
                   <label key={dept} className="flex items-center gap-2 cursor-pointer hover:text-cyan-400 transition">
                     <input
                       type="radio"
@@ -300,54 +305,7 @@ export default function RegistrationForm() {
                 Workshop Amount (₹): <span className="text-green-400 font-bold">{workshopAmount}</span>
               </div>
             </div>
-            <div className="relative">
-              <div 
-                className="w-full p-3 pr-10 rounded-lg bg-gray-800 border border-gray-700 focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer"
-                onClick={() => setForm(prev => ({ ...prev, timeslotDropdownOpen: !prev.timeslotDropdownOpen }))}
-              >
-                <span className={form.timeslot ? 'text-gray-300' : 'text-gray-400'}>
-                  {form.timeslot || '-- Choose Timeslot --'}
-                </span>
-                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg 
-                    className={`w-5 h-5 text-gray-400 transition-transform ${form.timeslotDropdownOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </div>
-              </div>
-              
-              {form.timeslotDropdownOpen && (
-                <div className="absolute top-full left-0 right-0 mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
-                  {[
-                    { value: "", label: "-- Choose Timeslot --" },
-                    { value: "Morning", label: "Morning" },
-                    { value: "Afternoon", label: "Afternoon" }
-                  ].map((option) => (
-                    <div
-                      key={option.value}
-                      className={`px-3 py-2 cursor-pointer transition-colors ${
-                        form.timeslot === option.value 
-                          ? 'bg-cyan-400 text-gray-900' 
-                          : 'text-gray-300 hover:bg-gray-700'
-                      } ${option.value === "" ? 'text-gray-400' : ''}`}
-                      onClick={() => {
-                        setForm(prev => ({ 
-                          ...prev, 
-                          timeslot: option.value, 
-                          timeslotDropdownOpen: false 
-                        }));
-                      }}
-                    >
-                      {option.label}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
+            
             <label className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition cursor-pointer">
               <input
                 type="checkbox"
@@ -356,10 +314,10 @@ export default function RegistrationForm() {
                 onChange={handleChange}
                 className="accent-cyan-400"
               />
-              Need Accommodation & food  (₹279/day)
+              Need Accommodation & food  (₹299/day)
             </label>
             <div className="text-white font-medium text-sm">
-              Amount (₹): <span className="text-green-400 font-bold">{accommodationAmount}</span>
+              Amount (₹): <span className="text-green-400 font-bold">{accommodationAmount !== 0 ? accommodationAmount : 0} {accommodationAmount !== 0 && "for 3 days"}</span>
             </div>
             <label className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition cursor-pointer">
               <input
@@ -462,10 +420,6 @@ export default function RegistrationForm() {
                     <td className="py-3 px-4">{form.dept || "Not selected"}</td>
                   </tr>
                   <tr className="border-b border-gray-800">
-                    <td className="py-3 px-4 font-medium">Timeslot</td>
-                    <td className="py-3 px-4">{form.timeslot || "Not selected"}</td>
-                  </tr>
-                  <tr className="border-b border-gray-800">
                     <td className="py-3 px-4 font-medium">Accommodation</td>
                     <td className="py-3 px-4">{form.accommodation ? "Yes" : "No"}</td>
                   </tr>
@@ -488,7 +442,7 @@ export default function RegistrationForm() {
             <div className="mt-8 flex justify-center">
               <button
                 onClick={handlePayment}
-                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
+                className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
               >
                 Pay Now ₹{amount}
               </button>

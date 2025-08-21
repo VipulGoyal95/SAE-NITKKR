@@ -23,7 +23,6 @@ const ShowcaseVideo = () => {
         {/* Video */}
         <video
           className="w-full aspect-video object-cover rounded-3xl"
-          poster="/assets/images/autokriti/video-poster.jpg"
           autoPlay
           muted
           loop
