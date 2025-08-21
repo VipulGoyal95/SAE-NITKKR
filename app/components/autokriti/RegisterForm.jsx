@@ -1,6 +1,9 @@
   "use client";
-import React, { useState } from "react";
+import { getCashfree } from "@/app/utils/cashfree";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import validator from "validator";
+import axios from "axios";
 
 const instructions = (
   <div className="bg-cyan-950/70 border border-cyan-700 rounded-xl p-5 text-cyan-100 max-w-xs shadow-lg">
@@ -23,7 +26,10 @@ const instructions = (
   </div>
 );
 
-export default function RegistrationForm({ onClose }) {
+export default function RegistrationForm() {
+  const params = useParams();
+  const isSessionId = params.sessionid;
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -42,7 +48,65 @@ export default function RegistrationForm({ onClose }) {
   const [workshopAmount, setWorkshopAmount] = useState(0);
   const [accommodationAmount, setAccommodationAmount] = useState(0);
   const [showDataDialog, setShowDataDialog] = useState(false);
-  const totalAmount = workshopAmount + accommodationAmount;
+  const amount = workshopAmount + accommodationAmount;
+  const [sessionId, setSessionId] = useState('');
+  const version = "2025-01-01";
+  const [loading, setLoading] = useState(false);
+
+    const getSessionId = async () => {
+        // if (!name || !email || !amount || !phone) {
+        //     alert("Please fill in all fields.");
+        //     return null;
+        // }
+        
+        setLoading(true);
+        try {
+            const res = await axios.post(`https://sae-backend.vercel.app/api/payment`, {
+                version,
+                name: form.name,
+                email: form.email,
+                phone: form.phone,
+                amount: 1,
+            });
+
+            console.log(res.data);
+            setLoading(false);
+            return res.data.payment_session_id; // Extract session ID from response
+        } catch (err) {
+            setLoading(false);
+            console.error("Error generating session ID:", err);
+            alert("Failed to initiate payment. Please try again.");
+            return null;
+        }
+    };
+
+    const handlePayment = async (e) => {
+        e.preventDefault(); // Prevent default form submission
+        // console.log("run");
+        const newSessionId = await getSessionId(); // Get session ID from API
+        // console.log(newSessionId);
+        if (!newSessionId) return; // Stop if session ID is not received
+        const cashfree = await getCashfree();
+        setSessionId(newSessionId); // Update session ID state
+
+        let checkoutOptions = {
+            paymentSessionId: newSessionId, // Use the latest session ID
+            // returnUrl: `https://saenitkurukshetra.com/cashfree/payment`,
+        };
+
+        cashfree.checkout(checkoutOptions).then(function (result) {
+            if (result.error) {
+                alert(result.error.message);
+            }
+            if (result.redirect) {
+                console.log("Redirection", result);
+            }
+        });
+    };
+
+    useEffect(async () => {
+        setSessionId(isSessionId);
+    }, [isSessionId]);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
@@ -78,7 +142,13 @@ export default function RegistrationForm({ onClose }) {
       !validator.isMobilePhone(form.phone, "en-IN") ||
       !validator.isLength(form.phone, { min: 10, max: 10 })
     ) {
-      newErrors.phone = "Enter a valid 10-digit Indian phone number.";
+      newErrors.phone = "Enter a valid 10-digit phone number.";
+    }
+    if (!form.dept) {
+      newErrors.dept = "Please select a department.";
+    }
+    if (!form.semester) {
+      newErrors.semester = "Please select a semester.";
     }
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
@@ -104,6 +174,7 @@ export default function RegistrationForm({ onClose }) {
                 placeholder="Full Name *"
                 value={form.name}
                 onChange={handleChange}
+                required
                 className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.name ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
               />
               {errors.name && <div className="text-red-400 text-xs mt-1">{errors.name}</div>}
@@ -115,6 +186,7 @@ export default function RegistrationForm({ onClose }) {
                 placeholder="Email ID *"
                 value={form.email}
                 onChange={handleChange}
+                required
                 className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.email ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
               />
               {errors.email && <div className="text-red-400 text-xs mt-1">{errors.email}</div>}
@@ -126,6 +198,7 @@ export default function RegistrationForm({ onClose }) {
                 placeholder="Phone No *"
                 value={form.phone}
                 onChange={handleChange}
+                required
                 className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.phone ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
               />
               {errors.phone && <div className="text-red-400 text-xs mt-1">{errors.phone}</div>}
@@ -136,6 +209,7 @@ export default function RegistrationForm({ onClose }) {
               placeholder="College"
               value={form.college}
               onChange={handleChange}
+              required
               className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition"
             />
             <input
@@ -144,11 +218,12 @@ export default function RegistrationForm({ onClose }) {
               placeholder="Branch"
               value={form.branch}
               onChange={handleChange}
+              required
               className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition"
             />
             <div className="relative">
               <div 
-                className="w-full p-3 pr-10 rounded-lg bg-gray-800 border border-gray-700 focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer"
+                className={`w-full p-3 pr-10 rounded-lg bg-gray-800 border ${errors.semester ? 'border-red-500' : 'border-gray-700'} focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer`}
                 onClick={() => setForm(prev => ({ ...prev, semesterDropdownOpen: !prev.semesterDropdownOpen }))}
               >
                 <span className={form.semester ? 'text-gray-300' : 'text-gray-400'}>
@@ -199,6 +274,7 @@ export default function RegistrationForm({ onClose }) {
                   ))}
                 </div>
               )}
+              {errors.semester && <div className="text-red-400 text-xs mt-2">{errors.semester}</div>}
             </div>
             <div>
               <label className="block mb-2 font-semibold text-cyan-300">Select Your Department</label>
@@ -217,6 +293,7 @@ export default function RegistrationForm({ onClose }) {
                   </label>
                 ))}
               </div>
+              {errors.dept && <div className="text-red-400 text-xs mt-2">{errors.dept}</div>}
             </div>
             <div className="space-y-2">
               <div className="text-white font-medium text-sm">
@@ -291,10 +368,11 @@ export default function RegistrationForm({ onClose }) {
                 checked={form.instructionsRead}
                 onChange={handleChange}
                 className="accent-cyan-400"
+                required
               />
               I have read and understood the instructions
             </label>
-            <span> Total Amount : {totalAmount}</span>
+            <span> Total Amount : {amount}</span>
             <button
               type="submit"
               className="w-full cursor-pointer mt-6 bg-cyan-500 text-gray-900 font-extrabold py-3 rounded-lg hover:bg-cyan-400 transition text-lg shadow-lg tracking-wide"
@@ -401,7 +479,7 @@ export default function RegistrationForm({ onClose }) {
                   </tr>
                   <tr className="border-b border-gray-800">
                     <td className="py-3 px-4 font-medium">Total Amount</td>
-                    <td className="py-3 px-4 text-green-400 font-bold text-xl">₹{totalAmount}</td>
+                    <td className="py-3 px-4 text-green-400 font-bold text-xl">₹{amount}</td>
                   </tr>
                 </tbody>
               </table>
@@ -409,13 +487,10 @@ export default function RegistrationForm({ onClose }) {
 
             <div className="mt-8 flex justify-center">
               <button
-                onClick={() => {
-                  // Handle payment logic here
-                  alert("Payment gateway integration coming soon!");
-                }}
+                onClick={() => {handlePayment}}
                 className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
               >
-                Pay Now ₹{totalAmount}
+                Pay Now ₹{amount}
               </button>
             </div>
           </div>

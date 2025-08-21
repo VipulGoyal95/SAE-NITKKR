@@ -16,7 +16,7 @@ const AutokritiDespscription = () => {
                 transition={{ duration: 0.8 }}
                 className="text-4xl sm:text-5xl font-bold text-center mb-8 bg-gradient-to-r text-white bg-clip-text"
             >
-                 <span className="text-red-500">Auto</span>kriti 14.O : Fueling the Future
+                 <span className="text-red-500">Auto</span>kriti 15.O : Intelligence Overdrive
             </motion.h1>
 
             <motion.div
@@ -26,7 +26,7 @@ const AutokritiDespscription = () => {
                 className="prose prose-lg max-w-none mx-auto"
             >
                 <p className="text-gray-300 leading-relaxed mb-6">
-                    Interested in automobiles but unsure where to begin? Let this be your gateway to the future of mobility. Join us for Autokriti 14.0 and become a part of the revolution.
+                   Curious about automobiles and technology but don’t know where to start? Autokriti 15.0 is your gateway to the next era of mobility and intelligence. Join us for the 15th edition of North India’s largest automotive workshop
                 </p>
 
                 <motion.div
@@ -36,18 +36,23 @@ const AutokritiDespscription = () => {
                     className="bg-gray-800/50 p-6 rounded-lg mb-6"
                 >
                     <p className="text-gray-300 leading-relaxed">
-                        From dismantling a 2-stroke engine of a scooter in Autokriti 1.0 to exploring the intricacies of a Porsche Cayenne engine in Autokriti 11.0, we have consistently aligned ourselves with cutting-edge innovation. Our commitment to staying abreast of evolving technology has solidified our status as North India's largest automotive workshop. In our ongoing pursuit of knowledge sharing, we proudly present Autokriti 14.0.
+                        Our journey has been about breaking barriers and embracing innovation. With each edition, we’ve scaled higher, blending automotive engineering with emerging technologies! This year, we’re all set to go into overdrive.
                     </p>
                     <br/>
                     <p className="text-gray-300 leading-relaxed">
-                        This year, we're set to explore the future of mobility under the theme <span className="font-bold text-blue-400">Fueling the Future</span>, focusing on a journey that's safe, steady, and insightful.
+                        This year’s theme, <span className="font-bold text-blue-400">Intelligence Overdrive</span>, focuses on harnessing the power of AI, Machine Learning, and smart systems in mobility and beyond.. creating smarter vehicles, smarter technology, and smarter engineers!
                     </p>
                     <br/>
                     <p className="text-gray-300 leading-relaxed">
-                        Autokriti 14.0 features four dynamic workshops: <span className="font-bold text-blue-400">Combustion Vehicles (CV)</span>, <span className="font-bold text-blue-400">Electric Vehicles (EV)</span>, <span className="font-bold text-blue-400">Internet of Things (IoT)</span>, and <span className="font-bold text-blue-400">Software</span>. Each workshop is meticulously designed to offer both theoretical insights and hands-on practical experience, ensuring a comprehensive understanding of the respective fields.
+                        Autokriti 15.0 will feature four cutting-edge workshops:<br/><span className="font-bold text-blue-400">Combustion Vehicles (CV): </span>Dive deep into the fundamentals of power and performance.<br/>
+                        <span className="font-bold text-blue-400">Electric Vehicles (EV): </span>Explore the technology shaping tomorrow’s mobility.<br/> <span className="font-bold text-blue-400">Internet of Things (IoT) with AI/ML: </span>Experience the fusion of intelligence and connectivity with hands-on projects.<br/>
+                        <span className="font-bold text-blue-400">Software & Simulation: </span> Design, model, and optimize the future with digital tools such as Solidworks and ANSYS.
                     </p>
                     <p className="text-gray-300 leading-relaxed mt-4">
-                        You'll have the opportunity to engage with physical models for a more personalized learning experience. Additionally, the event will include guest lectures by esteemed industry experts. Dive into the future with us and explore the content of these workshops for more details.
+                        Each workshop is designed to give participants hands-on practical exposure along with powerful theoretical sessions, ensuring a complete and engaging learning experience.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed mt-4">
+                        Experience the vibe of learning and fun.
                     </p>
                 </motion.div>
             </motion.div>

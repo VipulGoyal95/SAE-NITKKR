@@ -12,6 +12,7 @@
     "sitemap": "next-sitemap"
   },
   "dependencies": {
+    "@cashfreepayments/cashfree-js": "^1.0.5",
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@mux/mux-player-react": "^3.4.1",
     "@use-gesture/react": "^10.3.1",

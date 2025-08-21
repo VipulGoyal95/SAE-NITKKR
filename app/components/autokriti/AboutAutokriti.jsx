@@ -32,33 +32,33 @@ const AboutAutokriti = () => {
 
       {/* Text Section */}
       <motion.div
-        className="w-full lg:w-[99%] lg:pl-16"
+        className="w-full lg:w-[95%]"
         initial={{ opacity: 0, x: 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
         transition={{ duration: 0.8, delay: 0.4 }}
       >
         <motion.h1
-          className="bg-red text-4xl sm:text-[70px] font-bold mb-8 lg:mb-12 translate-x-80"
+          className="w-full text-center bg-red text-4xl sm:text-[70px] font-bold mb-8 lg:mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          About Aut
-          <span className="relative inline-block w-[60px] h-[60px] translate-y-3">
+          About Auto
+          {/* <span className="relative inline-block w-[60px] h-[60px] translate-y-3">
             <Image src="/tyre.png" alt="tyre" fill style={{ objectFit: 'contain' }} />
-          </span>
+          </span> */}
           kriti
         </motion.h1>
 
         <motion.div
-          className="bg-red text-justify text-base sm:text-lg leading-relaxed space-y-6 bg-white/20 rounded-3xl p-8 translate-x-[-30px]"
+          className="bg-red text-justify text-base sm:text-lg leading-relaxed space-y-6 bg-white/20 rounded-3xl p-8"
           initial={{ opacity: 0, y: 20 }}
-          style={{ backgroundImage: "url('/back2.jpg')",
+          style={{ backgroundImage: "url('/back2.webp')",
             backgroundColor: 'rgba(0, 0, 0, 0.4)',
             backgroundBlendMode: 'darken',
             backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center"
+            backgroundSize: "cover",
+            backgroundPosition: "center"
            }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.5, delay: 0.8 }}

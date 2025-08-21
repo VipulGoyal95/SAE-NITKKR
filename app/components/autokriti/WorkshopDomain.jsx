@@ -18,7 +18,7 @@ const workshops = [
     gradient: 'from-[#00c6ff]/40 via-[#0072ff]/20 to-transparent'
   },
   {
-    title: 'IOT',
+    title: 'IOT with AI/ML',
     price: 'INR 2499/-',
     icon: '/assets/images/autokriti/iot.webp',
     gradient: 'from-[#a8ff78]/40 via-[#78ffd6]/20 to-transparent'

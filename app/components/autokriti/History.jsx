@@ -149,7 +149,7 @@ const History = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]"
+          className="text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px] select-none"
         >
           202<span style={{ fontSize: mounted ? `${getFontSize(5)}px` : '130px' ,color : getColor(0)}} className="ml-[2px] inline-block align-top transition-all duration-300">5</span>
         </motion.p>
@@ -157,7 +157,7 @@ const History = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={hasAnimated ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
+          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px] select-none'
         >
           202<span style={{ fontSize: mounted ? `${getFontSize(4)}px` : '130px' ,color : getColor(1) }} className="ml-[2px] inline-block align-top transition-all duration-300">4</span>
         </motion.p>
@@ -165,7 +165,7 @@ const History = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={hasAnimated ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px]'
+          className='text-[8.5rem] font-[600] max-[1165px]:text-[7rem] max-[980px]:text-[6rem] max-[860px]:text-[4.68rem] max-[693px]:text-[4rem] max-[560px]:text-[46px] max-[420px]:text-[43px] select-none'
         >
           202<span style={{ fontSize: mounted ? `${getFontSize(3)}px` : '130px' ,color : getColor(2)}} className="ml-[2px] inline-block align-top transition-all duration-300">3</span>
         </motion.p>
