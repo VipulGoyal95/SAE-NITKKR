@@ -47,6 +47,14 @@ export default function AutokritiCard() {
     }
   ];
 
+  useEffect(() => {
+    // Preload all poster images on mount to avoid delay when switching
+    items.forEach(({ poster }) => {
+      const img = new window.Image();
+      img.src = poster;
+    });
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row bg-black text-white p-6 gap-6 items-center justify-center min-h-screen">
       {/* Left Poster Image */}

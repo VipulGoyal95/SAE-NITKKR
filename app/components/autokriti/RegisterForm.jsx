@@ -1,4 +1,4 @@
-"use client";
+  "use client";
 import React, { useState } from "react";
 import validator from "validator";
 
@@ -35,10 +35,13 @@ export default function RegistrationForm({ onClose }) {
     timeslot: "",
     accommodation: false,
     instructionsRead: false,
+    semesterDropdownOpen: false,
+    timeslotDropdownOpen: false,
   });
   const [errors, setErrors] = useState({});
   const [workshopAmount, setWorkshopAmount] = useState(0);
   const [accommodationAmount, setAccommodationAmount] = useState(0);
+  const [showDataDialog, setShowDataDialog] = useState(false);
   const totalAmount = workshopAmount + accommodationAmount;
 
   function handleChange(e) {
@@ -79,20 +82,16 @@ export default function RegistrationForm({ onClose }) {
     }
     setErrors(newErrors);
     if (Object.keys(newErrors).length === 0) {
-      alert("Form submitted!");
+      // Store form data in localStorage
+      localStorage.setItem("form data", JSON.stringify(form));
+      // alert("Form submitted successfully! Data saved to localStorage.");
+      setShowDataDialog(true);
     }
   }
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 bg-opacity-95 z-50 font-sans">
-      <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col md:flex-row gap-8 max-h-[90vh] overflow-y-auto">
-        <button
-          className="absolute top-4 right-4 text-gray-400 hover:text-cyan-400 text-3xl transition"
-          onClick={onClose}
-          aria-label="Close"
-        >
-          &times;
-        </button>
+    <div className="inset-0 flex items-center justify-center mt-30 from-gray-950 via-gray-900 to-gray-800 bg-opacity-95 z-50 font-sans">
+      <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col md:flex-row gap-8 overflow-y-auto">
         <div className="flex-1 min-w-0">
           <h2 className="text-3xl font-extrabold mb-6 text-cyan-400 tracking-tight text-center drop-shadow font-sans">
             Registration Form
@@ -147,22 +146,60 @@ export default function RegistrationForm({ onClose }) {
               onChange={handleChange}
               className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition"
             />
-            <select
-              name="semester"
-              value={form.semester}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-lg text-gray-300 transition"
-            >
-              <option value="">-- Select Semester --</option>
-              <option>1st</option>
-              <option>2nd</option>
-              <option>3rd</option>
-              <option>4th</option>
-              <option>5th</option>
-              <option>6th</option>
-              <option>7th</option>
-              <option>8th</option>
-            </select>
+            <div className="relative">
+              <div 
+                className="w-full p-3 pr-10 rounded-lg bg-gray-800 border border-gray-700 focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer"
+                onClick={() => setForm(prev => ({ ...prev, semesterDropdownOpen: !prev.semesterDropdownOpen }))}
+              >
+                <span className={form.semester ? 'text-gray-300' : 'text-gray-400'}>
+                  {form.semester || '-- Select Semester --'}
+                </span>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg 
+                    className={`w-5 h-5 text-gray-400 transition-transform ${form.semesterDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              
+              {form.semesterDropdownOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
+                  {[
+                    { value: "", label: "-- Select Semester --" },
+                    { value: "1st", label: "1st" },
+                    { value: "2nd", label: "2nd" },
+                    { value: "3rd", label: "3rd" },
+                    { value: "4th", label: "4th" },
+                    { value: "5th", label: "5th" },
+                    { value: "6th", label: "6th" },
+                    { value: "7th", label: "7th" },
+                    { value: "8th", label: "8th" }
+                  ].map((option) => (
+                    <div
+                      key={option.value}
+                      className={`px-3 py-2 cursor-pointer transition-colors ${
+                        form.semester === option.value 
+                          ? 'bg-cyan-400 text-gray-900' 
+                          : 'text-gray-300 hover:bg-gray-700'
+                      } ${option.value === "" ? 'text-gray-400' : ''}`}
+                      onClick={() => {
+                        setForm(prev => ({ 
+                          ...prev, 
+                          semester: option.value, 
+                          semesterDropdownOpen: false 
+                        }));
+                      }}
+                    >
+                      {option.label}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <div>
               <label className="block mb-2 font-semibold text-cyan-300">Select Your Department</label>
               <div className="flex flex-col space-y-2">
@@ -186,16 +223,54 @@ export default function RegistrationForm({ onClose }) {
                 Workshop Amount (₹): <span className="text-green-400 font-bold">{workshopAmount}</span>
               </div>
             </div>
-            <select
-              name="timeslot"
-              value={form.timeslot}
-              onChange={handleChange}
-              className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400 text-lg text-gray-300 transition"
-            >
-              <option value="">-- Choose Timeslot --</option>
-              <option>Morning</option>
-              <option>Afternoon</option>
-            </select>
+            <div className="relative">
+              <div 
+                className="w-full p-3 pr-10 rounded-lg bg-gray-800 border border-gray-700 focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer"
+                onClick={() => setForm(prev => ({ ...prev, timeslotDropdownOpen: !prev.timeslotDropdownOpen }))}
+              >
+                <span className={form.timeslot ? 'text-gray-300' : 'text-gray-400'}>
+                  {form.timeslot || '-- Choose Timeslot --'}
+                </span>
+                <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                  <svg 
+                    className={`w-5 h-5 text-gray-400 transition-transform ${form.timeslotDropdownOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </div>
+              </div>
+              
+              {form.timeslotDropdownOpen && (
+                <div className="absolute top-full left-0 right-0 mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg z-10">
+                  {[
+                    { value: "", label: "-- Choose Timeslot --" },
+                    { value: "Morning", label: "Morning" },
+                    { value: "Afternoon", label: "Afternoon" }
+                  ].map((option) => (
+                    <div
+                      key={option.value}
+                      className={`px-3 py-2 cursor-pointer transition-colors ${
+                        form.timeslot === option.value 
+                          ? 'bg-cyan-400 text-gray-900' 
+                          : 'text-gray-300 hover:bg-gray-700'
+                      } ${option.value === "" ? 'text-gray-400' : ''}`}
+                      onClick={() => {
+                        setForm(prev => ({ 
+                          ...prev, 
+                          timeslot: option.value, 
+                          timeslotDropdownOpen: false 
+                        }));
+                      }}
+                    >
+                      {option.label}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
             <label className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition cursor-pointer">
               <input
                 type="checkbox"
@@ -222,7 +297,7 @@ export default function RegistrationForm({ onClose }) {
             <span> Total Amount : {totalAmount}</span>
             <button
               type="submit"
-              className="w-full bg-cyan-500 text-gray-900 font-extrabold py-3 rounded-lg hover:bg-cyan-400 transition text-lg shadow-lg tracking-wide"
+              className="w-full cursor-pointer mt-6 bg-cyan-500 text-gray-900 font-extrabold py-3 rounded-lg hover:bg-cyan-400 transition text-lg shadow-lg tracking-wide"
             >
               Confirm
             </button>
@@ -230,6 +305,122 @@ export default function RegistrationForm({ onClose }) {
         </div>
         <div className="hidden md:block">{instructions}</div>
       </div>
+
+      {/* Data Display Dialog */}
+      {showDataDialog && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4">
+          <div 
+            className="bg-gray-900 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+            style={{
+              scrollbarWidth: 'thin',
+              scrollbarColor: '#4B5563 #1F2937'
+            }}
+          >
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                width: 8px;
+              }
+              div::-webkit-scrollbar-track {
+                background: #1F2937;
+                border-radius: 4px;
+              }
+              div::-webkit-scrollbar-thumb {
+                background: #4B5563;
+                border-radius: 4px;
+                transition: background 0.2s ease;
+              }
+              div::-webkit-scrollbar-thumb:hover {
+                background: #6B7280;
+              }
+              div::-webkit-scrollbar-corner {
+                background: #1F2937;
+              }
+            `}</style>
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-3xl font-bold text-cyan-400">Registration Summary</h2>
+              <button
+                onClick={() => setShowDataDialog(false)}
+                className="text-gray-400 hover:text-cyan-400 text-3xl transition"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse">
+                <thead>
+                  <tr className="border-b border-gray-700">
+                    <th className="py-3 px-4 text-cyan-400 font-semibold">Field</th>
+                    <th className="py-3 px-4 text-cyan-400 font-semibold">Value</th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-300">
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Full Name</td>
+                    <td className="py-3 px-4">{form.name}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Email ID</td>
+                    <td className="py-3 px-4">{form.email}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Phone Number</td>
+                    <td className="py-3 px-4">{form.phone}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">College</td>
+                    <td className="py-3 px-4">{form.college || "Not specified"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Branch</td>
+                    <td className="py-3 px-4">{form.branch || "Not specified"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Semester</td>
+                    <td className="py-3 px-4">{form.semester || "Not selected"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Department</td>
+                    <td className="py-3 px-4">{form.dept || "Not selected"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Timeslot</td>
+                    <td className="py-3 px-4">{form.timeslot || "Not selected"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Accommodation</td>
+                    <td className="py-3 px-4">{form.accommodation ? "Yes" : "No"}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Workshop Amount</td>
+                    <td className="py-3 px-4 text-green-400 font-semibold">₹{workshopAmount}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Accommodation Amount</td>
+                    <td className="py-3 px-4 text-green-400 font-semibold">₹{accommodationAmount}</td>
+                  </tr>
+                  <tr className="border-b border-gray-800">
+                    <td className="py-3 px-4 font-medium">Total Amount</td>
+                    <td className="py-3 px-4 text-green-400 font-bold text-xl">₹{totalAmount}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="mt-8 flex justify-center">
+              <button
+                onClick={() => {
+                  // Handle payment logic here
+                  alert("Payment gateway integration coming soon!");
+                }}
+                className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
+              >
+                Pay Now ₹{totalAmount}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
