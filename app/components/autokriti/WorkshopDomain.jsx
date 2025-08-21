@@ -8,25 +8,25 @@ import { useRouter } from "next/navigation";
 const workshops = [
   {
     title: "Combustion Vehicle",
-    price: "INR 1999/-",
+    price: "INR 1799/-",
     icon: "/assets/images/autokriti/cv.webp",
     gradient: "from-[#ff512f]/40 via-[#dd2476]/20 to-transparent",
   },
   {
     title: "Electric Vehicle",
-    price: "INR 1999/-",
+    price: "INR 1799/-",
     icon: "/assets/images/autokriti/ev.webp",
     gradient: "from-[#00c6ff]/40 via-[#0072ff]/20 to-transparent",
   },
   {
     title: "IOT with AI/ML",
-    price: "INR 2499/-",
+    price: "INR 2199/-",
     icon: "/assets/images/autokriti/iot.webp",
     gradient: "from-[#a8ff78]/40 via-[#78ffd6]/20 to-transparent",
   },
   {
     title: "Software",
-    price: "INR 1999/-",
+    price: "INR 1599/-",
     icon: "/assets/images/autokriti/sw.webp",
     gradient: "from-[#f7971e]/40 via-[#ffd200]/20 to-transparent",
   },
