@@ -59,7 +59,7 @@ export default function RegistrationForm() {
         
         setLoading(true);
         try {
-            const res = await axios.post(`http://localhost:5000/api/payment`, {
+            const res = await axios.post(`https://sae-backend.vercel.app/api/payment`, {
                 version,
                 form,
                 amount: 1,
@@ -87,7 +87,6 @@ export default function RegistrationForm() {
 
         let checkoutOptions = {
             paymentSessionId: newSessionId, // Use the latest session ID
-            mode: 'Sandbox'
             // returnUrl: `https://saenitkurukshetra.com/cashfree/payment`,
         };
 

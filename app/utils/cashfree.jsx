@@ -6,7 +6,7 @@ let cachedCashfree = null;
 export const getCashfree = async () => {
   if (!cachedCashfree) {
     cachedCashfree = await load({
-      mode: "Sandbox",
+      mode: "production",
     });
   }
   return cachedCashfree;
