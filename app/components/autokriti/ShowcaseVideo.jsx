@@ -29,7 +29,7 @@ const ShowcaseVideo = () => {
           loop
           muted
           playsInline
-          poster="/assets/images/autokriti/video-poster.jpg"
+          // poster="/assets/images/autokriti/video-poster.jpg"
           className="w-full aspect-video rounded-3xl"
           no-controls
         />
