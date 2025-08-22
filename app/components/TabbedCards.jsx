@@ -78,16 +78,24 @@ const tabs = [
   ] },
   { id: 6, title: "Electric Vehicle", paddingbottom:"10", marginbottom:"1", padding:"2", color: "bg-[#973933]", content:[
     {
-      title: "Battery",
-      topics: ["Mechanical design","Thermal design","Electrical design","Cell stacking","Types of cells(Shape/ Chemistry)"]
-    },
-    {
       title: "BMS",
-      topics: ["Basics of BMS","Cell Balancing","Battery parameters Monitoring","Working Model of BMS","PCB Designing"]
+      topics: ["Samsung Case Study","Topologies (Tata v/s Tesla)","BMS Functions","Cooling and future trends Motor"]
     },
     {
-      title: "Motor and Motor Controller",
-      topics: ["Motor Considerations","Characteristics of Motors","Selection Of Power Rating","Torque Encoder","Motor Resolver","H Bridge","PWM","Motor Controller"]
+      title: "Motor",
+      topics: ["Motor Types and Comparison (BLDC, Brushed DC, Induction and PMSM)"]
+    },
+    {
+      title: "Motor Controller",
+      topics: ["Basics","Core Components(PWM, H-Bridge, inverter tech)","Communication , Control and Arduino project(LN289)"]
+    },
+    {
+      title: "Battery",
+      topics: ["Fundamentals","Design and Safety","Case Study, Life Cycle and Arduino Project"]
+    },
+    {
+      title: "PCB",
+      topics: ["Why PCB and Basics","Terminologies","Schematic and Manufacturing"]
     }
   ]},
   {
@@ -220,7 +228,7 @@ export default function TabbedCards() {
                 </div>
               ) : (
                 <p className="text-white/80 text-lg">
-                  This is the {tab.title} section. Add your content here.
+                  Syllabus Coming soon....
                 </p>
               )}
             </div>
