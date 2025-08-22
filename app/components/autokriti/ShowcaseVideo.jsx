@@ -5,7 +5,7 @@ import MuxPlayer from "@mux/mux-player-react";
 
 const ShowcaseVideo = () => {
   return (
-    <div className="relative w-full max-w-6xl mx-auto mt-20 px-4">
+    <div className="relative w-full max-w-6xl mx-auto mt-4 px-4">
       <motion.div
         className="relative overflow-hidden rounded-3xl border border-cyan-400/30
                    shadow-[0_0_20px_rgba(34,211,238,0.4),0_0_40px_rgba(168,85,247,0.25)]
