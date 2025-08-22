@@ -14,7 +14,7 @@ export default function ClientLayoutWrapper({ children }) {
 
   return (
     <>
-      {/* {!hideBanner && <BannerMarquee />} */}
+      <BannerMarquee />
       <Header />
       <main className="min-h-screen">{children}</main>
       <Footer />

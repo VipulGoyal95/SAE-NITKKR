@@ -5,12 +5,12 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 const marqueeText =
-  "Together, we made it happen! In 45 days, we managed to raise ₹7.48 lakhs. Thank you to everyone who believed in our journey. Your trust resonates with us. For those who still wish to support, contributions are still welcome!";
+  "The 15th iteration of Autokriti is coming soon. Registrations for Autokriti 15.0: Intelligence Overdrive are LIVE! Register Now!!";
 
 export default function BannerMarquee() {
   return (
     <Link
-      href="/crowdfunding"
+      href="/autokriti/registrationform"
       className="fixed top-0 right-0 z-[100] w-full bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 py-2 overflow-hidden border-b-2 border-blue-300 shadow-lg transition duration-200 hover:brightness-110 cursor-pointer"
       style={{ textDecoration: 'none' }}
     >

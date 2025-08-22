@@ -6,7 +6,7 @@ import validator from "validator";
 import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import toast from "react-hot-toast";
-
+import { ClipLoader } from "react-spinners";
 const instructions = (
   <div className="bg-cyan-950/70 border border-cyan-700 rounded-xl p-5 text-cyan-100 max-w-xs shadow-lg">
     <div className="font-bold text-lg mb-2 flex items-center gap-2">
@@ -161,7 +161,7 @@ export default function RegistrationForm() {
     <>
       <Toaster />
       <div className="inset-0 flex items-center justify-center z-50 font-sans bg-black">
-        <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl mt-30 max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col md:flex-row gap-8 overflow-y-auto max-[960px]:mt-30 max-[960px]:m-10  max-[440px]:mt-26 max-[440px]:m-6 ">
+        <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl mt-40 max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col-reverse md:flex-row gap-8 overflow-y-auto max-[960px]:mt-40 max-[960px]:m-10  max-[440px]:mt-36 max-[440px]:m-6 ">
           <div className="flex-1 min-w-0">
             <h2 className="text-3xl font-extrabold mb-6 text-cyan-400 tracking-tight text-center drop-shadow font-sans">
               Registration Form
@@ -206,7 +206,7 @@ export default function RegistrationForm() {
               <input
                 type="text"
                 name="college"
-                placeholder="College"
+                placeholder="College *"
                 value={form.college}
                 onChange={handleChange}
                 required
@@ -215,7 +215,7 @@ export default function RegistrationForm() {
               <input
                 type="text"
                 name="branch"
-                placeholder="Branch"
+                placeholder="Branch *"
                 value={form.branch}
                 onChange={handleChange}
                 required
@@ -334,7 +334,7 @@ export default function RegistrationForm() {
               </button>
             </form>
           </div>
-          <div className="hidden md:block">{instructions}</div>
+          <div className="block max-[768px]:flex max-[768px]:justify-center">{instructions}</div>
         </div>
 
         {/* Data Display Dialog */}
@@ -437,9 +437,14 @@ export default function RegistrationForm() {
               <div className="mt-8 flex justify-center">
                 <button
                   onClick={handlePayment}
-                  className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg"
+                  className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg flex items-center justify-center"
+                  disabled={loading}
                 >
-                  Pay Now ₹{amount}
+                  {loading ? (
+                    <ClipLoader color="#fff" size={24} />
+                  ) : (
+                    <>Pay Now ₹{amount}</>
+                  )}
                 </button>
               </div>
             </div>
