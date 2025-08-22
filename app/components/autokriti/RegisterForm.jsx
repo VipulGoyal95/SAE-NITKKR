@@ -160,8 +160,8 @@ export default function RegistrationForm() {
   return (
     <>
       <Toaster />
-      <div className="inset-0 flex items-center justify-center mt-30 from-gray-950 via-gray-900 to-gray-800 bg-opacity-95 z-50 font-sans">
-        <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col md:flex-row gap-8 overflow-y-auto">
+      <div className="inset-0 flex items-center justify-center mt-30 z-50 font-sans bg-black">
+        <div className="bg-gray-900/95 p-8 rounded-2xl shadow-2xl max-w-4xl w-full relative text-gray-100 border border-gray-700 flex flex-col md:flex-row gap-8 overflow-y-auto max-[960px]:m-10 max-[440px]:m-6">
           <div className="flex-1 min-w-0">
             <h2 className="text-3xl font-extrabold mb-6 text-cyan-400 tracking-tight text-center drop-shadow font-sans">
               Registration Form
@@ -307,7 +307,7 @@ export default function RegistrationForm() {
                   name="accommodation"
                   checked={form.accommodation}
                   onChange={handleChange}
-                  className="accent-cyan-400"
+                  className="accent-cyan-400 mr-2"
                 />
                 Need Accommodation & food  (₹299/day)
               </label>
@@ -320,7 +320,7 @@ export default function RegistrationForm() {
                   name="instructionsRead"
                   checked={form.instructionsRead}
                   onChange={handleChange}
-                  className="accent-cyan-400"
+                  className="accent-cyan-400 mr-2"
                   required
                 />
                 I have read and understood the instructions
