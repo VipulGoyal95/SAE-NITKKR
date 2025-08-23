@@ -47,7 +47,11 @@ const tabs = [
       topics: ["introduction","Basic terminology","Forces","Parts"]
     }
   ]},
-  { id: 3, title: "Brakes", paddingbottom:"0", marginbottom:"6", padding:"4", color: "bg-[#3e574c]"},
+  { id: 3, title: "Brakes", paddingbottom:"0", marginbottom:"6", padding:"4", color: "bg-[#3e574c]",
+    // content:[
+
+    // ]
+  },
   { id: 4, title: "Engines Overhauling", paddingbottom:"0", marginbottom:"2", padding:"4", color: "bg-[#f27325]", content:[
     {
       title: "Overhauling of following engines",
@@ -101,12 +105,12 @@ const tabs = [
   {
     id:7, title: "Softwares", paddingbottom:"pb-4", marginbottom:"2", padding:"4", color: "bg-[#3D0301]", content:[
       {
-        title:"Solidworks/Catia/Siemens NX",
+        title:"Solidworks",
         topics:["Installation","Introduction to UI","Part file(Sketching 2D)","Part File(Sketching 3D)","Extrude/cut/revolve a pattern by an example (sheaves of CVT)","Assembly(Dampers)"]
       },
       {
         title:"Ansys",
-        topics: ["Introduction to Ansys","Getting Started with ANSYS","Workbench","Geometry import & Creation","Meshing in ANSYS","Static Structural Analysis","Th"]
+        topics: ["Introduction to Ansys","Getting Started with ANSYS","Workbench","Geometry import & Creation","Meshing in ANSYS","Static Structural Analysis","Thermal Analysis","Optimization in ANSYS"]
       }
     ]
   }

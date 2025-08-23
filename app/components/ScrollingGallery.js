@@ -45,9 +45,30 @@ const bottomImagesNitrox = [
   "/assets/images/nitrox/img14.webp"
 ]
 
+const topImagesAutokriti = [
+  "/assets/images/autokriti/img1.webp",
+  "/assets/images/autokriti/img2.webp",
+  "/assets/images/autokriti/img3.webp",
+  "/assets/images/autokriti/img4.webp",
+  "/assets/images/autokriti/img5.webp",
+  "/assets/images/autokriti/img6.webp",
+  "/assets/images/autokriti/img7.webp",
+]
+
+const bottomImagesAutokriti = [
+  "/assets/images/autokriti/img8.webp",
+  "/assets/images/autokriti/img9.webp",
+  "/assets/images/autokriti/img10.webp",
+  "/assets/images/autokriti/img11.webp",
+  "/assets/images/autokriti/img12.webp",
+  "/assets/images/autokriti/img13.webp",
+  "/assets/images/autokriti/img14.webp",
+]
+
 export default function ScrollingGallery() {
   const pathname = usePathname();
   const isNitroxPage = pathname.includes('/nitrox');
+  const isAutokritiPage = pathname.includes('/autokriti'); 
   const [selectedImage, setSelectedImage] = useState(null);
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, amount: 0.5 });
@@ -76,8 +97,10 @@ export default function ScrollingGallery() {
       }
     }
   };
-  const topImages = isNitroxPage ? topImagesNitrox : topImagesAcelerons;
-  const bottomImages = isNitroxPage ? bottomImagesNitrox : bottomImagesAcelerons;
+  let topImages = isNitroxPage ? topImagesNitrox : topImagesAcelerons;
+  let bottomImages = isNitroxPage ? bottomImagesNitrox : bottomImagesAcelerons;
+  topImages = isAutokritiPage ? topImagesAutokriti : topImages;
+  bottomImages = isAutokritiPage ? bottomImagesAutokriti : bottomImages;
   
   return (
     <motion.div
@@ -165,7 +188,7 @@ export default function ScrollingGallery() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4 cursor-pointer"
+          className="fixed inset-0 mt-12 bg-black/80 flex items-center justify-center z-50 p-4 cursor-pointer"
           onClick={() => setSelectedImage(null)}
         >
           <motion.div 
@@ -179,7 +202,7 @@ export default function ScrollingGallery() {
               alt="Enlarged view"
               width={1200}
               height={800}
-              className="object-contain w-full h-full"
+              className="object-contain w-full h-screen"
             />
             <button
               className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
