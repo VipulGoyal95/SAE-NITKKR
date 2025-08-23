@@ -20,6 +20,8 @@
     "embla-carousel-react": "^8.6.0",
     "firebase": "^11.9.1",
     "framer-motion": "^12.7.4",
+    "jose": "^6.0.13",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.503.0",
     "next": "15.3.0",
     "next-sitemap": "^4.2.3",
@@ -32,7 +34,8 @@
     "react-spinners": "^0.17.0",
     "swiper": "^11.2.6",
     "three": "^0.176.0",
-    "validator": "^13.15.15"
+    "validator": "^13.15.15",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
