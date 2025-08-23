@@ -106,7 +106,7 @@ const tabs = [
       },
       {
         title:"Ansys",
-        topics: ["Introduction to Ansys","Design and Structural Analysis of components","Design and Thermal Analysis of components","Computational Fluid Analysis"]
+        topics: ["Introduction to Ansys","Getting Started with ANSYS","Workbench","Geometry import & Creation","Meshing in ANSYS","Static Structural Analysis","Th"]
       }
     ]
   }
