@@ -22,30 +22,31 @@ const ShowcaseVideo = () => {
         </div>
 
         {/* Mux Player */}
-        <MuxPlayer
-          playbackId="1ks1pwPYXn02hGcc9lr5lcahM2002a602hbmCdglXJ2HXA" // replace with actual playbackId
-          streamType="on-demand"
-          autoPlay="muted"
-          loop
-          muted
-          playsInline
-          // poster="/assets/images/autokriti/video-poster.jpg"
-          className="w-full aspect-video rounded-3xl"
-          no-controls
-        />
+        <div className="relative w-full aspect-video rounded-3xl overflow-hidden">
+          <MuxPlayer
+            playbackId="1ks1pwPYXn02hGcc9lr5lcahM2002a602hbmCdglXJ2HXA"
+            streamType="on-demand"
+            autoPlay="muted"
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+            no-controls
+          />
 
-        {/* Overlay gradient for cinematic effect */}
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
+          {/* Overlay gradient for cinematic effect */}
+          <div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/40 via-transparent to-black/20 pointer-events-none" />
 
-        {/* Title overlay */}
-        <div className="absolute bottom-6 left-6 text-white/90">
-          <h3 className="text-2xl md:text-3xl font-bold tracking-wide drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">
-            Drift Show
-          </h3>
-          <p className="text-sm md:text-base text-zinc-300 mt-1 drop-shadow-[0_0_6px_rgba(255,0,255,0.6)]">
-            Experience the thrills of professional drifting at SAE NIT
-            Kurukshetra, courtesy of BND Motorsports
-          </p>
+          {/* Title overlay */}
+          <div className="absolute bottom-6 left-6 text-white/90">
+            <h3 className="text-2xl md:text-3xl font-bold tracking-wide drop-shadow-[0_0_8px_rgba(0,255,255,0.8)]">
+              Drift Show
+            </h3>
+            <p className="text-sm md:text-base text-zinc-300 mt-1 drop-shadow-[0_0_6px_rgba(255,0,255,0.6)]">
+              Experience the thrills of professional drifting at SAE NIT
+              Kurukshetra, courtesy of BND Motorsports
+            </p>
+          </div>
         </div>
       </motion.div>
     </div>
