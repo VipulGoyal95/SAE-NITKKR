@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import ClientLayoutWrapper from "./components/ClientLayoutWrapper";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 selection:bg-red-500 selection:text-white scroll-smooth`}
       >
+        <Script src="https://checkout.razorpay.com/v1/checkout.js" />
         <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
