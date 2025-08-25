@@ -110,7 +110,7 @@ export default function RegistrationForm() {
       const res = await fetch("/api/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount: 1 }), // ₹500.00 → 50000 paise
+        body: JSON.stringify({ amount }), // ₹500.00 → 50000 paise
       });
 
       const order = await res.json();
