@@ -19,15 +19,15 @@ export async function POST(req) {
     } = body;
 
     // Validate required fields
-    if (!form.email || !form.password) {
-      return Response.json(
-        {
-          success: false,
-          error: "Email and password are required",
-        },
-        { status: 400 }
-      );
-    }
+    // if (!form.email || !form.password) {
+    //   return Response.json(
+    //     {
+    //       success: false,
+    //       error: "Email and password are required",
+    //     },
+    //     { status: 400 }
+    //   );
+    // }
 
     // 1. Verify signature
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
@@ -41,54 +41,54 @@ export async function POST(req) {
     }
 
     // 2. Create user account with email and password
-    let uid = null;
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        form.email,
-        form.password
-      );
-      uid = userCredential.user.uid;
-      console.log("User created successfully with UID:", uid);
-    } catch (error) {
-      // If user already exists, try to sign in to get the existing user
-      if (error.code === "auth/email-already-in-use") {
-        console.log("User already exists, attempting to sign in");
-        try {
-          const signInCredential = await signInWithEmailAndPassword(
-            auth,
-            form.email,
-            form.password
-          );
-          uid = signInCredential.user.uid;
-          console.log("Existing user signed in successfully with UID:", uid);
-        } catch (signInError) {
-          console.error("Failed to sign in existing user:", signInError);
-          return Response.json(
-            {
-              success: false,
-              error: "Invalid credentials for existing account",
-            },
-            { status: 401 }
-          );
-        }
-      } else {
-        console.error("Error creating user:", error);
-        return Response.json(
-          {
-            success: false,
-            error: "Failed to create user account",
-          },
-          { status: 500 }
-        );
-      }
-    }
+    // let uid = null;
+    // try {
+    //   const userCredential = await createUserWithEmailAndPassword(
+    //     auth,
+    //     form.email,
+    //     form.password
+    //   );
+    //   uid = userCredential.user.uid;
+    //   console.log("User created successfully with UID:", uid);
+    // } catch (error) {
+    //   // If user already exists, try to sign in to get the existing user
+    //   if (error.code === "auth/email-already-in-use") {
+    //     console.log("User already exists, attempting to sign in");
+    //     try {
+    //       const signInCredential = await signInWithEmailAndPassword(
+    //         auth,
+    //         form.email,
+    //         form.password
+    //       );
+    //       uid = signInCredential.user.uid;
+    //       console.log("Existing user signed in successfully with UID:", uid);
+    //     } catch (signInError) {
+    //       console.error("Failed to sign in existing user:", signInError);
+    //       return Response.json(
+    //         {
+    //           success: false,
+    //           error: "Invalid credentials for existing account",
+    //         },
+    //         { status: 401 }
+    //       );
+    //     }
+    //   } else {
+    //     console.error("Error creating user:", error);
+    //     return Response.json(
+    //       {
+    //         success: false,
+    //         error: "Failed to create user account",
+    //       },
+    //       { status: 500 }
+    //     );
+    //   }
+    // }
 
     // 3. Save to Firestore with UID (excluding password for security)
     const { password, ...formDataWithoutPassword } = form;
     await setDoc(doc(db, "AutokritiRegistration", razorpay_order_id), {
       ...formDataWithoutPassword,
-      uid: uid, // Include UID in the registration data
+      // uid: uid, // Include UID in the registration data
       status: "PAID",
       amount: amount,
       paidAt: new Date(),
@@ -99,7 +99,7 @@ export async function POST(req) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...formDataWithoutPassword,
-        uid: uid, // Include UID in Google Sheets data
+        // uid: uid, // Include UID in Google Sheets data
         amount: amount,
         orderId: razorpay_order_id,
         paymentId: razorpay_payment_id,
@@ -173,15 +173,15 @@ export async function POST(req) {
                   `,
     });
 
-    console.log(
-      "Registration completed successfully for order:",
-      razorpay_order_id,
-      "with UID:",
-      uid
-    );
+    // console.log(
+    //   "Registration completed successfully for order:",
+    //   razorpay_order_id,
+    //   "with UID:",
+    //   uid
+    // );
     return Response.json({
       success: true,
-      uid: uid,
+      // uid: uid,
       message: "User account created and registration completed successfully",
     });
   } catch (err) {

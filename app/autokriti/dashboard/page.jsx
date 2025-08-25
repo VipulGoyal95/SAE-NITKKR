@@ -5,17 +5,37 @@ import { auth } from "../../firebase";
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { Toaster, toast } from "react-hot-toast";
 import { ClipLoader } from "react-spinners";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import db from "../../firebase";
 
 export default function AutokritiDashboard() {
   const router = useRouter();
   const [user, setUser] = useState(null);
+  const [registrationData, setRegistrationData] = useState(null); // NEW STATE
   const [loading, setLoading] = useState(true);
   const [signingOut, setSigningOut] = useState(false);
+  const [studymaterial,setStudyMaterial] = useState(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
+        // Fetch registration data from Firestore
+        try {
+          const q = query(
+            collection(db, "AutokritiRegistration"),
+            where("email", "==", user.email)
+          );
+          const querySnapshot = await getDocs(q);
+          if (!querySnapshot.empty) {
+            setRegistrationData(querySnapshot.docs[0].data());
+          } else {
+            setRegistrationData(null);
+          }
+        } catch (err) {
+          console.error("Error fetching registration data:", err);
+          setRegistrationData(null);
+        }
         setLoading(false);
       } else {
         // User is not authenticated, redirect to login
@@ -128,7 +148,7 @@ export default function AutokritiDashboard() {
           <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 rounded-2xl p-8 mb-8 border border-cyan-700/50">
             <div className="text-center">
               <h2 className="text-4xl font-bold text-white mb-4">
-                Welcome to Autokriti 15.0! 🚗
+                Welcome to Autokriti 15.0!
               </h2>
               <p className="text-xl text-cyan-200 mb-6">
                 North India's Largest Automotive Workshop
@@ -178,14 +198,30 @@ export default function AutokritiDashboard() {
               </div>
               <div className="space-y-3">
                 <div>
+                  <p className="text-gray-400 text-sm">Name</p>
+                  <p className="text-white font-medium">{registrationData.name}</p>
+                </div>
+                <div>
                   <p className="text-gray-400 text-sm">Email</p>
                   <p className="text-white font-medium">{user.email}</p>
                 </div>
                 <div>
-                  <p className="text-gray-400 text-sm">User ID</p>
-                  <p className="text-white font-mono text-sm">{user.uid}</p>
+                  <p className="text-gray-400 text-sm">College</p>
+                  <p className="text-white font-medium">{registrationData.college}</p>
                 </div>
                 <div>
+                  <p className="text-gray-400 text-sm">Department</p>
+                  <p className="text-white font-medium">{registrationData.department}</p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Accommodation</p>
+                  <p className="text-white font-medium">{registrationData.accommodation?"Yes":"No"}</p>
+                </div>
+                {/* <div>
+                  <p className="text-gray-400 text-sm">User ID</p>
+                  <p className="text-white font-mono text-sm">{user.uid}</p>
+                </div> */}
+                {/* <div>
                   <p className="text-gray-400 text-sm">Email Verified</p>
                   <div className="flex items-center">
                     {user.emailVerified ? (
@@ -220,7 +256,7 @@ export default function AutokritiDashboard() {
                       </span>
                     )}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -290,23 +326,23 @@ export default function AutokritiDashboard() {
               </div>
               <div className="space-y-3">
                 <button
-                  onClick={() => router.push("/autokriti")}
+                  onClick={()=> setStudyMaterial(true)}
                   className="w-full px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors text-sm font-medium"
                 >
-                  View Registration
+                  Download Study Materials
                 </button>
                 <button
                   onClick={() => router.push("/contactus")}
                   className="w-full px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm font-medium"
                 >
-                  Contact Support
+                  Contact Us
                 </button>
-                <button
+                {/* <button
                   onClick={() => router.push("/sponsors")}
                   className="w-full px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm font-medium"
                 >
                   View Sponsors
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

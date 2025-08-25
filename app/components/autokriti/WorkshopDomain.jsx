@@ -141,7 +141,7 @@ const WorkshopDomain = () => {
           <span className="absolute inset-0 rounded-xl animate-pulse bg-red-500/10" />
         </motion.button>
 
-        <motion.button
+        {/* <motion.button
           onClick={() => router.push("/autokriti/dashboard")}
           className="relative overflow-hidden bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
              text-white text-lg font-bold py-3 px-8 rounded-xl 
@@ -161,7 +161,7 @@ const WorkshopDomain = () => {
 
           
           <span className="absolute inset-0 rounded-xl animate-pulse bg-cyan-500/10" />
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </div>
   );

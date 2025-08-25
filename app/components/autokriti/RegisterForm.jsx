@@ -208,9 +208,9 @@ export default function RegistrationForm() {
     if (!validator.isEmail(form.email)) {
       newErrors.email = "Enter a valid email.";
     }
-    if (!form.password || form.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters long.";
-    }
+    // if (!form.password || form.password.length < 6) {
+    //   newErrors.password = "Password must be at least 6 characters long.";
+    // }
     if (
       !validator.isMobilePhone(form.phone, "en-IN") ||
       !validator.isLength(form.phone, { min: 10, max: 10 })
@@ -282,7 +282,7 @@ export default function RegistrationForm() {
                   </div>
                 )}
               </div>
-              <div className="relative">
+              {/* <div className="relative">
                 <input
                   type="password"
                   name="password"
@@ -294,7 +294,7 @@ export default function RegistrationForm() {
                     errors.password ? "border-red-500" : "border-gray-700"
                   } focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
                 />
-                {/* Info icon with tooltip/message */}
+                
                 <div className="absolute top-1/2 right-3 transform -translate-y-1/2 group">
                   <span className="text-cyan-400 cursor-pointer text-xl" tabIndex={0} title="Create password for Autokriti dashboard">
                     <svg xmlns="http://www.w3.org/2000/svg" className="inline h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -311,7 +311,7 @@ export default function RegistrationForm() {
                     {errors.password}
                   </div>
                 )}
-              </div>
+              </div> */}
               <div>
                 <input
                   type="tel"
@@ -562,10 +562,10 @@ export default function RegistrationForm() {
                       <td className="py-3 px-4 font-medium">Email ID</td>
                       <td className="py-3 px-4">{form.email}</td>
                     </tr>
-                    <tr className="border-b border-gray-800">
+                    {/* <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Password</td>
                       <td className="py-3 px-4">••••••</td>
-                    </tr>
+                    </tr> */}
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Phone Number</td>
                       <td className="py-3 px-4">{form.phone}</td>
