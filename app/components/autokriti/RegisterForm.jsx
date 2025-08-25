@@ -500,7 +500,7 @@ export default function RegistrationForm() {
 
               <div className="mt-8 flex justify-center">
                 <button
-                  onClick={handlePayment}
+                  onClick={handlePayment2}
                   className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition w-full max-w-xs flex items-center justify-center gap-2"
                 >
                   {loading ? (
