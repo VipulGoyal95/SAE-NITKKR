@@ -114,7 +114,7 @@ const WorkshopDomain = () => {
         ))}
       </motion.div>
       <motion.div
-        className="mt-8 flex justify-center"
+        className="mt-8 flex justify-center gap-6 flex-wrap"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.8 }}
@@ -139,6 +139,28 @@ const WorkshopDomain = () => {
 
           {/* Glow pulse */}
           <span className="absolute inset-0 rounded-xl animate-pulse bg-red-500/10" />
+        </motion.button>
+
+        <motion.button
+          onClick={() => router.push("/autokriti/dashboard")}
+          className="relative overflow-hidden bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
+             text-white text-lg font-bold py-3 px-8 rounded-xl 
+             border border-cyan-400 shadow-[0_4px_15px_rgba(6,182,212,0.5)] 
+             cursor-pointer transition-all duration-300 ease-out
+             hover:shadow-[0_8px_25px_rgba(6,182,212,0.7)] hover:scale-105"
+          whileHover={{ scale: 1.07 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <span className="relative z-10">Go to Dashboard 📊</span>
+
+          {/* Shine effect */}
+          <span
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
+                   translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"
+          />
+
+          {/* Glow pulse */}
+          <span className="absolute inset-0 rounded-xl animate-pulse bg-cyan-500/10" />
         </motion.button>
       </motion.div>
     </div>

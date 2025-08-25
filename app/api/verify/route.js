@@ -1,12 +1,33 @@
 import crypto from "crypto";
-import { collection, addDoc,setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import nodemailer from "nodemailer";
-import db from './../../firebase';
+import db, { auth } from "./../../firebase";
 
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, form, amount } = body;
+    const {
+      razorpay_order_id,
+      razorpay_payment_id,
+      razorpay_signature,
+      form,
+      amount,
+    } = body;
+
+    // Validate required fields
+    if (!form.email || !form.password) {
+      return Response.json(
+        {
+          success: false,
+          error: "Email and password are required",
+        },
+        { status: 400 }
+      );
+    }
 
     // 1. Verify signature
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
@@ -18,9 +39,56 @@ export async function POST(req) {
     if (expectedSign !== razorpay_signature) {
       return Response.json({ success: false }, { status: 400 });
     }
-    // 2. Save to Firestore
+
+    // 2. Create user account with email and password
+    let uid = null;
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        form.email,
+        form.password
+      );
+      uid = userCredential.user.uid;
+      console.log("User created successfully with UID:", uid);
+    } catch (error) {
+      // If user already exists, try to sign in to get the existing user
+      if (error.code === "auth/email-already-in-use") {
+        console.log("User already exists, attempting to sign in");
+        try {
+          const signInCredential = await signInWithEmailAndPassword(
+            auth,
+            form.email,
+            form.password
+          );
+          uid = signInCredential.user.uid;
+          console.log("Existing user signed in successfully with UID:", uid);
+        } catch (signInError) {
+          console.error("Failed to sign in existing user:", signInError);
+          return Response.json(
+            {
+              success: false,
+              error: "Invalid credentials for existing account",
+            },
+            { status: 401 }
+          );
+        }
+      } else {
+        console.error("Error creating user:", error);
+        return Response.json(
+          {
+            success: false,
+            error: "Failed to create user account",
+          },
+          { status: 500 }
+        );
+      }
+    }
+
+    // 3. Save to Firestore with UID (excluding password for security)
+    const { password, ...formDataWithoutPassword } = form;
     await setDoc(doc(db, "AutokritiRegistration", razorpay_order_id), {
-      ...form,
+      ...formDataWithoutPassword,
+      uid: uid, // Include UID in the registration data
       status: "PAID",
       amount: amount,
       paidAt: new Date(),
@@ -30,7 +98,8 @@ export async function POST(req) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        ...form,
+        ...formDataWithoutPassword,
+        uid: uid, // Include UID in Google Sheets data
         amount: amount,
         orderId: razorpay_order_id,
         paymentId: razorpay_payment_id,
@@ -38,7 +107,6 @@ export async function POST(req) {
       }),
     });
 
-    
     // 3. Send confirmation email
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -102,12 +170,28 @@ export async function POST(req) {
                       </p>
                     </div>
                   </div>
-                  `
+                  `,
     });
 
-    return Response.json({ success: true });
+    console.log(
+      "Registration completed successfully for order:",
+      razorpay_order_id,
+      "with UID:",
+      uid
+    );
+    return Response.json({
+      success: true,
+      uid: uid,
+      message: "User account created and registration completed successfully",
+    });
   } catch (err) {
-    console.error(err);
-    return Response.json({ success: false }, { status: 500 });
+    console.error("Error in verify route:", err);
+    return Response.json(
+      {
+        success: false,
+        error: err.message || "Internal server error",
+      },
+      { status: 500 }
+    );
   }
 }

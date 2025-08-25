@@ -15,14 +15,19 @@ const instructions = (
     </div>
     <ul className="list-disc pl-5 space-y-2 text-sm">
       <li>
-        <span className="font-semibold">Make sure your email id is correct</span> as you will be getting confirmation on that email.
+        <span className="font-semibold">
+          Make sure your email id is correct
+        </span>{" "}
+        as you will be getting confirmation on that email.
       </li>
       <li>
         <span className="font-semibold">Workshop will be 3 days long.</span>
       </li>
       <li>
-        In case of any issue or payment failure, please contact:<br />
-        <span className="font-semibold">Ankit</span> +91-8168754398<br />
+        In case of any issue or payment failure, please contact:
+        <br />
+        <span className="font-semibold">Ankit</span> +91-8168754398
+        <br />
         <span className="font-semibold">Sarthak</span> +91-9311323161
       </li>
     </ul>
@@ -36,6 +41,7 @@ export default function RegistrationForm() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    password: "",
     phone: "",
     college: "",
     branch: "",
@@ -49,7 +55,7 @@ export default function RegistrationForm() {
   const [accommodationAmount, setAccommodationAmount] = useState(0);
   const [showDataDialog, setShowDataDialog] = useState(false);
   const amount = workshopAmount + accommodationAmount;
-  const [sessionId, setSessionId] = useState('');
+  const [sessionId, setSessionId] = useState("");
   const version = "2025-01-01";
   const [loading, setLoading] = useState(false);
   const [bigLoader, setBigLoader] = useState(false); // NEW STATE
@@ -62,11 +68,14 @@ export default function RegistrationForm() {
 
     setLoading(true);
     try {
-      const res = await axios.post(`https://sae-backend.vercel.app/api/payment`, {
-        version,
-        form,
-        amount,
-      });
+      const res = await axios.post(
+        `https://sae-backend.vercel.app/api/payment`,
+        {
+          version,
+          form,
+          amount,
+        }
+      );
 
       console.log(res.data);
       setLoading(false);
@@ -135,7 +144,7 @@ export default function RegistrationForm() {
 
             const data = await verifyRes.json();
             setBigLoader(false);
-            
+
             if (data.success) {
               router.replace("/autokriti/redirect");
             } else {
@@ -199,6 +208,9 @@ export default function RegistrationForm() {
     if (!validator.isEmail(form.email)) {
       newErrors.email = "Enter a valid email.";
     }
+    if (!form.password || form.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters long.";
+    }
     if (
       !validator.isMobilePhone(form.phone, "en-IN") ||
       !validator.isLength(form.phone, { min: 10, max: 10 })
@@ -231,7 +243,11 @@ export default function RegistrationForm() {
             <h2 className="text-3xl font-extrabold mb-6 text-cyan-400 tracking-tight text-center drop-shadow font-sans">
               Registration Form
             </h2>
-            <form className="space-y-5" onSubmit={handleSubmit} autoComplete="off">
+            <form
+              className="space-y-5"
+              onSubmit={handleSubmit}
+              autoComplete="off"
+            >
               <div>
                 <input
                   type="text"
@@ -240,9 +256,13 @@ export default function RegistrationForm() {
                   value={form.name}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.name ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
+                  className={`w-full p-3 rounded-lg bg-gray-800 border ${
+                    errors.name ? "border-red-500" : "border-gray-700"
+                  } focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
                 />
-                {errors.name && <div className="text-red-400 text-xs mt-1">{errors.name}</div>}
+                {errors.name && (
+                  <div className="text-red-400 text-xs mt-1">{errors.name}</div>
+                )}
               </div>
               <div>
                 <input
@@ -252,9 +272,33 @@ export default function RegistrationForm() {
                   value={form.email}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.email ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
+                  className={`w-full p-3 rounded-lg bg-gray-800 border ${
+                    errors.email ? "border-red-500" : "border-gray-700"
+                  } focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
                 />
-                {errors.email && <div className="text-red-400 text-xs mt-1">{errors.email}</div>}
+                {errors.email && (
+                  <div className="text-red-400 text-xs mt-1">
+                    {errors.email}
+                  </div>
+                )}
+              </div>
+              <div>
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Password *"
+                  value={form.password}
+                  onChange={handleChange}
+                  required
+                  className={`w-full p-3 rounded-lg bg-gray-800 border ${
+                    errors.password ? "border-red-500" : "border-gray-700"
+                  } focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
+                />
+                {errors.password && (
+                  <div className="text-red-400 text-xs mt-1">
+                    {errors.password}
+                  </div>
+                )}
               </div>
               <div>
                 <input
@@ -264,9 +308,15 @@ export default function RegistrationForm() {
                   value={form.phone}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 rounded-lg bg-gray-800 border ${errors.phone ? "border-red-500" : "border-gray-700"} focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
+                  className={`w-full p-3 rounded-lg bg-gray-800 border ${
+                    errors.phone ? "border-red-500" : "border-gray-700"
+                  } focus:outline-none focus:border-cyan-400 text-lg placeholder-gray-400 transition`}
                 />
-                {errors.phone && <div className="text-red-400 text-xs mt-1">{errors.phone}</div>}
+                {errors.phone && (
+                  <div className="text-red-400 text-xs mt-1">
+                    {errors.phone}
+                  </div>
+                )}
               </div>
               <input
                 type="text"
@@ -288,20 +338,33 @@ export default function RegistrationForm() {
               />
               <div className="relative">
                 <div
-                  className={`w-full p-3 pr-10 rounded-lg bg-gray-800 border ${errors.semester ? 'border-red-500' : 'border-gray-700'} focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer`}
+                  className={`w-full p-3 pr-10 rounded-lg bg-gray-800 border ${
+                    errors.semester ? "border-red-500" : "border-gray-700"
+                  } focus-within:border-cyan-400 text-lg text-gray-300 transition cursor-pointer`}
                   onClick={() => setSemesterDropdownOpen(!semesterDropdownOpen)}
                 >
-                  <span className={form.semester ? 'text-gray-300' : 'text-gray-400'}>
-                    {form.semester || '-- Select Semester --'}
+                  <span
+                    className={
+                      form.semester ? "text-gray-300" : "text-gray-400"
+                    }
+                  >
+                    {form.semester || "-- Select Semester --"}
                   </span>
                   <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                     <svg
-                      className={`w-5 h-5 text-gray-400 transition-transform ${form.semesterDropdownOpen ? 'rotate-180' : ''}`}
+                      className={`w-5 h-5 text-gray-400 transition-transform ${
+                        form.semesterDropdownOpen ? "rotate-180" : ""
+                      }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
                     </svg>
                   </div>
                 </div>
@@ -317,16 +380,17 @@ export default function RegistrationForm() {
                       { value: "5th", label: "5th" },
                       { value: "6th", label: "6th" },
                       { value: "7th", label: "7th" },
-                      { value: "8th", label: "8th" }
+                      { value: "8th", label: "8th" },
                     ].map((option) => (
                       <div
                         key={option.value}
-                        className={`px-3 py-2 cursor-pointer transition-colors ${form.semester === option.value
-                          ? 'bg-cyan-400 text-gray-900'
-                          : 'text-gray-300 hover:bg-gray-700'
-                          } ${option.value === "" ? 'text-gray-400' : ''}`}
+                        className={`px-3 py-2 cursor-pointer transition-colors ${
+                          form.semester === option.value
+                            ? "bg-cyan-400 text-gray-900"
+                            : "text-gray-300 hover:bg-gray-700"
+                        } ${option.value === "" ? "text-gray-400" : ""}`}
                         onClick={() => {
-                          setForm(prev => ({
+                          setForm((prev) => ({
                             ...prev,
                             semester: option.value,
                           }));
@@ -338,13 +402,22 @@ export default function RegistrationForm() {
                     ))}
                   </div>
                 )}
-                {errors.semester && <div className="text-red-400 text-xs mt-2">{errors.semester}</div>}
+                {errors.semester && (
+                  <div className="text-red-400 text-xs mt-2">
+                    {errors.semester}
+                  </div>
+                )}
               </div>
               <div>
-                <label className="block mb-2 font-semibold text-cyan-300">Select Your Department</label>
+                <label className="block mb-2 font-semibold text-cyan-300">
+                  Select Your Department
+                </label>
                 <div className="flex flex-col space-y-2">
                   {["CV", "IoT", "EV", "Software"].map((department) => (
-                    <label key={department} className="flex items-center gap-2 cursor-pointer hover:text-cyan-400 transition">
+                    <label
+                      key={department}
+                      className="flex items-center gap-2 cursor-pointer hover:text-cyan-400 transition"
+                    >
                       <input
                         type="radio"
                         name="department"
@@ -357,11 +430,18 @@ export default function RegistrationForm() {
                     </label>
                   ))}
                 </div>
-                {errors.department && <div className="text-red-400 text-xs mt-2">{errors.department}</div>}
+                {errors.department && (
+                  <div className="text-red-400 text-xs mt-2">
+                    {errors.department}
+                  </div>
+                )}
               </div>
               <div className="space-y-2">
                 <div className="text-white font-medium text-sm">
-                  Workshop Amount (₹): <span className="text-green-400 font-bold">{workshopAmount}</span>
+                  Workshop Amount (₹):{" "}
+                  <span className="text-green-400 font-bold">
+                    {workshopAmount}
+                  </span>
                 </div>
               </div>
 
@@ -373,10 +453,14 @@ export default function RegistrationForm() {
                   onChange={handleChange}
                   className="accent-cyan-400 mr-2"
                 />
-                Need Accommodation & food  (₹299/day)
+                Need Accommodation & food (₹299/day)
               </label>
               <div className="text-white font-medium text-sm">
-                Amount (₹): <span className="text-green-400 font-bold">{accommodationAmount !== 0 ? accommodationAmount : 0} {accommodationAmount !== 0 && "for 3 days"}</span>
+                Amount (₹):{" "}
+                <span className="text-green-400 font-bold">
+                  {accommodationAmount !== 0 ? accommodationAmount : 0}{" "}
+                  {accommodationAmount !== 0 && "for 3 days"}
+                </span>
               </div>
               <label className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition cursor-pointer">
                 <input
@@ -398,7 +482,9 @@ export default function RegistrationForm() {
               </button>
             </form>
           </div>
-          <div className="block max-[768px]:flex max-[768px]:justify-center">{instructions}</div>
+          <div className="block max-[768px]:flex max-[768px]:justify-center">
+            {instructions}
+          </div>
         </div>
 
         {/* Data Display Dialog */}
@@ -407,8 +493,8 @@ export default function RegistrationForm() {
             <div
               className="bg-gray-900 rounded-2xl p-8 max-w-4xl w-full max-h-[90vh] overflow-y-auto"
               style={{
-                scrollbarWidth: 'thin',
-                scrollbarColor: '#4B5563 #1F2937'
+                scrollbarWidth: "thin",
+                scrollbarColor: "#4B5563 #1F2937",
               }}
             >
               <style jsx>{`
@@ -416,23 +502,25 @@ export default function RegistrationForm() {
                   width: 8px;
                 }
                 div::-webkit-scrollbar-track {
-                  background: #1F2937;
+                  background: #1f2937;
                   border-radius: 4px;
                 }
                 div::-webkit-scrollbar-thumb {
-                  background: #4B5563;
+                  background: #4b5563;
                   border-radius: 4px;
                   transition: background 0.2s ease;
                 }
                 div::-webkit-scrollbar-thumb:hover {
-                  background: #6B7280;
+                  background: #6b7280;
                 }
                 div::-webkit-scrollbar-corner {
-                  background: #1F2937;
+                  background: #1f2937;
                 }
               `}</style>
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-3xl font-bold text-cyan-400">Registration Summary</h2>
+                <h2 className="text-3xl font-bold text-cyan-400">
+                  Registration Summary
+                </h2>
                 <button
                   onClick={() => setShowDataDialog(false)}
                   className="text-gray-400 hover:text-cyan-400 text-3xl transition"
@@ -445,8 +533,12 @@ export default function RegistrationForm() {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-gray-700">
-                      <th className="py-3 px-4 text-cyan-400 font-semibold">Field</th>
-                      <th className="py-3 px-4 text-cyan-400 font-semibold">Value</th>
+                      <th className="py-3 px-4 text-cyan-400 font-semibold">
+                        Field
+                      </th>
+                      <th className="py-3 px-4 text-cyan-400 font-semibold">
+                        Value
+                      </th>
                     </tr>
                   </thead>
                   <tbody className="text-gray-300">
@@ -459,40 +551,62 @@ export default function RegistrationForm() {
                       <td className="py-3 px-4">{form.email}</td>
                     </tr>
                     <tr className="border-b border-gray-800">
+                      <td className="py-3 px-4 font-medium">Password</td>
+                      <td className="py-3 px-4">••••••</td>
+                    </tr>
+                    <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Phone Number</td>
                       <td className="py-3 px-4">{form.phone}</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">College</td>
-                      <td className="py-3 px-4">{form.college || "Not specified"}</td>
+                      <td className="py-3 px-4">
+                        {form.college || "Not specified"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Branch</td>
-                      <td className="py-3 px-4">{form.branch || "Not specified"}</td>
+                      <td className="py-3 px-4">
+                        {form.branch || "Not specified"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Semester</td>
-                      <td className="py-3 px-4">{form.semester || "Not selected"}</td>
+                      <td className="py-3 px-4">
+                        {form.semester || "Not selected"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Department</td>
-                      <td className="py-3 px-4">{form.department || "Not selected"}</td>
+                      <td className="py-3 px-4">
+                        {form.department || "Not selected"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Accommodation</td>
-                      <td className="py-3 px-4">{form.accommodation ? "Yes" : "No"}</td>
+                      <td className="py-3 px-4">
+                        {form.accommodation ? "Yes" : "No"}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Workshop Amount</td>
-                      <td className="py-3 px-4 text-green-400 font-semibold">₹{workshopAmount}</td>
+                      <td className="py-3 px-4 text-green-400 font-semibold">
+                        ₹{workshopAmount}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
-                      <td className="py-3 px-4 font-medium">Accommodation Amount</td>
-                      <td className="py-3 px-4 text-green-400 font-semibold">₹{accommodationAmount}</td>
+                      <td className="py-3 px-4 font-medium">
+                        Accommodation Amount
+                      </td>
+                      <td className="py-3 px-4 text-green-400 font-semibold">
+                        ₹{accommodationAmount}
+                      </td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Total Amount</td>
-                      <td className="py-3 px-4 text-green-400 font-bold text-xl">₹{amount}</td>
+                      <td className="py-3 px-4 text-green-400 font-bold text-xl">
+                        ₹{amount}
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -528,7 +642,9 @@ export default function RegistrationForm() {
           <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-70">
             <div className="flex flex-col items-center">
               <ClipLoader color="#06b6d4" size={80} />
-              <span className="mt-6 text-cyan-200 text-xl font-semibold animate-pulse">Processing Payment...</span>
+              <span className="mt-6 text-cyan-200 text-xl font-semibold animate-pulse">
+                Processing Payment...
+              </span>
             </div>
           </div>
         )}
