@@ -288,7 +288,9 @@ function Dashboard() {
               <div>
                 <p className="text-slate-400 text-sm">Total Revenue</p>
                 <p className="text-2xl font-bold text-white">
-                  ₹{students.reduce((sum, s) => sum + s.amount, 0).toLocaleString()}
+                  ₹{students
+                    .reduce((sum, s) => sum + Number(s.amount ?? 0), 0)
+                    .toLocaleString()}
                 </p>
               </div>
               <Calendar className="w-8 h-8 text-pink-500" />
@@ -425,7 +427,7 @@ function Dashboard() {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-violet-400">
-                        ₹{student.amount.toLocaleString()}
+                        ₹{Number(student.amount ?? 0).toLocaleString()}
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <div className="flex items-center space-x-2">
