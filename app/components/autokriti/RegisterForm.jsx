@@ -282,11 +282,11 @@ export default function RegistrationForm() {
                   </div>
                 )}
               </div>
-              <div>
+              {/* <div>
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password *"
+                  placeholder="Create Password *"
                   value={form.password}
                   onChange={handleChange}
                   required
@@ -299,7 +299,7 @@ export default function RegistrationForm() {
                     {errors.password}
                   </div>
                 )}
-              </div>
+              </div> */}
               <div>
                 <input
                   type="tel"

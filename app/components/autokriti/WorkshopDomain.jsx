@@ -141,7 +141,7 @@ const WorkshopDomain = () => {
           <span className="absolute inset-0 rounded-xl animate-pulse bg-red-500/10" />
         </motion.button>
 
-        <motion.button
+        {/* <motion.button
           onClick={() => router.push("/autokriti/dashboard")}
           className="relative overflow-hidden bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
              text-white text-lg font-bold py-3 px-8 rounded-xl 
@@ -153,15 +153,15 @@ const WorkshopDomain = () => {
         >
           <span className="relative z-10">Go to Dashboard 📊</span>
 
-          {/* Shine effect */}
+          
           <span
             className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent 
                    translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"
           />
 
-          {/* Glow pulse */}
+          
           <span className="absolute inset-0 rounded-xl animate-pulse bg-cyan-500/10" />
-        </motion.button>
+        </motion.button> */}
       </motion.div>
     </div>
   );
