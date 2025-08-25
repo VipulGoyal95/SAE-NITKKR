@@ -1,12 +1,12 @@
 import crypto from "crypto";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc,setDoc, doc } from "firebase/firestore";
 import nodemailer from "nodemailer";
 import db from './../../firebase';
 
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, form } = body;
+    const { razorpay_order_id, razorpay_payment_id, razorpay_signature, form, amount } = body;
 
     // 1. Verify signature
     const sign = razorpay_order_id + "|" + razorpay_payment_id;
@@ -19,9 +19,10 @@ export async function POST(req) {
       return Response.json({ success: false }, { status: 400 });
     }
     // 2. Save to Firestore
-    await setDoc(doc(db, "AutokritiRegistration", response.razorpay_order_id), {
+    await setDoc(doc(db, "AutokritiRegistration", razorpay_order_id), {
       ...form,
       status: "PAID",
+      amount: amount,
       paidAt: new Date(),
     });
 
@@ -30,6 +31,7 @@ export async function POST(req) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         ...form,
+        amount: amount,
         orderId: razorpay_order_id,
         paymentId: razorpay_payment_id,
         paidAt: new Date().toISOString(),

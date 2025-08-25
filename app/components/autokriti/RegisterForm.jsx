@@ -40,7 +40,7 @@ export default function RegistrationForm() {
     college: "",
     branch: "",
     semester: "",
-    dept: "",
+    department: "",
     accommodation: false,
     instructionsRead: false,
   });
@@ -110,7 +110,7 @@ export default function RegistrationForm() {
       const res = await fetch("/api/order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ amount }), // ₹500.00 → 50000 paise
+        body: JSON.stringify({ amount: 1 }), // ₹500.00 → 50000 paise
       });
 
       const order = await res.json();
@@ -130,12 +130,12 @@ export default function RegistrationForm() {
             const verifyRes = await fetch("/api/verify", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ ...response, form }),
+              body: JSON.stringify({ ...response, form, amount }),
             });
 
             const data = await verifyRes.json();
             setBigLoader(false);
-
+            
             if (data.success) {
               router.replace("/autokriti/redirect");
             } else {
@@ -180,7 +180,7 @@ export default function RegistrationForm() {
       setAccommodationAmount(checked ? 299 * 3 : 0);
     }
 
-    if (name === "dept") {
+    if (name === "department") {
       let amount = 0;
       if (value === "CV") amount = 1799;
       else if (value === "IoT") amount = 2199;
@@ -205,8 +205,8 @@ export default function RegistrationForm() {
     ) {
       newErrors.phone = "Enter a valid 10-digit phone number.";
     }
-    if (!form.dept) {
-      newErrors.dept = "Please select a department.";
+    if (!form.department) {
+      newErrors.department = "Please select a department.";
     }
     if (!form.semester) {
       newErrors.semester = "Please select a semester.";
@@ -343,21 +343,21 @@ export default function RegistrationForm() {
               <div>
                 <label className="block mb-2 font-semibold text-cyan-300">Select Your Department</label>
                 <div className="flex flex-col space-y-2">
-                  {["CV", "IoT", "EV", "Software"].map((dept) => (
-                    <label key={dept} className="flex items-center gap-2 cursor-pointer hover:text-cyan-400 transition">
+                  {["CV", "IoT", "EV", "Software"].map((department) => (
+                    <label key={department} className="flex items-center gap-2 cursor-pointer hover:text-cyan-400 transition">
                       <input
                         type="radio"
-                        name="dept"
-                        value={dept}
-                        checked={form.dept === dept}
+                        name="department"
+                        value={department}
+                        checked={form.department === department}
                         onChange={handleChange}
                         className="accent-cyan-400"
                       />
-                      {dept}
+                      {department}
                     </label>
                   ))}
                 </div>
-                {errors.dept && <div className="text-red-400 text-xs mt-2">{errors.dept}</div>}
+                {errors.department && <div className="text-red-400 text-xs mt-2">{errors.department}</div>}
               </div>
               <div className="space-y-2">
                 <div className="text-white font-medium text-sm">
@@ -476,7 +476,7 @@ export default function RegistrationForm() {
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Department</td>
-                      <td className="py-3 px-4">{form.dept || "Not selected"}</td>
+                      <td className="py-3 px-4">{form.department || "Not selected"}</td>
                     </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Accommodation</td>
@@ -500,7 +500,7 @@ export default function RegistrationForm() {
 
               <div className="mt-8 flex justify-center">
                 <button
-                  onClick={handlePayment2}
+                  onClick={handlePayment}
                   className="cursor-pointer bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg transition w-full max-w-xs flex items-center justify-center gap-2"
                 >
                   {loading ? (
@@ -521,6 +521,14 @@ export default function RegistrationForm() {
                   )}
                 </button>
               </div>
+            </div>
+          </div>
+        )}
+        {bigLoader && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-70">
+            <div className="flex flex-col items-center">
+              <ClipLoader color="#06b6d4" size={80} />
+              <span className="mt-6 text-cyan-200 text-xl font-semibold animate-pulse">Processing Payment...</span>
             </div>
           </div>
         )}
