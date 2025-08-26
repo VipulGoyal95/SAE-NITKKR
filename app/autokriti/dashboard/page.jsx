@@ -205,7 +205,7 @@ export default function AutokritiDashboard() {
                   <p className="text-gray-400 text-sm">Email</p>
                   <p className="text-white font-medium">{user.email}</p>
                 </div>
-                <div>
+                {/* <div>
                   <p className="text-gray-400 text-sm">College</p>
                   <p className="text-white font-medium">{registrationData.college}</p>
                 </div>
@@ -216,7 +216,7 @@ export default function AutokritiDashboard() {
                 <div>
                   <p className="text-gray-400 text-sm">Accommodation</p>
                   <p className="text-white font-medium">{registrationData.accommodation?"Yes":"No"}</p>
-                </div>
+                </div> */}
                 {/* <div>
                   <p className="text-gray-400 text-sm">User ID</p>
                   <p className="text-white font-mono text-sm">{user.uid}</p>
