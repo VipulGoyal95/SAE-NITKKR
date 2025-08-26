@@ -2,7 +2,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { Download, Filter, ChevronDown, ChevronUp, Users, Calendar, MapPin, Mail } from 'lucide-react';
 import * as XLSX from 'xlsx';
-import { collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
 import db from '../../firebase';
 
 import { useRouter } from 'next/navigation';
@@ -70,12 +70,35 @@ function Dashboard() {
     const fetchStudents = async () => {
       try {
         setLoading(true);
-        const querySnapshot = await getDocs(collection(db, "AutokritiRegistration"));
-        const studentsData = querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
+
+        const q = query(
+          collection(db, "AutokritiRegistration"),
+          where("status", "==", "PAID")
+        );
+        const querySnapshot = await getDocs(q);
+        const studentsData = querySnapshot.docs.map(doc => {
+          const data = doc.data();
+          // Normalize college name if it contains "manglam"
+          let college = data.college || "";
+          if (college.toLowerCase().includes("mangalam") || college.toLowerCase().includes("manglam")) {
+            college = "KR Mangalam";
+          }
+          return {
+            id: doc.id,
+            ...data,
+            college, // Overwrite with normalized college name
+          };
+        });
+        
+        // Sort by registrationID (ascending, alphanumeric)
+        studentsData.sort((a, b) => {
+          const regA = a.registrationID ? String(a.registrationID) : "";
+          const regB = b.registrationID ? String(b.registrationID) : "";
+          return regA.localeCompare(regB, undefined, { numeric: true, sensitivity: 'base' });
+        });
+
         setStudents(studentsData);
+        console.log("Fetched students:", studentsData);
         setError(null);
       } catch (err) {
         console.error("Error fetching students:", err);
@@ -154,8 +177,16 @@ function Dashboard() {
     setAccommodationFilter('');
   };
 
-  const handleSendEmail = (student) => {
-    window.open(`mailto:${student.email}`);
+  const handleSendEmail = async (student) => {
+    await fetch("/api/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: student.email,
+        name: student.name,
+        registrationID: student.registrationID
+      }),
+    });
   };
 
   // Show loading state while checking role
@@ -496,19 +527,17 @@ function Dashboard() {
                               <h4 className="font-semibold text-white border-b border-slate-700 pb-2">Registration Details</h4>
                               <div>
                                 <span className="text-slate-400">Registration ID: </span>
-                                <span className="text-white font-mono">{student.registrationId}</span>
+                                <span className="text-white font-mono">{student.registrationID}</span>
+                              </div>
+                      <div>
+                                <span className="text-slate-400">UID: </span>
+                                <span className="text-white font-mono">{student.uid}</span>
                               </div>
                               <div>
-                                <span className="text-slate-400">Transaction ID: </span>
-                                <span className="text-white font-mono">{student.transactionId}</span>
-                              </div>
-                              <div>
-                                <span className="text-slate-400">Time Slot: </span>
-                                <span className="text-white">{student.timeSlot}</span>
-                              </div>
-                              <div>
-                                <span className="text-slate-400">Registration Time: </span>
-                                <span className="text-white text-xs">{new Date(student.registrationTime).toLocaleString()}</span>
+                                <span className="text-slate-400">Paid At: </span>
+                                <span className="text-white text-xs">
+                                  {student.paidAt ? student.paidAt.toDate().toLocaleString() : "N/A"}
+                                </span>
                               </div>
                             </div>
                           </div>
@@ -535,4 +564,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard; 
+export default Dashboard;

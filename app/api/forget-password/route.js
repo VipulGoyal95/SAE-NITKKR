@@ -38,7 +38,7 @@ export async function POST(req) {
       return Response.json({
         success: true,
         message:
-          "Password reset email sent successfully. Please check your email inbox.",
+          "Password reset email sent successfully. Please check your email inbox or spam folder.",
         email: email,
       });
     } catch (error) {

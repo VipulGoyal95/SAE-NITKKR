@@ -14,7 +14,8 @@ export default function AutokritiDashboard() {
   const [registrationData, setRegistrationData] = useState(null); // NEW STATE
   const [loading, setLoading] = useState(true);
   const [signingOut, setSigningOut] = useState(false);
-  const [studymaterial,setStudyMaterial] = useState(false);
+  const [studymaterial, setStudyMaterial] = useState(false);
+  const [showContactInfo, setShowContactInfo] = useState(false); // NEW STATE
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -29,6 +30,7 @@ export default function AutokritiDashboard() {
           const querySnapshot = await getDocs(q);
           if (!querySnapshot.empty) {
             setRegistrationData(querySnapshot.docs[0].data());
+            console.log(querySnapshot.docs[0].data())
           } else {
             setRegistrationData(null);
           }
@@ -65,7 +67,7 @@ export default function AutokritiDashboard() {
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
         <div className="text-center">
           <ClipLoader color="#06b6d4" size={60} />
-          <p className="mt-4 text-cyan-400 text-lg">Loading dashboard...</p>
+          <p className="mt-4 text-cyan-400 text-lg">Loading portal...</p>
         </div>
       </div>
     );
@@ -78,7 +80,7 @@ export default function AutokritiDashboard() {
   return (
     <>
       <Toaster position="top-center" />
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 mt-42">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 mt-42 max-[600px]:mt-32">
         {/* Header */}
         <header className="bg-gray-800/50 backdrop-blur-sm border-b border-gray-700">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -101,7 +103,7 @@ export default function AutokritiDashboard() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold text-white">
-                    Autokriti Dashboard
+                    Autokriti Portal
                   </h1>
                   <p className="text-gray-400 text-sm">
                     Welcome back, {user.email}
@@ -148,7 +150,7 @@ export default function AutokritiDashboard() {
           <div className="bg-gradient-to-r from-cyan-900/50 to-blue-900/50 rounded-2xl p-8 mb-8 border border-cyan-700/50">
             <div className="text-center">
               <h2 className="text-4xl font-bold text-white mb-4">
-                Welcome to Autokriti 15.0!
+                Welcome to Autokriti!
               </h2>
               <p className="text-xl text-cyan-200 mb-6">
                 North India's Largest Automotive Workshop
@@ -198,25 +200,39 @@ export default function AutokritiDashboard() {
               </div>
               <div className="space-y-3">
                 <div>
-                  {/* <p className="text-gray-400 text-sm">Name</p>
-                  <p className="text-white font-medium">{registrationData.name}</p> */}
+                  <p className="text-gray-400 text-sm">Name</p>
+                  <p className="text-white font-medium">
+                    {registrationData.name}
+                  </p>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
                   <p className="text-white font-medium">{user.email}</p>
                 </div>
-                {/* <div>
+                <div>
                   <p className="text-gray-400 text-sm">College</p>
-                  <p className="text-white font-medium">{registrationData.college}</p>
+                  <p className="text-white font-medium">
+                    {registrationData.college}
+                  </p>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Department</p>
-                  <p className="text-white font-medium">{registrationData.department}</p>
+                  <p className="text-white font-medium">
+                    {registrationData.department}
+                  </p>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Accommodation</p>
-                  <p className="text-white font-medium">{registrationData.accommodation?"Yes":"No"}</p>
-                </div> */}
+                  <p className="text-white font-medium">
+                    {registrationData.accommodation ? "Yes" : "No"}
+                  </p>
+                </div>
+                <div>
+                  <p className="text-gray-400 text-sm">Registration ID</p>
+                  <p className="text-white font-medium">
+                    {registrationData.registrationID}
+                  </p>
+                </div>
                 {/* <div>
                   <p className="text-gray-400 text-sm">User ID</p>
                   <p className="text-white font-mono text-sm">{user.uid}</p>
@@ -294,6 +310,18 @@ export default function AutokritiDashboard() {
                 <div>
                   <p className="text-gray-400 text-sm">Venue</p>
                   <p className="text-white font-medium">NIT Kurukshetra</p>
+                  <div className="mt-3 rounded-lg overflow-hidden border border-gray-700 w-fit">
+                    <iframe
+                      title="sae_location"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1371.9914590955484!2d76.81686969579629!3d29.944863529234286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390e3f5100000001%3A0x348464dd40cfcf28!2sGol%20Canteen!5e0!3m2!1sen!2sin!4v1641211248086!5m2!1sen!2sin"
+                      height={130}
+                      width={250}
+                      allowFullScreen=""
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      style={{ border: 0 }}
+                    ></iframe>
+                  </div>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Duration</p>
@@ -326,17 +354,22 @@ export default function AutokritiDashboard() {
               </div>
               <div className="space-y-3">
                 <button
-                  onClick={()=> setStudyMaterial(true)}
+                  onClick={() => setStudyMaterial(true)}
                   className="w-full px-4 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg transition-colors text-sm font-medium"
                 >
                   Download Study Materials
                 </button>
                 <button
-                  onClick={() => router.push("/contactus")}
+                  onClick={() => setShowContactInfo(true)}
                   className="w-full px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm font-medium"
                 >
                   Contact Us
                 </button>
+                {showContactInfo && (
+                  <div className="mt-4 bg-gray-800 border border-gray-700 rounded-lg p-4 text-cyan-200 text-sm">
+                    For any queries, contact Ankit (+91-8168754398) or Sarthak (+91-9311323161)
+                  </div>
+                )}
                 {/* <button
                   onClick={() => router.push("/sponsors")}
                   className="w-full px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition-colors text-sm font-medium"
@@ -367,22 +400,81 @@ export default function AutokritiDashboard() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-yellow-300 mb-2">
-                  Important Information
+                  Announcements
                 </h3>
-                <ul className="text-yellow-200 space-y-2">
-                  <li>• Detailed workshop schedule will be shared via email</li>
-                  <li>
-                    • Please bring your college ID and registration confirmation
-                  </li>
-                  <li>• Workshop materials will be provided on-site</li>
+                {/* <ul className="text-yellow-200 space-y-2">
                   <li>
                     • For any queries, contact Ankit (+91-8168754398) or Sarthak
                     (+91-9311323161)
                   </li>
-                </ul>
+                </ul> */}
+                <p className="text-yellow-200 space-y-2">
+                  No announcements at the moment. Please check back later for updates.
+                </p>
               </div>
             </div>
           </div>
+
+          {/* Study Materials Section */}
+          {studymaterial && (
+            <div className="bg-cyan-900/20 border border-cyan-700/50 rounded-xl p-6 mb-8">
+              <div className="flex items-start">
+                <div className="h-8 w-8 bg-cyan-600 rounded-lg flex items-center justify-center mr-4 mt-1">
+                  <svg
+                    className="h-5 w-5 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 20h9"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16.5 3.5a2.121 2.121 0 013 3L7 19.5 3 21l1.5-4L16.5 3.5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-cyan-300 mb-2">
+                    Study Materials
+                  </h3>
+                  {/* <ul className="text-cyan-100 space-y-2">
+                    <li>
+                      <a
+                        href="/study-materials/Autokriti-Module.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:underline"
+                      >
+                        📄 Autokriti Workshop Module (PDF)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="/study-materials/Automotive-Basics.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-cyan-400 hover:underline"
+                      >
+                        📄 Automotive Basics (PDF)
+                      </a>
+                    </li>
+                    
+                  </ul> */}
+
+                  <p className="text-cyan-100 text-base">
+                    The study materials will be provided during the workshop.
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Footer */}
           <div className="text-center text-gray-400 text-sm">
