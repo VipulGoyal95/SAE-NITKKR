@@ -22,7 +22,7 @@ export default function Redirect() {
         setIsLottieLoaded(true);
         const timeout = setTimeout(() => {
             // Use replace to prevent user from returning to this page
-            router.replace("/autokriti");
+            router.replace("/autokriti/login");
         }, 5000);
         return () => clearTimeout(timeout);
     }, [router]);

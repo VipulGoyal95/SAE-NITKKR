@@ -141,7 +141,7 @@ const WorkshopDomain = () => {
           <span className="absolute inset-0 rounded-xl animate-pulse bg-red-500/10" />
         </motion.button>
 
-        {/* <motion.button
+        <motion.button
           onClick={() => router.push("/autokriti/dashboard")}
           className="relative overflow-hidden bg-gradient-to-r from-cyan-500 via-blue-600 to-blue-700 
              text-white text-lg font-bold py-3 px-8 rounded-xl 
@@ -151,7 +151,7 @@ const WorkshopDomain = () => {
           whileHover={{ scale: 1.07 }}
           whileTap={{ scale: 0.95 }}
         >
-          <span className="relative z-10">Go to Dashboard 📊</span>
+          <span className="relative z-10">Go to Autokriti Portal</span>
 
           
           <span
@@ -161,7 +161,7 @@ const WorkshopDomain = () => {
 
           
           <span className="absolute inset-0 rounded-xl animate-pulse bg-cyan-500/10" />
-        </motion.button> */}
+        </motion.button>
       </motion.div>
     </div>
   );

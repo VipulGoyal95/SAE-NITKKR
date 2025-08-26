@@ -47,7 +47,9 @@ export default function RegistrationForm() {
     branch: "",
     semester: "",
     department: "",
+    registrationID: "",
     accommodation: false,
+    emailSent: false,
     instructionsRead: false,
   });
   const [errors, setErrors] = useState({});
@@ -282,7 +284,7 @@ export default function RegistrationForm() {
                   </div>
                 )}
               </div>
-              {/* <div className="relative">
+              <div className="relative">
                 <input
                   type="password"
                   name="password"
@@ -296,14 +298,14 @@ export default function RegistrationForm() {
                 />
                 
                 <div className="absolute top-1/2 right-3 transform -translate-y-1/2 group">
-                  <span className="text-cyan-400 cursor-pointer text-xl" tabIndex={0} title="Create password for Autokriti dashboard">
+                  <span className="text-cyan-400 cursor-pointer text-xl" tabIndex={0} title="Create password for Autokriti Portal">
                     <svg xmlns="http://www.w3.org/2000/svg" className="inline h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none"/>
                       <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M12 16v-4m0-4h.01"/>
                     </svg>
                   </span>
                   <div className="absolute right-0 mt-2 w-56 bg-gray-800 text-gray-100 text-xs rounded shadow-lg px-3 py-2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none z-20">
-                    Create password for Autokriti dashboard
+                    Create password for Autokriti Portal
                   </div>
                 </div>
                 {errors.password && (
@@ -311,7 +313,7 @@ export default function RegistrationForm() {
                     {errors.password}
                   </div>
                 )}
-              </div> */}
+              </div>
               <div>
                 <input
                   type="tel"
@@ -562,10 +564,10 @@ export default function RegistrationForm() {
                       <td className="py-3 px-4 font-medium">Email ID</td>
                       <td className="py-3 px-4">{form.email}</td>
                     </tr>
-                    {/* <tr className="border-b border-gray-800">
+                    <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Password</td>
                       <td className="py-3 px-4">••••••</td>
-                    </tr> */}
+                    </tr>
                     <tr className="border-b border-gray-800">
                       <td className="py-3 px-4 font-medium">Phone Number</td>
                       <td className="py-3 px-4">{form.phone}</td>
