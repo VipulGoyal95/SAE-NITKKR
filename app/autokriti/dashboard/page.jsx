@@ -198,8 +198,8 @@ export default function AutokritiDashboard() {
               </div>
               <div className="space-y-3">
                 <div>
-                  <p className="text-gray-400 text-sm">Name</p>
-                  <p className="text-white font-medium">{registrationData.name}</p>
+                  {/* <p className="text-gray-400 text-sm">Name</p>
+                  <p className="text-white font-medium">{registrationData.name}</p> */}
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Email</p>
