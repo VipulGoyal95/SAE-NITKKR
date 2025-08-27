@@ -136,11 +136,11 @@ export default function AutokritiLogin() {
       console.error("Login error:", error);
 
       let errorMessage = "Login failed. Please try again.";
-
+      // console.log(error);
       switch (error.code) {
-        case "auth/user-not-found":
+        case "auth/invalid-credential":
           errorMessage =
-            "No account found with this email address. Please check your email or register first.";
+            errorMessage = "Invalid email or password. Please try again.";
           break;
         case "auth/wrong-password":
           errorMessage = "Incorrect password. Please try again.";
@@ -172,7 +172,7 @@ export default function AutokritiLogin() {
 
   return (
     <>
-      <Toaster position="top-center" />
+      <Toaster position="top-center"/>
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-4 mt-12">
         <div className="max-w-md w-full space-y-8">
           {/* Header */}
