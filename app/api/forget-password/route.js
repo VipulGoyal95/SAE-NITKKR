@@ -31,10 +31,10 @@ export async function POST(req) {
 
     try {
       // Send password reset email using Firebase
-      await sendPasswordResetEmail(auth, email);
+      const res = await sendPasswordResetEmail(auth, email);
 
       console.log(`Password reset email sent successfully to: ${email}`);
-
+      console.log(res);
       return Response.json({
         success: true,
         message:

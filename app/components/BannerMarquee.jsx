@@ -5,12 +5,12 @@ import Link from "next/link";
 import Marquee from "react-fast-marquee";
 
 const marqueeText =
-  "The 15th iteration of Autokriti is coming soon. Registrations for Autokriti 15.0: Intelligence Overdrive are LIVE! Register Now!!";
+  "The 15th iteration of Autokriti is coming soon.";
 
 export default function BannerMarquee() {
   return (
     <Link
-      href="/autokriti/registrationform"
+      href="/autokriti"
       className="fixed top-0 right-0 z-[100] w-full bg-gradient-to-r from-blue-700 via-purple-700 to-pink-600 py-2 overflow-hidden border-b-2 border-blue-300 shadow-lg transition duration-200 hover:brightness-110 cursor-pointer"
       style={{ textDecoration: 'none' }}
     >

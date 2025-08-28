@@ -202,6 +202,8 @@ export default function RegistrationForm() {
   }
 
   async function handleSubmit(e) {
+    toast.success("Registration will be open soon");
+    return;
     e.preventDefault();
     const newErrors = {};
     if (!validator.isLength(form.name.trim(), { min: 2 })) {
