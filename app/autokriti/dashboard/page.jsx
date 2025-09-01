@@ -305,7 +305,7 @@ export default function AutokritiDashboard() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Date</p>
-                  <p className="text-white font-medium">4th September, 2025</p>
+                  <p className="text-white font-medium">Coming Soon</p>
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm">Venue</p>
