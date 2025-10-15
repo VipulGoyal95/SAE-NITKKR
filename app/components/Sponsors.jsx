@@ -35,6 +35,12 @@ const sponsorImages = [
     width: 250,
     height: 150
   },
+  {
+    src: '/assets/images/sponsors/sibe logo.webp',
+    alt: 'Sponsor 6',
+    width: 260,
+    height: 150
+  }
   // Add more sponsor images as needed
 ];
 

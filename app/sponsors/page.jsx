@@ -18,6 +18,7 @@ import {
   Handshake
 } from 'lucide-react';
 import { useRouter } from 'next/navigation'
+import Image from 'next/image';
 
 
 function Page() {
@@ -58,15 +59,27 @@ function Page() {
             <span className="text-white">Current </span>
             <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Sponsors and Partners</span>
           </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center justify-items-center mb-16">
-            <img src="/assets/images/sponsors/Altium2.webp" alt="Altium" className="h-32 object-contain" />
-            <img src="/assets/images/sponsors/pankaj_potentiometer.webp" alt="Pankaj Potentiometers" className="h-32 object-contain" />
-            <img src="/assets/images/sponsors/bender.webp" alt="Bender" className="h-32 object-contain" />
-            <img src="/assets/images/sponsors/bare metal comp.webp" alt="Bare Metal Comp" className="h-32 object-contain" />
-            <img src="/assets/images/sponsors/solidworks.webp" alt="SolidWorks" className="h-32 object-contain col-span-2 sm:col-span-1" />
-            {/* <img src="/assets/images/sponsors/" alt="Altium2" className="h-32 object-contain col-span-2 sm:col-span-1" /> */}
+          <div className="flex flex-row flex-wrap items-center justify-center gap-8 mb-16">
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/Altium2.webp" width={200} height={200} alt="Altium" className="h-full w-auto object-contain" />
+            </div>
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/pankaj_potentiometer.webp" width={200} height={200} alt="Pankaj Potentiometers" className="h-full w-auto object-contain" />
+            </div>
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/bender.webp" width={200} height={200} alt="Bender" className="h-full w-auto object-contain" />
+            </div>
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/bare metal comp.webp" width={200} height={200} alt="Bare Metal Comp" className="h-full w-auto object-contain" />
+            </div>
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/solidworks.webp" width={200} height={200} alt="SolidWorks" className="h-full w-auto object-contain" />
+            </div>
+            <div className="flex justify-center items-center h-32 w-56 bg-gray-100 p-4 rounded-lg">
+              <Image src="/assets/images/sponsors/sibe logo.webp" width={200} height={200} alt="Sibe" className="h-full w-auto object-contain" />
+            </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 mt-20">
+          {/* <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 mt-20">
             <span className="text-white">Previous </span>
             <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Sponsors</span>
           </h2>
@@ -77,7 +90,7 @@ function Page() {
             <img src="/assets/images/sponsors/bare metal comp.webp" alt="Bare Metal Comp" className="h-32 object-contain" />
             <img src="/assets/images/sponsors/solidworks.webp" alt="SolidWorks" className="h-32 object-contain col-span-2 sm:col-span-1" />
             <img src="/assets/images/sponsors/Altium2.webp" alt="Altium2" className="h-32 object-contain col-span-2 sm:col-span-1" />
-          </div>
+          </div> */}
         </div>
       </div>
      
