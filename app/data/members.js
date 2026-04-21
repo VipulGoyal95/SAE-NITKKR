@@ -313,7 +313,7 @@ export const Details4yr = [
   },
   {
     id: 32,
-    img: '/assets/images/Teammembers/priyanshu.webp',
+    img: '/assets/images/Teammembers/Priyanshu.webp',
     name: "Priyanshu",
     Team: "Accelerons",
     metadata:{
@@ -338,10 +338,14 @@ export const Details4yr = [
   },
   {
     id: 26,
-    img: '/assets/images/Teammembers/Divyansh.jpeg',
+    img: '/assets/images/Teammembers/Divyansh.webp',
     name: "Divyansh Garg",
     Team: "Nitrox",
-    Department: "Brakes Head and DAQ Head",
+    metadata:{
+      position1: "Brakes Head",
+      position2: "DAQ Head"
+    },
+    Department: "Brakes and DAQ",
     LinkedIn: "https://www.linkedin.com/in/divyansh-garg-179000286/",
     Email: "bharatgarg685@gmail.com",
   },
@@ -374,7 +378,6 @@ export const Details4yr = [
     Team: "Nitrox",
     metadata:{
       position1: "Procurement and Inventory Head",
-      position2: "Brakes Head"
     },
     Department: "Brakes",
     LinkedIn: "https://www.linkedin.com/in/mukul-verma-590113267/",
@@ -500,6 +503,7 @@ export const Details4yr = [
   //   Email: "sunnysabharwal2233@gmail.com",
   // }
 ];
+
 
 export const Details3yr = [
   {
@@ -657,7 +661,7 @@ export const Details3yr = [
   },
   {
     id: 59,
-    img: '/assets/images/Teammembers/RAHUL.webp',
+    img: '/assets/images/Teammembers/Rahul Rana.webp',
     name: 'Rahul',
     Team: 'Accelerons',
     Department: 'VD/Aerodynamics',
@@ -755,4 +759,251 @@ export const Details3yr = [
     LinkedIn: '#',
     Email: 'Bhoomikalangan06@gmail.com',
   },
+]
+
+export const Details2yr = [
+
+  {
+    id: 13,
+    img: '/assets/images/Teammembers/Kavya Khanna.webp',
+    name: 'Kavya Khanna',
+    Team: 'Team Nitrox',
+    Department: 'Brakes',
+    LinkedIn: 'https://www.linkedin.com/in/kavya-khanna5',
+    Email: 'kavyakhanna205@gmail.com',
+  },
+
+  {
+    id: 23,
+    img: '/assets/images/Teammembers/Abhinav Khasariya.webp',
+    name: 'Abhinav Khasariya',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/abhinav-khasariya-a1a7652a8',
+    Email: 'khasariyaabhi@gmail.com',
+  },
+  
+  {
+    id: 9,
+    img: '/assets/images/Teammembers/Sahil Sindhal.webp',
+    name: 'SAHIL',
+    Team: 'Team Nitrox',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/sahil-sindhal-7086163a8',
+    Email: 'sahilsindhal86@gmail.com',
+  },
+  
+  {
+    id: 2,
+    img: '/assets/images/Teammembers/Yogesh Kumar.webp',
+    name: 'Yogesh Kumar',
+    Team: 'Team Accelerons Electric',
+    Department: 'Vehicle Dynamics / Chassis',
+    LinkedIn: 'https://www.linkedin.com/in/yogesh-kumar-243720319',
+    Email: 'yogesh.k281001@gmail.com',
+  },
+
+  {
+    id: 1,
+    img: '/assets/images/Teammembers/Aryan Saini.webp',
+    name: 'Aryan Saini',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical and Electronics Dept.',
+    LinkedIn: '#',
+    Email: 'aryansaini211106@gmail.com',
+  },
+  {
+    id: 3,
+    img: '/assets/images/Teammembers/Saransh Agrawal.webp',
+    name: 'Saransh Agrawal',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/saransh-agrawal-81462a31a',
+    Email: 'saranshmarch16@gmail.com',
+  },
+
+  {
+    id: 4,
+    img: '/assets/images/Teammembers/Pranjal.webp',
+    name: 'Pranjal Gupta',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: '#',
+    Email: 'pranjalguptapg5@gmail.com',
+  },
+
+  {
+    id: 5,
+    img: '/assets/images/Teammembers/Nishtha Jain.webp',
+    name: 'Nishtha jain',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/nishtha-jain-246433301',
+    Email: 'nishthaj63@gmail.com',
+  },
+
+  {
+    id: 6,
+    img: '/assets/images/Teammembers/Mayank Goel.webp',
+    name: 'Mayank goel',
+    Team: 'Team Accelerons Electric',
+    Department: 'Brakes',
+    LinkedIn: 'https://www.linkedin.com/in/nishtha-jain-246433301',
+    Email: 'mayankgoel452@gmail.com',
+  },
+
+  {
+    id: 7,
+    img: '/assets/images/Teammembers/stanzin lhamo.webp',
+    name: 'Stanzin Lhamo',
+    Team: 'Team Nitrox',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/stanzin-lhamo-355660345',
+    Email: 'lhamostanzin333@gmail.com',
+  },
+
+  {
+    id: 8,
+    img: '/assets/images/Teammembers/Shreyas M.webp',
+    name: 'Mantri Shreyas',
+    Team: 'Team Nitrox',
+    Department: 'Vehicle Dynamics / Chassis',
+    LinkedIn: 'https://www.linkedin.com/in/shreyas-mantri02',
+    Email: 'shreyasm1002@gmail.com',
+  },
+
+  
+
+  {
+    id: 10,
+    img: '/assets/images/Teammembers/Ayush Tiwari.webp',
+    name: 'Ayush Tiwari',
+    Team: 'Team Nitrox',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/ayush-tiwari-8161a5325',
+    Email: 'tiwariayushpersonal@gmail.com',
+  },
+
+  {
+    id: 11,
+    img: '/assets/images/Teammembers/Marmik.webp',
+    name: 'Marmik Chaudhari',
+    Team: 'Team Nitrox',
+    Department: 'Vehicle Dynamics / Chassis',
+    LinkedIn: 'https://www.linkedin.com/in/marmik-chaudhari-aab89b368',
+    Email: 'marmik7035@gmail.com',
+  },
+
+  {
+    id: 12,
+    img: '/assets/images/Teammembers/Danish Madhu.webp',
+    name: 'Danish Madhu',
+    Team: 'Team Nitrox',
+    Department: 'Brakes',
+    LinkedIn: 'https://www.linkedin.com/in/danish-madhu',
+    Email: 'danishmadhu10@gmail.com',
+  },
+
+  
+
+  {
+    id: 14,
+    img: '/assets/images/Teammembers/Gitansh Sharma.webp',
+    name: 'Gitansh Sharma',
+    Team: 'Team Accelerons Electric',
+    Department: 'Vehicle Dynamics / Chassis',
+    LinkedIn: 'https://www.linkedin.com/in/gitansh-sharma-542822322',
+    Email: 'sharmagitansh187@gmail.com',
+  },
+
+  {
+    id: 15,
+    img: '/assets/images/Teammembers/Tarun Tyagi.webp',
+    name: 'Tarun Tyagi',
+    Team: 'Team Accelerons Electric',
+    Department: 'Transmission',
+    LinkedIn: 'https://www.linkedin.com/in/tarun-tyagi-a23036395',
+    Email: 'tyagitarun738@gmail.com',
+  },
+  {
+    id: 16,
+    img: '/assets/images/Teammembers/stanzin namdol.webp',
+    name: 'STANZIN  NAMDOL',
+    Team: 'Team Accelerons Electric',
+    Department: 'Vehicle Dynamics / Chassis',
+    LinkedIn: '#',
+    Email: 'Namdol623@gmail.com',
+  },
+
+  
+  {
+    id: 18,
+    img: '/assets/images/Teammembers/Lakshya Bhardwaj.webp',
+    name: 'Lakshya Bhardwaj',
+    Team: 'Team Nitrox',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/lakshya-bhardwaj-ba038831a',
+    Email: 'bhardwaj.utkarsh.1906@gmail.com',
+  },
+  
+  {
+    id: 19,
+    img: '/assets/images/Teammembers/Ishu Jangra.webp',
+    name: 'Ishu',
+    Team: 'Team Accelerons Electric',
+    Department: 'Transmission',
+    LinkedIn: 'https://www.linkedin.com/in/lakshya-bhardwaj-ba038831a',
+    Email: 'mr.ishujangra@gmail.com',
+  },
+  
+  {
+    id: 20,
+    img: '/assets/images/Teammembers/Kumud Saini.webp',
+    name: 'Kumud Saini',
+    Team: 'Team Nitrox',
+    Department: 'Transmission',
+    LinkedIn: 'https://www.linkedin.com/in/kumud-saini-512505306/',
+    Email: 'kumudsaini09@gmail.com',
+  },
+  
+  {
+    id: 21,
+    img: '/assets/images/Teammembers/priyanshu sharma.webp',
+    name: 'PRIYANSHU SHARMA',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: '#',
+    Email: '8982246884k@gmail.com',
+  },
+  
+  {
+    id: 22,
+    img: '/assets/images/Teammembers/Sahil Yadav.webp',
+    name: 'Sahil Rao',
+    Team: 'Team Accelerons Electric',
+    Department: 'Brakes',
+    LinkedIn: '#',
+    Email: 'sahilydv2727@gmail.com',
+  },
+
+  // {
+  //   id: 23,
+  //   img: '/assets/images/Teammembers/Sahil Yadav.webp',
+  //   name: 'Divyansh Yadav',
+  //   Team: 'Team Accelerons Electric',
+  //   Department: 'Vehicle Dynamics / Chassis',
+  //   LinkedIn: 'https://www.linkedin.com/in/divyansh-yadav-5911b8215',
+  //   Email: 'divyanshy6387@gmail.com',
+  // },
+  
+  {
+    id: 17,
+    img: '/assets/images/Teammembers/Manavi Chauhan.webp',
+    name: 'Manavi',
+    Team: 'Team Nitrox',
+    Department: 'IT Team',
+    LinkedIn: 'https://www.linkedin.com/in/manavi-chauhan-39271534b',
+    Email: 'manavichauhan997@gmail.com',
+  },
+
 ]
