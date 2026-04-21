@@ -311,9 +311,11 @@ export const Details4yr = [
     LinkedIn: "https://www.linkedin.com/in/danish-goyal-94bb80269/",
     Email: "danishgoyaljind15@gmail.com",
   },
+
+
   {
     id: 32,
-    img: '/assets/images/Teammembers/Priyanshu.webp',
+    img: '/assets/images/Teammembers/priyanshu.webp',
     name: "Priyanshu",
     Team: "Accelerons",
     metadata:{
@@ -484,24 +486,6 @@ export const Details4yr = [
     LinkedIn:"https://www.linkedin.com/in/sahil-meena-160628260/",
     Email:"sahilghusinga@gmail.com",
   },
-  // {
-  //   id: 41,
-  //   img: '/assets/images/Teammembers/yashGarg.webp',
-  //   name: "Yash Garg",
-  //   Team: "",
-  //   Department: "IT Team",
-  //   LinkedIn: "https://www.linkedin.com/in/yash-garg-566417281",
-  //   Email: "Ygarg423@gmail.com",
-  // },
-  // {
-  //   id: 42,
-  //   img: '/assets/images/Teammembers/Sunny.webp',
-  //   name: "Sunny",
-  //   Team: "",
-  //   Department: "IT Team",
-  //   LinkedIn: "https://www.linkedin.com/in/sunny-sabharwal-761009289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-  //   Email: "sunnysabharwal2233@gmail.com",
-  // }
 ];
 
 
@@ -985,6 +969,16 @@ export const Details2yr = [
     LinkedIn: '#',
     Email: 'sahilydv2727@gmail.com',
   },
+
+  // {
+  //   id: 23,
+  //   img: '/assets/images/Teammembers/Sahil Yadav.webp',
+  //   name: 'Divyansh Yadav',
+  //   Team: 'Team Accelerons Electric',
+  //   Department: 'Vehicle Dynamics / Chassis',
+  //   LinkedIn: 'https://www.linkedin.com/in/divyansh-yadav-5911b8215',
+  //   Email: 'divyanshy6387@gmail.com',
+  // },
 
   // {
   //   id: 23,
