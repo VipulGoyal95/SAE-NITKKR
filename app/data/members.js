@@ -459,7 +459,7 @@ export const Details4yr = [
     img: '/assets/images/Teammembers/Divyansh.webp',
     name: "Divyansh Garg",
     Team: "Nitrox",
-    Department: "Brakes",
+    Department: "Brakes and DAQ",
     LinkedIn: "https://www.linkedin.com/in/divyansh-garg-179000286/",
     Email: "bharatgarg685@gmail.com",
   },
