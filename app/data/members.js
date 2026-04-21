@@ -337,6 +337,15 @@ export const Details4yr = [
     Email: "jatinkhairwal2003@gmail.com",
   },
   {
+    id: 26,
+    img: '/assets/images/Teammembers/Divyansh.jpeg',
+    name: "Divyansh Garg",
+    Team: "Nitrox",
+    Department: "Brakes Head and DAQ Head",
+    LinkedIn: "https://www.linkedin.com/in/divyansh-garg-179000286/",
+    Email: "bharatgarg685@gmail.com",
+  },
+  {
     id: 36,
     img: '/assets/images/Teammembers/chirag.webp',
     name: "Chirag jangra",
@@ -455,15 +464,6 @@ export const Details4yr = [
   },
   
   {
-    id: 26,
-    img: '/assets/images/Teammembers/Divyansh.webp',
-    name: "Divyansh Garg",
-    Team: "Nitrox",
-    Department: "Brakes and DAQ",
-    LinkedIn: "https://www.linkedin.com/in/divyansh-garg-179000286/",
-    Email: "bharatgarg685@gmail.com",
-  },
-  {
     id: 30,
     img: '/assets/images/Teammembers/Sahaj Srivastava.webp',
     name: "Sahaj Srivastava",
@@ -481,24 +481,24 @@ export const Details4yr = [
     LinkedIn:"https://www.linkedin.com/in/sahil-meena-160628260/",
     Email:"sahilghusinga@gmail.com",
   },
-  {
-    id: 41,
-    img: '/assets/images/Teammembers/yashGarg.webp',
-    name: "Yash Garg",
-    Team: "",
-    Department: "IT Team",
-    LinkedIn: "https://www.linkedin.com/in/yash-garg-566417281",
-    Email: "Ygarg423@gmail.com",
-  },
-  {
-    id: 42,
-    img: '/assets/images/Teammembers/Sunny.webp',
-    name: "Sunny",
-    Team: "",
-    Department: "IT Team",
-    LinkedIn: "https://www.linkedin.com/in/sunny-sabharwal-761009289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
-    Email: "sunnysabharwal2233@gmail.com",
-  }
+  // {
+  //   id: 41,
+  //   img: '/assets/images/Teammembers/yashGarg.webp',
+  //   name: "Yash Garg",
+  //   Team: "",
+  //   Department: "IT Team",
+  //   LinkedIn: "https://www.linkedin.com/in/yash-garg-566417281",
+  //   Email: "Ygarg423@gmail.com",
+  // },
+  // {
+  //   id: 42,
+  //   img: '/assets/images/Teammembers/Sunny.webp',
+  //   name: "Sunny",
+  //   Team: "",
+  //   Department: "IT Team",
+  //   LinkedIn: "https://www.linkedin.com/in/sunny-sabharwal-761009289?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app ",
+  //   Email: "sunnysabharwal2233@gmail.com",
+  // }
 ];
 
 export const Details3yr = [
@@ -628,15 +628,15 @@ export const Details3yr = [
     LinkedIn: 'https://www.linkedin.com/in/piyush-bansal-316487311/',
     Email: 'piyushbans3.14@gmail.com',
   },
-  {
-    id: 56,
-    img: '/assets/images/Teammembers/PRATHAM GUPTA.webp',
-    name: 'Pratham Gupta',
-    Team: 'Nitrox',
-    Department: 'Transmission',
-    LinkedIn: 'https://www.linkedin.com/in/pratham-gupta-448b31290/',
-    Email: '123106060@nitkkr.ac.in',
-  },
+  // {
+  //   id: 56,
+  //   img: '/assets/images/Teammembers/PRATHAM GUPTA.webp',
+  //   name: 'Pratham Gupta',
+  //   Team: 'Nitrox',
+  //   Department: 'Transmission',
+  //   LinkedIn: 'https://www.linkedin.com/in/pratham-gupta-448b31290/',
+  //   Email: '123106060@nitkkr.ac.in',
+  // },
   {
     id: 57,
     img: '/assets/images/Teammembers/PREETAM PREETAM.webp',
