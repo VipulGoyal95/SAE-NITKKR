@@ -869,7 +869,7 @@ export const Details2yr = [
 
   {
     id: 12,
-    img: '/assets/images/Teammembers/Danish Madhu.webp',
+    img: '/assets/images/Teammembers/mandhu.webp',
     name: 'Danish Madhu',
     Team: 'Team Nitrox',
     Department: 'Brakes',
