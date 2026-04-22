@@ -91,7 +91,7 @@ export default function OurTeams() {
         >
           <div className="relative w-full md:w-[500px] h-[350px] md:h-[500px] rounded-[35px] overflow-hidden mx-5 max-[768px]:w-[80%] max-[541px]:w-[90%]">
             <Image
-              src="/assets/images/homepage/nitrox.webp"
+              src="/assets/images/homepage/nit.webp"
               alt="Nitrox Car"
               fill
               className="rounded-[35px] object-cover"
