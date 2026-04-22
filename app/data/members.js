@@ -421,18 +421,7 @@ export const Details4yr = [
     LinkedIn: "https://www.linkedin.com/in/ajay-jangra-67a499289",
     Email: "ajayjangra2403@gmail.com",
   },
-  {
-    id: 28,
-    img: '/assets/images/Teammembers/atharva.webp',
-    name: "Atharva Mahajan",
-    Team: "Nitrox",
-    metadata:{
-      position1: "Sales Head",
-    },
-    Department: "Brakes",
-    LinkedIn: "https://www.linkedin.com/in/atharva-mahajan-2aa7511b0/",
-    Email: "mahajanatharva43@gmail.com",
-  },
+  
   {
     id: 20,
     img: '/assets/images/Teammembers/MOHIT CHAUDHARY.webp',
@@ -970,25 +959,15 @@ export const Details2yr = [
     Email: 'sahilydv2727@gmail.com',
   },
 
-  // {
-  //   id: 23,
-  //   img: '/assets/images/Teammembers/Sahil Yadav.webp',
-  //   name: 'Divyansh Yadav',
-  //   Team: 'Team Accelerons Electric',
-  //   Department: 'Vehicle Dynamics / Chassis',
-  //   LinkedIn: 'https://www.linkedin.com/in/divyansh-yadav-5911b8215',
-  //   Email: 'divyanshy6387@gmail.com',
-  // },
-
-  // {
-  //   id: 23,
-  //   img: '/assets/images/Teammembers/Sahil Yadav.webp',
-  //   name: 'Divyansh Yadav',
-  //   Team: 'Team Accelerons Electric',
-  //   Department: 'Vehicle Dynamics / Chassis',
-  //   LinkedIn: 'https://www.linkedin.com/in/divyansh-yadav-5911b8215',
-  //   Email: 'divyanshy6387@gmail.com',
-  // },
+  {
+    id: 23,
+    img: '/assets/images/Teammembers/ritesh.webp',
+    name: 'Ritesh',
+    Team: 'Team Nitrox',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/ritesh-yadav-24a813368',
+    Email: 'divya240407@gmail.com',
+  },
   
   {
     id: 17,
@@ -998,6 +977,15 @@ export const Details2yr = [
     Department: 'IT Team',
     LinkedIn: 'https://www.linkedin.com/in/manavi-chauhan-39271534b',
     Email: 'manavichauhan997@gmail.com',
+  },
+  {
+    id: 24,
+    img: '/assets/images/Teammembers/Tamanna.webp',
+    name: 'Tamanna',
+    Team: 'Team Accelerons Electric',
+    Department: 'Electrical & Electronics',
+    LinkedIn: 'https://www.linkedin.com/in/tamanna-kansal-146786321',
+    Email: '124104032@nitkkr.ac.in',
   },
 
 ]
