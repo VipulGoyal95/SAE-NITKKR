@@ -544,7 +544,7 @@ export const Details3yr = [
   },
   {
     id: 49,
-    img: '/assets/images/Teammembers/Kshitz.jpg',
+    img: '/assets/images/Teammembers/Kshitz.webp',
     name: 'Kshitiz Gupta',
     Team: 'Nitrox',
     Department: 'Electrical',
