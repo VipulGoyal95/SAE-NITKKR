@@ -27,9 +27,9 @@ export default function Herosection() {
     urls: [
       "/assets/images/nitrox/hero.webp",
       "/assets/images/nitrox/img1.webp",
-      "/assets/images/nitrox/img2.webp",
-      "/assets/images/nitrox/img3.webp",
-      "/assets/images/nitrox/img4.webp"
+      "/assets/images/nitrox/img25.webp",
+      "/assets/images/nitrox/img26.webp",
+      "/assets/images/nitrox/img28.webp"
     ],
     title: "Team Nitrox",
     about: "TEAM NITROX is a dedicated group of engineering enthusiasts united by a common goal: to build a high-performance ATV (All-Terrain Vehicle) that can dominate any terrain. Established in 2010 under the banner of SAE NIT Kurukshetra, the team has consistently evolved, excelling both technically and competitively. From being one of the few teams to design its own Continuously Variable Transmission (CVT) to representing India at BAJA SAE Illinois, and to even debuting our 4X4 ATV: Team Nitrox has consistently demonstrated exceptional growth and innovation in the field of off-road engineering."
@@ -80,9 +80,9 @@ export default function Herosection() {
           </motion.div>
           <div className="absolute inset-0 bg-black/30" />
           
-          <div className="absolute inset-0 flex items-end justify-center py-8 px-8 max-[450px]:mb-10 md:px-16">
+          <div className={`absolute inset-0 flex items-end justify-center py-8 px-8 max-[450px]:mb-10 ${isNitroxPage?"":"max-[410px]:px-5 max-[375px]:px-4"}  md:px-16`}>
             <div className="relative">
-              <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center max-[460px]:text-2xl"
+              <motion.h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold text-white text-center ${isNitroxPage?"max-[460px]:text-4xl":"max-[460px]:text-[28px]"}`}
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.3 }}

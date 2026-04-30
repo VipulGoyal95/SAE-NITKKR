@@ -27,22 +27,23 @@ const bottomImagesAcelerons = [
 ];
 
 const topImagesNitrox = [
-  "/assets/images/nitrox/img1.webp",
-  "/assets/images/nitrox/img2.webp",
-  "/assets/images/nitrox/img3.webp",
-  "/assets/images/nitrox/img4.webp",
-  "/assets/images/nitrox/img5.webp",
-  "/assets/images/nitrox/img6.webp",
-  "/assets/images/nitrox/img7.webp"
+  "/assets/images/nitrox/img15.webp",
+  "/assets/images/nitrox/img28.webp",
+  "/assets/images/nitrox/img29.webp",
+  "/assets/images/nitrox/img30.webp",
+  "/assets/images/nitrox/img19.webp",
+  "/assets/images/nitrox/img20.webp",
+  "/assets/images/nitrox/img21.webp"
 ]
 
 const bottomImagesNitrox = [
-  "/assets/images/nitrox/img8.webp",
-  "/assets/images/nitrox/img9.webp",
-  "/assets/images/nitrox/img10.webp",
-  "/assets/images/nitrox/img12.webp",
-  "/assets/images/nitrox/img13.webp",
-  "/assets/images/nitrox/img14.webp"
+  "/assets/images/nitrox/img22.webp",
+  "/assets/images/nitrox/img23.webp",
+  "/assets/images/nitrox/img24.webp",
+  "/assets/images/nitrox/img25.webp",
+  "/assets/images/nitrox/img26.webp",
+  "/assets/images/nitrox/img27.webp",
+  "/assets/images/nitrox/img31.webp",
 ]
 
 const topImagesAutokriti = [
