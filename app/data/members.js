@@ -693,7 +693,7 @@ export const Details3yr = [
     name: 'Nitesh Gupta',
     Team: 'IT',
     Department: 'IT Team',
-    LinkedIn: 'https://niteshishere.vercel.app',
+    LinkedIn: 'https://xenitesh.vercel.app',
     Email: 'nitesh647484@gmail.com',
   },
   {
@@ -960,7 +960,7 @@ export const Details2yr = [
   },
 
   {
-    id: 23,
+    id: 34,
     img: '/assets/images/Teammembers/ritesh.webp',
     name: 'Ritesh',
     Team: 'Team Nitrox',
@@ -1068,7 +1068,7 @@ export const Details2yr = [
     Email: 'ayushigarg0611@gmail.com',
   },
   {
-    id: 31,
+    id: 35,
     img: '/assets/images/Teammembers/Arnav Mishra.webp',
     name: 'Arnav Mishra',
     Team: 'Team Nitrox',

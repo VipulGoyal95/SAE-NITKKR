@@ -51,7 +51,7 @@ const TeamMemberCard = ({ member }) => {
             
           </div>
           
-          <p className={`mb-6 text-sm leading-relaxed text-gray-200/90 max-[550px]:mb-4 max-[410px]:mb-2 transition-all duration-700 ${
+          <div className={`mb-6 text-sm leading-relaxed text-gray-200/90 max-[550px]:mb-4 max-[410px]:mb-2 transition-all duration-700 ${
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}>
             {
@@ -70,7 +70,7 @@ const TeamMemberCard = ({ member }) => {
               !member.metadata && member.Team &&
               <p className="mt-1 text-[17px] leading-4 font-medium text-blue-50/70">{member.Team}</p>
             }
-          </p>
+          </div>
           
           <div className={`flex space-x-3 transition-all duration-700 max-[450px]:space-x-2 max-[400px]:space-x-1 ${
             isHovered ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'

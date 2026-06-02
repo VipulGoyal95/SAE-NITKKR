@@ -87,27 +87,26 @@ const Teammembers = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.8 }}
       >
-        <Link href="/teammembers" passHref legacyBehavior>
-          <a
-            onMouseEnter={() => setTitleHovered(true)}
-            onMouseLeave={() => setTitleHovered(false)}
-            className="block w-fit mx-auto cursor-pointer"
-            style={{ textDecoration: 'none' }}
+        <Link
+          href="/teammembers"
+          onMouseEnter={() => setTitleHovered(true)}
+          onMouseLeave={() => setTitleHovered(false)}
+          className="block w-fit mx-auto cursor-pointer"
+          style={{ textDecoration: 'none' }}
+        >
+          <h2 className="text-white text-4xl font-bold text-center select-none">
+            TEAM MEMBERS
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-white/0 via-white to-white/0 mx-auto mt-4"></div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={titleHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+            transition={{ duration: 0.3 }}
+            className="text-white text-lg font-medium text-center mt-2"
+            style={{ pointerEvents: 'none' }}
           >
-            <h2 className="text-white text-4xl font-bold text-center select-none">
-              TEAM MEMBERS
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-white/0 via-white to-white/0 mx-auto mt-4"></div>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={titleHovered ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
-              transition={{ duration: 0.3 }}
-              className="text-white text-lg font-medium text-center mt-2"
-              style={{ pointerEvents: 'none' }}
-            >
-              Know more about our team
-            </motion.div>
-          </a>
+            Know more about our team
+          </motion.div>
         </Link>
       </motion.div>
 
